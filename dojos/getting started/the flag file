@@ -1,0 +1,21 @@
+# challenge: the flag file
+
+📅 2025-05-25  
+📁 getting started
+
+---
+
+## ✅ what i did  
+-clicked on start
+-opened the terminal
+-executed '/flag' but i didnt have the permission
+-executed '/challenge/solve' -> now i got the permission to read '/flag'
+-ran: cat /flag
+-flag poped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+running '/challenge/solve' make the file 'flag' readable (NOT EXECUTABLE).
+u can see that now the file flag is readable lookin at its permissions running: ls -l /flag
+
+## 🏁 Flag  
+pwn.college{gQcLBEnFgsKYP1qtg4xFulK2KH1.QX5IzNzwCO4IDOxEzW}
