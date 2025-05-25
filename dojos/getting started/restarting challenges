@@ -1,0 +1,21 @@
+# challenge: restarting challenges
+
+📅 2025-05-25  
+📁 getting started
+
+---
+
+## ✅ what i did  
+-clicked on start
+-opened desktop in a new tab
+-typed a random letter cuz idk the password
+-terminal said its incorrect (of course) so i copied the right password
+-started the challenge again 
+-pasted the correct password
+-flag poped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+reloading the desktop environment will clear the clipboard so u gotta save the content of the clipboard somwhere else before reloadin the environment
+
+## 🏁 Flag  
+pwn.college{AxeD7xuknW5q_SXDdsjKxF52ezv.QX1kDM1wCO4IDOxEzW}
