@@ -1,0 +1,24 @@
+# challenge: using practice mode
+📅 2025-05-25  
+📁 getting started
+
+---
+
+## ✅ what i did  
+-clicked on practice mode
+-opened the terminal
+-ran: '/challenge/solve'
+-tried to ran: 'cat /challenge/secret' but i wasn't root
+-ran: 'sudo su'
+-as root i could run 'cat /challenge/secret'
+-i saved the string into the clipboard and then outside the environment cuz i had to open it in start mode and not in practice mode
+-pasted the string into the clipboard and opened the temrinal
+-ran: '/challenge/solve'
+-right-click and pasted the string
+-flag poped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can do ur tests in the practice environment
+
+## 🏁 Flag
+pwn.college{gqXflKYV1NJ1ogMmr0IDNFKozVO.QXwMzNzwCO4IDOxEzW}
