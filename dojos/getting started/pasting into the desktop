@@ -1,0 +1,22 @@
+# challenge: pasting into the desktop
+
+📅 2025-05-25  
+📁 getting started
+
+---
+
+## ✅ what i did  
+-clicked on start
+-copied the string
+-opened desktop in a new tab
+-pasted the string in the clipboard
+-clicked on the terminal at the bottom
+-right-click and pasted the string that now its saved inside the desktop
+-flag poped out
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u will learn how to copy-paste from outside the desktop environment into it
+
+## 🏁 Flag  
+pwn.college{EpNVMEL85gpLrfzao5chl4_4uqH.QX4IzNzwCO4IDOxEzW}
