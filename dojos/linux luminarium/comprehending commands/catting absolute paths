@@ -1,0 +1,17 @@
+# challenge: catting absolute paths
+
+📅 2025-05-26  
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /flag'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to pass the absolute path of a file to cat
+
+## 🏁 Flag  
+pwn.college{QXfYPyqLv-a4lw1JDngpDwNCcFB.QX5ETO0wCO4IDOxEzW}
