@@ -1,0 +1,21 @@
+# challenge: implicit relative path
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-moved to the root directory using 'cd ..' 2x
+-ran: 'cd challenge'
+-ran: './run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to run programs from the current directory by specifying it w/ ./
+
+## 🏁 Flag  
+pwn.college{4Jt0wUzfdlDN-cVK4hUdNI49rTa.QXxUTN0wCO4IDOxEzW}
