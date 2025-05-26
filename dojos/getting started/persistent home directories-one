@@ -1,0 +1,23 @@
+# challenge: persistent home directories-one
+
+📅 2025-05-26  
+📁 getting started
+
+---
+
+## ✅ what i did  
+-clicked on start
+-opened the terminal
+-ran: '/challenge/solve'
+-ran: 'cat /challenge/secret' and copied the content
+-ran: 'mkdir leap'
+-ran: 'cd leap'
+-ran: 'vim leap' and pasted the content using the top bar (edit -> paste)
+-ran: '/challenge/solve'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to create directories and files that stay persistent in your desktop environment and they will be usefull in future
+
+## 🏁 Flag  
+pwn.college{cj5eShRmq3UVjq7Hta_yYiOTEss.QXxMzNzwCO4IDOxEzW}
