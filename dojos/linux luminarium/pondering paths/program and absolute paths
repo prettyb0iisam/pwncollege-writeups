@@ -8,11 +8,11 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: '/challenge/solve/'
+-ran: '/challenge/run/'
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-also here u r going to use the absolute path of the command
+just like before u r going to ran a command using its absolute path but this time located in /challenge/run
 
 ## 🏁 Flag  
 pwn.college{4YPcUqaJBOdsDP8JiVHqG1iei4G.QX1QTN0wCO4IDOxEzW}
