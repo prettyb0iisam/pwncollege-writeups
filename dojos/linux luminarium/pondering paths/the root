@@ -1,0 +1,18 @@
+# challenge: the root
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/pwn'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can ran commands by using their absolute path. in this case the command is located in the root directory so u just need to run /pwn
+
+## 🏁 Flag  
+pwn.college{YN3Rv1EzU7KyfMqkO-jDG9-_1Jp.QX4cTO0wCO4IDOxEzW}
