@@ -1,0 +1,21 @@
+# challenge: home swet home
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-command needs an argument no longer than 3 characters
+-ran: '/challenge/run ~/a'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+~ is a shortcut to go to the user's directory.
+
+
+## 🏁 Flag  
+pwn.college{gP1okvwIkNqum_V8znTT1PSaJjP.QXzMDO0wCO4IDOxEzW}
