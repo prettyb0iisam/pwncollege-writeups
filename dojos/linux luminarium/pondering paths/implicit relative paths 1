@@ -1,0 +1,22 @@
+# challenge: implicit relative paths 1
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-ran: '/challenge/run'
+-moved to the root directory using 'cd ..' 2x
+-ran: 'challenge/run'
+-flag popped out
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+/challenge/run != challenge/run
+/challenge/run -> absolute path: u can run it anywhere
+challenge/run -> relative path: it only works if u r in the parent directory (in this case / )
+
+## 🏁 Flag  
+pwn.college{gJBtFyA9yBb-VQMFfKeI943ojo9.QX5QTN0wCO4IDOxEzW}
