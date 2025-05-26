@@ -1,0 +1,22 @@
+# challenge: position thy self
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-moved to the root directory using 'cd ..' 2x
+-ran: 'cd var/lib/apt/lists'
+-ran: '/challenge/run'
+-flag popped out
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to navigate through the filesystem both backward and forward into specific directories
+
+## 🏁 Flag 
+pwn.college{gnl0ZhPM0B19MZbpRgb_jVhKyxA.QX2QTN0wCO4IDOxEzW}
