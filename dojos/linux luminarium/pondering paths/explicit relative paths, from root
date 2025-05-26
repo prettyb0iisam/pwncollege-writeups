@@ -1,0 +1,22 @@
+# challenge: explicit relative paths, from root
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-moved to the root directory using 'cd ..' 2x
+-ran: './challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+./challenge/run != challenge/run
+./challenge/run -> relative path invoked from the current directory using . 
+challenge/run ->relative path 
+
+## 🏁 Flag  
+pwn.college{klXPcN778obVOhC-jvUZAPKkkPP.QXwUTN0wCO4IDOxEzW}
