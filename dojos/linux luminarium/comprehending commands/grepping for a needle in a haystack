@@ -1,0 +1,20 @@
+# challenge: grepping for a needle in a haystack
+
+📅 2025-05-27  
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/data.txt'
+-too many strings
+-ran: '/challenge/data.txt | grep pwn.college'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u will learn how to use grep, very important for filtering the output of a command
+
+## 🏁 Flag  
+pwn.college{4_i8jmKvnn7o3Dli_Wdv2Zc6cvQ.QX3EDO0wCO4IDOxEzW}
