@@ -16,7 +16,7 @@
 ## 🧑🏾‍🏫 what this challenge teaches u
 ./challenge/run != challenge/run
 ./challenge/run -> relative path invoked from the current directory using . 
-challenge/run ->relative path 
+challenge/run -> relative path invoked from the parent directory
 
 ## 🏁 Flag  
 pwn.college{klXPcN778obVOhC-jvUZAPKkkPP.QXwUTN0wCO4IDOxEzW}
