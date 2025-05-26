@@ -1,0 +1,18 @@
+# challenge: persistent home directories-two
+
+📅 2025-05-25  
+📁 getting started
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/solve'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the contents of /home/hacker persist across sessions but files outside it might not
+
+## 🏁 Flag  
+pwn.college{cG67SXOCjDCuJY3KmracJdYRonh.QXyMzNzwCO4IDOxEzW}
