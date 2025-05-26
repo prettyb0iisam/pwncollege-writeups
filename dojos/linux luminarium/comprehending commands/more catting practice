@@ -1,0 +1,18 @@
+# challenge: more catting practice
+
+📅 2025-05-26  
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /usr/share/php7.4-json/flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+passing argument w/ their absolute flag
+
+## 🏁 Flag
+pwn.college{8OqIVCI0T6yMIDPpmYJK1LJxWl2.QXwITO0wCO4IDOxEzW}
