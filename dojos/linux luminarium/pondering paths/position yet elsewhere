@@ -1,0 +1,22 @@
+# challenge: position yet elsewhere
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-cilicked start
+-opened the terminal
+-ran: '/challenge/run'
+-moved to the root directory using 'cd ..' 2x
+-ran: 'cd tmp'
+-ran: '/challenge/run'
+-flag popped out
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+moving though file system directories as before
+
+## 🏁 Flag  
+pwn.college{A1kFRp1oYrdrQ2p1lNlsTtUhCPL.QX4QTN0wCO4IDOxEzW}
