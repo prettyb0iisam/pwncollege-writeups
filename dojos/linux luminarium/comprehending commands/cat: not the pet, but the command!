@@ -1,0 +1,18 @@
+# challenge: cat: not the pet, but the command!
+
+📅 2025-05-26  
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the command cat will print the contents of the arguments passed to it
+
+## 🏁 Flag  
+pwn.college{wkPewUR0EEePPZ_WVluvoaA5fa7.QXxcTN0wCO4IDOxEzW}
