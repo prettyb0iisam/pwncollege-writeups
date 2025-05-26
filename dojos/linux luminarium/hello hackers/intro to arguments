@@ -1,0 +1,23 @@
+# challenge: intro to arguments
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'hello hackers'
+-flag popped out
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can pass arguments to a command. 
+hello hackers -> 1argument
+hello i love hacking -> 3arguments
+hello "i love hacking" -> 1argument
+
+
+## 🏁 Flag  
+pwn.college{gZyNtCGqDuHVWwbojLcmoPri7uU.QX4YjM1wCO4IDOxEzW}
