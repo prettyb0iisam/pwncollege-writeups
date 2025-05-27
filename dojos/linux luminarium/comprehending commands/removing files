@@ -1,0 +1,19 @@
+# challenge: removing files
+
+📅 2025-05-27 
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'rm delete_me'
+-ran: '/challenge/check'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use rm to remove files
+
+## 🏁 Flag  
+pwn.college{Em7AJoCxT3DbKN-KdqJCz3NVOUb.QX2kDM1wCO4IDOxEzW}
