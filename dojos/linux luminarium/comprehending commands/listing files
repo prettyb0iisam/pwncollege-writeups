@@ -1,0 +1,19 @@
+# challenge: listing files
+
+📅 2025-05-27
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls /challenge'
+-ran: '/challenge/14752-renamed-run-19348'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the command ls lists the content of a directory
+
+## 🏁 Flag 
+pwn.college{s6FvvOxgIz40asicFWxkUtLTLHY.QX4IDO0wCO4IDOxEzW}
