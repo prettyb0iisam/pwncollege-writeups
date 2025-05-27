@@ -1,0 +1,20 @@
+# challenge: touching files
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-run: 'touch /tmp/pwn /tmp/college'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to create empty files w/ touch
+
+## 🏁 Flag  
+pwn.college{kScjWxAUf7zMCGLVvVNadAuY9Ym.QXwMDO0wCO4IDOxEzW}
