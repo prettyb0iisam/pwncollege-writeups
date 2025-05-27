@@ -1,0 +1,19 @@
+# challenge: hidden files
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -a /'
+-ran: 'cat /.flag-5734119164323'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the flag -a in the command ls will list the hidden files
+
+## 🏁 Flag  
+pwn.college{8qBDj5hN2g5YAqreqhdWXYC5wfk.QXwUDO0wCO4IDOxEzW}
