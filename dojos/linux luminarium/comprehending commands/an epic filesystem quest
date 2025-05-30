@@ -1,0 +1,39 @@
+# challenge: an epic filesystem quest
+
+📅 2025-05-29  
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls /'
+-ran: 'cat /SNIPPET'
+-ran: 'cd /opt/linux/linux-5.4/include/config/kasan'
+-ran: 'ls'
+-ran: 'cat WHISPER'
+-ran: 'ls /usr/share/doc/procps'
+-ran: 'cat /usr/share/doc/procps/INSIGHT-TRAPPED'
+-ran: 'ls -a /opt/linux/linux-5.4/fs/ecryptfs'
+-ran: 'cat /opt/linux/linux-5.4/fs/ecryptfs/.SECRET'
+-ran: 'ls /opt/linux/linux-5.4/include/config/have/kprobes'
+-ran: 'cat /opt/linux/linux-5.4/include/config/have/kprobes/HINT'
+-ran: 'ls /usr/share/javascript/mathjax/unpacked/jax/output/HTML-CSS/fonts/STIX-Web/Fraktur'
+-ran: 'cat /usr/share/javascript/mathjax/unpacked/jax/output/HTML-CSS/fonts/STIX-Web/Fraktur/TRACE'
+-ran: 'ls /opt/splitmind/.git/logs'
+-ran: 'cat /opt/splitmind/.git/logs/TIP'
+-ran: 'ls /opt/linux/linux-5.4/include/linux/input'
+-ran: 'cd /opt/linux/linux-5.4/include/linux/input'
+-ran: 'ls'
+-ran: 'cat EVIDENCE'
+-ran: 'ls /etc/rc5.d'
+-ran: 'cat /etc/rc5.d/BLUEPRINT'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+helps you visualize the contents of the systems directories from the outside, using their absolute path and cat to read file contents. 
+it's a long and demanding challenge:(
+
+## 🏁 Flag  
+pwn.college{gHk0ySAfg2ASa6iaRJY-LngeWDN.QX5IDO0wCO4IDOxEzW}
