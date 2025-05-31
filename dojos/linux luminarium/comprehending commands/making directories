@@ -1,0 +1,22 @@
+# challenge: making directories
+
+📅 2025-05-26  
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-ran: 'mkdir /tmp/challenge'
+-ran: '/challenge/run'
+-ran: 'touch /tmp/pwn/challenge/'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to create directories
+
+## 🏁 Flag  
+pwn.college{M9clwgARyksrIapu332SIzlZopu.QXxMDO0wCO4IDOxEzW}
