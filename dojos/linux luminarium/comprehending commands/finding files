@@ -1,0 +1,19 @@
+# challenge: finding files
+
+📅 2025-05-31 
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'find / -name flag'
+-ran: 'cat /usr/lib/python3/dist-packages/sympy/integrals/rubi/parsetools/flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to search files and directories in the filesystem
+
+## 🏁 Flag  
+pwn.college{UNFUSETT491AzLhdfDwRLJsC7ac.QXyMDO0wCO4IDOxEzW}
