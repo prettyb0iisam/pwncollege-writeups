@@ -1,0 +1,27 @@
+# challenge: linking files
+
+📅 2025-05-31 
+📁 linux luminarium
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/catflag'
+-ran: 'ln -s /flag /home/hacker/not-the-flag'
+-ran: '/challenge/catflag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use soft and hard links in linux.
+-soft link -> a link that points to another file using its path. if the original file is deleted or moved, the link will no longer works.
+-hard link -> creates a new label (name) for the same inode (file content). the file is deleted when all the hard links r removed.
+ 
+tl;dr
+soft link: pointer to a path
+hard link: pointer to the inode
+
+
+## 🏁 Flag  
+pwn.college{Ylve3s-oGgnx3vddXBQH1rT2kHd.QX5ETN1wCO4IDOxEzW}
