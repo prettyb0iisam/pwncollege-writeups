@@ -14,6 +14,8 @@
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to search files and directories in the filesystem
+find -> will search every file and directory in the current directory
+find / -> will search every file and directory in the entire filesystem (takes time)
 
 ## 🏁 Flag  
 pwn.college{UNFUSETT491AzLhdfDwRLJsC7ac.QXyMDO0wCO4IDOxEzW}
