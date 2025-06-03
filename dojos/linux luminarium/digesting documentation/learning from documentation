@@ -1,0 +1,19 @@
+# challenge: learning from documentation
+
+📅 2025-06-02  
+📁 digesting documentation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/challenge'
+-ran: '/challenge/challenge --giveflag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to pass arguments to a command
+
+## 🏁 Flag  
+pwn.college{ckNP6Qb5DWHDhXO0SXtiAS3LY41.QX0ITO0wCO4IDOxEzW}
