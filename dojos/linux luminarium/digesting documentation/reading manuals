@@ -1,0 +1,21 @@
+# challenge: reading manuals
+
+📅 2025-06-03  
+📁 digesting documentation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/challenge'
+-ran: 'man challenge'
+-read the description part 
+-ran: '/challenge/challenge --szqdpk 016'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use man to learn the functionality of a command and its arguments
+
+## 🏁 Flag  
+pwn.college{sT016_Z6zqdTO7pkKbV0JyPNU3l.QX0EDO0wCO4IDOxEzW}
