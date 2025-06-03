@@ -1,0 +1,19 @@
+# challenge: learning complex usage
+
+📅 2025-06-03
+📁 digesting documentation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/challenge'
+-ran: '/challenge/challenge --printfile /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+some commands require and argument to their argument
+
+## 🏁 Flag  
+pwn.college{wy2fgS1BoLd3kZ2jJtYUGdZu4Cf.QX1ITO0wCO4IDOxEzW}
