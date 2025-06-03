@@ -1,0 +1,21 @@
+# challenge: searching manuals
+
+📅 2025-06-03  
+📁 digesting documentation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/challenge'
+-ran: 'man challenge'
+-found the argument that print the flag typing '/' and 'flag'. 'n' to see the next word and 'N' to see the previous one
+-ran: '/challenge/challenge --iit'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to search in the manual using keywords and move through them w/ 'n' or 'N'
+
+## 🏁 Flag  
+pwn.college{Qwalz7u6MB9zoAfR0mqtyfJDld2.QX1EDO0wCO4IDOxEzW}
