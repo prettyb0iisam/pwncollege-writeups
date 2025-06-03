@@ -1,0 +1,20 @@
+# challenge: help for builtins
+
+📅 2025-06-03  
+📁 digesting documentation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'help challenge'
+-read the DESCRIPTION part carefully and copied the value needed as argument
+-ran: 'challenge -secret 4byYUGAa'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+there r commands that r built into the shell, they r called builtins command. u can use help COMMAND to understand how to use it
+
+## 🏁 Flag  
+pwn.college{4byYUGAaxkdlwJUuB1DN_OJKxMs.QX0ETO0wCO4IDOxEzW}
