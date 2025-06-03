@@ -1,0 +1,21 @@
+# challenge: helpful programs
+
+📅 2025-06-03  
+📁 digesting documentation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/challenge --help'
+-ran: '/challenge/challenge -p'
+-displayed a value that will be passed to '/challenge/challenge -g VALUE' as argument
+-ran '/challenge/challenge -g 719'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+some commands may have not the man page so u can use --help as documentation
+
+## 🏁 Flag  
+pwn.college{I-WXnR7foKCkIGxdB1Zko-qS9Yf.QX3IDO0wCO4IDOxEzW}
