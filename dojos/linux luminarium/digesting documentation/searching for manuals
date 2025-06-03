@@ -1,0 +1,25 @@
+# challenge: searching for manuals
+
+📅 2025-06-03  
+📁 digesting documentation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/challenge'
+-ran: 'man man'
+-read carefully the manual and found the flag -k which i can pass as argument
+-ran in the terminal: 'man -k /challenge/challenge'
+-found one match, command name: ggathfjuel -> print the flag
+-ran: 'man ggathfjuel'
+-found tha right argument to print the flag: --ggathf 457
+-ran: '/challenge/challenge --ggathf 457'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+understanding properly the use of arguments for man. in this case the flag -k require an argument used as keyword in the description's command.
+
+## 🏁 Flag 
+pwn.college{g_45AgYa7tSS35hfju6el8qsvZZ.QX2EDO0wCO4IDOxEzW}
