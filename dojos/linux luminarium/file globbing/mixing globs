@@ -1,0 +1,19 @@
+# challenge: mixing globs
+
+📅 2025-06-04  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cd /challenge/files' 
+-ran: '/challenge/run [cep]*'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can mix globs in the same command
+
+## 🏁 Flag  
+pwn.college{Mq0NrdaPJK2aGo0EDU5McrJmgyE.QX1IDO0wCO4IDOxEzW}
