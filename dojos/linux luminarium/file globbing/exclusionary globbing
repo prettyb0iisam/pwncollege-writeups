@@ -1,0 +1,19 @@
+# challenge: exclusionary globbing
+
+📅 2025-06-04  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cd /challenge/files'
+-ran: '/challenge/run [^pwn]*' or '/challenge/run [!pwn]*'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use ^ or ! inside [] to filter out characters from ur matches. be carefull though cuz ^ only works in newer versions of bash
+
+## 🏁 Flag  
+pwn.college{4yfF5KPwtqtljGqj3mP8CqMuup0.QX2IDO0wCO4IDOxEzW}
