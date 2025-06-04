@@ -1,0 +1,20 @@
+# challenge: multiple globs
+
+📅 2025-06-04  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cd /challenge/files'
+-ran: 'ls' just to see the diversely-named files
+-ran: '/challenge/run *p*'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use multiple globs like * in the same command to match more complex patterns
+
+## 🏁 Flag  
+pwn.college{0gp2_E7cqixt7mI56jay6MsRwRi.0lM3kjNxwCO4IDOxEzW}
