@@ -1,0 +1,19 @@
+# challenge: matching with []
+
+📅 2025-06-04  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cd /challenge/files'
+-ran: '/challenge/run file_[bash]'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use [] as a glob, that matches exactly one character from a specific set of characters
+
+## 🏁 Flag  
+pwn.college{0-J66r-_fAN8OqZXxzctRU7G3Py.QXzIDO0wCO4IDOxEzW}
