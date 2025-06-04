@@ -1,0 +1,19 @@
+# challenge: matching with *
+
+📅 2025-06-04  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cd /ch*'
+-ran: './run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use * wildcard, which the shell uses to automatically complete names of the files or folder that match what u typed
+
+## 🏁 Flag  
+pwn.college{MJliptg-9FK2s0EeNzfdEX2Z4dk.QXxIDO0wCO4IDOxEzW}
