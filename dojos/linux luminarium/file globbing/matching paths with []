@@ -1,0 +1,18 @@
+# challenge: matching paths with []
+
+📅 2025-06-04  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run /challenge/files/file_[bash]' 
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use [] as a glob to match one character in file names, even when they r part of full paths
+
+## 🏁 Flag  
+pwn.college{cIRHqFBiDNrmOTtrz1Lx6nnn_HU.QX0IDO0wCO4IDOxEzW}
