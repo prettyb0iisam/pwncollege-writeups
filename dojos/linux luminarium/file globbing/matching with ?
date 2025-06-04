@@ -1,0 +1,18 @@
+# challenge: matching with ?
+
+📅 2025-06-04  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cd /?ha??enge'
+-ran: './run'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use ? as a glob that substitutes exactly one letter and matches all files or folders that fit the pattern.
+
+## 🏁 Flag  
+pwn.college{83a1TrWUqeX9y2Rx7Mnbb9kwVZz.QXyIDO0wCO4IDOxEzW}
