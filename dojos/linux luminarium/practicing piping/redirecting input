@@ -1,0 +1,19 @@
+# challenge: redirecting input
+
+📅 2025-06-05  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'echo COLLEGE > PWN'
+-ran: '/challenge/run < PWN'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use < to send a file as input to a command
+
+## 🏁 Flag  
+pwn.college{M6juh9JiiKdqmQZBcsB2NfzAW2p.QXwcTN0wCO4IDOxEzW}
