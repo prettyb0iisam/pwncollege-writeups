@@ -1,0 +1,18 @@
+# challenge: grepping live output
+
+📅 2025-06-06 
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run | grep pwn' 
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use the pipe command | to redirect the output of a command as input to the next one
+
+## 🏁 Flag  
+pwn.college{wSKzyxCnqKO7OzfzAE4Cp4g7Ngj.QX5EDO0wCO4IDOxEzW}
