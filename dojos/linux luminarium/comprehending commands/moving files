@@ -1,0 +1,19 @@
+# challenge: moving files
+
+📅 2025-06-05  
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'mv /flag /tmp/hack-the-planet'
+-ran: '/challenge/check'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use mv to move files to other directories and give them a new name
+
+## 🏁 Flag  
+pwn.college{ALkxykyWDzfOptbdKIil6ONFT_e.0VOxEzNxwCO4IDOxEzW}
