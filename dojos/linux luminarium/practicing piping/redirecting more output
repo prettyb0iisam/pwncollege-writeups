@@ -1,0 +1,19 @@
+# challenge: redirecting more output
+
+📅 2025-06-05  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run > myflag'
+-ran: 'cat myflag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can redirect the output of a commmand into a file
+
+## 🏁 Flag  
+pwn.college{oVsx81Cu2f5hdI8DNW3WwZT2YvM.QX1YTN0wCO4IDOxEzW}
