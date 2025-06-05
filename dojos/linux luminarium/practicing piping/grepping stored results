@@ -1,0 +1,19 @@
+# challenge: grepping stored results
+
+📅 2025-06-06
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run > /tmp/data.txt'
+-ran: 'cat /tmp/data.txt | grep pwn'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use grep as filter to ur output
+
+## 🏁 Flag  
+pwn.college{Ie_lqHsC5trPP5L2QdUYBqVoDrf.QX4EDO0wCO4IDOxEzW}
