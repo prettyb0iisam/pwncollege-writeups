@@ -1,0 +1,19 @@
+# challenge: appending output
+
+📅 2025-06-05  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run >> the-flag'
+-ran: 'cat the-flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use >> to append output to a file without overwriting its existing content
+
+## 🏁 Flag  
+pwn.college{ccdpSa08sO-VOsTj-jN1Ztuy-qR.QX3ATO0wCO4IDOxEzW}
