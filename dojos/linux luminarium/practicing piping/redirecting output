@@ -1,0 +1,18 @@
+# challenge: redirecting output
+
+📅 2025-06-05  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'echo PWN > COLLEGE'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use echo and > to write text into a file
+
+## 🏁 Flag  
+pwn.college{woh9XwEsGcZXCtOcM_yl9_NXs72.QX0YTN0wCO4IDOxEzW}
