@@ -1,0 +1,21 @@
+# challenge: redirecting errors
+
+📅 2025-06-05  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run > myflag 2> instructions'
+-ran: 'cat instructions'
+-made sure the last line is successfull
+-run: 'cat myflag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use 2> to redirect the error output of a command
+
+## 🏁 Flag  
+pwn.college{k9Tf9P1BiCdNnz6cVeYLxi0wRtZ.QX3YTN0wCO4IDOxEzW}
