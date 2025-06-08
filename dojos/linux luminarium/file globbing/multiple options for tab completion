@@ -1,0 +1,22 @@
+# challenge: multiple options for tab completion
+
+📅 2025-06-08
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /ch[TAB]/f[TAB]/p[TAB] [TAB][TAB]'
+-the terminal displayed some files
+-after displaying the files it waits for the absolute path of the file needed
+-pressed: 'c[TAB] [TAB][TAB]'
+-typed: 'flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches 
+u can use 2x[TAB] to see multiple options
+
+## 🏁 Flag  
+pwn.college{gkzMp0EY_CeQYl_L3gSZkq5A4Ar.0lN0EzNxwCO4IDOxEzW}
