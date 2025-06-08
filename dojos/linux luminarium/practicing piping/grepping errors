@@ -12,7 +12,7 @@
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-2>&1 redirect the error into input to a new file
+2>&1 redirect the error into input to the next command
 
 ## 🏁 Flag  
 pwn.college{cFx-3FLX4QmbLRPm8l1OX5SlSCF.QX1ATO0wCO4IDOxEzW}
