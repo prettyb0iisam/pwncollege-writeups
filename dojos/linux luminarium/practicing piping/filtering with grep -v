@@ -1,0 +1,18 @@
+# challenge: filtering with grep -v
+
+📅 2025-06-08  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run | grep -v DECOY'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the flag -v in grep shows lines that do not match the pattern
+
+## 🏁 Flag  
+pwn.college{oJdJz-Gf5buUIeBZ0dMHkWCQSxu.0FOxEzNxwCO4IDOxEzW}
