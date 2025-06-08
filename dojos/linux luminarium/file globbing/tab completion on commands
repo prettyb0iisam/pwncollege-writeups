@@ -1,0 +1,19 @@
+# challenge: tab completion on commands
+
+📅 2025-06-08  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'pwn [TAB][TAB]'
+-pressed: 'c[TAB]'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use [TAB] also for commands
+
+## 🏁 Flag  
+pwn.college{IXJaBipqiLxvonmxn-0FqzPJv0f.0VN0EzNxwCO4IDOxEzW}
