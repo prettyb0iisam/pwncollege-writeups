@@ -1,0 +1,18 @@
+# challenge: tab completion
+
+📅 2025-06-08  
+📁 file globbing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/pw[TAB]'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use tab as autocompletion
+
+## 🏁 Flag  
+pwn.college{obecfOLuRinT6BC0YYcHhSbBlHL.0FN0EzNxwCO4IDOxEzW}
