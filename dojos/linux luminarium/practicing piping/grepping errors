@@ -1,0 +1,18 @@
+# challenge: grepping errors
+
+📅 2025-06-08  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run 2>&1 | grep pwn'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+2>&1 redirect the error into input to a new file
+
+## 🏁 Flag  
+pwn.college{cFx-3FLX4QmbLRPm8l1OX5SlSCF.QX1ATO0wCO4IDOxEzW}
