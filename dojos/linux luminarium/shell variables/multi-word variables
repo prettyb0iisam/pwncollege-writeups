@@ -1,0 +1,20 @@
+# challenge: multi-word variables
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'echo $PWN'
+-ran: 'PWN="COLLEGE YEAH"'
+-ran: 'echo $PWN'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use double quotes to set multi-word values in the variable
+
+## 🏁 Flag  
+pwn.college{Ez8wegD5pwRlC9L-WSdilngJAMB.QXwYTN0wCO4IDOxEzW}
