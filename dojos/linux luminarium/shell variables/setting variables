@@ -1,0 +1,20 @@
+# challenge: setting variables
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'echo $PWN'
+-ran: 'PWN=COLLEGE'
+-ran: 'echo $PWN'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can set the value of a variables using = w/out spaces
+
+## 🏁 Flag  
+pwn.college{gm4sXd9V9AlbVoZneNN-odUmAGX.QX5UTN0wCO4IDOxEzW}
