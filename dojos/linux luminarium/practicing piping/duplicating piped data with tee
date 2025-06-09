@@ -1,0 +1,22 @@
+# challenge: duplicating piped data with tee
+
+📅 2025-06-08  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/pwn | /challenge/college'
+-ran: '/challenge/pwn | tee output | /challenge/college'
+-ran: 'cat output'
+-copied the value of 'SECRET_ARG'
+-ran: '/challenge/pwn --secret 4HiBL_m6 | /challenge/college'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use tee to duplicate output to a file while still seeing it in the terminal, which is useful when debugging or tracking what goes into a command
+
+## 🏁 Flag  
+pwn.college{4HiBL_m6XzJeMf74c0Ff_35uOKr.QXxITO0wCO4IDOxEzW}
