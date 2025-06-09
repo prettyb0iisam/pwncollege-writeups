@@ -1,0 +1,18 @@
+# challenge: writing to multiple programs
+
+📅 2025-06-08  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/hack | tee >(/challenge/the) >(/challenge/planet)'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use >(COMMAND) for process substitution, which allows a program like tee to send its output directly to another command as input to it
+
+## 🏁 Flag  
+pwn.college{kMGL1a5KvU3mLH5lBVBzRDMmWhh.QXwgDN1wCO4IDOxEzW}
