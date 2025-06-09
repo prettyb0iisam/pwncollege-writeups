@@ -1,0 +1,18 @@
+# challenge: split-piping stderr and stdout
+
+📅 2025-06-09  
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/hack > >(/challenge/planet) 2> >(/challenge/the)'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can split stdout and stderr and send them to 2 different commands using > and 2>
+
+## 🏁 Flag  
+pwn.college{o814cOf9KO6770PXFBkM7la2cYi.QXxQDM2wCO4IDOxEzW}
