@@ -1,0 +1,18 @@
+# challenge: printing variables
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'echo $FLAG'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+variables r saved in the shell and u can print them w/ echo and $
+
+## 🏁 Flag  
+pwn.college{sEjULxQCO_HPrkLhKBmUdpA0cxi.QX3UTN0wCO4IDOxEzW}
