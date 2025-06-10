@@ -1,0 +1,18 @@
+# challenge: reading files
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'read PWN < /challenge/read_me'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can pass files as input to vars using <
+
+## 🏁 Flag  
+pwn.college{YPxkr_yVDM3zoQb3UCIFrueNCj8.QXwIDO0wCO4IDOxEzW}
