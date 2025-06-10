@@ -1,0 +1,19 @@
+# challenge: storing command output
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'PWN=$(/challenge/run)' or 'PWN=`/challenge/run`'
+-ran: 'echo $PWN'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can store the output of a command into a variable using command substitution -> $(COMMAND) or `COMMAND`
+
+## 🏁 Flag  
+pwn.college{AmAHAyVFtRa9qWK4qTye34Vm-eb.QX1cDN1wCO4IDOxEzW}
