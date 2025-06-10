@@ -1,0 +1,19 @@
+# challenge: printing exported variables
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'env'
+-ran: 'env | grep FLAG'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+env prints every environment variables, not the local ones
+
+## 🏁 Flag  
+pwn.college{AEL1YOUjFdGhS0o-jalYZNl9CG5.QX4UTN0wCO4IDOxEzW}
