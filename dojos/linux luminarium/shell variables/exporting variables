@@ -1,0 +1,25 @@
+# challenge: exporting variables
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'PWN=COLLEGE'
+-ran: 'COLLEGE=PWN'
+-ran: 'export PWN'
+-ran: 'sh'
+-ran: 'echo $PWN' -> the value should be COLLEGE
+-ran: 'echo $COLLEGE' -> no value
+-ran: 'exit'
+-ran: '/challenge/run PWN'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use export to share variables w/ the child shell
+
+## 🏁 Flag  
+pwn.college{Ql-OF2nSmaErbEzrydv9VlifCm4.QXyYTN0wCO4IDOxEzW}
