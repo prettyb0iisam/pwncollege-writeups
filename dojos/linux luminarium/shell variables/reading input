@@ -1,0 +1,19 @@
+# challenge: reading input
+
+📅 2025-06-10  
+📁 shell variables
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'read PWN' or 'read -p "enter ur input: " PWN'
+-input: 'COLLEGE'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use read to set vars from user input. the flag -p let u specify a prompt
+
+## 🏁 Flag  
+pwn.college{oBaOgLfrVi9wCA9BumEzssH5MfD.QX4cTN0wCO4IDOxEzW}
