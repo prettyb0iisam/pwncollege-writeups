@@ -1,0 +1,19 @@
+# challenge: deleting characters
+
+📅 2025-06-11  
+📁 data manipulation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-ran: '/challenge/run | tr -d ^%'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use the -d flag w/ tr to delete characters from the output
+
+## 🏁 Flag  
+pwn.college{ESBtt8vw-F9CvMfD6-njCqQxgxI.0FNxEzNxwCO4IDOxEzW}
