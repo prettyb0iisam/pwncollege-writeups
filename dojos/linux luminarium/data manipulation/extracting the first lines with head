@@ -1,0 +1,18 @@
+# challenge: extracting the first lines with head
+
+📅 2025-06-11  
+📁 data manipulation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/pwn | head -n 7 | /challenge/college'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+head gives u the first 10 lines. w/ -n flag u can choose how many lines u want
+
+## 🏁 Flag  
+pwn.college{0WSvLm3H3Kd5-Yxi8uizg3w4_9b.0lNxEzNxwCO4IDOxEzW}
