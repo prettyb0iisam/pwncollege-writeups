@@ -1,0 +1,20 @@
+# challenge: extracting specific sections of text
+
+📅 2025-06-11  
+📁 data manipulation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run | cut -d " " -f 2 | tr -d "\n"'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the cut command w/ the -d and -f flags extracts specific columns from the output
+-d " " -> delimiter
+-f N -> column number
+
+## 🏁 Flag  
+pwn.college{s7IcVhHou4Tkt9Ii6rL-xEIJw-D.01NxEzNxwCO4IDOxEzW}
