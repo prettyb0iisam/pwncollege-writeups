@@ -1,0 +1,19 @@
+# challenge: deleting newlines
+
+📅 2025-06-11  
+📁 data manipulation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-ran: '/challenge/run | tr -d "\n"'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can delete speific characters from stdin using tr -d w/ properly quoted input
+
+## 🏁 Flag  
+pwn.college{0qd9LZ7rgFFdzLSVt8EQYAhc0Zw.0VNxEzNxwCO4IDOxEzW}
