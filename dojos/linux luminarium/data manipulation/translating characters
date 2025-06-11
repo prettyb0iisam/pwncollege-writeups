@@ -1,0 +1,18 @@
+# challenge: translating characters
+
+📅 2025-06-11  
+📁 data manipulation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run | tr 'a-zA-Z' 'A-Za-z''
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use tr to translate characters in a command's output
+
+## 🏁 Flag  
+pwn.college{EAZgXeylIY_gTrPK0_uAXmb0Zjh.01MxEzNxwCO4IDOxEzW}
