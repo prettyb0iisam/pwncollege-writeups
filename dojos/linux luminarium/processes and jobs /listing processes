@@ -1,0 +1,20 @@
+# challenge: listing processes
+
+📅 2025-06-12  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal 
+-ran: 'ps aux' or 'ps -ef' 
+-found and copied the command in the command section
+-pasted the command in the terminal
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+ps aux or ps -ef show all runnin processes. u can add ww to the command to avoid line truncating behavior
+
+## 🏁 Flag  
+pwn.college{cxyStZ0f68U3CfSPPsAHycPv_mK.QX4MDO0wCO4IDOxEzW}
