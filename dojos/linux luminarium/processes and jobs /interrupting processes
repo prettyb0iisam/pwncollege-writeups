@@ -1,0 +1,19 @@
+# challenge: interrupting processes
+
+📅 2025-06-12  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-pressed Ctrl+C
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+Ctrl+C exits a running process by sending an interrupt signal
+
+## 🏁 Flag  
+pwn.college{UrQSGLcg2TGMeybvAAcsimRY6AN.QXzQDO0wCO4IDOxEzW}
