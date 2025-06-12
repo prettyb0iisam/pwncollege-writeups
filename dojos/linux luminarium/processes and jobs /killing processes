@@ -1,0 +1,22 @@
+# challenge: killing processes
+
+📅 2025-06-12  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-ran: 'ps aux'
+-found the /challenge/dont_run's PID -> 128
+-ran: 'kill 128' -> [/challenge/dont_run's PID]
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+kill command terminates processes by passing their PID
+
+## 🏁 Flag  
+pwn.college{Evvller0uxutxtaCJRNWedByFCh.QXyQDO0wCO4IDOxEzW}
