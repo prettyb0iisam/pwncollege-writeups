@@ -1,0 +1,18 @@
+# challenge: starting backgrounded processes
+
+📅 2025-06-13  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run &'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+appending & to a command runs it in the backround
+
+## 🏁 Flag  
+pwn.college{YIlDnpYUSTKLvuKD9ayXYn8IN8T.QX5QDO0wCO4IDOxEzW}
