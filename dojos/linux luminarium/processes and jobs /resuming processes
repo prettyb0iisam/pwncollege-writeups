@@ -1,0 +1,20 @@
+# challenge: resuming processes
+
+📅 2025-06-13  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-pressed Ctrl+Z
+-ran: 'fg'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+fg resumes the most recent suspended process and brings it to the foreground
+
+## 🏁 Flag  
+pwn.college{4Z5XqEC7LLywleWAUqWK2s49Vix.QX2QDO0wCO4IDOxEzW}
