@@ -1,0 +1,23 @@
+# challenge: foregrounding processes
+
+📅 2025-06-13  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-pressed Ctrl+Z
+-ran: 'bg'
+-pressed Enter
+-ran: 'fg'
+-pressed Enter
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+fg can also bring background processes back to the foreground
+
+## 🏁 Flag  
+pwn.college{cyjgCVAtMwyHGVWkI1eK0wQ-uHw.QX4QDO0wCO4IDOxEzW}
