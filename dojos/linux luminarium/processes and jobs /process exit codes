@@ -1,0 +1,23 @@
+# challenge: process exit codes
+
+📅 2025-06-13  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/get-code'
+-ran: 'echo $?'
+-copied the value -> 184
+-ran: '/challenge/submit-code 184'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+every terminated process has an exit code. u can check the exit code of the most recent command using echo $? 
+0 -> terminated successfully
+1 (or any other number) -> failure or error
+
+## 🏁 Flag  
+pwn.college{k2W0Cba1NFxlr44Ih8iVFqO3lyP.QX5YDO1wCO4IDOxEzW}
