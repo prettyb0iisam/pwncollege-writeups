@@ -1,0 +1,20 @@
+# challenge: suspending processes
+
+📅 2025-06-13  
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-pressed Ctrl+Z
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+Ctrl+Z suspends the current running process and sends it to the background as a stopped job
+
+## 🏁 Flag  
+pwn.college{8ccPfmB2nOH1-NnxdYQz9c1BOA1.QX1QDO0wCO4IDOxEzW}
