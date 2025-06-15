@@ -1,0 +1,23 @@
+# challenge: fun with groups names
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -l /'
+-'flag'`s group was root
+-ran: 'id'
+-hacker's group name was: 'grp22065'
+-ran: 'chgrp grp22065 /flag'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+id tells u which groups ur user belongs to
+
+## 🏁 Flag  
+pwn.college{IrRUR09P78plCDa3bzhTJMiDM0p.QXycjM1wCO4IDOxEzW}
