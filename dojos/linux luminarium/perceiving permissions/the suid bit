@@ -1,0 +1,22 @@
+# challenge: the suid bit
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -l /challenge/getroot'
+-ran: 'chmod u+s /challenge/getroot'
+-ran: '/challenge/getroot'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+suid lets u run a file w/ the owner's power (like root)
+reminder: it only works if u can actually execute it (group has --x or others have --x)
+
+## 🏁 Flag  
+pwn.college{I7r3R_hfYFrtdki2b-aiaE24p3J.QXzEjN0wCO4IDOxEzW}
