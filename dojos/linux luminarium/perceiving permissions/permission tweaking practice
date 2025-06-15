@@ -1,0 +1,27 @@
+# challenge: permission tweaking practice
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-ran: 'chmod o+w /challenge/pwn'
+-ran: 'chmod g+w /challenge/pwn'
+-ran: 'chmod a+x /challenge/pwn'
+-ran: 'chmod go-w /challenge/pwn'
+-ran: 'chmod go+w /challenge/pwn'
+-ran: 'chmod u-x /challenge/pwn'
+-ran: 'chmod u+x /challenge/pwn'
+-ran: 'chmod ug-rw /challenge/pwn'
+-ran: 'chmod a+r /flag'
+-ran; 'cat /flag'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use vary options of WHO +/- WHAT combos w/ chmod
+
+## 🏁 Flag  
+pwn.college{cVN0DrP4HdBwyy9XUbTef7wRD6o.QXwEjN0wCO4IDOxEzW}
