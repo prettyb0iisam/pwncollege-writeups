@@ -1,0 +1,31 @@
+# challenge: permissions setting practice 
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-ran: 'chmod u=rx,g=rx,o=wx /challenge/pwn'
+-ran: 'chmod u=w,g=r,o=rx /challenge/pwn'
+-ran: 'chmod u=r,g=-,o=x /challenge/pwn'
+-ran: 'chmod u=rwx,o=wx /challenge/pwn'
+-ran: 'chmod u=w,g=rw,o=- /challenge/pwn'
+-ran: 'chmod u=w,g=rw,o=- /challenge/pwn'
+-ran: 'chmod u=w,g=rw,o=- /challenge/pwn'
+-ran: 'chmod u=w,g=rw,o=- /challenge/pwn'
+-ran: 'chmod a+r /flag'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can overwrite permissions w/chmod using = , -
+= to set exact perms
+, to chain changes
+- to remove perms
+
+## 🏁 Flag  
+pwn.college{kuubAHPTl4dbmdXC0mnhw44jIDK.QXzETO0wCO4IDOxEzW}
