@@ -1,0 +1,21 @@
+# challenge: changing permissions
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -l /'
+-'flag' was only readable by the root
+-ran: 'chmod o+r /flag'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+chmod WHO +/- WHAT changes file/dir's permissions
+
+## 🏁 Flag  
+pwn.college{sWRxQfC5yaFUlILki1Kl1M_tNxt.QXzcjM1wCO4IDOxEzW}
