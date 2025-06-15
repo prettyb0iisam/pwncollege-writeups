@@ -1,0 +1,21 @@
+# challenge: executable files
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -l /challenge/run'
+-'/challenge/run' is only readable by the user (hacker)
+-ran: 'chmod u+x /challenge/run'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u+x makes the file/dir executable for the current user
+
+## 🏁 Flag  
+pwn.college{A1JbX-cvPsh4ASONGMWgKu7oJkW.QXyEjN0wCO4IDOxEzW}
