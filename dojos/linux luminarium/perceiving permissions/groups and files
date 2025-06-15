@@ -1,0 +1,21 @@
+# challenge: groups and files
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -l /'
+-the group of 'flag' is root
+-ran: 'chgrp hacker /flag'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+chgrp changes the group ownership of file/dir
+
+## 🏁 Flag  
+pwn.college{4cDyt6ks9fdDHvSeNz-IbPRrAQS.QXxcjM1wCO4IDOxEzW}
