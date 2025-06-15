@@ -1,0 +1,21 @@
+# challenge: changing file ownership
+
+📅 2025-06-15  
+📁 perceiving permissions
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -l /'
+-the owner of 'flag' is root
+-ran: 'chown hacker /flag'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+chown changes who owns a file (usually from root to another users)
+
+## 🏁 Flag  
+pwn.college{soP8WHfwfsftUQGl8ANUi1eXyzd.QXxEjN0wCO4IDOxEzW}
