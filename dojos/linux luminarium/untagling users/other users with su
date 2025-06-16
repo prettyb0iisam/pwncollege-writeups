@@ -1,0 +1,22 @@
+# challenge: other users with su
+
+📅 2025-06-16 
+📁 untagling users
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'su zardus'
+-typed: 'dont-hack-me'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+## 🧠 what this challenge teaches u  
+using su followed by a username switches to that user (if u have the password)
+
+
+## 🏁 Flag  
+pwn.college{cihU2VqjEmIXg2HDCXDKM0HUNil.QX2UDN1wCO4IDOxEzW}
