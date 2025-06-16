@@ -1,0 +1,18 @@
+# challenge: using sudo
+
+📅 2025-06-16 
+📁 untagling users
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'sudo cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+sudo gives u root privileges only for the command that follows
+
+## 🏁 Flag  
+pwn.college{44rzC0OZbFUa6Olzc5jbkQdSgMi.QX4UDN1wCO4IDOxEzW}
