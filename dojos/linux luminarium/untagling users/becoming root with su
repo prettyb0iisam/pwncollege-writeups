@@ -1,0 +1,20 @@
+# challenge: becoming root with su
+
+📅 2025-06-16 
+📁 untagling users
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'su'
+-typed: 'hack-the-planet'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+su lets u switch to other users (like root)
+
+## 🏁 Flag  
+pwn.college{0AcOoFJI9JUzTcMKRWIRYifJNQl.QX1UDN1wCO4IDOxEzW}
