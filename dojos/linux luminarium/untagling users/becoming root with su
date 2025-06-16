@@ -14,7 +14,7 @@
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-su lets u switch to other users (like root)
+su w/out args switches u to root if u know the password
 
 ## 🏁 Flag  
 pwn.college{0AcOoFJI9JUzTcMKRWIRYifJNQl.QX1UDN1wCO4IDOxEzW}
