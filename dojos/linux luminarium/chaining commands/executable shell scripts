@@ -1,0 +1,21 @@
+# challenge: executable shell scripts
+
+📅 2025-06-17 
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim script.sh'
+-typed: '/challenge/solve'
+-ran: 'chmod u+x script.sh'
+-ran: './script.sh'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can ran shell scripts w/out invoking the bash command, u only need the absolute or relative path to the script
+
+## 🏁 Flag  
+pwn.college{MTU7zUn1hgggU2HB75-dqtgVK3D.QX0cjM1wCO4IDOxEzW}
