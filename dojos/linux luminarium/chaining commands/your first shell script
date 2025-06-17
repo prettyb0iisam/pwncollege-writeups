@@ -1,0 +1,21 @@
+# challenge: your first shell script
+
+📅 2025-06-17 
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim x.sh'
+-typed: '/challenge/pwn'
+        '/challenge/college'
+-ran: 'bash x.sh'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can save commands into a .sh file and run it in the terminal using the bash command. it will executes as a shell script
+
+## 🏁 Flag  
+pwn.college{UxLvxVn1oImSeRXuW5hGOYutR5W.QXxcDO0wCO4IDOxEzW}
