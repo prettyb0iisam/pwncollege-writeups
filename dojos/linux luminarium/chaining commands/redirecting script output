@@ -1,0 +1,21 @@
+# challenge: redirecting script output
+
+📅 2025-06-17 
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim script.sh'
+-typed: '/challenge/pwn'
+        '/challenge/college'
+-ran: 'bash script.sh | /challenge/solve'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can redirect a shell script's output as input to other commands
+
+## 🏁 Flag  
+pwn.college{EcOx_3YsrQwy5GG7QEMofuinV03.QX4ETO0wCO4IDOxEzW}
