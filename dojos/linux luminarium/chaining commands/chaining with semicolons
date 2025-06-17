@@ -1,0 +1,18 @@
+# challenge: chaining with semicolons
+
+📅 2025-06-17 
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/pwn; /challenge/college'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+semicolon ; is used to chain commands
+
+## 🏁 Flag  
+pwn.college{cBOD5KqLygpgLaav7Aj5H2lZ9gv.QX1UDO0wCO4IDOxEzW}
