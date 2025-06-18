@@ -1,0 +1,19 @@
+# challenge: setting path
+
+📅 2025-06-18 
+📁 pondering path
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'PATH=/challenge/more_commands'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can override the default PATH by assigning it a new value, changing where the shell looks for commands
+
+## 🏁 Flag  
+pwn.college{I6PhjDFDE_nejzHPl9m_n3BJVmH.QX1cjM1wCO4IDOxEzW}
