@@ -1,0 +1,19 @@
+# challenge: the path variable
+
+📅 2025-06-18 
+📁 pondering path
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'PATH=""'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+PATH="" disables the execution of most system commands, because the shell no longer knows where to find them
+
+## 🏁 Flag
+pwn.college{ErjbyRgIpQ5D2rBFmkgXzUsrT9d.QX2cDM1wCO4IDOxEzW}
