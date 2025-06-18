@@ -1,0 +1,20 @@
+# challenge: finding commands
+
+📅 2025-06-18 
+📁 pondering path
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'which win'
+-copied the path -> '/challenge/paths/1163/win'
+-ran: 'cat /challenge/paths/1163/win/flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can find the absolute path of a commands using the which command
+
+## 🏁 Flag  
+pwn.college{UFHQzkTHCyQGiwAJ15CEvj9l5wz.01NzEzNxwCO4IDOxEzW}
