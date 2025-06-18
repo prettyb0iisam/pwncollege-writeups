@@ -8,7 +8,16 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: ''
+-ran: 'mkdir win'
+-ran: 'cd win'
+-ran: 'which cat'
+-copied the path
+-ran: 'vim win'
+-pasted the path into win and added /flag -> '/run/workspace/bin/cat /flag'
+-ran: 'chmod a+x win'
+-ran: 'PATH=/home/hacker/win'
+-ran: '/challenge/run'
+-flag popped out
 
 
 ## 🧑🏾‍🏫 what this challenge teaches u
