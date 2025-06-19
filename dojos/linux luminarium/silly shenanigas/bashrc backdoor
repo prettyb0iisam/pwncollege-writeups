@@ -1,0 +1,21 @@
+# challenge: bashrc backdoor
+
+📅 2025-06-19
+📁 silly shenanigas
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim /home/zardus/.bashrc'
+-added at the end: 'cat /flag'
+-ran: '/challenge/victim'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+.bashrc is a configuration file that executes commands every time a shell session is launched.
+it's possible to modify another users .bashrc file by appending a command at the end and when the user opens a new shell, the command is executed automatically
+
+## 🏁 Flag  
+pwn.college{c7zOpzsNQh4D1QXC5KPbTNcONKv.0VMzEzNxwCO4IDOxEzW}
