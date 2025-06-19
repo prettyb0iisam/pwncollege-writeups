@@ -18,7 +18,7 @@
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-which command is used to search for the full path of an executable command
+how to add a custom command to your path, so that it can be run from anywhere in the terminal just like built-in commands.
 
 ## 🏁 Flag  
 pwn.college{omlviGHA-WSHM062Z3EyT-0_-GE.QX2cjM1wCO4IDOxEzW}
