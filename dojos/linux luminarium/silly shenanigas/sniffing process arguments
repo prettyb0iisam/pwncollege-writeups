@@ -1,0 +1,22 @@
+# challenge: sniffing process arguments
+
+📅 2025-06-20
+📁 silly shenanigas
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ps aux'
+-copied zardus' password on third line in commands
+-ran: 'su zardus'
+-password: '[PASTED]'
+-ran [zardus]: 'sudo cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how sensitive data like password can be exposed through process arguments and how ps aux can be used to capture that information in real-time
+
+## 🏁 Flag 
+pwn.college{McrXYgEwYeK33b98GgL7wLjNYok.0FOzEzNxwCO4IDOxEzW}
