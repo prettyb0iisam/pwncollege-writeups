@@ -1,0 +1,23 @@
+# challenge: snooping configurations
+
+📅 2025-06-20
+📁 silly shenanigas
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/victim'
+-ran: 'cat /home/zardus/.bashrc'
+-copied the line contains the key for flag_getter
+-ran: 'flag_getter [PASTED]'
+-pressed. 'y'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how sensitive data like API keys can be leaked through readable configuration files like .bashrc 
+and how such data can be exploited by other users using environment variables and command-line tools
+
+## 🏁 Flag  
+pwn.college{YKAz8OS0eNETZhvAt0H2HeI0T07.0lM0EzNxwCO4IDOxEzW}
