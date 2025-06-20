@@ -1,0 +1,25 @@
+# challenge: tricky linking
+
+📅 2025-06-20
+📁 silly shenanigas
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'rm /tmp/collab/evil-commands.txt'
+-pressed: 'y'
+-ran: 'ln -s /home/zardus/.bashrc /tmp/collab/evil-commands.txt'
+-ran: '/challenge/victim'
+-ran: '/challenge/victim'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how soft links actually work when executed
+at first i removed evil-commands.txt because its first line contained a recursive remove that would delete system files
+then i created a dynamic link from zardus' bashrc to the new /tmp/collab/evil-commands.txt
+i ran /challenge/victim twice because at first it will write cat /flag to .bashrc and second it will execute it
+
+## 🏁 Flag  
+pwn.college{YJ696_spU0J7f7Duew0hzFGnRU1.0VM0EzNxwCO4IDOxEzW}
