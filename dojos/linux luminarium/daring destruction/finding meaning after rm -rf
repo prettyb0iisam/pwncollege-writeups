@@ -1,0 +1,24 @@
+# challenge: finding meaning after rm -rf /
+
+📅 2025-06-21
+📁 daring destruction
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-ran in a new terminal: 'rm -rf --no-preserve-root /'
+-went back to the first terminal
+-ran: 'echo /*'
+-copied the randomly generated filename -> in my case: '/f24846e4'
+-ran: 'read bro < [PASTED]' -> 'read bro < /f24846e4'
+-ran: 'echo $bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to locate files and dirs in the system w/out using ls, relying instead on * TAB 
+
+## 🏁 Flag  
+pwn.college{QRb9omiwMINgNLL06jDFRWEYVAB.0FNzEzNxwCO4IDOxEzW}
