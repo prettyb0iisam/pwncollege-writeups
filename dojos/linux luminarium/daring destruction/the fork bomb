@@ -22,5 +22,9 @@
 how to perform a local DoS attack by creating a fork bomb 
 it recursively spawns child processes until the process table is saturated, making the system unable to start new processes and so the terminal unusable
 
+this challenge and /silly shenanigas/sniffing input taught me an important lesson: 
+if you struggle for hours, it means there’s still something fundamental you haven’t truly grasped yet
+(yeah i know its obviously)
+
 ## 🏁 Flag  
 pwn.college{UtwVKf6QC0wP8DL9o2lybiu81MA.0VMyEzNxwCO4IDOxEzW}
