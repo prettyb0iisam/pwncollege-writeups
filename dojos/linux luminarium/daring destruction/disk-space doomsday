@@ -1,0 +1,22 @@
+# challenge: disk-space doomsday
+
+📅 2025-06-21
+📁 daring destruction
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'yes > bro'
+-ran: '/challenge/check'
+-ran: 'rm bro'
+-ran: '/challenge/check'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to clog the disk using a simple command and redirect it to a file
+u can check how much space the file is using just w/ ls -l 
+
+## 🏁 Flag  
+pwn.college{g8Xvq1vppAfyKixGqBplUUek9Kb.0lMyEzNxwCO4IDOxEzW}
