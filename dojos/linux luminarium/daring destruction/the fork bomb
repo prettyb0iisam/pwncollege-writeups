@@ -1,0 +1,26 @@
+# challenge: the fork bomb
+
+📅 2025-06-21
+📁 daring destruction
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '/home/hacker/bro &'
+        '/home/hacker/bro &'
+-opened a new terminal
+-ran in the new terminal: '/challenge/check'
+-ran in the firt one: 'chmod a+x bro'
+-ran: './bro &'
+-terminal started showing DoS symptoms
+-flag popped out in the other terminal
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform a local DoS attack by creating a fork bomb 
+it recursively spawns child processes until the process table is saturated, making the system unable to start new processes and so the terminal unusable
+
+## 🏁 Flag  
+pwn.college{UtwVKf6QC0wP8DL9o2lybiu81MA.0VMyEzNxwCO4IDOxEzW}
