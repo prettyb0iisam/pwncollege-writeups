@@ -1,0 +1,20 @@
+# challenge: rm -rf /
+
+📅 2025-06-21
+📁 daring destruction
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-ran in a new terminal: 'rm -rf /'
+-ran again with: 'rm -rf --no-preserve-root /'
+-flag popped out after a while in the other terminal
+
+## 🧑🏾‍🏫 what this challenge teaches u
+command rm -rf / forcefully deletes every file and directory from the root of the system making it completely unusable
+
+## 🏁 Flag  
+pwn.college{MqQ7i8_BOECb6W9VI7s783BcQ0R.0lMzEzNxwCO4IDOxEzW}
