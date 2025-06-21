@@ -1,0 +1,23 @@
+# challenge: life after rm -rf /
+
+📅 2025-06-21
+📁 daring destruction
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-ran in a new terminal: 'rm -rf /'
+-ran again: 'rm -rf --no-preserve-root /'
+-waited untill the first terminal printed the message to read the flag
+-ran: 'read bro < /flag'
+-ran: 'echo $bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+after wiping the system with rm -rf /, you can still use built-in shell commands like read to operate even if cat is no longer available
+
+## 🏁 Flag  
+pwn.college{AmJmXfmmt03sOtC5CqpkctmOuYI.01MzEzNxwCO4IDOxEzW}
