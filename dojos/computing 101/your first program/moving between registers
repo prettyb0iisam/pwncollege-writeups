@@ -21,7 +21,8 @@
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+rsi register is commonly used to store variable data
+u can use the mov instruction to copy data from one register into another
 
 ## 🏁 Flag  
 pwn.college{Ath6cjR-klMQKbPNPS-DausQgmu.QX5QTN2wCO4IDOxEzW}
