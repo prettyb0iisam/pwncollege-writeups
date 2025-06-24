@@ -18,6 +18,7 @@ modern CPUs use the x86-64 architecture (64-bit), which is backward compatible w
 u interact w/ the CPU via Assembly Instructions, which move and manipulate data in registers
 rax is one of the general-porpuse 64-bit registers in x86-64
 u store a value into a register using mov and separate the two operands w/ a comma
+the program crashed because it only moved a value into rax but didn’t include any instruction to stop or exit
 
 ## 🏁 Flag  
 pwn.college{0ZyPV0Ibiu9ezw9ZQGewt_GAEhl.QXzQDO1wCO4IDOxEzW}
