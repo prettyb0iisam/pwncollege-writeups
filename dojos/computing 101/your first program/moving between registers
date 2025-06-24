@@ -1,0 +1,27 @@
+# challenge: moving between registers
+
+📅 2025-06-24
+📁 your first program
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rdi, rsi'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
+pwn.college{Ath6cjR-klMQKbPNPS-DausQgmu.QX5QTN2wCO4IDOxEzW}
