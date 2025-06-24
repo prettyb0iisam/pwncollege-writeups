@@ -1,0 +1,23 @@
+# challenge: your first register
+
+📅 2025-06-24
+📁 your first program
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'mov rax, 60'
+-ran: '/challenge/check bro.s'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+modern CPUs use the x86-64 architecture (64-bit), which is backward compatible w/ x86 (32-bit)
+u interact w/ the CPU via Assembly Instructions, which move and manipulate data in registers
+rax is one of the general-porpuse 64-bit registers in x86-64
+u store a value into a register using mov and separate the two operands w/ a comma
+
+## 🏁 Flag  
+pwn.college{0ZyPV0Ibiu9ezw9ZQGewt_GAEhl.QXzQDO1wCO4IDOxEzW}
