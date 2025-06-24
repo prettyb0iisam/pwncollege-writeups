@@ -1,0 +1,23 @@
+# challenge: your first syscall
+
+📅 2025-06-24
+📁 your first program
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'mov rax, 60'
+        'syscall'
+-ran: '/challenge/check bro.s'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+system calls are actions that u can execute by asking the OS directly
+there are many of em and each one has its own number and specific function
+u can trigger one by putting the right number in the rax register and calling syscall
+
+## 🏁 Flag  
+pwn.college{EDwZtEhCnGL7eBiQCxUDVd3gtFZ.QX4YDO1wCO4IDOxEzW}
