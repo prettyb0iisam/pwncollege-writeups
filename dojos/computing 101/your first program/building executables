@@ -1,0 +1,31 @@
+# challenge: building executables 
+
+📅 2025-06-24
+📁 your first program
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        'mov rax, 60'
+        'mov rdi, 42'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to build and run an assembly program by compiling it 
+source code (.s) -> object file (.o) -> executable (.elf)
+from .s to .o using as
+from .o to .elf using ld
+to avoid the _start symbol error when linking, after .intel_syntax noprefix u should add: '.global _start'
+                                                                                              '_start: '
+
+
+## 🏁 Flag  
+pwn.college{gACgAxh6Y6WOnlF0-_6nW8ats9z.0FM3IDMxwCO4IDOxEzW}
