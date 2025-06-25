@@ -1,0 +1,32 @@
+# challenge: writing output
+
+📅 2025-06-25
+📁 hello hackers
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, 1'
+        'mov rdi, 1'
+        'mov rsi, 1337000'
+        'mov rdx, 1'
+        'syscall'
+-presed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the write syscall takes the followinf arguments:
+rax -> syscall number for write which is 1
+rdi -> file descriptor
+rsi -> memory address of the data
+rdx -> number of bytes to write
+it prints the content starting from the memory address in rsi for rdx bytes to the file descriptor specified in rdi
+
+## 🏁 Flag  
+pwn.college{wnm-zyzmtM8HQj8eAiihpnoMWZG.QXwUTN2wCO4IDOxEzW}
