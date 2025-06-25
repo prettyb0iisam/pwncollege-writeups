@@ -1,0 +1,20 @@
+# challenge: starting programs in gdb
+
+📅 2025-06-25
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me'
+-(gdb) starti
+-copied the secret number
+-ran: '/challenge/submit-number [PASTED]'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in gdb the command starti makes the program start from the very first instruction, before the main function in executed
+
+pwn.college{UW28HqSO3L_LZ-AzpHqzkbc6jjC.0lMzITNxwCO4IDOxEzW}
