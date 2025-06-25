@@ -1,0 +1,30 @@
+# challenge: chaining syscalls
+
+📅 2025-06-25
+📁 hello hackers
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, 1'
+        'mov rdi, 1'
+        'mov rsi, 1337000'
+        'mov rdx, 1'
+        'syscall'
+        'mov rax, 60'
+        'mov rdi, 42'
+        'syscall'
+-pressed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to chain multiple syscalls by placing their instruction blocks consecutively
+
+## 🏁 Flag  
+pwn.college{Aup7tAHFROvYGqgi0BNPiWNfwtv.QXxUTN2wCO4IDOxEzW}
