@@ -1,0 +1,41 @@
+# challenge: reading data
+
+📅 2025-06-25
+📁 hello hackers
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        'start: '
+        'mov rax, 0'
+        'mov rdi, 0'
+        'mov rsi, 1337000'
+        'mov rdx, 8'
+        'syscall'
+        'mov rax, 1'
+        'mov rdi, 1'
+        'mov rsi, 133700'
+        'mov rdx, 8'
+        'syscall'
+        'mov rax, 60'
+        'mov rdi, 42'
+        'syscall'
+-pressed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the read syscall takes the following arguments:
+rax -> syscall number which is 0
+rdi -> file descriptor
+rsi -> memory address where data will be stored
+rdx -> number of bytes to read from input
+w/ read u can store input from stdin directly into memory at a specific address
+in this case we dont need to write anything in the terminal after we r done w/ writing the program because automatically it will fill the stdin
+
+## 🏁 Flag  
+pwn.college{oKq7I-3aTPlCZZfDBKYN0KroB8A.0FNwUTNxwCO4IDOxEzW}
