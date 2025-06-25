@@ -1,0 +1,30 @@
+# challenge: writing strings
+
+📅 2025-06-25
+📁 hello hackers
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, 1'
+        'mov rdi, 1'
+        'mov rsi, 1337000'
+        'mov rdx, 14'
+        'syscall'
+        'mov rax, 60'
+        'mov rdi, 42'
+        'syscall'
+-pressed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to print a string to stdout using the write syscall, by correctly setting rdx to the number of characters to write
+
+## 🏁 Flag  
+pwn.college{EiRyrp5exTtkrSfOmOribFWN4C2.01NzEDMxwCO4IDOxEzW}
