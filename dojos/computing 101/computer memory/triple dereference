@@ -1,0 +1,27 @@
+# challenge: triple dereference
+
+📅 2025-06-25
+📁 computer memory
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, [rdi]'
+        'mov rdi, [rdi]'
+        'mov rdi, [rdi]'
+        'mov rax, 60'
+        'syscall'
+-pressed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+dereferencig multiple times is even worse than the previous one
+
+## 🏁 Flag  
+pwn.college{ghAT_zLEYIfXvQmg0Wicp4PBC2l.QXzQTO1wCO4IDOxEzW}
