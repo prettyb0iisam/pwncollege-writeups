@@ -1,0 +1,20 @@
+# challenge: starting gdb
+
+📅 2025-06-25
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me'
+-copied the secret number
+-ran: '/challenge/submit-number [PASTED]'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+gdb is a debugging tool used to understand and inspect bugs inside a program. it helps analyze how a program behaves during execution
+
+## 🏁 Flag 
+pwn.college{0LaGuUFS__SLPZRtf_XVvPqHnFp.0VMzITNxwCO4IDOxEzW}
