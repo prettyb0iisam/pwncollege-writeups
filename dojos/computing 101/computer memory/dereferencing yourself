@@ -1,0 +1,25 @@
+# challenge: dereferencing yourself
+
+📅 2025-06-25
+📁 computer memory
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, [rdi]'
+        'mov rax, 60'
+        'syscall'
+-pressed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use the same register to dereference its content and also to store the value in it
+
+## 🏁 Flag  
+pwn.college{ADXnFSFWctW7HVAozoKtZBWjKxN.QXyMTO1wCO4IDOxEzW}
