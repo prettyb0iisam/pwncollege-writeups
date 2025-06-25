@@ -1,0 +1,25 @@
+# challenge: dereferencing with offsets
+
+📅 2025-06-25
+📁 computer memory
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, [rdi+8]'
+        'mov rax, 60'
+        'syscall'
+-pressed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+if a pointer refers to a collection of data, u can access individual elements by using offsets
+  
+## 🏁 Flag  
+pwn.college{cN7wpYyr9lrM0h_XBOIUHTaN8gK.QX1QTO1wCO4IDOxEzW}
