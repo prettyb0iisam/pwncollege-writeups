@@ -1,0 +1,26 @@
+# challenge: loading from memory
+
+📅 2025-06-25
+📁 computer memory
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, [133700]'
+        'mov rax, 60'
+        'syscall'
+-pressed: Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in assembly u can access data stored in memory using its address by wrapping it in [ ]
+this allows you to load values from specific memory locations into registers
+
+## 🏁 Flag  
+pwn.college{cTMFPwY0ZMXJO63vB0q11coC4CO.QX0ITO1wCO4IDOxEzW}
