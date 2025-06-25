@@ -1,0 +1,26 @@
+# challenge: deferencing pointers
+
+📅 2025-06-25
+📁 computer memory
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/check'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, [rax]'
+        'mov rax, 60'
+        'syscall'
+-pressed Ctrl+D
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use the rax register as a pointer 
+if it holds an address, u can access the value at that address by dereferencing it w/ [ ]
+
+## 🏁 Flag  
+pwn.college{AEFFhhax1iWu8POR3aP4lQ0tqoS.QXxMTO1wCO4IDOxEzW}
