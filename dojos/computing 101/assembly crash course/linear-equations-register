@@ -1,0 +1,27 @@
+# challenge: linear-equations-register
+
+📅 2025-06-26
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'imul rdi, rsi'
+        'add rdi, rdx'
+        'mov rax, rdi'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to make multiple operations on registers
+
+## 🏁 Flag  
+pwn.college{kfeyNCwHgVo9pkmb_ivcGJXeY7D.dZTOxwCO4IDOxEzW}
