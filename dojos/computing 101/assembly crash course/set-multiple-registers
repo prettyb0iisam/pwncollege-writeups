@@ -1,0 +1,26 @@
+# challenge: set-multiple-registers
+
+📅 2025-06-26
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, 0x1337'
+        'mov r12, 0xCAFED00D1337BEEF'
+        'mov rsp, 0x31337'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to set multiple GPRs
+## 🏁 Flag  
+pwn.college{Q_J58-wWIeMzZyemIRsCUkC2xjF.QXwEDOzwCO4IDOxEzW}
