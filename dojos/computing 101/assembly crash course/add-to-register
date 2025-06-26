@@ -1,0 +1,25 @@
+# challenge: add-to-register
+
+📅 2025-06-26
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'add rdi, 0x331337'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to add values to registers content
+
+## 🏁 Flag  
+pwn.college{4bSP7OZ9NyUsHR-lUtF9Wi7YorK.dVTOxwCO4IDOxEzW}
