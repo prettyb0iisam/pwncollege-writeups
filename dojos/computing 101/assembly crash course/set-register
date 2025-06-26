@@ -1,0 +1,25 @@
+# challenge: set-register
+
+📅 2025-06-26
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, 0x1337'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to set general purpose registers
+
+## 🏁 Flag  
+pwn.college{EAWgCww-iFZ5r47MAlqN6i9A4Th.dRTOxwCO4IDOxEzW}
