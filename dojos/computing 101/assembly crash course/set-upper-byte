@@ -1,0 +1,25 @@
+# challenge: set-upper-byte
+
+📅 2025-06-27
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov ah, 0x42'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to access and set the lower bytes of a register
+
+## 🏁 Flag 
+pwn.college{8vnNCniFFVzH5pFSKkS-AsmqjF_.QXxEDOzwCO4IDOxEzW}
