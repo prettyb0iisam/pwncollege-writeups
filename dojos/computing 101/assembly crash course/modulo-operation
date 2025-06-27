@@ -15,7 +15,7 @@
         'mov rax, rdi'
         'mov rdi, 0x0'
         'div rsi'
-        mov rax, rdx'
+        'mov rax, rdx'
 -ran: 'as -o bro.o bro.s'
 -ran: 'ld -o bro bro.o'
 -ran: '/challenge/run bro'
