@@ -1,0 +1,30 @@
+# challenge: integer-division
+
+📅 2025-06-27
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, rdi'
+        'mov rdi, 0x0'
+        'div rsi'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform integer division using the div instruction
+before dividing, the registers must be set as follows:
+-rdi -> lower 64bits of the dividend
+-rax -> uppper 64bits of the dividend
+-other register (in this case rsi) -> divisor
+executing division -> div [REGISTER DIVISOR]
+-rax -> quotient
+-rdx -> rest
+
+## 🏁 Flag  
+pwn.college{4iavl6VaJolOWyOp7oYvAF3HHyl.ddTOxwCO4IDOxEzW}
