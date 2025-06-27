@@ -1,0 +1,26 @@
+# challenge: efficient-modulo
+
+📅 2025-06-27
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov al, dil'
+        'mov bx, si'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to move partial values using sub-registers w/out affecting the rest of the register
+
+## 🏁 Flag  
+pwn.college{8VLY3yb3SaWY7wpKtal37Y2rXMJ.dlTOxwCO4IDOxEzW}
