@@ -1,0 +1,28 @@
+# challenge: modulo-operation
+
+📅 2025-06-27
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, rdi'
+        'mov rdi, 0x0'
+        'div rsi'
+        mov rax, rdx'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform the modulo operation using div instruction, knowing the remainder is stored in rdx
+
+## 🏁 Flag  
+pwn.college{A9o3qrAtwqaCsgL4aFh8qhCPSiN.dhTOxwCO4IDOxEzW}
