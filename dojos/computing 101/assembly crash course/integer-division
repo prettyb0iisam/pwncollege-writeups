@@ -15,6 +15,8 @@
         'mov rax, rdi'
         'mov rdi, 0x0'
         'div rsi'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
 -ran: '/challenge/run bro'
 -flag popped out
 
@@ -26,7 +28,7 @@ before dividing, the registers must be set as follows:
 -other register (in this case rsi) -> divisor
 executing division -> div [REGISTER DIVISOR]
 -rax -> quotient
--rdx -> rest
+-rdx -> remainder
 
 ## 🏁 Flag  
 pwn.college{4iavl6VaJolOWyOp7oYvAF3HHyl.ddTOxwCO4IDOxEzW}
