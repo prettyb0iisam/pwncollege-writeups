@@ -15,6 +15,8 @@
         'mov rax, rdi'
         'mov rdi, 0x0'
         'div rsi'
+-ran: '/challenge/run bro'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to perform integer division using the div instruction
