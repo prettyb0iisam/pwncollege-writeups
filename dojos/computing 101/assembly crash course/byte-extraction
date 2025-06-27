@@ -1,0 +1,29 @@
+# challenge: byte-extraction
+
+📅 2025-06-27
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'shr rdi, 32'
+        'mov rax, 0'
+        'mov al, dil'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform bit shifting
+-shift left -> shl [REGISTER], [NUMBER]       which is equivalent to multiplying by powers of 2
+-shift right -> shr [REGISTER], [NUMBER]      which is equivalent to integer division by powers of 2
+
+## 🏁 Flag  
+pwn.college{Y59dnKI3AJLvXw6ea7skOmJbnTb.dBDMywCO4IDOxEzW}
