@@ -1,0 +1,28 @@
+# challenge: memory-size-access
+
+📅 2025-06-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov al, [0x404000]'
+        'mov bx, [0x404000]'
+        'mov ecx, [0x404000]'
+        'mov rdx, [0x404000]'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to load different memory sizes as byte, word, double word, quad word into corresponding subregisters
+
+## 🏁 Flag  
+pwn.college{gX0OMYZU_OewjIvMsKywxo2w3OT.dRDMywCO4IDOxEzW}
