@@ -1,0 +1,27 @@
+# challenge: bitwise-and
+
+📅 2025-06-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'and rdi, rsi'
+        'and rax, 0'
+        'xor rax, rdi'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use other operators as and, or, xor, not
+
+## 🏁 Flag  
+pwn.college{Qj9Pfl5-612PB7Kuu59oD1raYSu.dFDMywCO4IDOxEzW}
