@@ -1,0 +1,27 @@
+# challenge: check-even
+
+📅 2025-06-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'and rdi, 1'
+        'and rax, 1'
+        'xor rax, rdi'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to check if a number is even or odd by looking at its LSB 
+
+## 🏁 Flag  
+pwn.college{c7VIp5elC7JAA30r78oRg4rv_UM.dJDMywCO4IDOxEzW}
