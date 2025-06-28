@@ -1,0 +1,25 @@
+# challenge: byte-access
+
+📅 2025-06-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov al, [0x404000]'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to read a single byte from memory into a register and understand how to access different memory sizes
+
+## 🏁 Flag  
+pwn.college{gLwaXHsG9z9ViAUgI3OY8PZhYJX.QX0EDOzwCO4IDOxEzW}
