@@ -1,0 +1,50 @@
+# challenge: little-endian-write
+
+📅 2025-06-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed:   'intel_syntax noprefix'
+          '.global _start'
+          '_start: '
+          'mov rax, 0x37
+          'mov [rdi], rax'
+          'mov rax, 0x13'
+          'mov [rdi+1], rax'
+          'mov rax, 0x00'
+          'mov [rdi+2], rax'
+          'mov [rdi+3], rax'
+          'mov rax, 0xef'
+          'mov [rdi+4], rax'
+          'mov rax, 0xbe'
+          'mov [rdi+5], rax'
+          'mov rax, 0xad'
+          'mov [rdi+6], rax'
+          'mov rax, 0xde'
+          'mov [rdi+7], rax'
+          
+          'mov rax, 0x00'
+          'mov [rsi], rax'
+          'mov [rsi+1], rax'
+          'mov rax, 0xee'
+          'mov [rsi+2], rax'
+          'mov rax, 0xff'
+          'mov [rsi+3], rax'
+          'mov rax, 0xc0'
+          'mov [rsi+4], rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how memory cells store exactly 1 byte and that to store values larger than 1 byte, multiple consecutive cells are used 
+it also shows how in little endian architectures, values are stored from the least significant byte to the most significant, starting from the lowest address
+
+## 🏁 Flag  
+pwn.college{0MbDSuKFjrDv5S5jeXB5KfFan6o.dVDMywCO4IDOxEzW}
