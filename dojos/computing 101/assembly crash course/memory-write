@@ -1,0 +1,25 @@
+# challenge: memory-write
+
+📅 2025-06-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov [0x404000], rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to store the value from a register into a specific memory address
+
+## 🏁 Flag  
+pwn.college{AeGHfnf3AsTZBW5V96U9GxtcKtk.QXzEDOzwCO4IDOxEzW}
