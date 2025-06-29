@@ -1,0 +1,35 @@
+# challenge: average-stack-values
+
+📅 2025-06-29
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, [rsp]'
+        'mov rbx, [rsp+8]'
+        'add rax, rbx'
+        'mov rbx, [rsp+16]'
+        'add rax, rbx'
+        'mov rbx, [rsp+24]'
+        'add rax, rbx'
+        'mov rdx, 0'
+        'mov rdi, 4'
+        'div rdi'
+        'push rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out 
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use rsp, the stack-pointer register, to directly access values stored on the stack using offsets
+
+## 🏁 Flag  
+pwn.college{o81UXHVT9w1lkKnIppvmwhnrRse.dlDMywCO4IDOxEzW}
