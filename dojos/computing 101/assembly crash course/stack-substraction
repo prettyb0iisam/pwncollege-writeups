@@ -1,0 +1,36 @@
+# challenge: 
+
+📅 2025-06-29
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'pop rax'
+        'not rdi'
+        'add rdi, 1'
+        'add rax, rdi'
+        'push rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how the stack works
+it dynamically allocates memory using 2 instructions: 
+push -> store a value into the stack
+pop -> retrieve a value from the stack
+stack is LIFO -> Last In First Out -> the last value pushed is the first value popped
+u learn also how to perform substraction
+u have to not the subtrahend and add to it 1
+then perform add between the minuend and subtrahend
+
+## 🏁 Flag  
+pwn.college{ESPSm7FnbRcmy2Nhh2aGqfnev2I.ddDMywCO4IDOxEzW}
