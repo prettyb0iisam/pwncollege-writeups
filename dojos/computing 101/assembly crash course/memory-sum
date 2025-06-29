@@ -1,0 +1,28 @@
+# challenge: memory-sum
+
+📅 2025-06-29
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, [rdi]'
+        'mov rbx, [rdi+8]'
+        'add rax, rbx'
+        'mov [rsi], rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use memory offset to access consecutive values in memory
+
+## 🏁 Flag  
+pwn.college{IoCVC1c8Ktv11PcBv5LyNoTS82J.dZDMywCO4IDOxEzW}
