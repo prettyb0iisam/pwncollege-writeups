@@ -21,9 +21,11 @@
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to perform jump
-in this case, asbolute jump
+in this case, absolute jump
 u need only to put the address which u want to start the instruction into a register and then call jmp w/ that register
-here it is also an indirect jump beacuse first u put the address into a register and the perform jump
+here it is also an indirect jump beacuse first u put the address into a register and then perform jump
+instructions as jump are saved in a specific memory zone: .text
+
 
 ## 🏁 Flag  
 pwn.college{opjajB1q-CovOYeSWRAWjunsXNf.QX1EDOzwCO4IDOxEzW}
