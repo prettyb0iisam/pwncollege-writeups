@@ -1,0 +1,29 @@
+# challenge: absolute-jump
+
+📅 2025-06-30
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rax, 0x403000'
+        'jmp rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform jump
+in this case, asbolute jump
+u need only to put the address which u want to start the instruction into a register and then call jmp w/ that register
+here it is also an indirect jump beacuse first u put the address into a register and the perform jump
+
+## 🏁 Flag  
+pwn.college{opjajB1q-CovOYeSWRAWjunsXNf.QX1EDOzwCO4IDOxEzW}
