@@ -15,7 +15,7 @@
         'jmp dest'
         '.rept 81'
         'nop'
-        'endr'
+        '.endr'
         'dest: '
             'mov rax, 1'
 -ran: 'as -o bro.o bro.s'
