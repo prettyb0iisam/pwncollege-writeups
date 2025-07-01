@@ -1,0 +1,30 @@
+# challenge: relative-jump
+
+📅 2025-07-01
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'jmp dest'
+        '.rept 81'
+        'nop'
+        'endr'
+        'dest: '
+            'mov rax, 1'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform a relative jump using a label and how to provide instructions at the label
+also, how to use the .rept directive to repeat instructions multiple times
+
+## 🏁 Flag  
+pwn.college{sEYcMi4zPuArCut8TjrKW6JXWv7.QX2EDOzwCO4IDOxEzW}
