@@ -1,0 +1,33 @@
+# challenge: jump-trampoline
+
+📅 2025-07-01
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'jmp dest'
+        '.rept 0x51'
+        'nop'
+        '.endr'
+        'dest: '
+            'pop rdi'
+            'mov rax, 0x403000'
+            'jmp rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to combine a relative jump with an absolute jump
+i realized that if you perform an absolute jump like jmp 0x403000, the assembler treats the value as an offset to be added to rip, causing the jump to go to the wrong address
+to avoid this, you need to perform an indirect jump by first moving the address into a reg, then do jmp reg
+
+## 🏁 Flag 
+pwn.college{sr2_bCGhHDmqdkwNhLvi43B3FBu.dBTMywCO4IDOxEzW}
