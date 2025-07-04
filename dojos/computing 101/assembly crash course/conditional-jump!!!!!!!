@@ -1,6 +1,6 @@
 # challenge: conditional-jump
 
-📅 2025-07-01
+📅 2025-07-04
 📁 assembly crash course
 
 ---
@@ -8,10 +8,55 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'vim bro.s'
+-typed: 'intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rbx, [rdi]'
+        'mov eax, ebx'
+        'cmp eax, 0x7f454c46'
+        'jne again'
+        'add rdi, 4'
+        'mov eax, [rdi]'
+        'add rdi, 4'
+        'add eax, [rdi]'
+        'add rdi, 4'
+        'add eax, [rdi]'
+        'jmp done'
+        'again: '
+        'cmp eax, 0x00005A4D'
+        'jne multiply005A4D'
+        'jne multiply'
+        'add rdi, 4'
+        'mov eax, [rdi]'
+        'add rdi, 4'
+        'mov ebx, [rdi]'
+        'sub eax, ebx'
+        'add rdi, 4'
+        'mov ebx, [rdi]'
+        'sub eax, ebx'
+        'jmp done'
+        'multiply:'
+        'add rdi, 4'
+        'mov eax, [rdi]'
+        'add rdi, 4'
+        'imul eax, [rdi]'
+        'add rdi, 4'
+        'imul eax, [rdi]'
+        'jmp done'
+        'done: '
+        'nop'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+how the zero flag works: after a cmp instruction, if the result is zero (meaning the values are equal), ZF is set to 1 -> use je/jz 
+                                                  if the result is not zero (values are different), ZF is 0 -> i use jne/jnz
+after executing a subroutine like again or multiply, always jump to the final part of the program (done) to avoid falling through unintended code instructions
+this challenge helps understanding how to control program flow in assembly using conditional jumps and how to translate high-level logic into low-level instructions
 
 ## 🏁 Flag  
+pwn.college{gtIOOZGnYAOrGVGiXL6464R_kIU.dFTMywCO4IDOxEzW}
+
