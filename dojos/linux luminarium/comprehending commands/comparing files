@@ -1,0 +1,18 @@
+# challenge: comparing files
+
+📅 2025-07-28
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'diff /challenge/decoys_only.txt /challenge/decoys_and_real.txt'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the diff command is used to compare two different files and shows the differences between their contents line by line
+
+## 🏁 Flag
+pwn.college{gSoofX5pORqzHUTGSoFPvVKkYxw.01MwMDOxwCO4IDOxEzW}
