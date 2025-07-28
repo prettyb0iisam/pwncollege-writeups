@@ -1,0 +1,19 @@
+# challenge: process substitution for input
+
+📅 2025-07-28
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'diff <(/challenge/print_decoys) <(/challenge/print_decoys_and_flag)'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can compare outputs of 2 commands using <(COMMAND)  
+bash treats them like files so diff works without saving stuff
+
+## 🏁 Flag 
+pwn.college{gpUdygT6uGEr1e5stV8NdwoCFKg.0lNwMDOxwCO4IDOxEzW}
