@@ -1,0 +1,23 @@
+# challenge: killing misbehaving processes
+
+📅 2025-07-29
+📁 processes and jobs
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ps aux > bro.txt'
+-ran: 'cat bro.txt | grep decoy'
+-obtained the PID of the process i had to kill
+-ran: 'kill [PID]'
+-ran: '/challenge/run &'
+-ran: 'cat /tmp/flag_fifo'
+-flag popped out (last one)
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to find and kill a process that’s messing with ur pipe so you can get clean output
+
+## 🏁 Flag 
+pwn.college{8vPS-ytIGXksn3vmlOhtMEVL5-H.0FNzMDOxwCO4IDOxEzW}
