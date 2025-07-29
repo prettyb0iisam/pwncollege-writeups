@@ -1,0 +1,23 @@
+# challenge: sorting data
+
+📅 2025-07-29
+📁 data manipulation
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/flags.txt | sort'
+-flag popped out (last one)
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to sort datas
+no flag -> alphabetic order
+flag: -r -> reverse order Z to A
+      -u -> remove duplicates
+      -n -> numeric order
+      -R -> random
+
+## 🏁 Flag
+pwn.college{ESOT_jTiDB17SnKjyXRjrEWwiMk.0FM0MDOxwCO4IDOxEzW}
