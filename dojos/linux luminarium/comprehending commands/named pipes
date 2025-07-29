@@ -1,0 +1,21 @@
+# challenge: named pipes
+
+📅 2025-07-29
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'mkfifo /tmp/flag_fifo'
+-ran: '/challenge/run > /tmp/flag_fifo &'
+-ran: 'cat /tmp/flag_fifo'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use fifos to sync processes and pass data without saving it to disk
+mkfifo makes the pipe, and & runs the writer in background so the reader can unblock it
+
+## 🏁 Flag 
+pwn.college{M3SZL5a1JyQVweT3nks1nKjeiE-.01MzMDOxwCO4IDOxEzW}
