@@ -1,0 +1,22 @@
+# challenge: switching windows
+
+📅 2025-07-30
+📁 terminal multiplexing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'screen -ls'
+-ran: 'screen -r [PID of the only detached one]'
+-pressed Ctrl+A 
+-pressed p
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to move between windows in the same session
+actually terminal multiplexing can be way more usefull than it seems
+
+## 🏁 Flag
+pwn.college{UIJPvoTq8gRTgyuQ-EZf2BNjmLc.0FO4IDOxwCO4IDOxEzW}
