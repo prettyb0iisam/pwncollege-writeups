@@ -1,0 +1,23 @@
+# challenge: detaching and attaching (tmux)
+
+📅 2025-07-30
+📁 terminal multiplexing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'tmux'
+-pressed Ctrl+B
+-pressed d
+-ran: '/challenge/run'
+-ran: 'tmux attach'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+tmux works the same screen
+the main difference is the control prefix which is Ctrl+B
+
+## 🏁 Flag 
+pwn.college{8U9pdG57VvxPU6vsXZ6zcKBFg4i.0VO4IDOxwCO4IDOxEzW}
