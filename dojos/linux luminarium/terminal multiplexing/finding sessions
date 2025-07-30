@@ -1,0 +1,20 @@
+# challenge: finding sessions
+
+📅 2025-07-30
+📁 terminal multiplexing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'screen -ls'
+-tryied each by running the following commands:
+          -'screen -r [PID]'
+          -if wrong, i tryied the next PID until the flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to pick a screen session and reattach to it by using its PID
+
+## 🏁 Flag
+pwn.college{4XGK759fp8Ly42dubbgsSadihXL.01N4IDOxwCO4IDOxEzW}
