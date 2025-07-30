@@ -1,0 +1,23 @@
+# challenge: detaching and attaching
+
+📅 2025-07-30
+📁 terminal multiplexing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'screen'
+-pressed ENTER
+-pressed Ctrl+A
+-pressed d
+-ran: '/challenge/run'
+-ran: 'screen -r'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+use Ctrl+A, then d to detach from screen and use screen -r to reattach and continue where you left off
+
+## 🏁 Flag
+pwn.college{g-7lZZNREuMlCrbKb8m03rnP3Qu.0lN4IDOxwCO4IDOxEzW}
