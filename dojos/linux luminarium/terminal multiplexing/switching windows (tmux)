@@ -1,0 +1,20 @@
+# challenge: switching windows (tmux)
+
+📅 2025-07-30
+📁 terminal multiplexer
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'tmux attach'
+-pressed Ctrl+B
+-pressed p
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+actually tmux works like screen but it shows active windows in a bar at the bottom
+
+## 🏁 Flag
+pwn.college{cG4xI5gUpDf8j9A0d6PeA5c8sbj.0FM5IDOxwCO4IDOxEzW}
