@@ -1,0 +1,20 @@
+# challenge: launching screen
+
+📅 2025-07-30
+📁 terminal multiplexing
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'screen'
+-pressed ENTER
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+screen lets u run a shell that stays alive even if u disconnect
+unlike a normal shell, it keeps running ur commands in the background
+
+## 🏁 Flag
+pwn.college{0hxfWErXSkmLv3K8jWbKJEA-nUY.0VN4IDOxwCO4IDOxEzW}
