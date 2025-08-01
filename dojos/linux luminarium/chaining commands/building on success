@@ -1,0 +1,18 @@
+# challenge: building on success
+
+📅 2025-08-01
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/first-success && /challenge/second'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use && as AND to run commands. the second command will run only if the first one succeed correctly (exit code=0)
+
+## 🏁 Flag
+pwn.college{o1homEWIgUyfgSPrIB_Ao_zWjG6.0lM0MDOxwCO4IDOxEzW}
