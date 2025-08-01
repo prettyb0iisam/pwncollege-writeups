@@ -1,0 +1,18 @@
+# challenge: handling failure
+
+📅 2025-08-01
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/first-failure || /challenge/second'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use || as OR for chaining commands. the second commands will run ONLY if the first one failed (exit code !=1)
+
+## 🏁 Flag 
+pwn.college{88Y3p4UEFw_cQ0b4LtpiXYNgRJw.01M0MDOxwCO4IDOxEzW}
