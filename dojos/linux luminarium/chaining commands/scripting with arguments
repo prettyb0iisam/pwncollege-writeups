@@ -1,0 +1,21 @@
+# challenge: scripting with arguments
+
+📅 2025-08-26
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim solve.sh'
+-typed: '#!/bin/bash'
+        'echo "$2 $1"'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can read arguments w/in ur script by using $1 for the first, $2 for the second, $3...
+
+## 🏁 Flag 
+pwn.college{gxisYcBv3f_Bdp696t9BREEInF7.0VNzMDOxwCO4IDOxEzW}
