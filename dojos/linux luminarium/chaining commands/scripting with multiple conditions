@@ -1,0 +1,31 @@
+# challenge: scripting with multiple conditions
+
+📅 2025-08-26
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim solve.sh'
+-typed: '#!/bin/bash'
+        'if [ "$1" == "hack" ]'
+        'then echo "the planet"'
+        'elif [ "$1" == "pwn" ]'
+        'then echo "college"'
+        'elif [ "$1" == "learn" ]'
+        'then echo "linux"'
+        'else'
+        'echo "unknown"'
+        'fi'
+-ran: 'chmod a+x solve.sh'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use elif (else if) statemt for multiple conditions
+each elif must be followed by a then and u can chain multiple elif blocks
+
+## 🏁 Flag
+pwn.college{wmj2Wk61yJfwhUOnxblmsEKV_9M.0FOzMDOxwCO4IDOxEzW}
