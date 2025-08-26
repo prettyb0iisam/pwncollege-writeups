@@ -1,0 +1,24 @@
+# challenge: reading shell scripts
+
+📅 2025-08-26
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+-pressed Ctrl+C
+-ran: 'cat /challenge/run'
+-copied "hack the PLANET"
+-ran: '/challenge/run'
+-typed: 'hack the PLANET'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to understand the logic of bash scripts and obtain hidden informations such as passwords
+this challenge is a basic intro to the world of reverse engineering
+
+## 🏁 Flag
+pwn.college{4JNgCv1O9b45JW93kvPJTeKPlp-.0lMwgDOxwCO4IDOxEzW}
