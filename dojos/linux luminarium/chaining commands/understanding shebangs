@@ -1,0 +1,26 @@
+# challenge: understanding shebangs
+
+📅 2025-08-26
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim solve.sh'
+-typed: '#!/bin/bash'
+        'echo "hack the planet"'
+-run: '/challenge/solve'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can decide the interpreter of ur file to be executed using shebang, 
+a line of code at the top of the file
+#!/bin/bash -> bash scripts
+#!/usr/bin/python3 -> python scripts
+#!/usr/bin/node -> node.js
+finally i understand now why some files has that code line at the top:)
+
+## 🏁 Flag 
+pwn.college{MOOP0CcrF_DapTPa2hZzse77jNJ.0VOzMDOxwCO4IDOxEzW}
