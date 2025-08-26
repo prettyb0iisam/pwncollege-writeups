@@ -11,6 +11,7 @@
 -ran: 'vim solve.sh'
 -typed: '#!/bin/bash'
         'echo "hack the planet"'
+-ran: 'chmod a+x solve.sh'
 -run: '/challenge/solve'
 -flag popped out
 
