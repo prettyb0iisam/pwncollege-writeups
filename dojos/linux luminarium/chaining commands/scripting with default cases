@@ -1,0 +1,26 @@
+# challenge: scripting with default cases
+
+📅 2025-08-26
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim solve.sh'
+-typed: '#!/bin/bash'
+        'if [ "$1" == "pwn" ]'
+        'then echo "college'
+        'else'
+        'echo "nope"'
+        'fi'
+-ran: 'chmod a+x solve.sh'
+-ran: '/challenge/run'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use the else statement as default case when the if statement unsucced
+
+## 🏁 Flag 
+pwn.college{cHEbT3pGpVIp5dV19cpqvcMJHWd.01NzMDOxwCO4IDOxEzW}
