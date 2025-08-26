@@ -1,0 +1,23 @@
+# challenge: scripting with conditionals
+
+📅 2025-08-26
+📁 chaining commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim solve.sh'
+-typed: '#!/bin/bash'
+        'if [ "$1" == "pwn" ]'
+        'then echo "college"'
+        'fi'
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use conditionals
+if then and fi gotta be on different lines or in the same using semicolons
+between if, [ and ] u have to space em
+
+## 🏁 Flag 
+pwn.college{grDustsjU9wCEHXL0vAykNNw2pE.0lNzMDOxwCO4IDOxEzW}
