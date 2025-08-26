@@ -13,6 +13,9 @@
         'if [ "$1" == "pwn" ]'
         'then echo "college"'
         'fi'
+-ran: 'chmod a+x solve.sh'
+-ran: '/challenge/run'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to use conditionals
