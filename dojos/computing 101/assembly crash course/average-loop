@@ -1,0 +1,36 @@
+# challenge: average-loop
+
+📅 2025-08-26
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, 0'
+        'mov rdx, rsi'
+        'loop:'
+        'cmp rdx, 0'
+        'jz done'
+        'add rax, [rdi]'
+        'add rdi, 8'
+        'dec rdx'
+        'jmp loop'
+        'done:'
+        'mov rdi, 0'
+        'div rsi'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can create loops, in this case for loop, using labels and conditional jumps
+
+## 🏁 Flag
+pwn.college{YHfy6QSH-TmMt0v_wjl-BA4BpHR.dNTMywCO4IDOxEzW}
