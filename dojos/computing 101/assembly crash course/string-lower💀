@@ -1,0 +1,58 @@
+# challenge: string-lower
+
+📅 2025-08-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'xor rax, rax'
+        'cmp rdi, 0'
+        'jz done'
+        'loop: '
+        'xor rbx, rbx'
+        'mov bl, [rdi]'
+        'cmp bl, 0'
+        'jz done'
+        'cmp bl, 90'
+        'jg above'
+        'push rax'
+        'push rdi'
+        'xor rdi, rdi'
+        'mov dil, bl'
+        'mov rcx, 0x403000'
+        'call rcx'
+        'mov bl, al'
+        'pop rdi'
+        'mov [rdi], bl'
+        'pop rax'ùh
+        'add rax, 1'
+        'above: '
+        'add rdi, 1'
+        'jmp loop'
+        'done:'
+        'ret'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to call a function and return from it using call, labels and ret
+how to load values from memory to subregister and viceversa
+how to use the stack to store values and then pop em when u actually need the og one
+i spent 12hrs solving this fckn challenge, since i started pwncollege this one is by far the thoughest one
+i think its actually good to develop a software which works as an ide for assembly to check how registers and memory change every time a line of code is implemented
+also something that can be very usefull is to create a diagram w/ all the registers, subregister and flag. the ones online r a bit confusionary
+the challenge expects u to write a function that the emulator calls, so you must add a ret at the end
+i realized it after 8hrs thanks to pwn's discord
+shoutout to https://writeups.kunull.net/Pwn%20College/Assembly%20Crash%20Course which helped me A LOT solving this challenge
+
+## 🏁 Flag
+pwn.college{4SoIibYgB9KHlFZMvIkDydg_Niw.dVTMywCO4IDOxEzW}
