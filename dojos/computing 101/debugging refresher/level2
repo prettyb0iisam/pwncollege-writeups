@@ -1,0 +1,23 @@
+# challenge: level2
+
+📅 2025-08-28
+📁 debugging refresher
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryogdb_level2'
+-(gdb): r
+-(gdb): p/x $r12
+-copied the value
+-(gdb): c
+-(gdb): pasted the value
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to print in dec or hex the value of registers w/ p and $
+
+## 🏁 Flag 
+pwn.college{QDlLK_kTnAqYm8hMnPzPEmbOCoN.dVDNywCO4IDOxEzW}
