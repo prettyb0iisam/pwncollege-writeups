@@ -1,0 +1,36 @@
+# challenge: indirect-jump
+
+📅 2025-08-28
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'cmp rdi, 3'
+        'jg above'
+        'mov rax, rsi'
+        'imul rdi, 8'
+        'add rax, rdi'
+        'mov rax, [rax]'
+        'jmp rax'
+        'above: '
+        'mov rax, rsi'
+        'add rax, 32'
+        'mov rax, [rax]'
+        'jmp rax'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to implement a switch statement using labels and jump when a jump table is provided into an address
+
+## 🏁 Flag
+pwn.college{Aay7vZyX83guwagB0hsFSWo4kr8.dJTMywCO4IDOxEzW}
