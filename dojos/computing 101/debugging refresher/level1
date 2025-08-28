@@ -1,0 +1,21 @@
+# challenge: level1
+
+📅 2025-08-28
+📁 debugging refresher
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryogdb_level1'
+-(gdb): r
+-(gdb): c
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to start a program in gdb w/ r and resume after a breakpoint w/ c
+gdb is a must-know tool that helps u debug ur code
+
+## 🏁 Flag
+pwn.college{0Tq8bl4dA_0y82FJbvXcjq2HZdJ.dRDNywCO4IDOxEzW}
