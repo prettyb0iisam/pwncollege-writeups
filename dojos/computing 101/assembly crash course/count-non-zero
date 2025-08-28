@@ -8,11 +8,30 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'cmp rdi, 0'
+        'jnz loop'
+        'mov rax, 0'
+        'jmp done'
+        'loop:'
+        'mov rdx, [rdi]'
+        'cmp rdx, 0'
+        'jz done'
+        'add rax, 1'
+        'add rdi, 1'
+        'jmp loop'
+        'done:'
+        'nop'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+how to implement a while cycle using conditional jumps, unconditional jump and labels
 
 ## 🏁 Flag
 pwn.college{kboauno7VHMv9kYmY_s39pmHJ1h.dRTMywCO4IDOxEzW}
