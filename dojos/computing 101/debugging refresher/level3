@@ -1,0 +1,36 @@
+# challenge: level3
+
+📅 2025-08-29
+📁 debugging refresher
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryogdb_level3'
+-(gdb): r
+-(gbd): c
+-(gdb): x/10gx $rsp
+-copied one random value
+-(gdb): c
+-(gdb): pasted the value
+-wrong answer but at least now i knew which one im was supposed to copy (the 6th q-word in the stack)
+-(gdb): r
+-(gdb): c
+-(gdb): x/gx $rsp+40
+-copied the value
+-(gdb): c
+-pasted the value
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to dump memory locations in gdb using x/ and specify quantity, unit and format
+the formula is: x/[n][u][f] [address]
+-n -> number of bytes
+-u -> unit size. b=byte h=word w=double-word g=quad-word
+-f -> format. d=dec x=hex s=string i=instruction
+-address -> address memory to be dumped. it can be as register ($reg) or an absolute address
+
+## 🏁 Flag  
+pwn.college{Qj3bGmNLcLATUJoHVZvxPHIhSTe.dZDNywCO4IDOxEzW}
