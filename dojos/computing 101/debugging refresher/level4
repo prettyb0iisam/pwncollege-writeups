@@ -8,7 +8,7 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: '/challenge/embryolevel4'
+-ran: '/challenge/embryogdb_level4'
 -(gdb): set disassembly-flavor intel
 -(gdb): disas main
 we can see the program works the same as level3 but is going to check for the random values 4 times
