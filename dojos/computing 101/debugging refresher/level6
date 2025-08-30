@@ -1,0 +1,77 @@
+# challenge: level6
+
+📅 2025-08-30
+📁 debugging refresher
+
+---
+
+## ✅ what i did  
+1 WAY (best one)
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryogdb_level6'
+-(gdb): set disassembly-flavor intel
+the program works the same as previous levels but this time asks for the random value 63 times (0x3f).
+the goal is to set the counter to 0x3f after we put the first value correct so it goes to function win and print us the flag
+at line main+705 we can see that it does a cmp between a value inside the stack (the counter) and 0x3f.
+if the value in the stack is bigger than it, it will call win.
+if not, it will add 1 to the counter and keep asking for the value until counter>0x3f
+we can modify the value in the stack on line main+689
+-(gdb): q
+-ran: 'vim bro.gdb'
+-typed: 'r'
+        'break *main+584'
+        'commands'
+        'set $value=*(long*)($rbp-0x18)'
+        'printf "VALUE= %lx\n", $value'
+        'c'
+        'end'
+        'break *main+689'
+        'commands'
+        'set *((uint16_t*)($rbp-0x1c)) = 0x3f'
+        'c'
+        'end'
+        'c'
+-ran: 'chmod a+x bro.gdb'
+-ran: '/challenge/embryogdb_level6 -x bro.gdb'
+-copied the value
+-pasted the value
+-flag popped out
+
+2 WAY
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryogdb_level6'
+-(gdb): set disassembly-flavor intel
+-(gdb): disas main
+in this case instead of modify the value inside the stack, we can modify rip register to avoid the cmp between the counter and 0x3f
+after the cmp between our value and random value the program jump to main+701 to add 1 to the value in memory
+the goal is instead, jmp to main+715 to avoid the compare
+-(gdb): q
+-ran: 'vim bro.gdb'
+-typed: 'r'
+        'break *main+584'
+        'commands'
+        'set $value = *(long*)($rbp-0x18)'
+        'printf "VALUE= %lx\n", $value'
+        'c'
+        'end'
+        'break *main+689'
+        'commands'
+        'set $rip = main+715'
+        'c'
+        'end'
+        'c'
+-ran: 'chmod a+x bro.gdb'
+-ran: '/challenge/embryogdb_level6 -x bro.gdb'
+-copied the value
+-pasted the value
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can modify values inside registers and memory to make the program works as u want to
+set will set a value inside a memory address or a register
+scripting using gdb is so much powerfull and usefull but actually is really complicated
+
+## 🏁 Flag  
+pwn.college{sa3tKwJwSEECsg7AJ68Y4wEmdI2.dlDNywCO4IDOxEzW}
