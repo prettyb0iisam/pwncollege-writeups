@@ -30,15 +30,27 @@
 -opened the terminal
 -ran: '/challenge/embryogdb_level3'
 -(gdb): set disassembly-flavor intel
+-(gdb): disas main
+the line main+544 is crucial cuz is doing a cmp between two register. if the cmp succeded we get the flag because the program
+will call win function. so the goal now is to understand in which of the 2 registers, rax and rdx, the value we added will be stored.
+-(gdb): break *main+544
 -(gdb): r
 -(gdb): c
--(gdb): disassemble main
--typed c
--found the read syscall -> the data has been red from the second argument loaded in rsi -> rax copied rsi and rax has been set as the local variable from rbp-0x18
+-(gdb): c
+-typed: '1' -> wrong value
+-(gdb): info registers
+we can see that rdx holds 1, our value, and rax holds the random value we r supposed to give
+-(gdb): disas main
+in the line main+540 rax, receive a value from the stack. so we need to start the program again and when it says the value has been set, we need to dump the stack
+-(gdb): r
+-(gdb): c
+the random value has been set
 -(gdb): x/gx $rbp-0x18
 -copied the value
 -(gdb): c
 -pasted the value
+-correct answer
+-(gdb): c
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
@@ -47,10 +59,10 @@ the formula is: x/[n][u][f] [address]
 -n -> number of bytes
 -u -> unit size. b=byte h=word w=double-word g=quad-word
 -f -> format. d=dec x=hex s=string i=instruction
--address -> address memory to be dumped. it can be as register ($reg) or an absolute address
+-address -> address memory to be dumped. it can be a register ($reg) or an absolute address
 
-to switch from AT&T syntax to intel u can do set disassembly-flavor intel
-also how to disassemble main and understand how it works checking the code line by line 
+to switch from AT&T syntax to intel u can do -> set disassembly-flavor intel
+disas main is crucial to understand how the program works 
 rbp register is crucial for memory allocation when variable r created inside a function
 
 ## 🏁 Flag  
