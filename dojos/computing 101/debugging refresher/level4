@@ -1,0 +1,57 @@
+# challenge: level4
+
+📅 2025-08-30
+📁 debugging refresher
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryolevel4'
+-(gdb): set disassembly-flavor intel
+-(gdb): disas main
+we can see the program works the same as level3 but is going to check for the random values 4 times
+in line main+626 there is the cmp so the goal is to verify which of the 2 regs our value will go
+-(gdb): break *main+626
+-(gdb): r
+-(gdb): c
+-typed: '1' -> wrong answer
+-(gdb): info registers
+our value is stored in rdx and the random one in rax (as before)
+-(gdb): disas main
+-(gdb): break *main+524
+so we need to dump the value in the stack, rbp-0x18, after the program set it
+-(gdb): info break
+-(gdb): delete 1
+-(gdb): r
+-(gdb): c
+-(gdb): x/gx $rbp-0x18
+-copied the value
+-(gdb): c
+-pasted the value
+correct answer
+-(gdb): x/gx $rbp-0x18
+-copied the value
+-(gdb): c
+-pasted the value
+correct answer
+-(gdb): x/gx $rbp-0x18
+-copied the value
+-(gdb): c
+-pasted the value
+correct answer
+-(gdb): x/gx $rbp-0x18
+-copied the value
+-(gdb): c
+-pasted the value
+correct answer
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the challenge works the same as level3 but wont ask the value only one time but 4 times
+shotout to bidenator who i found in pwn.college's discord break room who helped me w/ this one. it was random
+the command layout regs is so usefull to see the regs and memory while executing
+
+## 🏁 Flag
+pwn.college{IPj91OjJ8nu6lxfMiK8-NWcMzQo.ddDNywCO4IDOxEzW}
