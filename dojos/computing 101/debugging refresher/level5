@@ -1,0 +1,41 @@
+# challenge: level5
+
+📅 2025-08-30
+📁 debugging refresher
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryogdb_level5'
+-(gdb): set disassembly-flavor intel
+-(gdb): disas main
+the program works the same as before one but its going to ask for the random value 8 times.
+obviusly we can do it manually but the goal is to script it
+the value has been put in the stack so we need to dump it before the program asks for the random value
+line main+716 print that the value has been set so we can break at that line or before one
+-(gdb): q
+-ran: 'vim bro.gdb'
+-typed: 'r'
+        'break *main+709'
+        'commands'
+          'set $value=*(long*)($rbp-0x18)'
+          'printf "VALUE= %lx\n", $value'
+          'c'
+        'end'
+        'c'
+-ran: 'chmod a+x bro.gdb'
+-ran: '/challenge/embryogdb_level5 -x bro.gdb'
+-copied the value printed and pasted it (8x)
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to script w/ gdb
+the lines r the commands that u use inside gdb
+create a variable is crucial and u can do that using set 
+remember that if u do not cast a value, it will be integer as default, so in this case u have to cast it to a long
+then when u print it use l 
+
+## 🏁 Flag
+pwn.college{oOHrqKidbIwq37ecnIY3xlX1535.dhDNywCO4IDOxEzW}
