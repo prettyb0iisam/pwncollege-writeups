@@ -8,10 +8,13 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: '/challenge/embryogdb_level7'
+-(gdb): r
+-(gdb): (void)win()
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+actually if u r root u have full controll over the program making it acts as u want in every way for example call a random function
 
 ## 🏁 Flag
+pwn.college{An-SEvwdhNLygWM3spCTDibprqP.dBTNywCO4IDOxEzW}
