@@ -1,0 +1,71 @@
+# challenge: level8
+
+📅 2025-07-29
+📁 debugging refresher
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/embryogdb_level8'
+-(gdb): set disassembly-flavor intel
+-(gdb): r
+-(gdb): call (void)win()
+flag didnt pop out. i need to check whats wrong in win function
+-(gdb): disas win
+we can see that the win function prints the flag. 
+it calls:
+-puts for print the phrase: u win
+-open to open the file where the flag is stored
+-read to read the file, indeed the flag, and put it in the buffer
+-write to print the buffer
+but at very first lines we can see the prologue in which win allocates 16bytes in the stack for local variabile
+the sigfault is caused because of the line from win+12 to win+24
+the program set 0 to a variable and then put it in rax
+the error is line win+24 in which it tries to access the content of the address in rax, which is 0, and put it in eax
+we just need to bypass thoose lines
+-(gdb): break *main
+-(gdb): break *win+12
+-(gdb): r
+-(gdb): layout regs
+-(gdb): set $rip=win
+we point the rip to the first instruction win function
+-(gdb): c
+-(gdb): set $rip=win+35
+-(gdb): c
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to make a functions execute even if it is broken. u can avoid lines which cause sig-fault by setting the rip using set
+
+functions:
+puts -> prints a string. 
+it takes one argument in rdi, which is the address of the first byte of the string
+it doesnt add \0 because the string is already null-terminated
+it prints the string in stdout fl=1
+
+open -> opens a file.
+it takes 2 arguments:
+-rdi= filename's address
+-rsi= how to open the file. 0->read-only
+the output is stored in rax and it means the file descriptor. if rax is negative, the open failed
+after that the value has been stored in memory as a global variable
+
+read -> reads a value from the file descriptor
+in this case it will read it from the file we just opened
+it takes 3 arguments:
+-rdi= the file descriptor to be read
+-rsi= the address of the buffer to copy the value red
+-rdx= number of bytes to be read
+the output of the read will be stored in rax and tells how many bytes were actually read
+if its negative, the read failed
+
+write -> prints a value 
+it takes 3 arguments:
+-rdi= where to print the value
+-rsi= the buffer in which the value has been stored and to be printed
+-rdx= how many bytes to be printed
+
+## 🏁 Flag
+pwn.college{EuIRYzq23XVWk39SUyujl86s-qW.QX5MzMzwCO4IDOxEzW}
