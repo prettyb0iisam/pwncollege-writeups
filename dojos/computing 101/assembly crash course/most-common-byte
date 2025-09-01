@@ -1,0 +1,58 @@
+# challenge: most-common-byte
+
+📅 2025-09-1
+📁 assembly crash course
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+
+.intel_syntax noprefix
+.global _start
+_start:
+xor rcx,rcx
+xor rbx,rbx
+push rbp
+mov rbp,rsp
+sub rsp,rsi
+_while1:
+cmp rcx,rsi
+jge _outwhile1
+mov bl,[rdi+rcx]
+mov rax,rbp
+sub rax,rbx
+xor r11, r11
+mov r11, 1
+add [rax], r11d
+inc rcx
+jmp _while1
+_outwhile1:
+xor rcx,rcx
+xor rbx,rbx
+xor rax,rax
+_while2:
+cmp rcx,0xff
+jg _ffin
+mov rsi,rbp
+sub rsi,rcx
+cmp bl,[rsi]
+jge _endwhile2
+mov rbx,[rsi]
+mov rax,rcx
+_endwhile2:
+inc rcx
+jmp _while2
+_ffin:
+mov rsp,rbp
+pop rbp
+ret
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+thats a fucking fucked up challenge
+
+## 🏁 Flag
+pwn.college{8Xf52rcKzrbQeGz3Tn2gmCKawUK.dZTMywCO4IDOxEzW}
