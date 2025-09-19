@@ -1,0 +1,30 @@
+# challenge: exit
+
+📅 2025-09-19
+📁 building a web server
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, 60'
+        'mov rdi, 0'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+its good use to exit a program when its done executing
+to exit u call the syscall exit which number is 60
+on the first argument (rdi) u need to specify the status code of the exit
+by convention number 0 equals success
+
+## 🏁 Flag 
+pwn.college{8vh76hHXagZlgpBMzadOov-ZnnO.QXwQzMzwCO4IDOxEzW}
