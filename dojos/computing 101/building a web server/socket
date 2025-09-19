@@ -1,0 +1,51 @@
+# challenge: socket
+
+📅 2025-09-19
+📁 building a web server
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'tmux'
+-pressed: 'Ctrl+b + c'
+-pressed: 'Ctrl+b + n'
+-ran: 'grep -R socket /usr/include'
+(in tmux to scroll the bar press Ctrl+b+[, to exit the scroll mode press q)
+found out the syscall number for socket is 41
+-ran: 'grep -R AF_INET /usr/include'
+found out the AF_INET is defined into PF_INET macro
+-ran: 'grep -R PF_INET /usr/include'
+found out the PF_INET value is 2
+-ran: 'grep -R SOCK_STREAM /usr/include'
+found out the SOCK_STREAM value is 1
+-pressed: 'Ctrl+b+p'
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, 41'
+        'mov rdi, 2'
+        'mov rsi, 1'
+        'mov rdx, 0'
+        'syscall'
+        'mov rax, 60'
+        'mov rdi, 0'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the socket allows u to create a communication between client and server
+the syscall number is 41 and takes 3 arguments:
+rdi -> domain such as AF_INET, AF_INET6, AF_UNIX...
+rsi -> type such as SOCK_STREAM (tcp) or SOCK_DGRAM (udp)
+rdx -> protocol most of the time set to 0 as default
+in this challenge grep -R helps u a lot to find out the actual value of AF_INET and SOCK_STREAM inside C's libreries
+never forget to exit the program
+
+## 🏁 Flag
+pwn.college{c8T7_ta-FDZCyBKFRn02htfa86j.QXxQzMzwCO4IDOxEzW}
