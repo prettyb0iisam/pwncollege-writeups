@@ -41,8 +41,8 @@ found out the SOCK_STREAM value is 1
 ## 🧑🏾‍🏫 what this challenge teaches u
 the socket allows u to create a communication between client and server
 the syscall number is 41 and takes 3 arguments:
-rdi -> domain such as AF_INET, AF_INET6, AF_UNIX...
-rsi -> type such as SOCK_STREAM (tcp) or SOCK_DGRAM (udp)
+rdi -> domain such as AF_INET, AF_INET6, AF_UNIX... (the type of domain u wanna use)
+rsi -> type such as SOCK_STREAM (tcp), SOCK_DGRAM (udp)...(the type of socket u wanna use)
 rdx -> protocol most of the time set to 0 as default
 the value returned is in rax and its the file descriptor for the socket
 in this challenge grep -R helps u a lot to find out the actual value of AF_INET and SOCK_STREAM inside C's libreries
