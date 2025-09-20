@@ -44,6 +44,7 @@ the syscall number is 41 and takes 3 arguments:
 rdi -> domain such as AF_INET, AF_INET6, AF_UNIX...
 rsi -> type such as SOCK_STREAM (tcp) or SOCK_DGRAM (udp)
 rdx -> protocol most of the time set to 0 as default
+the value returned is in rax and its the file descriptor for the socket
 in this challenge grep -R helps u a lot to find out the actual value of AF_INET and SOCK_STREAM inside C's libreries
 never forget to exit the program
 
