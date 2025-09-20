@@ -1,0 +1,63 @@
+# challenge: accept
+
+📅 2025-09-20
+📁 building a web server
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'tmux'
+-pressed: 'Ctrl+b+c'
+-ran: 'grep -r accept /usr/include'
+found out the accept syscall number is 43
+-pressed: 'Ctrl+b+p'
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, 41'
+        'mov rdi, 2'
+        'mov rsi, 1'
+        'mov rdx, 0'
+        'syscall'
+        'mov r10, rax'
+        'sub rsp, 16'
+        'mov r11, 0x2'
+        'mov [rsp], r11w'
+        'mov r11, 0x5000'
+        'mov [rsp+2], r11w'
+        'mov r11, 0x00000000'
+        'mov [rsp+4], r11d'
+        'mov r11, 0'
+        'mov [rsp+8], r11d'
+        'mov rax, 49'
+        'mov rdi, r10'
+        'mov rsi, rsp'
+        'mov rdx, 16'
+        'syscall'
+        'mov rax, 50'
+        'mov rdi, r10'
+        'mov rsi, 0'
+        'syscall'
+        'mov rax, 43'
+        'mov rdi, r10'
+        'mov rsi, 0'
+        'mov rdx, 0'
+        'syscall'
+        'mov rax, 60'
+        'mov rdi, 0'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+accept syscall number is 43 and it takes 3 arguments:
+rdi -> socket file descriptor
+rsi -> pointer to a struct w/ details of the client. u can use NULL to avoid details
+rdx -> struct's lenght. set to NULL if rsi is NULL
+
+## 🏁 Flag
+pwn.college{MZV6cc2Fw-gfkddajCLow_E6_CF.QX0QzMzwCO4IDOxEzW}
