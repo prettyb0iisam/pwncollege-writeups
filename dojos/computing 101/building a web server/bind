@@ -1,0 +1,69 @@
+# challenge: bind
+
+📅 2025-09-20
+📁 building a web server
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'tmux'
+-pressed: 'Ctrl+b+C'
+-ran: 'grep -r bind /usr/include'
+found out the syscall number for bind is 49
+the 3 arguments it takes are: file descriptor, struct sockaddr, struct sockaddr len 
+the file descriptor is the result obtained into rax after socket syscall
+since we r using AF_INET (IPv4) we r supped to use struct sockaddr_in
+-ran: 'grep -r "struct sockaddr_in" /usr/include'
+found out the full implementation of struct sockaddr_in is in /usr/include/linux/in.h
+-ran: 'cat /usr/include/linux/in.h'
+found out the size of the struct is 16bytes:
+0-1 -> address family
+2-3 -> port
+4-7 -> internet address
+8-15 -> padding
+-pressed: 'Ctrl+b+p'
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, 41'
+        'mov rdi, 2'
+        'mov rsi, 1'
+        'mov rdx, 0'
+        'syscall'
+        'mov r10, rax'
+        'sub rsp, 16'
+        'mov r11, 0x2'
+        'mov [rsp], r11w'
+        'mov r11, 0x5000'
+        'mov [rsp+2], r11w'
+        'mov r11, 0x0'
+        'mov [rsp+4], r11d'
+        'mov [rsp+8], r11d'
+        'mov rax, 49'
+        'mov rdi, r10'
+        'mov rsi, rsp'
+        'mov rdx, 16'
+        'syscall'
+        'mov rax, 60'
+        'mov rdi, 0'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+after creating the socket u need to bind it using the bind syscall (number 49)
+bind allows u to set the family address of the domain, the IP address and the port
+the 3 arguments it takes r:
+socket file descriptor -> socket results in rax
+struct sockaddr -> in this case struct sockaddr_in because we setted in the socket the AF_INET domain
+                   the struct has 3 parameters: family address (2bytes), port (2bytes), ip address (4bytes), padding (8 bytes)
+sockaddr len -> 16bytes for sockaddr_in
+the struct has been implemented inside the stack and the values r in big endian (endianess)
+
+## 🏁 Flag
+pwn.college{kh000CtnCgAB05pZ2r0BW4R9Vpd.QXyQzMzwCO4IDOxEzW}
