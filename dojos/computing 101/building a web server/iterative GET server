@@ -99,7 +99,7 @@
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 to accept multiple request u just need to add an accept syscall at the end before the exit
-im not sure this is the right way, i pretty sure im supposed to loop accept, read, open, read, close, write, write..
+im not sure this is the right way, im pretty sure im supposed to loop accept, read, open, read, close, write...
 
 ## 🏁 Flag 
 pwn.college{MxeknFtWpi5CDKmqvBHxSqjSSne.QX3QzMzwCO4IDOxEzW}
