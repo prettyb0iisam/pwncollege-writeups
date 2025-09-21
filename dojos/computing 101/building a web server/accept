@@ -58,6 +58,7 @@ accept syscall number is 43 and it takes 3 arguments:
 rdi -> socket file descriptor
 rsi -> pointer to a struct w/ details of the client. u can use NULL to avoid details
 rdx -> struct's lenght. set to NULL if rsi is NULL
+accept gives back a file descriptor in which there is an active communication between the server and the client
 
 ## 🏁 Flag
 pwn.college{MZV6cc2Fw-gfkddajCLow_E6_CF.QX0QzMzwCO4IDOxEzW}
