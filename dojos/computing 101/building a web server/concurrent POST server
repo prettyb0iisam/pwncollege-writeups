@@ -1,0 +1,133 @@
+# challenge: concurrent POST server
+
+📅 2025-09-21
+📁 building a web server
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '.data'
+        'data:  .ascii  "HTTP/1.0 200 OK\r\n\r\n"'
+        'data_len= . - data'
+        'msg:   .skip  1024'
+        'content:  .skip  256'
+        '.text'
+        '_start:'
+        'mov rax, 41'
+        'mov rdi, 2'
+        'mov rsi, 1'
+        'mov rdx, 0'
+        'syscall          #socket'
+        'mov r10, rax'
+        'sub rsp, 16'
+        'mov r11, 0x2'
+        'mov [rsp], r11w'
+        'mov r11, 0x5000'
+        'mov [rsp+2], r11w'
+        'mov r11, 0x00000000'
+        'mov [rsp+4], r11d'
+        'mov r11, 0'
+        'mov [rsp+8], r11d'
+        'mov rax, 49'
+        'mov rdi, r10'
+        'mov rsi, rsp'
+        'mov rdx, 16'
+        'syscall            #bind'
+        'mov rax, 50'
+        'mov rdi, r10'
+        'mov rsi, 0'
+        'syscall            #listen'
+        'mov rax, 43'
+        'mov rdi, r10'
+        'mov rsi, 0'
+        'mov rdx, 0'
+        'syscall            #accept'
+        'mov r12, rax'
+        'mov rax, 57'
+        'syscall         #fork'
+        'cmp rax, 0'
+        'je child'
+        'jmp parent'
+        'child:'
+        'mov rax, 3'
+        'mov rdi, r10'
+        'syscall         #close'
+        'mov rax, 0'
+        'mov rdi, r12'
+        'lea rsi, msg'
+        'mov rdx, 1024'
+        'syscall            #read'
+        'mov r14, rax'
+        'mov rax, 2'
+        'lea rcx, msg'
+        'add rcx, 5'
+        'mov rbx, 0x0'
+        'mov [rcx+16], rbx'
+        'mov rdi, rcx'
+        'mov rsi, 0x41'
+        'mov rdx, 0777'
+        'syscall            #open'
+        'mov r8, rax'
+        'mov rax, 1'
+        'mov rdi, r8'
+        'lea rcx, msg'
+        'add rcx, 0xb7'
+        'mov rsi, rcx'
+        'sub r14, 0xb7'
+        'mov rdx, r14'
+        'syscall            #write'
+        'mov rax, 3'
+        'mov rdi, r8'
+        'syscall            #close'
+        'mov rax, 1'
+        'mov rdi, r12'
+        'lea rsi, data'
+        'mov rdx, data_len'
+        'syscall            #write'
+        'mov rax, 60'
+        'mov rdi, 0'
+        'syscall         #exit'
+        'parent:'
+        'mov rax, 3'
+        'mov rdi, r12'
+        'syscall            #close'
+        'mov rax, 43'
+        'mov rdi, r10'
+        'mov rsi, 0'
+        'mov rdx, 0'
+        'syscall            #accept'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to handle POST requests and parse the full request
+the POST request contain: REQUEST (the file needed), HEADER (client's details) and BODY (content the client is sending to the server)
+its crucial to parse correctly the full request to extract the file needed and body's content
+a good way can be saving the full request in a variable and then use a register as a pointer to go directly to the byte needed
+then figure out how many bytes the write syscall must print
+in this case my code obtain successfully the flag only when the Content-Lenght is 3digits. 
+it fails when its only 2digits because it fail to write the very first byte of body's content.
+so yeah, just for one byte sometimes it fails 
+in this case the write syscall takes as second argument O_WRONLY|O_CREAT it means write only or create the file. 
+O_RDONLY = 0
+O_WRONLY = 1
+O_RDWR = 2
+O_CREAT = 64
+O_WRONLY|O_CREAT = 65 (dec) = 0x41 (hex)
+the third argument handle the permissions of the file that has been created (0_CREATE) -> rwxrwxrwx=0777
+to extract the post's content-lenght i've subtracted the result of read syscall with 0xb7 (183 dec)
+write syscall start from msg+0xb7
+if post'content-lenght is 2digits, it would be supposed to start from msg+0xb6
+i need to find out a way to implement this check -> i was thinking to check the byte at msg+0xb7
+if its \n -> 3 digits -> works fine
+if its C -> 2 digits -> start at msg+0xb6 
+  
+## 🏁 Flag
+pwn.college{oGIYVtSJabHppIOGyQTZeDIQfdQ.QX5QzMzwCO4IDOxEzW}
