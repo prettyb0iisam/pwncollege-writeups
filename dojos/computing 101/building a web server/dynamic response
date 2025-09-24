@@ -133,6 +133,10 @@ then in the second space im supposed to put \0 because it ends the file's name s
 once open it, read it. the return value of the read syscall tell u how many bytes has been read.
 that value is crucial because allows u to write the correct number of bytes when u send the content asked for to the client
 challenge very usefull to understand deeply open, read and write syscalls. also declare variable to store buffer
+WARNING!
+i was using register r11 to store the value of rax after read syscall and then load when it comes to the second write.
+i found out that in syscalls between the second read and second write, the kernel use r11 to store other values losing the og one and i was failing all the time the second write
+rax, rcx and r11 are clobbered. that means that syscalls use these regs to store other values so its better to push the og value in the stack or use other registers
 
 ## 🏁 Flag
 pwn.college{8Dkt0QCCqp1D2ou3AFxaCNw2zL4.QX2QzMzwCO4IDOxEzW}
