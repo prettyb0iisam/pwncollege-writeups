@@ -1,0 +1,271 @@
+# challenge: web server
+
+📅 2025-09-24
+📁 building a web server
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix
+.global _start
+
+.data
+data:   .ascii  "HTTP/1.0 200 OK\r\n\r\n"
+data_len= . - data
+
+msg:    .skip   1024
+
+space:  .ascii  " "
+
+new_line:       .ascii  "\r\n\r\n"
+
+method: .ascii  "G"
+
+content:        .skip   1024
+
+.text
+_start:
+#SOCKET
+mov rax, 41
+mov rdi, 2
+mov rsi, 1
+mov rdx, 0
+syscall
+mov r8, rax
+
+
+#BIND
+mov rax, 49
+mov rdi, r8
+sub rsp, 16
+mov rsi, 0x2
+mov [rsp], si
+mov rsi, 0x5000
+mov [rsp+2], si
+mov rsi, 0x0
+mov [rsp+4], si
+mov [rsp+8], si
+mov rsi, rsp
+mov rdx, 16
+syscall
+
+
+#LISTEN
+mov rax, 50
+mov rdi, r8
+mov rsi, 0
+syscall
+
+LOOP:
+#ACCEPT
+mov rax, 43
+mov rdi, r8
+mov rsi, 0
+mov rdx, 0
+syscall
+mov r9, rax
+
+
+#FORK
+mov rax, 57
+syscall
+cmp rax, 0
+je CHILD
+jmp PARENT
+
+PARENT:
+#CLOSE
+mov rax, 3
+mov rdi, r9
+syscall
+jmp LOOP
+
+
+CHILD:
+#CLOSE
+mov rax, 3
+mov rdi, r8
+syscall
+
+#READ
+mov rax, 0
+mov rdi, r9
+lea rsi, msg
+mov rdx, 1024
+syscall
+push rax
+
+#GET OR POST?
+lea rax, method
+lea rbx, msg
+mov al, [rax]
+mov bl, [rbx]
+cmp al, bl
+je GET
+jmp POST
+
+
+GET:
+#OPEN
+mov rax, 2
+lea rdi, space
+mov dil, [rdi]
+lea rdx, msg
+check:
+mov bl, [rdx]
+cmp dil, bl
+je entry
+inc rdx
+jmp check
+entry:
+inc rdx
+push rdx
+entryy:
+inc rdx
+terminatore:
+mov bl, [rdx]
+cmp dil, bl
+jne entryy
+mov rdi, 0x0
+mov [rdx], dil
+pop rdi
+mov rsi, 0
+syscall
+mov r10, rax
+#READ
+mov rax, 0
+mov rdi, r10
+lea rsi, content
+mov rdx, 256
+syscall
+push rax
+#CLOSE
+mov rax, 3
+mov rdi, r10
+syscall
+#WRITE
+mov rax, 1
+mov rdi, r9
+lea rsi, data
+mov rdx, data_len
+syscall
+#WRITE
+mov rax, 1
+mov rdi, r9
+lea rsi, content
+pop rdx
+syscall
+#EXIT
+mov rax, 60
+mov rdi, 0
+syscall
+jmp LOOP
+
+
+
+
+
+
+
+
+POST:
+#OPEN
+mov rax, 2
+lea rdi, space
+mov dil, [rdi]
+lea rdx, msg
+checkk:
+mov bl, [rdx]
+cmp dil, bl
+je entryk
+inc rdx
+jmp checkk
+
+entryk:
+inc rdx
+push rdx
+entryyk:
+inc rdx
+terminatorek:
+mov bl, [rdx]
+cmp dil, bl
+jne entryyk
+mov rdi, 0x0
+mov [rdx], dil
+pop rdi
+mov rsi, 0x41
+mov rdx, 0777
+syscall
+mov r10, rax
+
+
+#WRITE
+mov rax, 1
+mov rdi, r10
+
+lea rsi, msg
+find:
+lea rcx, new_line
+xor r11, r11
+mov al, [rcx]
+findd:
+mov bl, [rsi]
+cmp al, bl
+je next_value
+inc rsi
+jmp findd
+
+next_value:
+cmp r11, 3
+je finish
+inc rsi
+inc rcx
+mov al, [rcx]
+mov bl, [rsi]
+cmp al, bl
+jne find
+inc r11
+jmp next_value
+
+finish:
+inc rsi
+lea rdx, msg
+pop r11
+push rsi
+sub rsi, rdx
+sub r11, rsi
+mov rdx, r11
+pop rsi
+mov rax, 1
+syscall
+
+
+#CLOSE
+mov rax, 3
+mov rdi, r10
+syscall
+
+
+#WRITE
+mov rax, 1
+mov rdi, r9
+lea rsi, data
+mov rdx, data_len
+syscall
+
+
+#EXIT
+mov rax, 60
+mov rdi, 0
+syscall
+jmp LOOP'
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag
+pwn.college{oyMipZ5AORdVfM1e_XpFyxS3ntw.QXwUzMzwCO4IDOxEzW}
