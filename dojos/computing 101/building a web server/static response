@@ -69,11 +69,13 @@
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-how to repsonse statically to a connection requests
-first u have to read the request the client sents u and the reply using write
+how to response statically to a connection requests
+first u have to read the request the client sents u and then reply using write
+u can read the request by saving it to a variable (label).
+in this case: msg: .skip 256 -> declare a variable in the buffer of 256bytes zeroed in which then will take the client's request
+the file descriptor is crucial because its there where it will start reading
+the result of read is how many bytes has been read
 dont forget to close the file descriptor and exit
-when u read the request from the client also u need to save it in the buffer (as in this case) or stack
-before that u have to declare the variable and allocate space for it using .skip [SIZE]
 
 ## 🏁 Flag
 pwn.college{gppkv8y961FywA2z_vCYa09YWQH.QX1QzMzwCO4IDOxEzW}
