@@ -52,6 +52,7 @@ found out the syscall number for listen is 50
 after create the socket and bind it, u have to make the server able to listen on the port
 u can achieve this using the listen syscall which its number is 50
 it takes only 2 arguments, the socket file descriptor and the backlog -> number of requests that can be in the queue
+if rsi=0=1 that means it can accept only one request a time, all the others will be declined
 
 ## 🏁 Flag 
 pwn.college{QfsLcj7RRHDPhA8chtE1nEWAocj.QXzQzMzwCO4IDOxEzW}
