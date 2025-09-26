@@ -54,5 +54,36 @@ the challenge expects u to write a function that the emulator calls, so you must
 i realized it after 8hrs thanks to pwn's discord
 shoutout to https://writeups.kunull.net/Pwn%20College/Assembly%20Crash%20Course which helped me A LOT solving this challenge
 
+UPDATE
+its been almost 2months im studying assembly and now everything is getting easier
+i decided to try this challenge again and in 4mins i wrote the right code giving me the flag
+this shit is so gratefull (26settember2025)
+.intel_syntax noprefix
+.global _start
+_start:
+xor rcx, rcx
+cmp rdi, 0
+je done
+loop:
+mov al, [rdi]
+cmp al, 0
+je done
+cmp al, 0x5a
+ja next
+push rdi
+mov dil, al
+mov rax, 0x403000
+call rax
+pop rdi
+mov [rdi], al
+inc rcx
+next:
+inc rdi
+jmp loop
+done:
+mov rax, rcx
+ret
+i remember it tooks me almost 1day to solve it. now only 4mins, amazing
+by the way i can definetly tell web server>>>>string-lower or most-common-byte
 ## 🏁 Flag
 pwn.college{4SoIibYgB9KHlFZMvIkDydg_Niw.dVTMywCO4IDOxEzW}
