@@ -54,5 +54,83 @@ ret
 ## 🧑🏾‍🏫 what this challenge teaches u
 thats a fucking fucked up challenge
 
+
+
+.intel_syntax noprefix
+.global _start
+
+_start:
+push rbp
+mov rbp, rsp
+sub rsp, 512
+
+
+xor rax, rax
+xor rbx, rbx
+
+zero:
+cmp rbx, 511
+ja code
+mov [rsp+rbx], al
+inc rbx
+jmp zero
+
+code:
+xor rax, rax
+xor rbx, rbx
+dec rsi
+loop:
+xor r10, r10
+xor rcx, rcx
+cmp rax, rsi
+ja next
+mov r8, rdi
+add r8, rax
+mov cl, [r8]
+imul rcx, 2
+mov r10, rbp
+sub r10, rcx
+mov r9w, [r10]
+inc r9
+mov [r10], r9w
+inc rax
+jmp loop
+
+
+
+next:
+xor rax, rax
+xor rbx, rbx
+xor rcx, rcx
+
+looop:
+xor r11, r11
+cmp bx, 0xff
+ja finish
+mov r9, rbx
+imul r9, 2
+mov r10, rbp
+sub r10, 2
+sub r10, r9
+mov r11w, [r10]
+cmp r11w, ax
+jbe keep
+mov ax, [r10]
+mov cl, bl
+keep:
+inc rbx
+jmp looop
+
+
+
+finish:
+mov rax, rcx
+inc rax
+mov rsp, rbp
+pop rbp
+ret
+
+
+
 ## 🏁 Flag
 pwn.college{8Xf52rcKzrbQeGz3Tn2gmCKawUK.dZTMywCO4IDOxEzW}
