@@ -9,128 +9,79 @@
 -clicked start
 -opened the terminal
 -ran: 'vim bro.s'
-
-.intel_syntax noprefix
-.global _start
-_start:
-xor rcx,rcx
-xor rbx,rbx
-push rbp
-mov rbp,rsp
-sub rsp,rsi
-_while1:
-cmp rcx,rsi
-jge _outwhile1
-mov bl,[rdi+rcx]
-mov rax,rbp
-sub rax,rbx
-xor r11, r11
-mov r11, 1
-add [rax], r11d
-inc rcx
-jmp _while1
-_outwhile1:
-xor rcx,rcx
-xor rbx,rbx
-xor rax,rax
-_while2:
-cmp rcx,0xff
-jg _ffin
-mov rsi,rbp
-sub rsi,rcx
-cmp bl,[rsi]
-jge _endwhile2
-mov rbx,[rsi]
-mov rax,rcx
-_endwhile2:
-inc rcx
-jmp _while2
-_ffin:
-mov rsp,rbp
-pop rbp
-ret
-
+-typed: '.intel_syntax noprefix
+        '.global _start'
+        '_start:'
+        'push rbp'
+        'mov rbp, rsp'
+        'sub rsp, 512'
+        'xor rax, rax'
+        'xor rbx, rbx'
+        'zero:'
+        'cmp rbx, 511'
+        'ja code'
+        'mov [rsp+rbx], al'
+        'inc rbx'
+        'jmp zero'
+        'code:'
+        'xor rax, rax'
+        'xor rbx, rbx'
+        'dec rsi'
+        'loop:'
+        'xor r10, r10'
+        'xor rcx, rcx'
+        'cmp rax, rsi'
+        'ja next'
+        'mov r8, rdi'
+        'add r8, rax'
+        'mov cl, [r8]'
+        'imul rcx, 2'
+        'mov r10, rbp'
+        'sub r10, rcx'
+        'mov r9w, [r10]'
+        'inc r9'
+        'mov [r10], r9w'
+        'inc rax'
+        'jmp loop'
+        'next:'
+        'xor rax, rax'
+        'xor rbx, rbx'
+        'xor rcx, rcx'
+        'looop:'
+        'xor r11, r11'
+        'cmp bx, 0xff'
+        'ja finish'
+        'mov r9, rbx'
+        'imul r9, 2'
+        'mov r10, rbp'
+        'sub r10, 2'
+        'sub r10, r9'
+        'mov r11w, [r10]'
+        'cmp r11w, ax'
+        'jbe keep'
+        'mov ax, [r10]'
+        'mov cl, bl'
+        'keep:'
+        'inc rbx'
+        'jmp looop'
+        'finish:'
+        'mov rax, rcx'
+        'inc rax'
+        'mov rsp, rbp'
+        'pop rbp'
+        'ret'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/run bro'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 thats a fucking fucked up challenge
 
-
-
-.intel_syntax noprefix
-.global _start
-
-_start:
-push rbp
-mov rbp, rsp
-sub rsp, 512
-
-
-xor rax, rax
-xor rbx, rbx
-
-zero:
-cmp rbx, 511
-ja code
-mov [rsp+rbx], al
-inc rbx
-jmp zero
-
-code:
-xor rax, rax
-xor rbx, rbx
-dec rsi
-loop:
-xor r10, r10
-xor rcx, rcx
-cmp rax, rsi
-ja next
-mov r8, rdi
-add r8, rax
-mov cl, [r8]
-imul rcx, 2
-mov r10, rbp
-sub r10, rcx
-mov r9w, [r10]
-inc r9
-mov [r10], r9w
-inc rax
-jmp loop
-
-
-
-next:
-xor rax, rax
-xor rbx, rbx
-xor rcx, rcx
-
-looop:
-xor r11, r11
-cmp bx, 0xff
-ja finish
-mov r9, rbx
-imul r9, 2
-mov r10, rbp
-sub r10, 2
-sub r10, r9
-mov r11w, [r10]
-cmp r11w, ax
-jbe keep
-mov ax, [r10]
-mov cl, bl
-keep:
-inc rbx
-jmp looop
-
-
-
-finish:
-mov rax, rcx
-inc rax
-mov rsp, rbp
-pop rbp
-ret
-
-
+UPDATE
+i was able to complete this challenge only a couple of weeks after first trying it.
+i managed to solve it after finishing Building a Web Server and i found it way easier than first time
+the tougher it gets over time, the more accomplished u will feel at the end
 
 ## 🏁 Flag
 pwn.college{8Xf52rcKzrbQeGz3Tn2gmCKawUK.dZTMywCO4IDOxEzW}
