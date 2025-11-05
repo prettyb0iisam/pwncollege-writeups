@@ -1,0 +1,32 @@
+# challenge: flag 0
+
+📅 2025-11-05
+📁 welcome
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/flag0'
+found out the input would have been converted using MD5 hashing
+this hash systems takes a string and return another string of 32chars hex every time
+it allocates 16bytes into the stack and 33bytes into the heap.
+digest -> 16bytes in which MD5 will create for each byte its own raw byte starting from each char of the string
+digest_str -> 33bytes which is basically the digest but padded and the last byte is the \0
+once md5sum function is done, it passes the output to check_flag which compare w/ 7de38f3c3d3baa7ca58a366f09577586
+used online tools to reverse 7de38f3c3d3baa7ca58a366f09577586 and found out the input was 'secrets'
+-ran: '/challenge/flag0'
+-typed: 'secrets'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+a lot about crypto and hashing systems
+how MD5 works, but it is not considerate secure anymore cuz of collisions. 
+those type of hashing systems r not reversable, it means u cannot obtaind the original input just from the output
+in this case i was able to obtain the og input because there are online tools which can obtain the og input because the output is well known
+https://crackstation.net/ allowed me to obtain the og input just from the output.
+i checked it was right putting the output the website gave to me as input to https://gchq.github.io/CyberChef/ specifying MD5 as operation
+
+## 🏁 Flag  
+pwn.college{UGkhQMGdykc6uslal3N8dJiflUc.0VMxgDOxwCO4IDOxEzW}
