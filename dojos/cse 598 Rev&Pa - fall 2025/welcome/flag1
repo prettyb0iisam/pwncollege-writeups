@@ -1,0 +1,29 @@
+# challenge: flag1
+
+📅 2025-11-05
+📁 welcome
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/flag1'
+copied the output in check_flag and put it in crackstation.net
+obtained 'symbolic' (but in md5)
+checked deeply the source code
+found out the hashing function the code calls is still MD5 but 2x
+put the output in crackstation separated in the middle:
+7bf46ad61adc2265f803fc3b798b3559
+ffc92c458b8c2fae185c283126663580
+obtained correctly: 'symbolic execution'
+-ran: '/challenge/flag1'
+-typed: 'symbolic' or 'symbolic execution'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+i think the source code is bugged but fortunately i could undestand anyway how the code works and obtained the flag
+in this case it was just 2words hashed
+
+## 🏁 Flag
+pwn.college{AiYj23d8ogIUBN-80fZOAInp6wy.0lMxgDOxwCO4IDOxEzW}
