@@ -1,6 +1,6 @@
-# challenge: falg -1
+# challenge: flag -1
 
-📅 2025-11-03
+📅 2025-11-05
 📁 welcome
 
 ---
@@ -8,10 +8,24 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'cat /challenge/flag-1.c'
+the code asks for a string. it saves it to a variable called flag and then iterate to it.
+for even indexes it xor with 1
+for odd indexes it add 1
+the final string should be: ixbhwewqlpfueo8l5mzbes0zoyycbmnd
+using https://xor.pw/ i obtained the xor value for even indexes
+using the ascii table i was able to subtract 1 to the character
+password: hwcgvdvpmogtdn9k4l{adr1ynxxbcloc 
+-ran: '/challenge/flag-1'
+-typed: 'hwcgvdvpmogtdn9k4l{adr1ynxxbcloc'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+it helps understanding deeply how program analysis works and rev
+at first i was trying to copy the source code to a new file and removing the for loop responsable for password validation
+i compiled the new file, bypassed successfully password encryption but could not able to open the flag file because of permissions
+so the only way was running the elf from /challenge/flag-1 and since the code is read-execute only i was not able to remove the for loop preventing me from code manipulation
+the only way was giving the code the right password
 
 ## 🏁 Flag
+pwn.college{cJ0tR6vdoj-aCsam35uYORtkwMR.0FMxgDOxwCO4IDOxEzW}
