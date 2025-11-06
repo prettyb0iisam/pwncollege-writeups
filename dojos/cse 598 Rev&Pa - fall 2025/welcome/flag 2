@@ -1,0 +1,27 @@
+# challenge: flag 2
+
+📅 2025-11-06
+📁 welcome
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -la /challenge'
+could not find the source code of flag2
+-ran: 'cat /challenge/.init'
+found out the flag2.c file was removed
+-ran: 'cat /challenge/flag2'
+found a string inside all the not readable chars: 'what_a_l0vely_day'
+i could have used also another command to find the string: 'strings /challenge/flag2'
+-ran: '/challenge/flag2'
+-typed: 'what_a_l0vely_day'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+even if u do not have the original elf's source code, u can use strings or cat the elf file to check for ascii chars sequences
+in this case the password was harcoded inside the file w/out being obfuscated
+
+## 🏁 Flag
+pwn.college{wsg9nMeqWAggJHSgLrFHZAAhJz9.01MxgDOxwCO4IDOxEzW}
