@@ -1,0 +1,19 @@
+# challenge: filtering with sed
+
+📅 2025-11-06
+📁 practicing piping
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run | sed "s/FAKEFLAG//g"'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+sed super useful to filter output
+the syntax is pretty simple: s/=substitute oldword/=original word to remove  neword/=new word to substitute the og one  /g=globally
+
+## 🏁 Flag
+pwn.college{Y_OntChCXSc0XK2KbnKBhrU0sdm.01NxQTMywCO4IDOxEzW}
