@@ -1,0 +1,19 @@
+# challenge: copying files
+
+📅 2025-11-05
+📁 comprehending commands
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cp /flag /tmp/hack-the-planet'
+-ran: '/challenge/check'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to copy a file to a new one using cp command
+
+## 🏁 Flag
+pwn.college{MvlgJL20LN2GDKsxSTJu0gAf9o4.0lNxQTMywCO4IDOxEzW}
