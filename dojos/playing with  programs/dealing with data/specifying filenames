@@ -1,0 +1,21 @@
+# challenge: specifying filenames
+
+📅 2025-11-07
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the program will open the file passed as first argument to it (argv[1])
+-ran: 'echo -n "vibeywaq" > bro'
+-ran: '/challenge/runme bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to pass a file as first argument to a program
+
+## 🏁 Flag 
+pwn.college{4rykoMKGBGiUdp8RM0fX45bVaFi.01M1YDNxwCO4IDOxEzW}
