@@ -1,0 +1,22 @@
+# challenge: ...and again!
+
+📅 2025-11-07
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+-copied the password
+-ran: 'echo "ianzwuxn" | /challenge/runme'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the challenge works the same as the prevoius one
+in this case i tried echo "[PASSWORD]" instead of first running the file and second entering the password
+the key difference is echo wont insert \n at the end of input
+
+## 🏁 Flag 
+pwn.college{csbT1h1E1WNkIOgtpOI_m-K3Jr5.0FM1YDNxwCO4IDOxEzW}
