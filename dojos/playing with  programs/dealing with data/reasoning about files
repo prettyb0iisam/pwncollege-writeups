@@ -1,0 +1,22 @@
+# challenge: reasoning about files
+
+📅 2025-11-07
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the code wont ask for the password from the terminal but it will look for it on a file called 'ypdm'
+-ran: 'echo -n "yblzvxqa" > ypdm'
+-ran: '/challenge/runme'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+applied what linux luminarium dojos thaught me on files redirection
+> '[FILE's NAME]'  allowed me to redirect the input to a file
+
+## 🏁 Flag  
+pwn.college{U6DOdfQYWNwJetUGTLnasQcUhGa.0lM1YDNxwCO4IDOxEzW}
