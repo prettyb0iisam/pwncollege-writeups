@@ -1,0 +1,20 @@
+# challenge: newline troubles
+
+📅 2025-11-07
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+-found out that entered_password has no .strip(), it means the input will contain \n
+-ran: 'echo -n "tyisvanz" | /challenge/runme'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+echo -n allowed me to remove \n from input
+
+## 🏁 Flag 
+pwn.college{0k7G0tKnpX_Ypz5YXlktMKMvsCb.0VM1YDNxwCO4IDOxEzW}
