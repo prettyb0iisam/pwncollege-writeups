@@ -1,0 +1,27 @@
+# challenge: decoding hex
+
+📅 2025-11-08
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the process the code does is the same as previous challenges:
+asks for input as BYTES
+BYTES -> STR -> STR (hex) -> BYTES  ->confront w/ correct_password
+in this caso tho to obtain the correct og input i reversed the sequence and used 'c8b4b9bafce9bec6' as input
+b'c8b4b9bafce9bec6' -> 'c8b4b9bafce9bec6' -> '\xc8\xb4\xb9\xba\xfc\xe9\xbe\xc6' -> b'\xc8\xb4\xb9\xba\xfc\xe9\xbe\xc6'
+so this means the right input is '\xc8\xb4\xb9\xba\xfc\xe9\xbe\xc6'
+at first i tryed to put it as input once the code asks for password but it was incorrect, reading 33bytes
+i found out that i had to being able make echo read escapes symbols from input so i used the -e flag in echo
+-ran: 'echo -ne "\xc8\xb4\xb9\xba\xfc\xe9\xbe\xc6" | /challenge/runme'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the -e flag in echo, will allow echo to read escape symbols properly
+
+## 🏁 Flag
+pwn.college{Q0vACNezH7F-zoYe7jevon7XFoX.0lN1YDNxwCO4IDOxEzW}
