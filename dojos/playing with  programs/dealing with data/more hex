@@ -1,0 +1,24 @@
+# challenge: more hex
+
+📅 2025-11-08
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the challenge works the same as previous one but in this case askes for more data
+took the follow input: \xbe\xb0\x9b\x9e\xe9\xcf\xe3\xbc and removed every \x and pass it as input to the code
+i was trying to do: 'echo -n "\xbe\xb0\x9b\x9e\xe9\xcf\xe3\xbc" | sed "s/\x//g" > bro'
+and then copying the data inside bro and pasted when the code asks for password but idk why is not working
+-ran: '/challenge/runme'
+-typed: 'beb09b9ee9cfe3bc'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+every time u mix two things u have just learned and u sure everything is correct, somehow that shit wont work💀
+
+## 🏁 Flag
+pwn.college{kTvG1dK-F5yVKdSfaozaumc_nTi.0VN1YDNxwCO4IDOxEzW}
