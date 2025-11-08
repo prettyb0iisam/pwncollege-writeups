@@ -1,6 +1,6 @@
 # challenge: binary and hex encoding
 
-📅 2025-11-07
+📅 2025-11-08
 📁 dealing with data
 
 ---
@@ -8,11 +8,26 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'cat /challenge/runme'
+found out the code asks for input and manipulates it
+the input's type is bytes because of sys.stdin.buffer.read1()
+it goes in this way:
+BYTES -> STR -> STR(hex) -> BYTES
+and ultimately compare it w/ correct_password (b"\x8d")
+-ran: '/challenge/runme'
+-typed: '8d' -> this will add \n at the end -> '8d\n'
+or i could have done this also: 'echo -n "8d" | /challenge/runme'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+strings in python can be distinct in 2 types: BYTES or STR
+bytes has b in front
+str r just strings in unicode while BYTES r raw bytes
+entered_password = sys.stdin.buffer.read1() -> BYTES
+bds = BYTES -> DECODE -> STRINGS
+seb = STRINGS -> ENCODE -> BYTES
+entered_password.decode("l1") -> STRINGS
+bytes.fromhex() -> BYTES (from hex str)
 
 ## 🏁 Flag 
 pwn.college{wX0UcNqfDcv0lNDo-5ObT5t4Ava.0FN1YDNxwCO4IDOxEzW}
