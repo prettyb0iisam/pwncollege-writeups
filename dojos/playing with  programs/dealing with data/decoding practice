@@ -1,0 +1,31 @@
+# challenge: decoding practice
+
+📅 2025-11-08
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the correct_password is b"1110010111000011111111001111101110100101101001011000010010110000"
+the code manipulates it in this way:
+BYTES -> STR (in base 2) -> int (in base 10) -> BYTES
+to obtain the right password i divided the correct password in 8 octets:
+11100101 11000011 11111100 11111011 10100101 10100101 10000100 10110000
+i convert it from binary to dec
+229 195 252 251 165 165 132 176
+i tried to pass them as input w/ echo: 'echo -ne "\229\195\252\251\165\165\132\176" | /challenge/runme'
+this was not working tho because echo is not able to read dec values. it reads only hex and octal with -e flag
+so i convert the value from binary to hex using https://www.rapidtables.com/convert/number/binary-to-hex.html
+E5 C3 FC FB A5 A5 84 B0
+-ran: 'echo -ne "\xe5\xc3\xfc\xfb\xa5\xa5\x84\xb0" | /challenge/runme'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in python int means dec in base 10
+echo is not able to interpret dec values such as \229 or \195, it is only able to interpret hex and oct w/ -e flag
+
+## 🏁 Flag
+pwn.college{8wqNVsz8tMoEk6Mu3TtkUqOrFk3.01N1YDNxwCO4IDOxEzW}
