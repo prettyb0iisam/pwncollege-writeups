@@ -23,9 +23,32 @@ E5 C3 FC FB A5 A5 84 B0
 -ran: 'echo -ne "\xe5\xc3\xfc\xfb\xa5\xa5\x84\xb0" | /challenge/runme'
 -flag popped out
 
+with python code:
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = 'error'
+
+p = process("/challenge/runme")
+
+password = b"1110010111000011111111001111101110100101101001011000010010110000"
+
+password = bytes.decode(password)
+
+payload = int.(password, 2)
+
+payload = int.to_bytes(payload, lenght=len(password) // 8, byteorder="big")
+
+p.write(payload)
+
+result = p.readall()
+
+print(result.decode('utf-8'))
+
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 in python int means dec in base 10
 echo is not able to interpret dec values such as \229 or \195, it is only able to interpret hex and oct w/ -e flag
+int also does not have len as method
 
 ## 🏁 Flag
 pwn.college{8wqNVsz8tMoEk6Mu3TtkUqOrFk3.01N1YDNxwCO4IDOxEzW}
