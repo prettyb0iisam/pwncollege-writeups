@@ -1,0 +1,45 @@
+# challenge: encoding practice
+
+📅 2025-11-08
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+understood the loop and wrote a script which works exactly the opposite to obtain the correct password
+copied the password
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/runme")'
+        'password = b"\xf7\xc5\xd6\xe4\xc9\xae\xdd\xe9"'
+        'password = int.from_bytes(password, byteorder="big")'
+        'password = bin(password)'
+        'payload = str.encode(password)'
+        'payload = payload[2:]'
+        'p.write(payload)'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+coding in python is such beautiful (but im pretty sure i will regret what i've just written)
+the key difference in this challenge is the code works at entered_password level not correct_password level
+in the previous challenge the loop was working at correct_password level, 
+it means that from the original input the loop would have create the expected
+output and then compare it to entered password meaning that our script should have just replicate the loop
+since here it works at entered_password level, to obtain the right original input we r supposed to enter, we need to reverse the entire loop
+so:
+from bytes.decode to str.encode
+from int() to bin()
+from int.to_bytes to int.from_bytes()
+payload[2:] allowed me to delete the first two chars
+
+## 🏁 Flag
+pwn.college{UPBjkTuiKX_YPTj8tjGfoPhmwyI.0FO1YDNxwCO4IDOxEzW}
