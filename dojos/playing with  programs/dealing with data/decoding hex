@@ -20,8 +20,49 @@ i found out that i had to being able make echo read escapes symbols from input s
 -ran: 'echo -ne "\xc8\xb4\xb9\xba\xfc\xe9\xbe\xc6" | /challenge/runme'
 -flag popped out
 
+decided to write python code for the first time since the challenge suggests me to do it:
+ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/runme")'
+        'payload = b"\xc8\xb4\xb9\xba\xfc\xe9\xbe\xc6"'
+        'p.write(payload)'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+
+the perfect code for this challenge is the following tho:
+
+#!/usr/bin/dev python3
+from pwn import *
+context.log_level = 'error'
+
+p = process("/challenge/runme")
+
+password = b"c8b4b9bafce9bec6"
+
+password = bytes.decode(password)
+
+payload = bytes.fromhex(password)
+
+p.write(payload)
+
+result = p.readall()
+
+print(result.decode.('utf-8'))
+
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 the -e flag in echo, will allow echo to read escape symbols properly
+best way to solve those type of challenges is python
+bytes.decode -> from BYTES to STRING
+bytes.fromhex -> from STR (in base hex) to BYTES
+p.write(payload) run the process and sends the payload as input to it
+p.readall will read every line in stdout
 
 ## 🏁 Flag
 pwn.college{Q0vACNezH7F-zoYe7jevon7XFoX.0lN1YDNxwCO4IDOxEzW}
