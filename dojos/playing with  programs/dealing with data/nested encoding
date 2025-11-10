@@ -1,0 +1,41 @@
+# challenge: nested encoding
+
+📅 2025-11-10
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the code requests a password in which it will encode-decode it 4times
+it also requires the input in argv[1]
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'password = b"pqpgkupc"'
+        'password = password.hex()'
+        'password = str.encode(password)'
+        'password = password.hex()'
+        'password = str.encode(password)'
+        'password = password.hex()'
+        'password = str.encode(password)'
+        'password = password.hex()'
+        'payload = str.encode(password)'
+        'with open("payload", "wb") as w:'
+          'w.write(payload)'
+        'p = process(["/challenge/runme", "/home/hacker/payload"])'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+nested coding and how to write the content of a variable into a file
+also how to pass a file as argv to another file
+
+## 🏁 Flag
+pwn.college{8Bv3IQh77iFo0rpeh1ZfhpSiM_Q.0FM2YDNxwCO4IDOxEzW}
