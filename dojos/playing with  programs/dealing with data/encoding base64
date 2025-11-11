@@ -1,0 +1,34 @@
+# challenge: encoding base64
+
+📅 2025-11-11
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the code takes the input, decode it from bytes to string, decode it from base64 to normal chars and then encode it to bytes
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/runme")'
+        'password = b"\x13i\xe7).\x88mB"'
+        'password = base64.b64encode(password)'
+        'p.write(password)'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+to decode from chars to base64: base64.b64encode()
+the 2 functions:
+base64.b64encode() and  base64.b64decode()
+take as input both str or bytes but the output is always BYTES
+
+## 🏁 Flag
+pwn.college{ozi7zZ39rGdv3dIiuCuAD8NOU2b.0FO2YDNxwCO4IDOxEzW}
