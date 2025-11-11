@@ -1,0 +1,37 @@
+# challenge: decoding base64
+
+📅 2025-11-11
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the correct_password is b"XH16gGsHceo="
+the code does to it:
+BYTES ->decode-> STR(base64) -> base64decode -> stringa
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/runme")'
+        'password = b"XH16gGsHceo="'
+        'password = password.decode()'
+        'payload = base64.b64decode(password)'
+        'print(payload)'
+        'p.write(payload)'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+base64 is a codific method which convert chars into base64 charset each 6bits
+from str to base64 -> base64.b64encode()
+from base64 to str -> base64.b64decode()
+
+## 🏁 Flag  
+pwn.college{cn-lUx8m_2RRoVQWjgFEcpw7reD.QXzczMzwCO4IDOxEzW}
