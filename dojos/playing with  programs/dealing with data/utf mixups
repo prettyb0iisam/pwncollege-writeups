@@ -1,0 +1,36 @@
+# challenge: utf mixups
+
+📅 2025-11-11
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the code does a decode in utf-16 and then an encode in latin1
+reversed the process
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'password = b"gqmjzsqv"'
+        'password = password.decode("latin1")'
+        'payload = password.encode("utf-16")'
+        'with open("broski", "wb") as w:'
+        'w.write(payload)'
+        'p = process(["/challenge/runme", "/home/hacker/broski"])'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+super easy challenge
+at first b"gqmjzsqv" has been converted into a string as each char interpreted based on latin1 table charset
+then the result has been converted into a bytes as each char interpreted based on utf-16 table charset
+
+## 🏁 Flag
+pwn.college{4Jz5Fv-eOG7dyN8RClLwrfklnFx.0lM2YDNxwCO4IDOxEzW}
