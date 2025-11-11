@@ -1,0 +1,47 @@
+# challenge: 
+
+📅 2025-11-11
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found the code does manipulation both to entered_password and correct_password:
+entered_password:
+BYTES ->decode-> STR(hex) ->fromhex-> BYTES ->decode-> STR(hex) ->fromhex-> BYTES ->decode-> STR ->base64decode-> BYTES ->reverse-> BYTES
+correct_password:
+BYTES ->reverse-> BYTES ->encode-> BYTES ->encode-> BYTES ->reverse-> BYTES
+so the correct input is to duplicate correct_password process + reverse entered_password process
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/runme")'
+        'password = b"\xbe\xe2\r\xf0\xcb\xc2y\xec"'
+        'password = password[::-1]'
+        'password = base64.b64encode(password)'
+        'password = base64.b64encode(password)'
+        'password = password[::-1]'
+        'password = password[::-1]'
+        'password = base64.b64encode(password)'
+        'password = password.hex()'
+        'password = password.encode()'
+        'password = password.hex()'
+        'payload = password.encode()'
+        'print(payload)'
+        'p.write(payload)'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to mix duplicate code from og file and reverse code from it
+not such easy to find out the trick
+
+## 🏁 Flag
+pwn.college{IgiMp-0n_tDJ68GB0nxRMIzSg8i.01N2YDNxwCO4IDOxEzW}
