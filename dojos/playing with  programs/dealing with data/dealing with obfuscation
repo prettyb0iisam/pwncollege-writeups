@@ -1,0 +1,39 @@
+# challenge: dealing with obfuscation
+
+📅 2025-11-11
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the code manipulates correct_password and then compare it with entered_password
+just replicate the loop
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'def encode_to_bits(s):'
+            'return b"".join(format(c, "08b").encode("latin1") for c in s)'
+        'p = process("/challenge/runme")'
+        'password = b"F(\x9f\xdf\xe2\xc6\x9fX"'
+        'password = base64.b64encode(password)'
+        'password = base64.b64encode(password)'
+        'password = encode_to_bits(password)'
+        'payload = password.hex().encode("l1")'
+        'p.write(payload)'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+obfuscation is usefull to make a variable (or even code) thougher to understand
+this does not men is irreversable
+obfuscation vs encryption vs encoding vs hashing
+
+## 🏁 Flag
+pwn.college{kz3gvfRXNh-LyoIjxiN6YK_WisV.0lN2YDNxwCO4IDOxEzW}
