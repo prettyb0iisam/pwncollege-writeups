@@ -1,0 +1,36 @@
+# challenge: modifying encoded data
+
+📅 2025-11-11
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the code does to the input:
+BYTES ->reversing with [::-1]-> BYTES ->decode-> STR(hex) ->fromhex-> BYTES
+reversed the process
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/runme")'
+        'password = b"\x06\x08\xd1\x16+h\xacy"'
+        'password = password.hex()'
+        'password = password.encode()'
+        'payload = password[::-1]'
+        'p.write(payload)'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))''
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+needless to say, changing bytes will give a different value
+uin pyhthon to reverse a value u can use [::-1]
+
+## 🏁 Flag 
+pwn.college{UPeVk9NX1sdzhpyriRSX76zWQ2Y.01M2YDNxwCO4IDOxEzW}
