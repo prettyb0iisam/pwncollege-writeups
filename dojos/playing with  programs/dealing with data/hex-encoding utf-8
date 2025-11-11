@@ -1,0 +1,39 @@
+# challenge: hex-encoding utf-8
+
+📅 2025-11-11
+📁 dealing with data
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/runme'
+found out the correct_password has been saved as a bytes
+the loop the code does to the input passed as argv[1] into a file is:
+BYTES ->decode-> STR(hex) ->fromhex-> BYTES
+the goal is to reverse the loop:
+BYTES ->hex-> STR(hex) ->decode-> BYTES
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'password = "📣 🎮 🐸 🆖".encode("utf-8")'
+        'password = password.hex()'
+        'payload = password.encode()'
+        'with open ("broski", "wb") as w:'
+          'w.write(payload)'
+        'p = process(["/challenge/runme", "/home/hacker/broski"])'
+        'result = p.readall()'
+        'print(result.decode('utf-8'))'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+unicode is a standard which allow to view every chars, emoji and symbols from all alphabet accross the world
+each char has its own code point
+the conversion from code point to byte is done by utf-8 (1-4bytes)
+
+## 🏁 Flag
+pwn.college{4u3uX_52yS3sfCePp7W7W6zwcCH.0VM2YDNxwCO4IDOxEzW}
