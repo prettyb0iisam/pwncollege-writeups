@@ -1,0 +1,25 @@
+# challenge: your first http request
+
+📅 2025-11-12
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: '/challenge/server'
+-copied the url: http://challenge.localhost:80
+-pasted the url in firefox
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+easy challenge
+the challenge does a check on user-agent because i was trying to solve it using ssh and when i performed:
+curl -v http://challenge.localhost:80
+i recieved 404 bad request: You are using an incorrect client to access this resource!
+this means u have to use Desktop
+
+## 🏁 Flag
+pwn.college{kY_9EWdUWanQxTH6gMCsiTSjyPe.0lMxgDNxwCO4IDOxEzW}
