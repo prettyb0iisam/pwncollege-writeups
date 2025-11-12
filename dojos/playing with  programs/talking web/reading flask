@@ -1,0 +1,22 @@
+# challenge: reading flask
+
+📅 2025-11-12
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-ran: 'cat /challenge/server'
+found out the correct endpoint to retrieve the flag is /challenge
+-ran: '/challenge/server'
+-opened firefox
+-url: 'http://challenge.localhost:80/challenge'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+flask is a python library that allows u to build a webserver  wth just a few lines of code
+
+## 🏁 Flag
+pwn.college{wrdZarj5eDkzeq5D7r57Pg23be1.01MxgDNxwCO4IDOxEzW}
