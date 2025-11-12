@@ -1,0 +1,24 @@
+# challenge: http metadata
+
+📅 2025-11-12
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the endpoint is /pass and the flag is in X-Flag Header
+-ran: '/challenge/server'
+-opened firefox
+-url: http://challenge.localhost/pass
+-devtools
+-found the flag in Network -> 200STATUS file pass -> scroll down untill Header section
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to inspect headers using devtools
+
+## 🏁 Flag
+pwn.college{4NVvuDYunxWeunMmkNTgIpv5b5E.0VNxgDNxwCO4IDOxEzW}
