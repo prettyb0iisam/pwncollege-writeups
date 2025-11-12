@@ -10,11 +10,15 @@
 -opened the desktop
 -opened the terminal
 -ran: 'cat /challenge/server'
--
-
+found the endpoint is /progress and i have to use the devtools to retrieve the flag
+-ran: '/challenge/server'
+-opened firefox
+-url: http://challenge.localhost/progress
+-opened the dev tools, [Shift] + [Ctrl] + i
+-found flag in source code
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+could not see the flag in the page because it was commented in the code with <!-- -->
 
 ## 🏁 Flag
 pwn.college{YoKT5rzPiZYaeNuLwdPAuZFPKG0.0FNxgDNxwCO4IDOxEzW}
