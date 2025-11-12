@@ -1,0 +1,26 @@
+# challenge: http (netcat)
+
+📅 2025-11-12
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: '/challenge/server'
+-ran: 'nc -v localhost.challenge 80'
+-typed: 'GET / HTTP/1.1'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+netcat is a super useful program that allows direct connection w/ the server
+nc [HOSTNAME] [PORT]
+hostname≠url
+flag -v prints details of requests
+once netcat is running, it wont send the request automatically, u need to create correctly by urself
+to create an http request -> [METHOD] [path] HTTP/[version]
+
+## 🏁 Flag
+pwn.college{gsoKVY0Y8eZdr3ia5BJP_OaaRC4.QX5YjMzwCO4IDOxEzW}
