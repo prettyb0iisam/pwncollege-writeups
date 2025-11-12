@@ -8,6 +8,7 @@
 ## ✅ what i did  
 -clicked start
 -opened the desktop
+-opened the terminal
 -ran: 'cat /challenge/server'
 found out the correct endpoint to retrieve the flag is /challenge
 -ran: '/challenge/server'
