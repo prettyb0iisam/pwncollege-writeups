@@ -1,0 +1,23 @@
+# challenge: http (curl)
+
+📅 2025-11-12
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+correct endpoint is /attempt
+-ran: '/challenge/server'
+-ran: 'curl -v http://challenge.localhost/attempt'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+curl is a command line tool that can perform tcp connection, in this case http
+the flag -v gives full details of http request and response
+
+## 🏁 Flag 
+pwn.college{AZRa1OdeeKmTq_Z4jOcR1budjw2.QX0cjMzwCO4IDOxEzW}
