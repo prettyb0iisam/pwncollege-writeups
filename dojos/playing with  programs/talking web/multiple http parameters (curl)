@@ -1,0 +1,26 @@
+# challenge: multiple http parameters (curl)
+
+📅 2025-11-13
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the right endpoint is /gate 
+params required:
+verify=euxcdjll
+security=idcgvsrs
+signature=afhjjtqj
+-ran: '/challenge/server'
+-ran: 'curl -v "http://challenge.localhost/gate?verify=euxcdjll&security=idcgvsrs&signature=afhjjtqj"'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to put multiple query string in the url using curl
+
+## 🏁 Flag
+pwn.college{UXSLYF0UqjKx5TCMriOwCXRGm3L.QXzgjMzwCO4IDOxEzW}
