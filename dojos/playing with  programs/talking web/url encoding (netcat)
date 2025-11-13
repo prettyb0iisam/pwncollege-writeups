@@ -1,0 +1,26 @@
+# challenge: url encoding (netcat)
+
+📅 2025-11-13
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the correct endpoint is /submission verify meet and host is challenge.localhost:80
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /submission%20verify%20meet HTTP/1.1'
+        'Host: challenge.localhost:80'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+spaces inside the endpoint request may can invalid the request
+to deal w/ it, use url encoding
+in url encoding spaces r encoded in %20
+
+## 🏁 Flag
+pwn.college{AxBZmQf7PAyldJkvdu2Esw0AwDd.QX5cjMzwCO4IDOxEzW}
