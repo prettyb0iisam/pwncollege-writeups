@@ -1,0 +1,27 @@
+# challenge: multiple http parameters (netcat)
+
+📅 2025-11-13
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran:'cat /challenge/server'
+found out the right enpoint is /trial and host is challenge.localhost:80
+the params i had to pass r:
+auth_key=zznthxtm
+key=mkhxkonr
+unlock_code=pmqoqdhk
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /trial?auth_key=zznthxtm&key=mkhxkonr&unlock_code=pmqoqdhk HTTP/1.1'
+        'Host: challenge.localhost:80'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in the url to add multiple params use & to separate them
+
+## 🏁 Flag 
+pwn.college{IyW37-lEA_d7v3d95rl6AYIpVME.QX0gjMzwCO4IDOxEzW}
