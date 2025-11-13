@@ -1,0 +1,28 @@
+# challenge: http (python)
+
+📅 2025-11-12
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+correct endpoint is /fulfill
+-ran: '/challenge/server'
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'url = "http://challenge.localhost/fulfill"'
+        'r = requests.get(url)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+http requests using python will be a crucial skill because it is so easy to use and at the same time super powerfull
+
+## 🏁 Flag
+pwn.college{Q1kR9TU5Ev0TmYphdMDWNqLfo30.QX2cjMzwCO4IDOxEzW}
