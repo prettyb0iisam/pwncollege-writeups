@@ -1,0 +1,32 @@
+# challenge: http host header (python)
+
+📅 2025-11-13
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+the right endpoint is /challenge and the server does a check to host headers.
+it will pass the check if host-header is alf.nu:80
+-ran: '/challenge/server'
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'url = "http://challenge.localhost/challenge"'
+        'headers = {'
+                  '"Host":"alf.nu:80"'
+              '}'
+        'r = requests.get(url, headers=headers)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to create a header properly and pass it to the request
+
+## 🏁 Flag 
+pwn.college{8CvmJ5rqRzSUktV3Lp_Ys8VkCfH.QXzcjMzwCO4IDOxEzW}
