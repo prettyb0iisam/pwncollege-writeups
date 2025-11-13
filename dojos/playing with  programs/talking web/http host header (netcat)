@@ -1,0 +1,24 @@
+# challenge: http host header (netcat)
+
+📅 2025-11-13
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+the right endpoint is /verify and host is gandalf.lakera.ai:80
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /verify HTTP/1.1'
+        'Host: gandalf.lakera.ai:80'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to create correct headers in netcat
+
+## 🏁 Flag
+pwn.college{ApxoqH183_XQgdSAKna6IJCzfkP.QXycjMzwCO4IDOxEzW}
