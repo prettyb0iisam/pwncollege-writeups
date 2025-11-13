@@ -1,0 +1,25 @@
+# challenge: http get parameters
+
+📅 2025-11-13
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the correct host is challenge.localhost:80 and endpoint is /complete
+the parameter i had to pass is auth_token=woiaadpt
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /complete?auth_token=woiaadpt HTTP/1.1'
+        'Host: challenge.localhost:80'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to build querystring manually. querystrings r parameters in the url and work the same as params for function call
+syntax: ?query=string&query1=string1&...
+
+## 🏁 Flag
+pwn.college{0dK-C9Z08oDafjuP4rRyN2vCgqJ.QXwgjMzwCO4IDOxEzW}
