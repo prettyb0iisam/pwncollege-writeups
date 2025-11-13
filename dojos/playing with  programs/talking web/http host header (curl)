@@ -1,0 +1,24 @@
+# challenge: http host header (curl)
+
+📅 2025-11-13
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the correct endpoint is /mission and the host check is websec.fr:80
+-ran: '/challenge/server'
+-ran: 'man curl | grep Header'
+found out the correct way to add an header in curl's command is using -H flag on it
+-ran: 'curl -H "Host:websec.fr:80" http://challenge.localhost/mission'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use -H flag on curl to build an header for the request
+
+## 🏁 Flag 
+pwn.college{Yd09ItKGYPOMQujXixEW7vGUn5F.QXxcjMzwCO4IDOxEzW}
