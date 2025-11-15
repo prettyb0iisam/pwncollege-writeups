@@ -6,7 +6,7 @@
 ---
 
 ## ✅ what i did  
-I'VE SOLVED THE CHALLENGE IN 3different WAYS:
+I'VE SOLVED THE CHALLENGE IN 4different WAYS:
 I WAY cURL
 -clicked start
 -opened the terminal
@@ -59,11 +59,24 @@ found out i had to send a post request with token=srcmbctb @ /authenticate w/ Us
         'token=srcmbctb'
 -flag popped out
 
+IV WAY
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out i had to send a post request with token=srcmbctb @ /authenticate w/ User-Agent: Firefox and Host: challenge.localhost:80
+-ran: '/challenge/server'
+-opened firefox
+-url: "http://challenge.localhost"
+-typed "srcmbctb" in the form and submitted
+-flag popped out
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 a lot in each way
 cURL -> \ allow to press enter w/out sending the command, -d flag is for body
 python -> body has to be passed into data parameter
 netcat -> u can unlock the body only by crafting the 2 follow headers: Content-Type and Content-Length (this one super crucial)
+firefox -> u can check the full request u sent and the full response u recieved in devtools, network section
 
 to check which process is using a port use: sudo ss -tulnp or sudo netstat -tulnp
 
