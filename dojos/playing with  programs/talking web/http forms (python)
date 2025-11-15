@@ -1,0 +1,36 @@
+# challenge: http forms (python)
+
+📅 2025-11-15
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+enpoint=/submit, Host=challenge.localhost:80 and auth_pass=vmgkvqlc
+-ran: '/challenge/server'
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'url = "http://challenge.localhost/submit"'
+        'headers = {'
+            '"Host": "challenge.localhost:80"'
+        '}'
+        'data = {'
+            '"auth_pass": "vmgkvqlc"'
+        '}'
+        'r = requests.post(url, headers=headers, data=data)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to send post requests in python
+u have to specify the method (post) and craft the data u want to send
+
+## 🏁 Flag
+pwn.college{0FhtH9IpXQ1noEbs1lLSxvfipmj.QX4gjMzwCO4IDOxEzW}
