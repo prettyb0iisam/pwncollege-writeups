@@ -1,0 +1,28 @@
+# challenge: http forms without forms
+
+📅 2025-11-15
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+enpoint=/mission, Host=challenge.localhost:80, User-Agent=Firefox and secure_key=uchnsrxs
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'POST /mission HTTP/1.1'
+        'User-Agent: Firefox'
+        'Host: challenge.localhost:80'
+        'Content-Type: application/x-www-form-urlencoded'
+        'Content-Length: 19'
+        ''
+        'secure_key=uchnsrxs'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform a post request w/ nc (again)
+
+## 🏁 Flag
+pwn.college{MdCSUfiZv2FEulju_USjzceZl2P.01NxgDNxwCO4IDOxEzW}
