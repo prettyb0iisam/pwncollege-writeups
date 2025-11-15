@@ -1,0 +1,27 @@
+# challenge: multiple form fields (curl)
+
+📅 2025-11-15
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+enpoint=/trial, Host=challenge.localhost:80, keycode=lheciolu, credential=wzbgnnid and solution=mrvjqgil
+the User-Agent gotta be curl so i performed the post request w/ curl
+-ran: '/challenge/server'
+-ran: 'curl -v \'
+-typed: '-H "Host: challenge.localhost:80" \'
+        '-d "keycode=lheciolu" \'
+        '-d "credential=wzbgnnid" \'
+        '-d "solution=mrvjqgil" \'
+        http://challenge.localhost/trial
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to fill multiple form fields w/ curl
+
+## 🏁 Flag
+pwn.college{M2WTPtqdjfhkL4A9yU7n2mHaoA2.QX5gjMzwCO4IDOxEzW}
