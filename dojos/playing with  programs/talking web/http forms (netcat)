@@ -1,0 +1,29 @@
+# challenge: http forms (netcat)
+
+📅 2025-11-15
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+endpoint=/pass, Host=challenge.localhost:80 and flag=kuzyuwlx
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'POST /pass HTTP/1.1'
+        'Host: challenge.localhost:80'
+        'Content-Type: application/x-www-form-urlencoded'
+        'Content-Length: 15'
+        ''
+        'verify=kuzyuwlx'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform post requests using netcat
+when u use netcat and u want to send a post requests, u have to specify Content-Type and Content-Length in the headers field.
+this will allow u to craft the body
+
+## 🏁 Flag
+pwn.college{Q32AbpiDgal0H4V_SRbQPv2GOkZ.QX3gjMzwCO4IDOxEzW}
