@@ -1,0 +1,23 @@
+# challenge: http forms (curl)
+
+📅 2025-11-15
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+enpoint=/check, Host=challenge.localhost:80, token=tinvgane
+-ran: 'curl -v \'
+-typed: '-H "Host: challenge.localhost:80" \'
+        '-d "token=tinvgane" \'
+        'http://challenge.localhost/check'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to craft post requests and filling the body using curl
+
+## 🏁 Flag
+pwn.college{ku-VVDnUdGiM0mLeWDv6-e5bTwp.QX2gjMzwCO4IDOxEzW}
