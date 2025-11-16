@@ -1,0 +1,29 @@
+# challenge: http redirects (python)
+
+📅 2025-11-16
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+enpoint=/
+-ran: '/challenge/server'
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'url = "http://challenge.localhost/"'
+        'r = requests.get(url)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how redirection works in python. its just automatic
+
+## 🏁 Flag
+pwn.college{QJUYYmy-W4AnTd3DniHs7mGnj5d.QXwAzMzwCO4IDOxEzW}
