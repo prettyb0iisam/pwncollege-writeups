@@ -1,0 +1,27 @@
+# challenge: http redirects (curl)
+
+📅 2025-11-16
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+enpoint=/, Host=challenge.localhost:80
+-ran: '/challenge/server'
+-ran: 'curl -v \'
+-typed: '-H "Host: challenge.localhost:80" \'
+        'http://challenge.localhost/'
+server responded back with redirection to /mdxFzEZD-pwn
+-ran: 'curl -v \'
+-typed: '-H "Host: challenge.localhost:80" \'
+        'http://challenge.localhost//mdxFzEZD-pwn'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how redirection works using curl
+
+## 🏁 Flag 
+pwn.college{47ApV2hqCfcTowBCE4HGUkEXArF.QX4kjMzwCO4IDOxEzW}
