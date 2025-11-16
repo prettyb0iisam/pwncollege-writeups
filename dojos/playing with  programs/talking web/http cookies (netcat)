@@ -1,0 +1,28 @@
+# challenge: http cookies (netcat)
+
+📅 2025-11-16
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: '/challenge/server'
+found out i had to send a request to / and then add a Cookie Header. all using netcat
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET / HTTP/1.1'
+        ''
+copied the Set-Cookie value
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET / HTTP/1.1'
+        'Cookie: cookie=5b0431500e99abaf96a657262cdf2c86'
+        ''
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to set Cookie value in netcat
+
+## 🏁 Flag  
+pwn.college{AsCVTtec93Qkgh5V2n0AoUZWxcM.QXyAzMzwCO4IDOxEzW}
