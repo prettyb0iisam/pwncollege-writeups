@@ -1,0 +1,29 @@
+# challenge: http redirects (netcat)
+
+📅 2025-11-16
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: 'cat /challenge/server'
+endpoint= / and Host: challenge.localhost:80
+i just needed to access / to be redirect
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET / HTTP/1.1'
+        'Host: challenge.localhost:80'
+-the / page redirected me to /HnokUVQR-meet
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /HnokUVQR-meet HTTP/1.1'
+        'Host: challenge.localhost:80'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how page redirection works. using netcat, the server responded back w/ the redirected page
+
+## 🏁 Flag
+pwn.college{oale7StfFtjGKISIv0tmpscD3E7.QX5kjMzwCO4IDOxEzW}
