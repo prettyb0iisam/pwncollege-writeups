@@ -1,0 +1,29 @@
+# challenge: server state (python)
+
+📅 2025-11-16
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: '/challenge/run'
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'url = "http://challenge.localhost/"'
+        's = requests.Session()'
+        'for i in range(4):'
+            'r = s.get(url)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-./bro
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+now i think i have a clearer idea of requests.Session()
+
+## 🏁 Flag
+pwn.college{c88a1wJEHVgt_-HoKHzZh5zWJqo.QX2AzMzwCO4IDOxEzW}
