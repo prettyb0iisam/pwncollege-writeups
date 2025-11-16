@@ -1,0 +1,27 @@
+# challenge: http cookies (curl)
+
+📅 2025-11-16
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: '/challenge/run'
+found out i had to send a request to / and then set a cookie
+-ran: 'curl -v http://challenge.localhost/'
+copied the cookie value from Set-Cookie header
+-ran: 'curl -v \'
+-typed: '-H "Cookie: cookie=0c696234de0d26696dccfb0d617c4d04" \'
+        'http://challenge.localhost/'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to set the Cookie header
+Set-Cookie ≠ Cookie 
+Set-Cookie Header is the Header the server sends to client and it has to keep it
+Cookie Header is the Header the client sends back to server w/ the Set-Cookie Header value
+
+## 🏁 Flag
+pwn.college{c-uMxbl56ZB_zHhGA3GqyKMAusr.QXxAzMzwCO4IDOxEzW}
