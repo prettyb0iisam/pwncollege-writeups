@@ -1,2 +1,28 @@
+# challenge: multiple form fields (netcat)
 
+📅 2025-11-16
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+endpoint=/submit, Host: challenge.localhost:80, User-Agent: nc and security=thzlooul&auth=bdknzpsz&secret_key=uoyomwvd&keycode=aqqmbxfl
+-ran: '/challenge/server'
+since User-Agent required is nc, i used nc. i dont need to specify it while crafting the request
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'POST /submit HTTP/1.1'
+        'Host: challenge.localhost:80'
+        'Content-Type: application/x-www-url-encoded'
+        'Content-Length: 68'
+        ''
+        'security=thzlooul&auth=bdknzpsz&secret_key=uoyomwvd&keycode=aqqmbxfl'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform post request w/ netcat w/ multiple form fields
+
+## 🏁 Flag 
 pwn.college{ouHsz9SvNKy6q78sDV7A2IokyIH.QXwkjMzwCO4IDOxEzW}
