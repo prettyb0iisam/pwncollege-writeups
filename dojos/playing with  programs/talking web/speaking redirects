@@ -1,0 +1,30 @@
+# challenge: speaking redirects
+
+📅 2025-11-17
+📁 talking web
+
+---
+
+## ✅ what i did  
+-copied the source code of /challenge/server from challenge: http redirects (netcat)
+-started the challenge: speaking redirects
+-opened the terminal
+-pasted the code in bro and modified it in:
+shebang -> #!/usr/bin/env python3
+removed netcat required part
+last line -> localhost and 1337
+redirects -> http://challenge.localhost:80/mission
+-ran: '/challenge/server'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-ran: '/challenge/client'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+a redirect doesnt necessary has to stay on the same server
+redirection is just based on what it will find as argument in flask.redirect()
+if its a full url, it will follow it
+if its just an endpoint, it will keep using the same host and port
+
+## 🏁 Flag
+pwn.college{QZqre3v3T5eOTr1iouZWeCpIaqu.0FM0gDNxwCO4IDOxEzW}
