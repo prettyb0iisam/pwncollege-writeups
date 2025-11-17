@@ -1,0 +1,35 @@
+# challenge: javascript redirects
+
+📅 2025-11-17
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/client'
+found out the client goes to http://challenge.localhost:80/~hacker/solve.html
+-ran: 'cat /challenge/server'
+found out the redirection gotta goes to /evaluate
+-ran: 'mkdir public_html'
+-ran: 'vim solve.html'
+-typed: '<!DOCTYPE html>'
+        '<html>'
+        '<head>'
+        '<script>'
+              'window.location = "http://challenge.localhost:80/evaluate";'
+        '</script>'
+        '</head>'
+        '<body>'
+        '</body>'
+        '</html>'
+-ran: '/challenge/server'
+-ran: '/challenge/client'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to redirect using javascript code directly inside html w/ window.location
+
+## 🏁 Flag
+pwn.college{QpAkwdQ4D3AsRcagT42HVgrL95q.0VNxATNxwCO4IDOxEzW}
