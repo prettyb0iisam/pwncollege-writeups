@@ -1,0 +1,30 @@
+# challenge: listening web
+
+📅 2025-11-17
+📁 talking web
+
+---
+
+## ✅ what i did  
+-went back to the first challenge in the module: Your first http request
+-started it 
+-opened the terminal
+-ran: 'cat /challenge/server'
+-copied the full source code
+-went back to this challenge: listening web
+-started it
+-opened the terminal
+-ran: 'vim bro'
+-pasted the code
+-modified the code at its last line: intead of challenge.localhost -> localhost and 80 -> 1337
+also the shebang setted to: #!/usr/bin/env python3
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-ran: '/challenge/client'
+-found the flag in log
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how requests comes to ur running server
+
+## 🏁 Flag
+pwn.college{oxPvm4DLkLctiOaaCv1flJVVKT8.0VOzgDNxwCO4IDOxEzW}
