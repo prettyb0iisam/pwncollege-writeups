@@ -1,0 +1,34 @@
+# challenge: http forms (javascript)
+
+📅 2025-11-18
+📁 talking web
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim solve.html'
+-typed: '<html>'
+        '<head>'
+        	'<title>Redirection</title>'
+        '</head>'
+        '<body>'
+        	'<p>Redirection using Javascript!!!</p>'
+        '</body>'
+        '<script>'
+        	'fetch('http://challenge.localhost:80/verify',{'
+        	'method: 'POST','
+        	'body: new URLSearchParams({unlock_code: 'chrzavej', secure_key: 'vwzljzcv', private_key: 'leqhqzzg'})'
+        	'}).then(response => response.text()).then(content => window.location.href='/home/hacker/public_html/solve.html'+content);'
+        '</script>'
+        '</html>'
+-ran: '/challenge/server'
+-ran: '/challenge/client'
+-flag popped out in logs
+
+## 🧑🏾‍🏫 what this challenge teaches u
+im done
+
+## 🏁 Flag
+pwn.college{cpwrVtYyRYYiFiLM6akjknqA0w8.0VOxATNxwCO4IDOxEzW}
