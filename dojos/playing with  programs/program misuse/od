@@ -1,0 +1,23 @@
+# challenge: od
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'od -tx1 /flag'
+-copied the output w/out the offset and convert it from hex to text using online converter
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+od stands for octal dump
+it prints in octal file's content. 
+-b -> flag prints each single byte in octal
+-t -> type
+-x1 -> each single byte in hex
+
+## 🏁 Flag  
+pwn.college{4gszD8TppF4gW4eRUWO7aeG8wrr.dNTNxwCO4IDOxEzW}
