@@ -1,0 +1,21 @@
+# challenge: split
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ls -l /flag'
+-ran: 'split -b 29 /flag pwn'
+-ran: 'cat pwn*'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+split allow u to split a file in different subfiles based on dimension
+-b flag specify the dimension of the different files u want to create
+
+## 🏁 Flag  
+pwn.college{0oHYU98vH6pB-n6VwBUMrwCJXdA.dhTNxwCO4IDOxEzW}
