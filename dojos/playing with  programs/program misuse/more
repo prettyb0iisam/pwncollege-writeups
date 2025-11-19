@@ -1,0 +1,18 @@
+# challenge: more
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'more /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+more command prints to screen the file's content, one page at a time if the file is huge.
+
+## 🏁 Flag  
+pwn.college{MCveuYCS0PFZ8-z-nzb0GhSZpOt.dRDNxwCO4IDOxEzW}
