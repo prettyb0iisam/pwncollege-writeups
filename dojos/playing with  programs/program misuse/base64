@@ -1,0 +1,18 @@
+# challenge: base64
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'base64 /flag | base64 --decode'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+!!!
+
+## 🏁 Flag  
+pwn.college{MiLBU9FQGk7jNu7nfpQjodtV2Mc.ddTNxwCO4IDOxEzW}
