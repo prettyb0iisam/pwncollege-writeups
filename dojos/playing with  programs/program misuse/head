@@ -1,0 +1,20 @@
+# challenge: head
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'head /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+head is the opposite of tail, it will prints the first 10lines
+-n flag -> number of lines to print
+-c flag -> number of bytes
+
+## 🏁 Flag  
+pwn.college{gYn8BbCETabQCvvOc4_P_tP2Hz3.ddDNxwCO4IDOxEzW}
