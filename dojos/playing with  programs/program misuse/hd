@@ -1,0 +1,19 @@
+# challenge: hd
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'hd /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+hd stands for hex dump
+[OFFSET] - [HEX BYTES] - [TEXT]
+
+## 🏁 Flag 
+pwn.college{EGOabv-jjTR6MdKGB5OSBrrYxTl.dRTNxwCO4IDOxEzW}
