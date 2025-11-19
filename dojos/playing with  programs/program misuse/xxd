@@ -1,0 +1,19 @@
+# challenge: xxd
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'xxd /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+xxd works the same as hd
+-p flag prints only hex bytes w/out offset and text
+
+## 🏁 Flag  
+pwn.college{ArxCn4HrmV84EYjP_V7SUO0Ph54.dVTNxwCO4IDOxEzW}
