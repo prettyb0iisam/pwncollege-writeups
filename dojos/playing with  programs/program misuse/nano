@@ -1,0 +1,18 @@
+# challenge: nano
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'nano /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+nano is another text editor
+
+## 🏁 Flag  
+pwn.college{QGDp0m2l516EMrouxLXPvnWYGMg.dFTNxwCO4IDOxEzW}
