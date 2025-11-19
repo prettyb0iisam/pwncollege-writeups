@@ -1,0 +1,18 @@
+# challenge: cat
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+!!!
+
+## 🏁 Flag  
+pwn.college{4551NYOh04LrqB1tkelVwx5zafF.dNDNxwCO4IDOxEzW}
