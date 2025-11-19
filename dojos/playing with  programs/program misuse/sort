@@ -1,0 +1,19 @@
+# challenge: sort
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'sort /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+sort command sorts the files lines
+-r flag -> reversed
+
+## 🏁 Flag  
+pwn.college{IO3NU5Q_fHWcezqEoVS3usqqJLo.dhDNxwCO4IDOxEzW}
