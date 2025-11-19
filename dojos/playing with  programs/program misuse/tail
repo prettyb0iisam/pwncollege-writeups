@@ -1,0 +1,20 @@
+# challenge: tail
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'tail /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+tail prints the last 10lines of a file
+-n flag specifies how many lines
+-f flag specifies to follow the file live
+
+## 🏁 Flag  
+pwn.college{oPaw82E4l9lD8bR_D5PUzsSDBKQ.dZDNxwCO4IDOxEzW}
