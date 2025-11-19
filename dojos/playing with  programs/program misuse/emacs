@@ -1,0 +1,20 @@
+# challenge: emacs
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'emacs /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+emacs is an another text editor
+vim -> modal
+emacs -> non modal Ctrl+X and Ctrl+C to quit
+
+## 🏁 Flag  
+pwn.college{cV46iYQ_kFA-9pm6egliVAmEOJg.dBTNxwCO4IDOxEzW}
