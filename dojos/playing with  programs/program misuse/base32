@@ -1,0 +1,18 @@
+# challenge: base32
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'base32 /flag | base32 --decode'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+base32 is a decode based on 32symbols: A-Z, 2-7
+
+## 🏁 Flag  
+pwn.college{0nHXnsQKzcfTGxCdUfUgm3vRglU.dZTNxwCO4IDOxEzW}
