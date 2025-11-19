@@ -1,0 +1,18 @@
+# challenge: vim
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+!!!
+
+## 🏁 Flag
+pwn.college{QKGkTWHHYn2tXCsSVfVVEsnKUPt.dlDNxwCO4IDOxEzW}
