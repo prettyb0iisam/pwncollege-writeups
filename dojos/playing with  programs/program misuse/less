@@ -1,0 +1,18 @@
+# challenge: less
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'less /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+less > more
+
+## 🏁 Flag  
+pwn.college{4AL98Ws7d7afv2AZMejRx3hcQ-Q.dVDNxwCO4IDOxEzW}
