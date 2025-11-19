@@ -1,0 +1,18 @@
+# challenge: rev
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'rev /flag | rev'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+rev prints the file pass as argument reversed
+
+## 🏁 Flag  
+pwn.college{wwIAJ5SYEv5LIjDu8efurQNPwVA.dJTNxwCO4IDOxEzW}
