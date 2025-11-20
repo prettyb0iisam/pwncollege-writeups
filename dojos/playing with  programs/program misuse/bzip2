@@ -1,0 +1,18 @@
+# challenge: bzip2
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'bzip2 /flag | bzip2 -dc /flag.bz2'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+bzip2 works the same as gzip
+
+## 🏁 Flag  
+pwn.college{wEToA3-_DPuV86vuuwkFSBwp570.dBjNxwCO4IDOxEzW}
