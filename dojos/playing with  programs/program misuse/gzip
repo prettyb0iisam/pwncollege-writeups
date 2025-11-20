@@ -1,0 +1,22 @@
+# challenge: gzip
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gzip /flag'
+-ran: 'gzip -dc /flag.gz'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+gzip is a command that allows to zip and unzip files
+-d -> decompress
+-c -> prints the result in stdout
+file ->(gzip)-> file.gz  ->(gzip -d or gunzip)-> file
+
+## 🏁 Flag  
+pwn.college{c2EYP3OhyR83G6Mj_FIYBV5k8ku.dlTNxwCO4IDOxEzW}
