@@ -1,0 +1,23 @@
+# challenge: zip
+
+📅 2025-11-19
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'zip bro.zip /flag'
+-ran: 'unzip -p bro.zip' or 'unzip bro.zip | cat flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+zip creates an archive w/ files
+not-necessary files have been compressed
+-l flag gives details to files. Stored means uncompressed
+unzip extracts the archive
+unzip -p file.zip -> prints out to stout the files it has stored/compressed
+
+## 🏁 Flag  
+pwn.college{oiXYbL1aUsd8ofIDAIIsNeKfjs_.dFjNxwCO4IDOxEzW}
