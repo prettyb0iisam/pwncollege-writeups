@@ -1,7 +1,29 @@
-tar 
-options to pick always: -c create, -x extract, -t list
-the other r modificatori
-auindi tar ha sempre una delle tre tra c x e t
+# challenge: tar
 
-https://chmod-calculator.com/?utm_source=chatgpt.com
-convertitore permessi da ottale a text
+📅 2025-11-24
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'tar -cvf bro.tar /flag'
+-ran: 'cat bro.tar'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+tar is a command to create archive. it stands for TApe aRchive, a bunch of files all togheter inside an archive .tar
+files can be compressed with gzip or bzip2
+every time u use tar u have to specify one of the following flags:
+-c -> create archive
+-x -> extract archive
+-t -> view archive
+once u picked with operation to execute, u can add other flags for the output:
+-v -> verbose, view what is going on
+-z -> compress/decompress using gzip -> .tar.gz or .tgz
+-j -> compress/decompress using bzip2 -> .tar.bz2
+-f -> explicit archive's name 
+
+## 🏁 Flag 
+pwn.college{grSbw79MjEhMbr5PKANmEZmrJzW.dJjNxwCO4IDOxEzW}
