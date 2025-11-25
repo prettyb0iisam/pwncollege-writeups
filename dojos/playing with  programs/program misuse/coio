@@ -1,0 +1,6 @@
+cpio
+
+
+find . -maxdepth 1 
+ovvero cerca solo nella dir corrente senza espolrare
+altre perche find di defaukt è ricorsivo
