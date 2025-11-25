@@ -1,0 +1,26 @@
+# challenge: ar
+
+📅 2025-11-25
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ar rc bro.a /flag'
+-ran: 'cat bro.a'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+ar stands for ARchive, in this case a collection of object files (.o) used as static library for linkers
+the options are:
+r -> replace/add
+c -> create the archive
+t -> view archive files
+x -> extract files
+...
+each option w/out -
+
+## 🏁 Flag  
+pwn.college{obMVWZy92N7uNi6dxVh40-KqswL.dNjNxwCO4IDOxEzW}
