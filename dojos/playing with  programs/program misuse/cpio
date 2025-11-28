@@ -1,0 +1,27 @@
+# challenge: cpio
+
+📅 2025-11-28
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'find / -maxdepth 1 -name "flag" -type f | cpio -o > bro.cpio'
+-ran: 'cat bro.cpio'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+cpio is a command to create archive as tar and zip
+the key difference stands on how to pass files and create archives
+cpio needs the file to be passed as standard inputs, this means using pipes
+cpio -o
+-v -> verbose, display files archived or extracted
+-i -> extract archive
+
+find command does a recursive search on each dir from the current working dir
+to avoid this use -maxdepth flag N to specify how deep u want find to works
+
+## 🏁 Flag  
+pwn.college{gnrKnAvM06xrwQvt-dJrcgLbSjh.dRjNxwCO4IDOxEzW}
