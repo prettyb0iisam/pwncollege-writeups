@@ -1,0 +1,18 @@
+# challenge: find
+
+📅 2025-11-28
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'find . -exec cat /flag \;'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag
+pwn.college{UbzTGxz65RZo-w628yG421T7-vH.ddjNxwCO4IDOxEzW}
