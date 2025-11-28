@@ -1,0 +1,23 @@
+# challenge: env
+
+📅 2025-11-28
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'env cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to pass root privileges to others commands
+in this case env has SUID active, this means everytime u run it has root privileges
+the first env's argument recieve privileges if env is root
+in this case cat can cat the flag bc it has privileges
+i could have done also:
+env chmod a+r /flag; cat /flag
+
+## 🏁 Flag  
+pwn.college{8EZuIaSFZ1tpWDZ-bNKY65WdGXd.dZjNxwCO4IDOxEzW}
