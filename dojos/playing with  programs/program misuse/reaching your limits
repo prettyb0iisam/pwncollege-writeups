@@ -1,0 +1,1 @@
+SELECT content FROM notes WHERE substr(content,1,5)='pwn.c' LIMIT 1
