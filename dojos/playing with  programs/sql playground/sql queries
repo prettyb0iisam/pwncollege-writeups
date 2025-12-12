@@ -1,0 +1,29 @@
+# challenge: sql queries
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+found out the code creates a DBMS w/ sqlite. the class is TemporaryDB() and it will be for the rest of the challenges in this module.
+our DBMS is db and the code adds values to it using db.execute()
+the crucial line is:
+'db.execute("""CREATE TABLE payloads AS SELECT ? as info""", [open("/flag").read().strip()])'
+TABLE = payloads  COLUMN = info  RECORD (just one) = [flag]
+-ran: '/challenge/sql'
+-typed: 'SELECT info FROM payloads'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform a sql query
+SELECT = select data from the db
+the syntax of SELECT is: 'SELECT what FROM where'  what and where r things u specify
+what=column  where=table
+u can use * for what to SELECT every column of the table
+
+## 🏁 Flag  
+pwn.college{Ez7-8lKaLdV4uzYXq0pb3GC9unc.0VO5cDNxwCO4IDOxEzW}
