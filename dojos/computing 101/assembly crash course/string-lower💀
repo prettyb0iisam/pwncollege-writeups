@@ -83,7 +83,7 @@ jmp loop
 done:
 mov rax, rcx
 ret
-i remember it tooks me almost 1day to solve it. now only 4mins, amazing
+i remember it took me almost 1day to solve it. now only 4mins, amazing
 by the way i can definitely tell web server>>>>string-lower or most-common-byte
 ## 🏁 Flag
 pwn.college{4SoIibYgB9KHlFZMvIkDydg_Niw.dVTMywCO4IDOxEzW}
