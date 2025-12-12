@@ -1,0 +1,26 @@
+# challenge: filtering sql
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+found out:
+table=logs  columns=flag_tag, resource
+record 1 = 1, random word
+record 2 = 1337, [flag]
+if we print more than one row, the code exits
+we have to specify which data print using WHERE clause
+-ran: '/challenge/sql'
+-typed: 'SELECT resource FROM logs WHERE flag_tag=1337'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+WHERE clause creates a condition allowing u to filters junked data from ur query
+
+## 🏁 Flag  
+pwn.college{sRI5giypPS5hjn8K6Qtc-QgtQSa.0FMwgDNxwCO4IDOxEzW}
