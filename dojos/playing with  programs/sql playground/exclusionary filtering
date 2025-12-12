@@ -1,0 +1,26 @@
+# challenge: exclusionary filtering
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=data
+columns=flag_tag, secret
+record 1 = 1, random word
+record 2,3,4...5<n<42 = 1, random word
+record n = 1337<n<313371337, [flag]
+record ... = 1, random word
+-ran: '/challenge/sql'
+-typed: 'SELECT secret FROM data WHERE flag_tag!=1'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to filter using WHERE clause by excluding data w/ !=
+
+## 🏁 Flag  
+pwn.college{cvcLEXJa1Dc-uZyqLOWvrRMF5uL.0lMwgDNxwCO4IDOxEzW}
