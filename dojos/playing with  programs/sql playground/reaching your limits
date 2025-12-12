@@ -1,0 +1,28 @@
+# challenge: reaching your limits
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=notes
+column=content
+record 1 = random word
+record 2,3...5<n<42 = random word
+record n = [flag]
+record ... = random word
+record ... = pwn.college{random word}
+-ran: '/challenge/sql'
+-typed: ' SELECT content FROM notes WHERE substr(content,1,12)='pwn.college{' LIMIT 1'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use LIMIT to limit the output. after limit just specify the number
+normally, it will print based on cronological order
+
+## 🏁 Flag  
+pwn.college{404nbDevdCxVa5nXdeFJXnCRRwT.01NwgDNxwCO4IDOxEzW}
