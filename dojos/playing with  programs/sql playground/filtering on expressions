@@ -1,0 +1,28 @@
+# challenge: filtering on expressions
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=storage
+column=element
+record 1 = random word
+record 2,3,5<n<42 = random word
+record n = [flag]
+record ... = random word
+-ran: '/challenge/sql'
+-typed: 'SELECT element FROM storage WHERE substr(element,1,12)='pwn.college{''
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+substr() functions is super usefull to filters garbage data
+its a function how takes 3 arguments: column/string(inside ''), position to start, lenght
+its output is the substring of the record
+
+## 🏁 Flag  
+pwn.college{E9Led3bGp0wq4cXLIHiX_hwSisa.0FNwgDNxwCO4IDOxEzW}
