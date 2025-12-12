@@ -57,7 +57,7 @@ shoutout to https://writeups.kunull.net/Pwn%20College/Assembly%20Crash%20Course 
 UPDATE
 its been almost 2months im studying assembly and now everything is getting easier
 i decided to try this challenge again and in 4mins i wrote the right code giving me the flag
-this shit is so grateful (26settember2025)
+this shit is so gratifying (26settember2025)
 .intel_syntax noprefix
 .global _start
 _start:
