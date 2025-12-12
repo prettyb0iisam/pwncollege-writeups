@@ -15,7 +15,7 @@ record 1 = [flag]
 -ran: '/challenge/sql'
 -typed: 'SELECT name FROM sqlite_master'
         copied the name
-        'SELECT blob FROM [PASTE]
+        'SELECT blob FROM [PASTE]'
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
