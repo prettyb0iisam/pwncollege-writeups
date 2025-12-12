@@ -54,5 +54,17 @@ cant print more than 5 chars
 ## 🧑🏾‍🏫 what this challenge teaches u
 u can use substr() to print part of a record
 
+i tried to script it in the following way:
+vim bro.sh
+typed:
+for (( i=1; i<60; i+=5 )); do
+    /challenge/sql <<< "SELECT substr(record,$i,5) FROM details;" \
+        | grep "substr" \
+        | cut -d"'" -f4
+done | tr -d '\n'; echo
+chmod a+x bro.sh
+./bro.sh
+retrieve the full flag
+
 ## 🏁 Flag 
 pwn.college{EOd2CPR4anfwVoM1Qsh_CFavGwW.0VNwgDNxwCO4IDOxEzW}
