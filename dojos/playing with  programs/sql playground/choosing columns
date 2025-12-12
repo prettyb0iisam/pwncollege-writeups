@@ -1,0 +1,26 @@
+# challenge: choosing columns
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=repository
+columns=flag_tag, value
+record 1 = 1, random word
+record 2,3,4...5<n<42 = 1, random word
+record n = 1337, [flag]
+record ... = 1, random word
+-ran: '/challenge/sql'
+-typed: 'SELECT value FROM repository WHERE flag_tag=1337'
+-flag popped out
+  
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use WHERE clause
+
+## 🏁 Flag  
+pwn.college{EGGruyLE5hQftFNEBGsJy5VkUau.0VMwgDNxwCO4IDOxEzW}
