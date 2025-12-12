@@ -1,0 +1,27 @@
+# challenge: composite conditions
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=logs
+columns=flag_tag, field
+record 1 = 1, random word
+record 2,...5<n<42 = 1, random word
+record n = 1337, [flag]
+record ... = 1337, random word
+record ... = 1, pwn.college{random word}
+-ran: '/challenge/sql'
+-typed: 'SELECT field FROM logs WHERE flag_tag=1337 AND substr(field,1,12)='pwn.college{''
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can add more filtering by adding AND/OR to the WHERE clause
+
+## 🏁 Flag  
+pwn.college{ksmLIHl0cpqAskpCqRQYcEEMw8f.0lNwgDNxwCO4IDOxEzW}
