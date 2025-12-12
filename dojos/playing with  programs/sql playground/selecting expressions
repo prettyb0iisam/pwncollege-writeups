@@ -1,0 +1,58 @@
+# challenge: selecting expressions
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=details
+column=record
+record 1 = [flag]
+cant print more than 5 chars
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,1,5) FROM details'
+-output firs 5 chars of the flag: pwn.c
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,6,5) FROM details'
+-output: olleg
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,11,5) FROM details'
+-output: e{EOd
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,16,5) FROM details'
+-output: 2CPR4
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,21,5) FROM details'
+-output: anfwV
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,26,5) FROM details'
+-output: oM1Qs
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,31,5) FROM details'
+-output: 'h_CFa'
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,36,5) FROM details'
+-output: vGwW.
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,41,5) FROM details'
+-output: 0VNwg
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,46,5) FROM details'
+-output: DNxwC
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,51,5) FROM details'
+-output: O4IDO
+-ran: '/challenge/sql'
+-typed: 'SELECT substr(record,56,5) FROM details'
+-output: xEzW}
+-built the flag
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can use substr() to print part of a record
+
+## 🏁 Flag 
+pwn.college{EOd2CPR4anfwVoM1Qsh_CFavGwW.0VNwgDNxwCO4IDOxEzW}
