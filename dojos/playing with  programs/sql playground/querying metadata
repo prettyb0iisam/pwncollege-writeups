@@ -1,0 +1,26 @@
+# challenge: querying metadata
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=???
+column=blob
+record 1 = [flag]
+-ran: '/challenge/sql'
+-typed: 'SELECT name FROM sqlite_master'
+        copied the name
+        'SELECT blob FROM [PASTE]
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in sqlite there is a table with all the names and values of all the other tables.
+this table is called sqlite_master. one of its column is name
+
+## 🏁 Flag  
+pwn.college{cQ4j5pXdeWnJonPkqups15sWxvj.0FOwgDNxwCO4IDOxEzW}
