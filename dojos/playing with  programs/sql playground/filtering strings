@@ -1,0 +1,25 @@
+# challenge: filtering strings
+
+📅 2025-12-12
+📁 sql playground
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/sql'
+table=logs
+columns=flag_tag, note
+record 1 = nope, random word
+record 2,3,4,5<n<42 = nope, random word
+record n = yep, [flag]
+record ... = nope, random word
+-ran: '/challenge/sql'
+-typed: 'SELECT note FROM logs WHERE flag_tag='yep'' or 'SELECT note FROM logs WHERE flag_tag!='nope''
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to filter by specify strings content w/ WHERE clause
+
+## 🏁 Flag  
+pwn.college{4GmquUKOuNgHSNuwPKOdrCddC6_.01MwgDNxwCO4IDOxEzW}
