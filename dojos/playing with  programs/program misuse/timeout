@@ -1,0 +1,18 @@
+# challenge: timeout
+
+📅 2025-12-15
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'timeout 0 cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+timeout N gives privileges to the command after
+
+## 🏁 Flag  
+pwn.college{YS1paCE1ra1YBGdSlsW31jCPE1i.dBzNxwCO4IDOxEzW}
