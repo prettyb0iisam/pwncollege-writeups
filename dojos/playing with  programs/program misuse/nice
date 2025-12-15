@@ -1,0 +1,18 @@
+# challenge: nice
+
+📅 2025-12-15
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'nice cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+nice with suid-root allows the command after to be suid-root too
+
+## 🏁 Flag  
+pwn.college{MoO2eG9F410TC9kMXbdEwLxXRrV.dljNxwCO4IDOxEzW}
