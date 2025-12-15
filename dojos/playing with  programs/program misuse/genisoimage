@@ -1,1 +1,24 @@
- genisoimage -sort /flag
+# challenge: genisoimage
+
+📅 2025-12-15
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'genisoimage -sort /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+genisoimage allow u to create an iso image starting from a given directory
+syntax: genisoimage -o /dir /file.iso
+-o -> output
+/dir -> starting dir to create the iso
+/file.iso -> iso image
+in this case, -sort option expects a number after the file's path
+if u dont specify any number, once u ran the command, the parsing will fail and it will print the full content of the file
+
+## 🏁 Flag  
+pwn.college{A0SV4-bznBKrMh4Lk8HRY9B8rdR.dVjNxwCO4IDOxEzW}
