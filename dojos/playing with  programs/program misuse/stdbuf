@@ -1,0 +1,18 @@
+# challenge: stdbuf 
+
+📅 2025-12-15
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'stdbuf -o0 cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+stdbuf with -o0 options gives privileges to the command after
+
+## 🏁 Flag  
+pwn.college{Ij0GKlUjWZ2ptut_kWljv41AfOX.dFzNxwCO4IDOxEzW}
