@@ -1,0 +1,24 @@
+# challenge: make
+
+📅 2025-12-15
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim Makefile'
+-typed: 'all:'
+            'cat /flag'
+-ran: 'chmod a+x Makefile'
+-ran: 'make'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+make looks for a file called Makefile.
+on it i typed the command which allows me to print the flag
+since make is user-root, its privileges goes to cat too
+
+## 🏁 Flag  
+pwn.college{s-ATOrJfTAAQRk9zHyuuUaQcRWK.dhjNxwCO4IDOxEzW}
