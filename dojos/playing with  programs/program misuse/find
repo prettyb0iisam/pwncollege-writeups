@@ -8,11 +8,12 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 'find . -exec cat /flag \;'
+-ran: 'find /flag -exec cat /flag {} \;'
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+find has an option: -exec that will execute after find command
+exec recieve a command
 
 ## 🏁 Flag
 pwn.college{UbzTGxz65RZo-w628yG421T7-vH.ddjNxwCO4IDOxEzW}
