@@ -10,7 +10,8 @@
 -opened the terminal
 -ran: ''
 
-
+setarch --addr-no-randomize cat /flag 
+pwn.college{gTC34Rxw7IK2WABvVLH8yGIiLBC.dJzNxwCO4IDOxEzW}
 ## 🧑🏾‍🏫 what this challenge teaches u
 
 
