@@ -1,2 +1,21 @@
-socat STDOUT /flag 
+# challenge: socat
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'socat STDOUT /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+socat connects 2different endpoints
+in this case:
+STDOUT -> what u see in screen
+/flag -> its data
+
+## 🏁 Flag  
 pwn.college{g76GRL3efiJC1_ndJAIVnc5A_CC.dRzNxwCO4IDOxEzW}
