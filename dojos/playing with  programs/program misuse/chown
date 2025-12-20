@@ -1,0 +1,19 @@
+# challenge: chown
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'chown hacker /flag'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+chown changes file's owner
+
+## 🏁 Flag  
+pwn.college{E20FcSl53rE5Z0DNLPf0aGCF6uZ.dlzNxwCO4IDOxEzW}
