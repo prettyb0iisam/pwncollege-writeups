@@ -1,0 +1,19 @@
+# challenge: chmod
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'chmod a+r /flag'
+-ran: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+chmod changes file's permissions
+
+## 🏁 Flag  
+pwn.college{cTeUaNGJPFDxiiU-3W7SFuac0RQ.dBDOxwCO4IDOxEzW}
