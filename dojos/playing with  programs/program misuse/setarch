@@ -8,11 +8,13 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: ''
+-ran: 'setarch --addr-no-randomize cat /flag'
+-flag popped out
 
-setarch --addr-no-randomize cat /flag 
-pwn.college{gTC34Rxw7IK2WABvVLH8yGIiLBC.dJzNxwCO4IDOxEzW}
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+setarch allows u to run a command in a specific architectural environment
+u dont change cpu but enable/disable some characteristics of it
+in this case we disable the ASLR -> address space layout randomization with --addr-no-randomize
 
 ## 🏁 Flag  
+pwn.college{gTC34Rxw7IK2WABvVLH8yGIiLBC.dJzNxwCO4IDOxEzW}
