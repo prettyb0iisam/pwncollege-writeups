@@ -1,0 +1,19 @@
+# challenge: awk
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'awk "//" '/flag''
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+awk reads files
+"//" empty regex
+
+## 🏁 Flag  
+pwn.college{I1ALCUw7JvZk6mp08OwxrZo6f5w.dZzNxwCO4IDOxEzW}
