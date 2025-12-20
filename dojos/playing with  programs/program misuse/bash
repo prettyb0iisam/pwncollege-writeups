@@ -1,0 +1,20 @@
+# challenge: bash
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'bash -p'
+-typed: 'cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+bash spawn a shell. this shell drops the privileges tho.
+to avoid it use -p option
+
+## 🏁 Flag  
+pwn.college{YVuubvCuCNJ8auQhh5AKFVU9dxr.dZDOxwCO4IDOxEzW}
