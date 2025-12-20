@@ -1,0 +1,21 @@
+# challenge: ruby
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.rb'
+-typed: 'puts Line.read("/flag")'
+-ran: 'chmod a+x bro.rb'
+-ran: 'ruby bro.rb'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+similar to the previous challenge
+
+## 🏁 Flag  
+pwn.college{QHywgq55KRAeas5a2O6hKrBorvC.dVDOxwCO4IDOxEzW}
