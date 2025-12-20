@@ -1,0 +1,18 @@
+# challenge: watch
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'watch -x cat /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+watch keep executing a command multiple times every 2sec and display its output
+
+## 🏁 Flag  
+pwn.college{sVVehtiaag4yN_qIXxDZkWAHSxW.dNzNxwCO4IDOxEzW}
