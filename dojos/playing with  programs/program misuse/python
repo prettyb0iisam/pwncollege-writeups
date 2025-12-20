@@ -1,0 +1,18 @@
+# challenge: python
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'python -c 'print(open("/flag").read())''
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+python -c tells the shell to execeute the code passed on line command
+
+## 🏁 Flag  
+pwn.college{4E6Gt2ugjWKU3vdGKhesb-EEjSF.dRDOxwCO4IDOxEzW}
