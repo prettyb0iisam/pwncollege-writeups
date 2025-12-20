@@ -1,0 +1,19 @@
+# challenge: perl
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'perl -pe 'END {close ARGV }' /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+no clues on how to solve this shit
+thanks to https://medium.com/@chunguss/program-misuse-challenges-writeups-part-3-7b3307a7170e
+
+## 🏁 Flag  
+pwn.college{oaleYxPC-jMQxPHy_gyNeChWmzX.dNDOxwCO4IDOxEzW}
