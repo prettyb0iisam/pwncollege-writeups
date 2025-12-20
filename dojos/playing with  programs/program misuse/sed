@@ -1,0 +1,19 @@
+# challenge: sed
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'sed "p" /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+sed is a command to modify an output content
+in this case "p" means to print
+
+## 🏁 Flag  
+pwn.college{Ic_pFGJs9DAnPWHxbvUGrEApmOj.ddzNxwCO4IDOxEzW}
