@@ -1,0 +1,22 @@
+# challenge: ed
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'ed /flag'
+-typed: 'p'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+ed is an editor line-oriented
+after u run it, it prints the how many bytes the file has
+then it waits for command
+p command will print the full content
+
+## 🏁 Flag  
+pwn.college{oLpgwF9yOMHFfIPKZmMTXiZn8Nx.dhzNxwCO4IDOxEzW}
