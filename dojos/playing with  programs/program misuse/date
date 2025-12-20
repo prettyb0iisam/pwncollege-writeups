@@ -1,0 +1,19 @@
+# challenge: date
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'date -f /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+date explains dates and hours
+-f flag tells to explain line by line and it also prints the content
+
+## 🏁 Flag  
+pwn.college{kmHyzKXcLOzDdVjaif6Oehcem7W.ddDOxwCO4IDOxEzW}
