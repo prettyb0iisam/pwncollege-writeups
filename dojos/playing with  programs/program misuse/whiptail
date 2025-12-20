@@ -8,10 +8,13 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'whiptail --textbox /flag 20 50'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+whiptail is a communication window between u and the terminal
+--textbox [FILE] -> show in the window file's content
+H W -> height and width 
 
 ## 🏁 Flag  
+pwn.college{QuuQsO9Ph6LJRAIuETTiqCBD4HM.dVzNxwCO4IDOxEzW}
