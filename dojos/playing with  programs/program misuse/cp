@@ -1,0 +1,21 @@
+# challenge: cp
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'touch bro'
+-ran: 'cp /flag /home/hacker/bro'
+-ran: 'cat bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+cp copy file's content of input file and paste it to file passed as output
+if the file passed as output doesn't exist, it will create it
+
+## 🏁 Flag  
+pwn.college{YEG4zufAJgUFcf41xJ_XFdG4fNl.dFDOxwCO4IDOxEzW}
