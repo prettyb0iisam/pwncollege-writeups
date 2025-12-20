@@ -1,0 +1,18 @@
+# challenge: dmesg
+
+📅 2025-12-20
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'dmesg -F /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+dmesg prints system's messages
+
+## 🏁 Flag  
+pwn.college{8gdEdKOBKCi-5g9O7dgL1XzwQhg.dhDOxwCO4IDOxEzW}
