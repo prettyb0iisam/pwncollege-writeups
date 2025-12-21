@@ -1,0 +1,19 @@
+# challenge: wc
+
+📅 2025-12-21
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'wc --files0-from /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+wc counts raws, words and bytes from a file
+--file0-from -> opens [FILE] and prints out its content
+
+## 🏁 Flag  
+pwn.college{Acd1Ib86Y5jFe1nGVIjnK3QK6Z8.dlDOxwCO4IDOxEzW}
