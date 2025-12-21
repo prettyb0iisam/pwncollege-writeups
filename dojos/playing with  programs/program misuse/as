@@ -1,0 +1,18 @@
+# challenge: as
+
+📅 2025-12-21
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'as /flag'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+as is linux assembler. it transform s files (asm) into machine code
+
+## 🏁 Flag  
+pwn.college{IZMHoPwKqtX_jRLcuKSBV5dv4lQ.dFTOxwCO4IDOxEzW}
