@@ -1,4 +1,23 @@
+# challenge: ssh-keygen
+
+📅 2025-12-21
+📁 program misuse
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
 pwn.college{wGYrw3Jg83zqU9-X1mk8xlVLFbY.dNTOxwCO4IDOxEzW}
+
+
 
 test.c:
 #include <dlfcn.h>
