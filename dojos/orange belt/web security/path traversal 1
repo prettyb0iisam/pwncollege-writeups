@@ -1,6 +1,6 @@
 # challenge: path traversal 1
 
-📅 2026-01-16
+📅 2026-01-17
 📁 web security
 
 ---
@@ -8,10 +8,26 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'cat /challenge/server'
+found out the only enpoint provided by the server is /deliverables
+furthermore, the server allows anything after /deliverables/ allowing us for a path traversal
+the server build the requested path in the following way:
+-app.root_path = /challenge
+-"/files/"
+-path = everything after /deliverables in the url
+requested_path = /challenge/files/???
+if nothing is provided after /deliverables, by default it will use index.html
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /deliverables/../../flag HTTP/1.1'
+        'Host: challenge.localhost'
+the requested_path=/challenge/files/../../flag is resolved in -> /flag    (../../ eliminates /challenge and /files)
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+how to read server's code and retrieve the correct vulnerablity to exploit
+in this case <path:path> accepts arbitrary subpaths
+app.root_path is the full path in which server's code exist
 
 ## 🏁 Flag  
+pwn.college{kfk1hZNut7C5qzaFnlbIOkQPPDt.QX3gzMzwCO4IDOxEzW}
