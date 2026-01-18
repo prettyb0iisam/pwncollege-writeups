@@ -58,6 +58,7 @@ IV WAY -> python
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 path.strip("/.") stripes ur path by removing "." and "/" ONLY in the beginning and end of path
+since curl, netcat and browser's syntax r very similar i will write only netcat and python solves
 
 ## 🏁 Flag  
 pwn.college{wdLYycwFVW4tYFxmeAO3y-EAna7.QXyYTN2wCO4IDOxEzW}
