@@ -36,7 +36,7 @@ II WAY -> python
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-to exploit the vulnerability even if the server does a simple check as replacing ";" with "", u can pipe the command
+to exploit the vulnerability even if the server does a simple check as replacing ";" with "", u can pipe the command using |
 
 ## 🏁 Flag  
 pwn.college{AWE23lMr27EeQJNBSZ3KtX50Y5h.QX0YTN2wCO4IDOxEzW}
