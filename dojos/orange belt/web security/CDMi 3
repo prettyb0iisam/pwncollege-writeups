@@ -34,6 +34,7 @@ II WAY -> python
                 '}'
         'r = requests.get(url, params)'
         'print(r.text)'
+-ran: 'chmod a+x bro'
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
