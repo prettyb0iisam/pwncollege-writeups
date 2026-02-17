@@ -51,7 +51,6 @@ while True:
         if "admin" in r.text:
             flag += c
             print(f"{flag}", end="\r")
-            done = c
             if c == "}":
                 print()
                 exit()
