@@ -63,9 +63,9 @@ how to perform a Blind SQLi
 this challenge is super useful
 it helps u to understand how to automate script since in this case its almost impossible to retrieve the flag manually
 i defined a charset fulfilled with capital + non-capital letters + digits + {}-_.
-i iterated to each charset char requests using them as payload untill i found the right one
-if the payload is right the webserver redirects me to page
-once this happens, i concatenate the right payload to the flag im building
+i iterated to each char in charset requests using it as payload untill i found the right one
+if the payload is right the webserver redirects me to the webpage
+once this happens, i concatenated the right payload to the flag im building
 im done once the last char is }
 
 ## 🏁 Flag  
