@@ -1,0 +1,24 @@
+# challenge: popping stack values
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me'
+(gdb): starti
+(gdb): si
+(gdb): print $rdi
+copied the value (132)
+(gdb): q
+-ran: '/challenge/submit-number 132'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+it works the same as previous one but this time we used the register
+
+## 🏁 Flag  
+pwn.college{Mj5bmu8-0d5tzsi01MdDmmO0btq.01NzczMywCO4IDOxEzW}
