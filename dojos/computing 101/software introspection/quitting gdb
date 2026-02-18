@@ -1,0 +1,19 @@
+# challenge: quitting gdb
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me'
+-typed: 'q'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to quit in gdb. type quit or q
+
+## 🏁 Flag  
+pwn.college{03FrAQR56LejI1nXGjloIHKtXZd.01MzczMywCO4IDOxEzW}
