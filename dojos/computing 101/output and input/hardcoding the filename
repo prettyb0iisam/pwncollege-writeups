@@ -1,0 +1,48 @@
+# challenge: hardcoding the filename
+
+📅 2026-02-18
+📁 output and input
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov BYTE PTR [rsp], 0x2f'
+        'mov BYTE PTR [rsp+1], 0x66'
+        'mov BYTE PTR [rsp+2], 0x6c'
+        'mov BYTE PTR [rsp+3], 0x61'
+        'mov BYTE PTR [rsp+4], 0x67'
+        'mov BYTE PTR [rsp+5], 0x0'
+        'mov rdi, rsp'
+        'mov rsi, 0'
+        'mov rax, 2'
+        'syscall'
+        'mov rdi, rax'
+        'mov rsi, rsp'
+        'mov rdx, 64'
+        'mov rax, 0'
+        'syscall'
+        'mov rdi, 0'
+        'mov rsi, rsp'
+        'mov rdx, 64'
+        'mov rax, 1'
+        'syscall'
+        'mov rdi, 42'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+to change a register's value directly with one instruction use the following syntax:
+mov BYTE PTR [register], value
+
+## 🏁 Flag  
+pwn.college{AQxdrFv-ylaiNhKU-HiZtc_w76M.0lM0czMywCO4IDOxEzW}
