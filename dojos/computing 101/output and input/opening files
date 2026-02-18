@@ -1,0 +1,44 @@
+# challenge: opening files
+
+📅 2026-02-18
+📁 output and input
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rdi, [rsp+16]'
+        'mov rsi, 0'
+        'mov rax, 2'
+        'syscall'
+        'mov rdi, rax'
+        'mov rsi, rsp'
+        'mov rdx, 64'
+        'mov rax, 0'
+        'syscall'
+        'mov rdi, 0'
+        'mov rsi, rsp'
+        'mov rdx, 64'
+        'mov rax, 1'
+        'syscall'
+        'mov rdi, 42'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to open files using open syscall
+open -> 2
+rdi -> pointer to the file name string in memory
+rsi -> mode
+the returned value stored in rax is the file descriptor
+## 🏁 Flag  
+pwn.college{M_isupIN92gU8D2oNKu0jCCcbic.0VM0czMywCO4IDOxEzW}
