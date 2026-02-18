@@ -1,0 +1,32 @@
+# challenge: chaining syscalls
+
+📅 2026-02-18
+📁 output and input
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rdi, 1'
+        'mov rsi, [rsp+16]'
+        'mov rdx, 1'
+        'mov rax, 1'
+        'syscall'
+        'mov rdi, 42'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to chain different syscalls
+
+## 🏁 Flag  
+pwn.college{Aup7tAHFROvYGqgi0BNPiWNfwtv.QXxUTN2wCO4IDOxEzW}
