@@ -1,0 +1,24 @@
+# challenge: reading register values
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me'
+(gdb): starti
+(gdb): si
+(gdb): print $rdi
+copied the value (19089)
+(gdb): q
+-ran: /challenge/submit-number [pasted the value]
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+print indirizzo/$register allows u to print the value stored in the address or register
+
+## 🏁 Flag  
+pwn.college{glpZGct8JTbgqZU7_HJVHdPWvB0.0lNzczMywCO4IDOxEzW}
