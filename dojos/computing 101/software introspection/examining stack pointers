@@ -1,0 +1,24 @@
+# challenge: examining stack pointers
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/degub-me'
+(gdb): starti
+(gdb): x/a $rsp+16
+copied tha value (0x7fffffffed75)
+(gdb): x/s [pasted the value]
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to display memory values in different formats
+/a -> display the value as a memory address
+/s -> display the value as a string
+
+## 🏁 Flag  
+pwn.college{QB0Lx6cTI8zNLvkMO_XEhE0Qhp4.0VOzczMywCO4IDOxEzW}
