@@ -1,0 +1,23 @@
+# challenge: stepping through instructions
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me' 
+-typed: 'starti'
+-typed: 'stepi'
+copied the value (12388)
+-typed: 'q'
+-ran: '/challenge/submi-number 12388'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to step to the next instruction with stepi or si
+
+## 🏁 Flag  
+pwn.college{Y1uiP8ZQqIlHwsNOLyliMpk2tNQ.0VNzczMywCO4IDOxEzW}
