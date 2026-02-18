@@ -8,7 +8,7 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 'vim bro'
+-ran: 'vim bro.s'
 -typed: '.intel_syntax noprefix'
         '.global _start'
         '_start:'
