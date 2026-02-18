@@ -1,0 +1,28 @@
+# challenge: popping from the stack
+
+📅 2026-02-18
+📁 the stack
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'pop rdi'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use pop to pop out values from the stack
+once the program starts, [rsp] -> argc 
+
+## 🏁 Flag  
+pwn.college{stIONcyhuUNcFfV1FwZm9rb4voQ.0VMzczMywCO4IDOxEzW}
