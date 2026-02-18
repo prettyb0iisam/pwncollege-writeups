@@ -1,0 +1,24 @@
+# challenge: disassembling in gdb
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me'
+-typed: 'starti'
+-typed: 'disassemble'
+copied the first value stored in rdi (7d0c)
+-typed: 'q'
+-ran: '/challenge/submit-number 7d0c'
+-flag popped out
+  
+## 🧑🏾‍🏫 what this challenge teaches u
+how to disassemble program in gdb
+by typing disassemble u can see all instructions of main function
+
+## 🏁 Flag  
+pwn.college{k5sLYtbW2VWh_M6-_vGT5mnfcIJ.0FNzczMywCO4IDOxEzW}
