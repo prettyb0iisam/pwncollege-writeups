@@ -1,0 +1,24 @@
+# challenge: examining memory
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/debug-me'
+(gdb): starti
+(gdb): x $rsp
+copied the value (13)
+(gdb): q
+-ran: '/challenge/submit-number 13'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this time we used x
+it allows u to print memory values in hex
+
+## 🏁 Flag  
+pwn.college{0QgWg9PtZYhlKuyi1gSTLmMD64m.0FOzczMywCO4IDOxEzW}
