@@ -1,0 +1,22 @@
+# challenge: disassembling programs
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'objdump -d -M intel /challenge/disassemble-me'
+copied the first value stored in rdi (37cf)
+-ran: '/challenge/submit-number 37cf' or '/challenge/submit-number 14287'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+objdump is a powerful tool allows u to disassemble file
+its crucial to specify the flag -M intel so the assembly code will be readable
+use -d flag to specify disassembling
+
+## 🏁 Flag  
+pwn.college{EukLLrlMSTgP-Zg4nOhBo7XFSM_.0lMzczMywCO4IDOxEzW}
