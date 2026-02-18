@@ -1,0 +1,28 @@
+# challenge: cooperative debugging
+
+📅 2026-02-18
+📁 software introspection
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, 1337'
+        'int3'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+finally i understood why int3 is important
+it will helps u debugging program
+when execution reches int3, the debugger stops the program 
+
+## 🏁 Flag  
+pwn.college{4RbK12tmDtWrOBaBTBr0K__tvAa.0FM0czMywCO4IDOxEzW}
