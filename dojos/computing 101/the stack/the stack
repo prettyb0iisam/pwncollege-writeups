@@ -8,10 +8,33 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start: '
+        'mov rdi, [rsp]'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+its been couple months i wasnt solving assembly challenges and shit this helps me solidify concepts
+when u ran a program in linux x86_64, rsp points to the first 8bytes of the stack
+those bytes contains how many args has passed to the program
+then every 8bytes after contains pointers to:
+-argv[0] -> program's name
+-argv[1] -> first argument passed to the program
+-argv[2] -> second argument ...
+...
+example:
+./bro broski brodi
+argc = 3
+argv[0] -> pointer to program's name: "./bro"
+argv[1] -> pointer to first arg: "broski"
+argv[2] -> pointer to first arg: "brodi"
 
 ## 🏁 Flag  
+pwn.college{cs-lsVUWtPiESnz__LVWKvvzOL6.0FOyczMywCO4IDOxEzW}
