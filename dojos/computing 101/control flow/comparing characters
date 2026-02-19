@@ -1,0 +1,29 @@
+# challenge: comparing characters
+
+📅 2026-02-19
+📁 control flow
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, [rsp+16]'
+        'cmp BYTE PTR [rax], 'p''
+        'setz dil'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in this case we compared a chars. to specify the char u want to compare, use '' in the cmp instruction
+
+## 🏁 Flag  
+pwn.college{gwj_H9dq5hL1c8Y7DDNP4ZGRflI.0FN0czMywCO4IDOxEzW}
