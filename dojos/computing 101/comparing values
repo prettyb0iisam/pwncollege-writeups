@@ -1,0 +1,34 @@
+# challenge: comparing values
+
+📅 2026-02-19
+📁 control flow
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'xor rdi, rdi'
+        'cmp QWORD PTR [rsp], 42'
+        'setz dil'
+        'mov rax, 60'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to cmp values and modify the program's control flow
+after a cmp, we can store the output result (1 or 0) into a register (only lowest 8bit) with the setz instruction
+setz means SET if Zero -> result = 0 -> same values -> 1
+                          result !=0 -> different values -> 0
+the opposite of setz is setnz
+in this case i directly used the memory value stored in the stack by using QWORD PTR [reg], so it used 64bits
+
+## 🏁 Flag  
+pwn.college{gy4HpgniXRql6Th3dzuOBtsPoXb.01M0czMywCO4IDOxEzW}
