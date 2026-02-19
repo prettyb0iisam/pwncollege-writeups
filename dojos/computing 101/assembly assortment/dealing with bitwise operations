@@ -1,0 +1,24 @@
+# challenge: dealing with bitwise operations
+
+📅 2026-02-19
+📁 assembly assortment
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/reverse-me'
+(gdb): set disassembly-flavor intel
+(gdb): starti
+(gdb): disas _start
+0x59^0x3b=0x62=98=b
+(gdb): q
+-ran: '/challenge/reverse-me b'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this one works the same as previous ones but with XOR operator -> ^
+
+## 🏁 Flag  
+pwn.college{oVv6tiYQMhYVLc_PoVw11ThWt1w.0lM1czMywCO4IDOxEzW}
