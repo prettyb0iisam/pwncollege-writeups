@@ -1,0 +1,28 @@
+# challenge: reverse the calculation
+
+📅 2026-02-19
+📁 assembly assortment
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/reverse-me'
+(gdb): set disassembly-flavor intel
+(gdb): disas _start
+the program expects an argument
+it adds 0x47 to argv[1] and compare it to 0x96
+if they equals, print the flag
+0x96-0x47=0x4f
+0x4f = 79
+79 = O
+(gdb): q
+-ran: '/challenge/reverse me O'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+super usefull challenge to understand how reverse engineering works
+
+## 🏁 Flag  
+pwn.college{82sxx15_cgXg_CvWDYVYNK61UEQ.0FM1czMywCO4IDOxEzW}
