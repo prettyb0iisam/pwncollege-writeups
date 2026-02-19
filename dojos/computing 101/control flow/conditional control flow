@@ -1,0 +1,35 @@
+# challenge: conditional control flow
+
+📅 2026-02-19
+📁 control flow
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, [rsp+16]'
+        'cmp BYTE PTR [rax], 'p''
+        'jne fail'
+        'mov rdi, 0'
+        'mov rax, 60'
+        'syscall'
+        'fail:'
+        'mov rax, 60'
+        'mov rdi, 1'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use conditional jumps based on flags results after cmp instruction
+jne -> jump if not equals -> ZF = 0 they r non-equals, ZF = 1 they r equals
+
+## 🏁 Flag  
+pwn.college{o4_bHRcX3UrJfB8s4yjgwQGkWUO.0VN0czMywCO4IDOxEzW}
