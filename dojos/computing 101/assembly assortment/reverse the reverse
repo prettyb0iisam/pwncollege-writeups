@@ -8,10 +8,20 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'gdb /challenge/reverse-me'
+(gdb): set disassembly-flavor intel
+(gdb): starti
+(gdb): disas _start
+the challenge works the same as previous one but this time it subs 0x1c to our argv[1]
+0x49+0x1c=0x65
+0x65 = 101
+101 = e
+(gdb): q
+-ran: '/challenge/reverse me e'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+this one works the same as previous one but instead of adding, it subtracts
 
 ## 🏁 Flag  
+pwn.college{UuwIJ5sVY413_6LJAdf9_msRMus.0VM1czMywCO4IDOxEzW}
