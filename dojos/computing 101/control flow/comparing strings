@@ -1,0 +1,38 @@
+# challenge: comparing strings
+
+📅 2026-02-19
+📁 control flow
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'vim bro.s'
+-typed: '.intel_syntax noprefix'
+        '.global _start'
+        '_start:'
+        'mov rax, [rsp+16]'
+        'cmp BYTE PTR [rax], 'p''
+        'jne fail'
+        'cmp BYTE PTR [rax+1], 'w''
+        'jne fail'
+        'cmp BYTE PTR [rax+2], 'n''
+        'jne fail'
+        'mov rax, 60'
+        'mov rdi, 0'
+        'syscall'
+        'fail:'
+        'mov rax, 60'
+        'mov rdi, 1'
+        'syscall'
+-ran: 'as -o bro.o bro.s'
+-ran: 'ld -o bro bro.o'
+-ran: '/challenge/check bro'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to cmp a string in memory (stack) and control flow for each result
+
+## 🏁 Flag  
+pwn.college{ERlY07-AYEbuPp4WFjqLmoxGYf2.0lN0czMywCO4IDOxEzW}
