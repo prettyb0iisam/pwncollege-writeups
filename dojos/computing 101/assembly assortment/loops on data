@@ -1,0 +1,24 @@
+# challenge: loops on data
+
+📅 2026-02-19
+📁 assembly assortment
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'strings /challenge/reverse-me'
+found a suspicius string: 8euAKe
+-ran: 'objdump -s -j .rodata /challenge/reverse-me'
+the same string appears
+-ran: '/challenge/reverse-me 8euAKe'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this challenge provides two super useful command to retrieve hardcoded strings hidden in an elf:
+strings
+-s -j .rodata flags for objdump
+
+## 🏁 Flag  
+pwn.college{gwUbRw8UsWYBnwRVnWdO7s_6jyQ.01M1czMywCO4IDOxEzW}
