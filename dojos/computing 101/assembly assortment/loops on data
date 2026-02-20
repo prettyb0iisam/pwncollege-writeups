@@ -1,24 +1,52 @@
 # challenge: loops on data
 
-📅 2026-02-19
+📅 2026-02-20
 📁 assembly assortment
 
 ---
 
-## ✅ what i did  
+## ✅ what i did 
+I WAY -> gdb
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/reverse-me'
+(gdb): starti
+(gdb): disas _start
+it stores the pointer to our first argv in rdi
+it loads in rsi the address build in the following way: rip+0xf44
+when we r executing the lea, rip points to the next instruction which is 0x40100c
+0x40100c+0xff4=0x402000
+so the address loaded in rsi is 0x402000
+the loop compares each char of our argv[1] with each char of the string in address 0x402000
+so the goal is to print the string in address 0x402000
+(gdb): x/s 0x40200
+the output is the hardcoded string -> copied the output DHrAk2
+(gdb): q
+-ran: '/challenge/reverse-me DHrAk2'
+-flag popped out
+
+II WAY -> strings
 -clicked start
 -opened the terminal
 -ran: 'strings /challenge/reverse-me'
-found a suspicius string: 8euAKe
--ran: 'objdump -s -j .rodata /challenge/reverse-me'
-the same string appears
--ran: '/challenge/reverse-me 8euAKe'
+found a string: DHrAk2
+-ran: '/challenge/reverse-me DHrAk2'
+-flag popped out
+
+III WAY -> objdump
+-clicked start
+-opened the terminal
+-ran: 'objdump -s /challenge/reverse-me' or 'objdump -s -j .rodata /challenge/reverse-me'
+found a string: DHrAk2
+-ran: '/challenge/reverse-me DHrAk2'
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-this challenge provides two super useful command to retrieve hardcoded strings hidden in an elf:
-strings
--s -j .rodata flags for objdump
+how to examine .rodata addresses to find hardcoded strings in a program using gdb
+the command strings allows u to print all the prtintable strings in the elf
+the flag -s in objdump allows u to print raw bytes of the elf
+u can add more details such as:
+ -j [section] -> prints raw bytes only of that section (j identifies the section)
 
 ## 🏁 Flag  
 pwn.college{gwUbRw8UsWYBnwRVnWdO7s_6jyQ.01M1czMywCO4IDOxEzW}
