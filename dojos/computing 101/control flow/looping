@@ -1,0 +1,28 @@
+# challenge: looping
+
+📅 2026-02-20
+📁 assembly assortment
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'gdb /challenge/reverse-me'
+(gdb): starti
+(gdb): disas _start
+found out the program write a string in the stack: 
+0x70 0x59 0x34 0x44 0x33 0x76 0x0 -> 'pY4D3v'
+(gdb): info functions
+(gdb): disas loop
+the program compares our first arg passed to it with the string built previously
+if they match, it will succed printing the flag
+(gdb): q
+-ran: '/challenge/reverse-me pY4D3v'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+super useful challenge to understand how programs build strings and then compare them to, in this case, our first arg
+
+## 🏁 Flag  
+pwn.college{8_2n8YrFkf0hDhLz10iRO98MO71.0VO0czMywCO4IDOxEzW}
