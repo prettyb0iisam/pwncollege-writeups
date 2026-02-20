@@ -8,11 +8,31 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'gdb /challenge/reverse-me'
+(gdb): starti
+(gdb): disas _start
+the program takes the first arg pointer and puts it in rcx
+then it dereferences it by storing the actual value (argv[1] actual value) in AL after cleaning rax
+it will use this value in the jump_table to load and address and jump into it
+here since it loads only AL it means its only 1byte=256possibilities in the jump table
+(gdb): x/256a jump_table
+it prints out the full jump_table
+BUT IT HAS 2ENTRIES FOR EACH RAW
+copied the raw with success: 
+address - value
+0x4013a5 - 0x401013
+so the goal it select a value for rax that based on the jump_table 'functions', the result will be: 0x4013a5
+0x4013a5-0x401085=0x320
+0x320/0x8=0x64
+0x64 = 100 = 'd'
+(gdb): q
+-ran: '/challenge/reverse-me d'
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+MOST OF THE TIME x COMMAND IN gdb PRINTS 2 ENTRIES FOR EACH ROW
+this thing drove me crazy cuz i was thinking for each row only 1entry
+values we pass to the programs as arguments r strings in memory
 
 ## 🏁 Flag  
 pwn.college{EMufJcOlU-zU1GhH0VpDu6nq7tb.0FO0czMywCO4IDOxEzW}
