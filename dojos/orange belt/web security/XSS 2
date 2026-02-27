@@ -1,0 +1,26 @@
+# challenge: XSS 2
+
+📅 2026-02-27
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+this time we need to use an alert
+-ran: '/challenge/server'
+-opened the browser
+-url: http://challenge.localhost:80/
+-input in form: <script>alert("PWNED")</script>
+-opened a new terminal
+-ran: '/challenge/victim'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this one works as previous one but this time we added JavaScript code
+Javascript code exists inside <script> and </script>
+
+## 🏁 Flag  
+pwn.college{IA8rRyoAY8dkXVjIEJ9graPtK7j.QX3cTN2wCO4IDOxEzW}
