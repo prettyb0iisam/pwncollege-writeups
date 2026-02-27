@@ -1,0 +1,32 @@
+# challenge: XSS 1
+
+📅 2026-02-27
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+there is a database in which r stored contents
+endpoint=/ POST & GET content=...
+once performed the POST requests, our content will be shown in the page
+since there is no sanitization, we can inject html code
+-ran: '/challenge/server'
+-opened the browser
+-url: http://challenge.localhost:80/
+-input to Post field: <input type=text value=bro>
+-submited the form
+-opened a new terminal
+-ran: '/challenge/victim'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to perform Stored-XSS
+in a Stored-XSS our input will be stored inside, in this case, a database
+if there r no input sanifications, we can inject code that will be executed by the browser
+here the goal was to inject another input field since /challenge/victim check for it
+
+## 🏁 Flag  
+pwn.college{Y3XPGv73PNifEaYzAhwterswU57.QX1cTN2wCO4IDOxEzW}
