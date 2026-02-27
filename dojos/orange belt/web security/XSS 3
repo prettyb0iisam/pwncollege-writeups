@@ -1,0 +1,22 @@
+# challenge: XSS 3
+
+📅 2026-02-27
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+this time its a Reflected-XSS so our goal is the query string in the url
+-ran: '/challenge/server'
+-ran: '/challenge/victim http://challenge.localhost:80/?msg=%3Cscript%3Ealert%28%22PWNED%22%29%3C%2Fscript%3E'
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+since nothing will be stored in the database, in fact there is no database, the Reflected-XSS lives in the url
+the query strings allows for xss since the attacker can trick the victim into visiting a specifically-crafted url
+
+## 🏁 Flag  
+pwn.college{c7N1v-WYoeuMUi-JFGDGmFiMvgR.QX0kzMzwCO4IDOxEzW}
