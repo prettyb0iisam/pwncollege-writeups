@@ -6,6 +6,7 @@
 ---
 
 ## ✅ what i did  
+I WAY -> python server x index.html
 -clicked start
 -opened the terminal
 -ran: 'cat /challenge/server'
@@ -30,6 +31,22 @@ it means that on every redirections cookie r not sent excepts for Top-Level redi
 -ran: '/challenge/victim'
 -checked on /challenge/server to see logs 
 -the goal is to see GET /publish 302 in green
+-opened the browser
+-url: http://challenge.localhost:80/
+-logged in as hacker-1337
+-flag popped out
+
+II WAY -> nc x 302 redirection
+-clicked start
+-opened the terminal
+-ran: 'nc -lv hacker.localhost 1337'
+-opened a new terminal
+-ran: '/challenge/server'
+-ran: '/challenge/victim'
+-once i see a request in hacker server i typed: 'HTTP/1.1 302 Found'
+                                                'Location: http://challenge.localhost:80/publish'
+-(pressed Enter multiple times)
+-checked on /challenge/server for GET /publish HTTP/1.1 302
 -opened the browser
 -url: http://challenge.localhost:80/
 -logged in as hacker-1337
