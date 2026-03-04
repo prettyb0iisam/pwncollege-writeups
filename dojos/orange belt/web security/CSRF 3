@@ -28,7 +28,7 @@ there is a new endpoint: /ephemeral -> GET, vulnerable to reflected-XSS
 -flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-crucial to understand how to avoid </script> parsing 
+crucial to understand how to avoid </script> parsing from the browser
 just divide </script> in the middle and concatenate the two parts
 
 ## 🏁 Flag  
