@@ -1,0 +1,34 @@
+📅 2026-03-20
+
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = 'error'
+
+p = process("/challenge/run")
+
+data = p.recvline()
+key = int(data.strip().decode().split()[-1])
+
+data = p.recvline()
+encrypted_secret = int(data.strip().decode().split()[-1])
+
+decrypted_key = key ^ encrypted_secret
+
+p.sendline(str(decrypted_key).encode())
+print(p.recvall().decode())
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use XOR in python
+if data r encrypted, to decrypted them u need the key
+in this challenge the goal was: extract the key, extract the encryption value and then XOR them, and send the result
+recvline() reads until it finds a \n. the value is bytes
+.strip() -> removes \n
+.decode() -> converts from bytes in strings
+.split() -> splits the string
+[-1] -> pick the last value in the array
+sendline() -> sends the value to the waiting process
+recvall() -> prints the full output
+
+## 🏁 Flag  
+pwn.college{kMcWQd4cPHpIBFkKeykK_qpVR83.QX3IzN5wCO4IDOxEzW}
