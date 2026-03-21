@@ -1,0 +1,28 @@
+📅 2026-03-21
+
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = 'error'
+
+p = process("/challenge/run", stdin=PTY, stdout=PTY)
+
+for i in range(9):
+    p.recvline()
+    enc_char = ord(p.recvline().strip().decode().split()[-1])
+    key = int(p.recvline().strip().decode().split()[-1], 16)
+    dec_char = enc_char ^ key
+    p.sendline(chr(dec_char).encode())
+    p.recvline()
+print(p.recvall().decode())
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in this challenge the process wants u interact with him
+to bypass this and still script it user: stdin=PTY, stdout=PTY inside process()
+once u extract the ASCII char to XOR it with the key u have to convert it first
+chr() and ord() functions allows u to pick which rapresentation of ASCII value u want:
+-from char to int -> ord()
+-from int to char -> chr()
+
+## 🏁 Flag  
+pwn.college{0iXrvT6KqAS9pUW89jjVKZqNYfm.QX4IzN5wCO4IDOxEzW}
