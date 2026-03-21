@@ -1,0 +1,35 @@
+📅 2026-03-21
+
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = 'error'
+
+p = process("/challenge/run")
+
+p.recvline()
+
+for i in range (10):
+    key = int(p.recvline().strip().decode().split()[-1], 16)
+
+    encrypted_secret = int(p.recvline().strip().decode().split()[-1], 16)
+
+    decrypted_secret = key ^ encrypted_secret
+
+    p.sendline(hex(decrypted_secret).encode())
+    p.recvline()
+    p.recvline()
+    p.recvline()
+print(p.recvall().decode())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in this challenge u have to work w/ HEX and iterate 10times
+in int method to convert a string in integer, u can specify the base of the string. 16 means the value is hex
+hex() converts a bytes into an hex string
+THERE R 3 FAMILY TYPES:
+-INT -> just numbers. for calculation only
+-STR -> just text. for print text only
+-BYTES -> raw bytes. for  comunication w/ process only
+
+
+## 🏁 Flag  
+pwn.college{c-xXrHHz8NRJVKxwEEM4mKKBudG.QXwMzN5wCO4IDOxEzW}
