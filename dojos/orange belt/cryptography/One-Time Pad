@@ -31,7 +31,7 @@ print(flag)
 One-Time Pad is the best encryption-decryption method ONLY if:
 -secure key transfer (nobody has the key excepts for the 2 who comunicate)
 -pad used 1 time only
-textwrap library was crucial to split key and enc_flag since they r in hex
+textwrap library was crucial to split key and enc_flag since they r in hex strings
 
 ## 🏁 Flag  
 pwn.college{YjMTgojANY9VuAg-Gy__1czf1Qy.QX0czMzwCO4IDOxEzW}
