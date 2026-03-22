@@ -1,0 +1,28 @@
+📅 2026-03-22
+I WAY -> online XORer
+/challenge/run
+input (hex): 212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121
+output (hex): b4469765256fd9851b993d40237d28b2d73a9231b0fb8c889188dcfd7855307c00276745f4c430bd8b32cefd4efa42bf9185155abd1caf6b065c96ca
+url: https://md5decrypt.net/Xor/
+cipher=212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121212121
+key=b4469765256fd9851b993d40237d28b2d73a9231b0fb8c889188dcfd7855307c00276745f4c430bd8b32cefd4efa42bf9185155abd1caf6b065c96ca
+settings all hex
+output=9567b644044ef8a43ab81c61025c0993f61bb31091daada9b0a9fddc5974115d21064664d5e5119caa13efdc6fdb639eb0a4347b9c3d8e4a277db7eb
+this value is the leaked key
+copied the flag ciphertext and filled the ciper field
+pasted the leaked key in the key field
+output set to text
+xored
+flag popped out
+
+II WAY -> python
+
+
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+One-Time Pad cannot work if the key is used more than once
+if i use a converted input that i know and xor with a hidden key, i can reproduce the key by xoring the output that i just recieved with my first input
+
+## 🏁 Flag  
+pwn.college{krgV_mwJaFqL54zlOsQ1G7rOPQ-.QX1czMzwCO4IDOxEzW}
