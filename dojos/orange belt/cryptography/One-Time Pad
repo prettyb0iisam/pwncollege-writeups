@@ -1,0 +1,37 @@
+📅 2026-03-22
+
+I WAY -> online XORer
+/challenge/run
+copied both:
+-One-Time Pad Key = 24e4ae7ac56f2d0b4909f975af6ad58b55eb6c3bd5673399b642b1fe25caae87e6f3456bab6635d1a8e65d0d017e64e7c251583ff1def1d59b821913
+-Flag Ciphertext = 5493c054a60041672c6e9c0ef60098df3284067a9b3e0acfc303d6d362b3f1d8d7903f0d9a374cfff9be6d6e7b331e90811e6c76b5918990e1d56419
+url: https://md5decrypt.net/en/Xor/
+pasted the values in the corrisponding fields and set them to hex
+flag popped out
+
+II WAY -> python
+#!/usr/bin/env python3
+import textwrap
+from pwn import *
+context.log_level = 'error'
+
+p = process("/challenge/run")
+
+key = textwrap.wrap(p.recvline().strip().decode().split()[-1], 2)
+enc_flag = textwrap.wrap(p.recvline().strip().decode().split()[-1], 2)
+flag = ""
+
+for i in range(len(key)):
+    flag += chr(int(key[i], 16) ^ int(enc_flag[i], 16))
+
+print(flag)
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+One-Time Pad is the best encryption-decryption method ONLY if:
+-secure key transfer (nobody has the key excepts for the 2 who comunicate)
+-pad used 1 time only
+textwrap library was crucial to split key and enc_flag since they r in hex
+
+## 🏁 Flag  
+pwn.college{YjMTgojANY9VuAg-Gy__1czf1Qy.QX0czMzwCO4IDOxEzW}
