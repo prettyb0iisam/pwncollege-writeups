@@ -1,0 +1,28 @@
+📅 2026-03-22
+
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = 'error'
+
+p = process("/challenge/run")
+
+for i in range(9):
+    p.recvline()
+    p.recvline()
+    enc_str = p.recvline().strip().decode().split()[-1]
+    key = p.recvline().strip().decode().split()[-1]
+    dec_str = ""
+    for i in range(len(enc_str)):
+        dec_str += chr(ord(enc_str[i]) ^ ord(key[i]))
+    p.sendline(dec_str.encode())
+
+print(p.recvall().decode())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+to xor a full string u have to xor each chars first
+in fact ord() takes one char as argument only
+chr() -> output a CHAR 
+ord() -> output an ORDINAL (number)
+
+## 🏁 Flag  
+pwn.college{gGmKvTF8D53wJ57NK-iwl-XxjVe.QX5IzN5wCO4IDOxEzW}
