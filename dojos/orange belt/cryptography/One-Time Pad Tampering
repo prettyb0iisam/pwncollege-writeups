@@ -1,0 +1,26 @@
+📅 2026-03-23
+
+I WAY -> online XORer
+cat /challenge/dispatcher 
+cat /challenge/workers
+found out i can leak the key, since it will be used more than 1 time. the first time it has been used to encrypt the word: sleep
+/challenge/dispatcher -> copied the ciphertext: 5c4cd8e704
+url: https://md5decrypt.net/Xor/
+input (text) = sleep
+key (hex) = 5c4cd8e704
+output (hex) = 2f20bd8274
+this value is the key in hex. this key will be used also to encrypt the word: flag! before getting the flag
+input (text) = flag!
+key (hex) = 2f20bd8274
+output (hex) = 494cdce555
+/challenge/dispatcher
+input: TASK: 494cdce555
+flag popped out
+
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+One-Time Pad cannot work if u use the same key more than once
+
+## 🏁 Flag  
+pwn.college{8CyinYQPSYfxUVyQQPKHhFdT1id.01M3kjNxwCO4IDOxEzW}
