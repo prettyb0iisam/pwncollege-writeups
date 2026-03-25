@@ -16,13 +16,33 @@ xored
 flag popped out
 
 II WAY -> python
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Util.strxor import strxor
+context.log_level = 'error'
 
+p = process("/challenge/run")
 
+flag_cipher = p.recvline().strip().decode().split()[-1]
+
+zero = b"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+p.sendline(zero)
+
+key = p.recvline().strip().decode().split()[-1]
+
+flag = strxor(bytes.fromhex(flag_cipher), bytes.fromhex(key))
+print(flag.decode())
 
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 One-Time Pad cannot work if the key is used more than once
-if i use a converted input that i know and xor with a hidden key, i can reproduce the key by xoring the output that i just recieved with my first input
+if i use as input ZEROs and xor with the hidden key, i can steal the key thanks to XOR property: identity on 0
+strxor() can xor full strings.
+it takes:
+-bytes
+-they gotta be the same length
+the output is still a bytes
+in this case we needed to specify to strxor that both inputs gotta be converted in hex bytes
 
 ## 🏁 Flag  
 pwn.college{krgV_mwJaFqL54zlOsQ1G7rOPQ-.QX1czMzwCO4IDOxEzW}
