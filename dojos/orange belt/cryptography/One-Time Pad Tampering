@@ -17,10 +17,36 @@ output (hex) = 494cdce555
 input: TASK: 494cdce555
 flag popped out
 
+II WAY -> python
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Util.strxor import strxor
+context.log_level = 'error'
+
+p1 = process("/challenge/dispatcher")
+
+task = p1.recvline().strip().decode().split()[-1]
+sleep = b"sleep"
+
+key_bytes = strxor(bytes.fromhex(task), sleep)
+key = bytes.hex(key_bytes)
+
+
+p2 = process("/challenge/worker")
+
+flag = b"flag!"
+intro = "TASK: "
+
+enc_flag = strxor(bytes.fromhex(key), flag)
+payload = intro + bytes.hex(enc_flag)
+
+p2.sendline(payload.encode())
+print(p2.recvall(timeout=1).decode())
 
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 One-Time Pad cannot work if u use the same key more than once
+timeout=1 was crucial to stop the process and get the result
 
 ## 🏁 Flag  
 pwn.college{8CyinYQPSYfxUVyQQPKHhFdT1id.01M3kjNxwCO4IDOxEzW}
