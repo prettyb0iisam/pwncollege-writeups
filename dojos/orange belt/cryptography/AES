@@ -1,0 +1,40 @@
+📅 2026-03-26
+
+I WAY -> cyberchef
+/challenge/run
+key (hex) = a36961bd0bbe848319a0a2cc97fb2d89
+flag ciphertext (hex) = 9b410b26272e0a65aac913bbeeeeca741361f3e813f87d3e59b20c90bd09219e27c4286db749646c9989173c41e1b90cb54f7566eba9390b0a34ee2fb9f173ad
+url: https://gchq.github.io/CyberChef/
+operations= AES Decrypt
+input=9b410b26272e0a65aac913bbeeeeca741361f3e813f87d3e59b20c90bd09219e27c4286db749646c9989173c41e1b90cb54f7566eba9390b0a34ee2fb9f173ad
+key=a36961bd0bbe848319a0a2cc97fb2d89
+mode=ECB
+flag popped out
+
+II WAY -> python
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Cipher import AES
+context.log_level = 'error'
+
+p = process("/challenge/run")
+
+key = p.recvline().strip().decode().split()[-1]
+flag_ciphertext = p.recvline().strip().decode().split()[-1]
+cipher = AES.new(bytes.fromhex(key), AES.MODE_ECB)
+flag = cipher.decrypt(bytes.fromhex(flag_ciphertext))
+
+print(flag.decode())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+AES=Advanced Encryption Standard
+it is symmetric as OTP, but it uses the same key guaranting security
+it works in 16bytes block:
+-plaintext < 16bytes -> PADDING
+-plaintext > 16bytes -> u can choose the MODE. in this case we used ECB=Electronic CodeBook
+use the following library: Crypto.Cipher
+u have to create an object (cipher) and assign it the key (bytes) and the mode
+then u can decrypt
+
+## 🏁 Flag  
+pwn.college{wZUWqgcwUnWOhCzsyiGeqJckvLV.QX2czMzwCO4IDOxEzW}
