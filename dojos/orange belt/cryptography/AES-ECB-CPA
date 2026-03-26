@@ -1,0 +1,37 @@
+📅 2026-03-26
+
+#!/usr/bin/env python3
+from pwn import *
+import string
+context.log_level = 'error'
+
+p = process("/challenge/run")
+charset = string.ascii_letters + string.digits + "{.-_}"
+flag = ""
+
+for i in range(59):
+    p.sendline("2".encode())
+    p.sendline("0".encode())
+    p.sendline(str(i+1).encode())
+    p.recvuntil(b"Result: ")
+    enc_flag = p.recvline().strip().decode().split()[-1]
+    for c in charset:
+        payload = flag + c
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        result = p.recvline().strip().decode().split()[-1]
+        if result == enc_flag:
+            flag += c
+            print(flag, end="\r")
+            break
+print()
+
+## 🧑🏾‍🏫 what this challenge teaches u
+AES is vulnerable to its mode: ECB
+u can use the cipher as Oracles to check if ur encrypted chosen plaintext is equal to the encrypted flag
+just work char-by-char and check if the result string is equal to the oracles output
+recvuntil() works perfectly in this case to extract what we need
+
+## 🏁 Flag  
+pwn.college{sJrnGDUv6DIGXlGdJVXNN6xvHsF.QXxMzN5wCO4IDOxEzW}
