@@ -1,0 +1,37 @@
+📅 2026-03-28
+
+#!/usr/bin/env python3
+from pwn import *
+import string
+context.log_level = 'error'
+
+charset = string.ascii_letters + string.digits + "{-._}"
+
+p = process("/challenge/run")
+flag = ""
+
+for i in range(59):
+    p.sendline("2".encode())
+    p.sendline(str(i+1).encode())
+    p.recvuntil("Result: ".encode())
+    cipher_flag_char = p.recvline().strip().decode()
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil("Result: ".encode())
+        result = p.recvline().strip().decode()
+        
+        if result == cipher_flag_char:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this time u have to work with the suffix
+u can encrypt the flag from the tail only
+
+## 🏁 Flag  
+pwn.college{wbHuOdZDq3dc_I9dv7UtImRH7bY.QXzMzN5wCO4IDOxEzW}
