@@ -98,6 +98,8 @@ this time, in prefix is way more difficult
 in the second option, our char is prepend to the flag
 this means that for the last 16bytes of the flag u can perform the attack as the previous challenge
 but when u look for the first 43bytes its a bit thougher
+in this challenge, PKCS7 is disabled. in fact if we prepend 5chars to the flag, we get 64bytes splited in 4 blocks of 16bytes each
+with PKCS7 abilited, if we send 64bytes, we would have had a fifth block ciphertext that tells the pt is finished
 
 ## 🏁 Flag 
 pwn.college{Y9yvOkYogu_1YSuudzCbHWU457o.QX0MzN5wCO4IDOxEzW}
