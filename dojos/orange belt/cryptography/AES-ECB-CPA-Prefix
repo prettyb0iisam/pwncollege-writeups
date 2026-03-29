@@ -1,0 +1,103 @@
+📅 2026-03-29
+
+#!/usr/bin/env python3
+from pwn import *
+import string
+import textwrap
+context.log_level = 'error'
+
+p = process("/challenge/run")
+charset = string.ascii_letters + string.digits + "{-._}"
+flag = ""
+
+
+for i in range(16):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+6)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-1]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-1]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+for i in range(16):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+22)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-2]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-2]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+for i in range(16):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+38)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-3]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-3]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+for i in range(16):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+49)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-4]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-4]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this time, in prefix is way more difficult
+in the second option, our char is prepend to the flag
+this means that for the last 16bytes of the flag u can perform the attack as the previous challenge
+but when u look for the first 43bytes its a bit thougher
+
+## 🏁 Flag 
+pwn.college{Y9yvOkYogu_1YSuudzCbHWU457o.QX0MzN5wCO4IDOxEzW}
