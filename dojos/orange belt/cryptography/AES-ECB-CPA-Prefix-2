@@ -1,0 +1,102 @@
+📅 2026-03-30
+
+#!/usr/bin/env python3
+from pwn import *
+import string
+import textwrap
+context.log_level = 'error'
+
+p = process("/challenge/run")
+charset = string.ascii_letters + string.digits + "{-._}"
+flag = ""
+
+
+for i in range(15):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+6)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-1]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-1]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+for i in range(16):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+21)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-2]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-2]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+
+for i in range(16):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+37)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-3]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-3]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+for i in range(12):
+    p.sendline("2".encode())
+    p.sendline(str("A" * (i+37)).encode())
+    p.recvuntil(b"Result: ")
+    full_block = p.recvline().strip().decode()
+    block = textwrap.wrap(full_block, 32)[-4]
+
+    for c in charset:
+        payload = c + flag
+        p.sendline("1".encode())
+        p.sendline(payload.encode())
+        p.recvuntil(b"Result: ")
+        full_result = p.recvline().strip().decode()
+        result = textwrap.wrap(full_result, 32)[-4]
+        if result == block:
+            flag = c + flag
+            print(flag, end="\r")
+            break
+print()
+
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+challenge works the same as previous one but this time PKCS7 is active
+this means we will have one block more at the end when we fulfill the chosen plaintext or prepended flag
+
+## 🏁 Flag  
+pwn.college{kOsDQeeLW_cC3pq2oWw6Sf0T_AH.QX1MzN5wCO4IDOxEzW}
