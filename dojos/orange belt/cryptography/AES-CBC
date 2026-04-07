@@ -1,0 +1,49 @@
+📅 2026-04-07
+
+I WAY -> CyberChef
+/challenge/run
+key=866ba24e607760cde277b346ee4e09fb
+ciphertext=fa45e171ee36fcdc898c305352cf0f13ae3a277b0abcc40fd360a0c17b96fb2a19124913f8cd659088594784920a813a589289174ce46862d22ace7ea68f03b098cac6c6124b7d7f3279552391b0378e
+url: https://gchq.github.io/CyberChef/
+operation: AES Decrypt
+key(hex) = 866ba24e607760cde277b346ee4e09fb
+ciphertext(hex) = fa45e171ee36fcdc898c305352cf0f13
+IV(hex) = ae3a277b0abcc40fd360a0c17b96fb2a19124913f8cd659088594784920a813a589289174ce46862d22ace7ea68f03b098cac6c6124b7d7f3279552391b0378e
+mode = CBC
+output = RAW
+flag popped out
+
+II WAY -> python 
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Cipher import AES
+context.log_level = 'error'
+
+p = process("/challenge/run")
+
+key = p.recvline().strip().decode().split()[-1]
+ciphertext = p.recvline().strip().decode().split()[-1]
+
+cipher = AES.new(bytes.fromhex(key), AES.MODE_CBC)
+
+flag = cipher.decrypt(bytes.fromhex(ciphertext))
+
+print(flag[16:].decode())
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how AES CBC mode works
+CBC=Cipher Block Chaining
+the encryption with this method works in the following way:
+-IV stands for Initial Vector -> a random 16bytes block that XORs the first plaintext 16bytes block 
+-the output of this XORs the second block and go on until it ends
+-the result XORed blocks r encrypted with the key in AES
+the process of decryption works the same but reversed
+in python (and cyberchef also) this is done automatically
+just provide:
+-plaintext
+-key
+-IV -> this one sometimes is optional because python recieve the input in the following way: IV+plaintext -> this means the first block is the IV
+
+## 🏁 Flag  
+pwn.college{4EvBBmBnh3ogSlJFVXHjRe53MDv.QX3MzN5wCO4IDOxEzW}
