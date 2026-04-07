@@ -44,6 +44,7 @@ just provide:
 -plaintext
 -key
 -IV -> this one sometimes is optional because python recieve the input in the following way: IV+plaintext -> this means the first block is the IV
+in python, after decryption, the first 16bytes of ouput is the IV so u can just slice it to avoid print it
 
 ## 🏁 Flag  
 pwn.college{4EvBBmBnh3ogSlJFVXHjRe53MDv.QX3MzN5wCO4IDOxEzW}
