@@ -1,0 +1,173 @@
+📅 2026-04-10
+
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Cipher import AES
+import string
+import textwrap
+context.log_level = 'error'
+
+p = process("/challenge/run")
+charset = "}" + string.ascii_letters + string.digits + "{.-_"
+flag = ""
+
+for i in range(15):
+    for c in charset:
+        j = 15 - i
+        n = 6 + i
+        preappend = format(ord(c), 'x') +  flag + f"{j:02x}" * j 
+        padding = "aa" * n
+
+        payload = preappend + padding
+
+        p.sendline(payload.encode())
+        p.recvuntil("Ciphertext: ".encode())
+        result = textwrap.wrap(p.recvline().decode(), 32)
+        block_flag = result[-1]
+        block_char = result[0]
+
+        if block_char == block_flag:
+            flag = format(ord(c), 'x') + flag
+            break
+for c in charset:
+    n = 5
+    preappend = format(ord(c), 'x') +  flag
+    padding = "aa" * n
+
+    payload = preappend + padding
+
+    p.sendline(payload.encode())
+    p.recvuntil("Ciphertext: ".encode())
+    result = textwrap.wrap(p.recvline().decode(), 32)
+    block_flag = result[-2]
+    block_char = result[0]
+
+    if block_char == block_flag:
+        flag = format(ord(c), 'x') + flag
+        break
+
+
+for i in range(15):
+    for c in charset:
+        j = 15 - i
+        n = 6 + i
+        append = format(ord(c), 'x') +  flag 
+        block_null = f"{j:02x}" * j 
+        preappend = append + block_null 
+        padding = "aa" * n
+
+        payload = preappend + padding
+
+        p.sendline(payload.encode())
+        p.recvuntil("Ciphertext: ".encode())
+        result = textwrap.wrap(p.recvline().decode(), 32)
+        block_flag = result[-2]
+        block_char = result[0]
+
+        if block_char == block_flag:
+            flag = format(ord(c), 'x') + flag
+            break
+for c in charset:
+    n = 5
+    preappend = format(ord(c), 'x') +  flag
+    padding = "aa" * n
+
+    payload = preappend + padding
+
+    p.sendline(payload.encode())
+    p.recvuntil("Ciphertext: ".encode())
+    result = textwrap.wrap(p.recvline().decode(), 32)
+    block_flag = result[-3]
+    block_char = result[0]
+
+    if block_char == block_flag:
+        flag = format(ord(c), 'x') + flag
+        break
+
+
+for i in range(15):
+    for c in charset:
+        j = 15 - i
+        n = 6 + i
+        append = format(ord(c), 'x') +  flag 
+        block_null = f"{j:02x}" * j 
+        preappend = append + block_null 
+        padding = "aa" * n
+
+        payload = preappend + padding
+
+        p.sendline(payload.encode())
+        p.recvuntil("Ciphertext: ".encode())
+        result = textwrap.wrap(p.recvline().decode(), 32)
+        block_flag = result[-3]
+        block_char = result[0]
+
+        if block_char == block_flag:
+            flag = format(ord(c), 'x') + flag
+            break
+for c in charset:
+    n = 5
+    preappend = format(ord(c), 'x') +  flag
+    padding = "aa" * n
+
+    payload = preappend + padding
+
+    p.sendline(payload.encode())
+    p.recvuntil("Ciphertext: ".encode())
+    result = textwrap.wrap(p.recvline().decode(), 32)
+    block_flag = result[-4]
+    block_char = result[0]
+
+    if block_char == block_flag:
+        flag = format(ord(c), 'x') + flag
+        break
+
+
+for i in range(11):
+    for c in charset:
+        j = 15 - i
+        n = 6 + i
+        append = format(ord(c), 'x') +  flag 
+        block_null = f"{j:02x}" * j 
+        preappend = append + block_null 
+        padding = "aa" * n
+
+        payload = preappend + padding
+
+        p.sendline(payload.encode())
+        p.recvuntil("Ciphertext: ".encode())
+        result = textwrap.wrap(p.recvline().decode(), 32)
+        block_flag = result[-4]
+        block_char = result[0]
+
+        if block_char == block_flag:
+            flag = format(ord(c), 'x') + flag
+            break
+for c in charset:
+    n = 5
+    preappend = format(ord(c), 'x') +  flag
+    padding = "aa" * n
+
+    payload = preappend + padding
+
+    p.sendline(payload.encode())
+    p.recvuntil("Ciphertext: ".encode())
+    result = textwrap.wrap(p.recvline().decode(), 32)
+    block_flag = result[-5]
+    block_char = result[0]
+
+    if block_char == block_flag:
+        flag = format(ord(c), 'x') + flag
+        break
+
+print(bytes.fromhex(flag).decode())
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+extremely difficult challenge
+the idea is to prepend our payload and dumb chars to get the ciphertext and compare the last block with the first block and carry out 1 char at a time
+after 15chars, u cannot still check the last block but the penultimate and go on
+the really difficult part after carrying on the concept idea, is to move from checking last block to checking the previous and so managing the dumb chars (in the script i called them block_null and padding)
+
+## 🏁 Flag  
+pwn.college{wekBLczwI4jXM5hbpshFU_as8oU.QX3czMzwCO4IDOxEzW}
