@@ -21,14 +21,16 @@ context.log_level = 'error'
 
 p = process("/challenge/run")
 
-key = p.recvline().strip().decode().split()[-1]
-ciphertext = p.recvline().strip().decode().split()[-1]
+p.recvuntil("AES Key (hex): ".encode())
+key = p.recvline().strip().decode()
+
+p.recvuntil("Flag Ciphertext (hex): ".encode())
+ciphertext = p.recvline().strip().decode()
 
 cipher = AES.new(bytes.fromhex(key), AES.MODE_CBC)
+plaintext = cipher.decrypt(bytes.fromhex(ciphertext))[16:75]
 
-flag = cipher.decrypt(bytes.fromhex(ciphertext))
-
-print(flag[16:].decode())
+print(plaintext.decode())
 
 
 ## 🧑🏾‍🏫 what this challenge teaches u
