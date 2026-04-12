@@ -1,0 +1,243 @@
+📅 2026-04-12
+
+#!/usr/bin/env python3
+from pwn import *
+from bs4 import BeautifulSoup
+import requests
+import string
+import base64
+context.log_level = 'error'
+
+url = "http://challenge.localhost/"
+url_reset = "http://challenge.localhost/reset"
+flag = ""
+charset = string.ascii_letters + string.digits + "{-._}"
+headers = {
+    "Host" : "challenge.localhost"
+}
+#BLOCK1
+for i in range(15):
+    for c in charset:
+        payload1 = {
+            "content" : "|" * (14 - i) 
+        }
+
+        build = "|" * (15-i) + flag + c
+
+        payload2 = {
+            "content" : f"{build}"
+        }
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload1)
+        soup_char = BeautifulSoup(r.text, 'html.parser')
+        result_flag = soup_char.find_all('pre')[0].text
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload2)
+        soup_result = BeautifulSoup(r.text, 'html.parser')
+        result = soup_result.find_all('pre')[0].text
+        result_flag_decode = base64.b64decode(result_flag)[:16]
+        result_decode = base64.b64decode(result)[:16]
+
+        if result_flag_decode == result_decode:
+            flag += c
+            print(flag, end="\r")
+            break
+for c in charset:
+    payload2 = {
+        "content" : f"{flag+c}"
+    }
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.get(url, headers=headers)
+    soup_char = BeautifulSoup(r.text, 'html.parser')
+    result_flag = soup_char.find_all('pre')[0].text
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.post(url, headers=headers, data=payload2)
+    soup_result = BeautifulSoup(r.text, 'html.parser')
+    result = soup_result.find_all('pre')[0].text
+    result_flag_decode = base64.b64decode(result_flag)[:16]
+    result_decode = base64.b64decode(result)[:16]
+
+    if result_flag_decode == result_decode:
+        flag += c
+        print(flag, end="\r")
+        break
+
+
+#BLOCK2
+for i in range(15):
+    for c in charset:
+        payload1 = {
+            "content" : "|" * (14 - i) 
+        }
+
+        build = "|" * (15-i) + flag + c
+
+        payload2 = {
+            "content" : f"{build}"
+        }
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload1)
+        soup_char = BeautifulSoup(r.text, 'html.parser')
+        result_flag = soup_char.find_all('pre')[0].text
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload2)
+        soup_result = BeautifulSoup(r.text, 'html.parser')
+        result = soup_result.find_all('pre')[0].text
+        result_flag_decode = base64.b64decode(result_flag)[16:32]
+        result_decode = base64.b64decode(result)[16:32]
+
+        if result_flag_decode == result_decode:
+            flag += c
+            print(flag, end="\r")
+            break
+for c in charset:
+    payload2 = {
+        "content" : f"{flag+c}"
+    }
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.get(url, headers=headers)
+    soup_char = BeautifulSoup(r.text, 'html.parser')
+    result_flag = soup_char.find_all('pre')[0].text
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.post(url, headers=headers, data=payload2)
+    soup_result = BeautifulSoup(r.text, 'html.parser')
+    result = soup_result.find_all('pre')[0].text
+    result_flag_decode = base64.b64decode(result_flag)[16:32]
+    result_decode = base64.b64decode(result)[16:32]
+
+    if result_flag_decode == result_decode:
+        flag += c
+        print(flag, end="\r")
+        break
+
+#BLOCK3
+for i in range(15):
+    for c in charset:
+        payload1 = {
+            "content" : "|" * (14 - i) 
+        }
+
+        build = "|" * (15-i) + flag + c
+
+        payload2 = {
+            "content" : f"{build}"
+        }
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload1)
+        soup_char = BeautifulSoup(r.text, 'html.parser')
+        result_flag = soup_char.find_all('pre')[0].text
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload2)
+        soup_result = BeautifulSoup(r.text, 'html.parser')
+        result = soup_result.find_all('pre')[0].text
+        result_flag_decode = base64.b64decode(result_flag)[32:48]
+        result_decode = base64.b64decode(result)[32:48]
+
+        if result_flag_decode == result_decode:
+            flag += c
+            print(flag, end="\r")
+            break
+for c in charset:
+    payload2 = {
+        "content" : f"{flag+c}"
+    }
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.get(url, headers=headers)
+    soup_char = BeautifulSoup(r.text, 'html.parser')
+    result_flag = soup_char.find_all('pre')[0].text
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.post(url, headers=headers, data=payload2)
+    soup_result = BeautifulSoup(r.text, 'html.parser')
+    result = soup_result.find_all('pre')[0].text
+    result_flag_decode = base64.b64decode(result_flag)[32:48]
+    result_decode = base64.b64decode(result)[32:48]
+
+    if result_flag_decode == result_decode:
+        flag += c
+        print(flag, end="\r")
+        break
+
+
+#BLOCK4
+for i in range(15):
+    for c in charset:
+        payload1 = {
+            "content" : "|" * (14 - i) 
+        }
+
+        build = "|" * (15-i) + flag + c
+
+        payload2 = {
+            "content" : f"{build}"
+        }
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload1)
+        soup_char = BeautifulSoup(r.text, 'html.parser')
+        result_flag = soup_char.find_all('pre')[0].text
+
+        r = requests.post(url_reset, headers=headers)
+        r = requests.post(url, headers=headers, data=payload2)
+        soup_result = BeautifulSoup(r.text, 'html.parser')
+        result = soup_result.find_all('pre')[0].text
+        result_flag_decode = base64.b64decode(result_flag)[48:64]
+        result_decode = base64.b64decode(result)[48:64]
+
+        if result_flag_decode == result_decode:
+            flag += c
+            print(flag, end="\r")
+            break
+for c in charset:
+    payload2 = {
+        "content" : f"{flag+c}"
+    }
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.get(url, headers=headers)
+    soup_char = BeautifulSoup(r.text, 'html.parser')
+    result_flag = soup_char.find_all('pre')[0].text
+
+    r = requests.post(url_reset, headers=headers)
+    r = requests.post(url, headers=headers, data=payload2)
+    soup_result = BeautifulSoup(r.text, 'html.parser')
+    result = soup_result.find_all('pre')[0].text
+    result_flag_decode = base64.b64decode(result_flag)[48:64]
+    result_decode = base64.b64decode(result)[48:64]
+
+    if result_flag_decode == result_decode:
+        if c == "}":
+            flag += c
+            print(flag, end="\r")
+            exit()
+
+        flag += c
+        print(flag, end="\r")
+        break
+
+print()
+
+## 🧑🏾‍🏫 what this challenge teaches u
+literally boss challenge
+the tough part is to handle base64 encode
+the basic idea is the following: 3:4=x:16 this proportion allows u to understand how many base64 chars u need to pick for a 16bytes encoded block 
+the rounded result is 24 but the last bit r messed up so u have to select the first 22chars
+FIRST:
+"|" * 14 -> to leak the first flag's byte
+SECOND:
+"|" * 15 + c (charset) -> to bruteforce and found the correct char
+once u r done with the first block the idea is the same but slice blocks 
+
+## 🏁 Flag  
+pwn.college{EEI37MzgfskhqxqyjbYOau-6LEj.QX2MzN5wCO4IDOxEzW}
