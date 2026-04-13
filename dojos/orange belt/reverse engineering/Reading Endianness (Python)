@@ -1,0 +1,18 @@
+📅 2026-04-13
+
+cat /challenge/cimg
+magic number = 0x674D4E43 (little)
+we need to reverse it and convert it from hex to string
+magic number = CNMg
+echo -n "CNMg" > bro.cimg | /challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+Endianness tells which order to store bytes
+u can store them in 2 ways:
+- Big Endian -> in the 'normal' order, from MSB to LSB. it is used in Networking
+- Little Endian -> the order is opposite: from LSB to MSB. it is used in processors to allow efficiency
+so in this case since the python line in cimg file explains "little", we need reverse the bytes
+
+## 🏁 Flag  
+pwn.college{IQ6JFhZAe9VFtdawaQGPM-ViUpR.01NwUjNxwCO4IDOxEzW}
