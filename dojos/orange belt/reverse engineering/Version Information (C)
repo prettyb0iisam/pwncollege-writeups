@@ -1,0 +1,23 @@
+📅 2026-04-13
+
+cat /challenge/cimg.c
+magic number = [lMg
+version (dec) = 225
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+      bro.write(b"[lMg")
+      bro.write(struct.pack("<I", 225))
+
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+challenge works the same as previous one
+u can use both <H or <I
+
+## 🏁 Flag  
+pwn.college{I_TWuwz8WRKN3Vr730n8rRrnY8R.0FMxUjNxwCO4IDOxEzW}
