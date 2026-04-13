@@ -5,6 +5,7 @@ find the comparison's raw
 magic number (hex) = 0x28 0x7e 0x6d 0x36
 magic number (string) = (~m6
 echo -n "(~m6" > bro.cimg | /challenge/cimg bro.cimg
+flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 the challenge works same as before but this time we have cimg file only
