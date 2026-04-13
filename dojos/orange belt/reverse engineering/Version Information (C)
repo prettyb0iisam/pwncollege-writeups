@@ -11,6 +11,7 @@ with open("bro.cimg", "wb") as bro:
       bro.write(b"[lMg")
       bro.write(struct.pack("<I", 225))
 
+chmod a+x bro
 ./bro
 /challenge/cimg bro.cimg
 flag popped out
