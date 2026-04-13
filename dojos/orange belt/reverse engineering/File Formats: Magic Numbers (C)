@@ -1,0 +1,12 @@
+📅 2026-04-13
+
+cat /challenge/cimg.c
+magic number = <O%r
+echo -n "<O%r" > bro.cimg | /challenge/cimg bro.cimg
+
+## 🧑🏾‍🏫 what this challenge teaches u
+same as previous one but in C this time
+just check .c file and last raws so u will see the comparisons
+
+## 🏁 Flag  
+pwn.college{IJhFOEaBesM9QPdvmBmeZhPv4KR.0lNwUjNxwCO4IDOxEzW}
