@@ -3,6 +3,7 @@
 cat /challenge/cimg.c
 magic number = <O%r
 echo -n "<O%r" > bro.cimg | /challenge/cimg bro.cimg
+flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 same as previous one but in C this time
