@@ -1,0 +1,28 @@
+📅 2026-04-13
+
+cat /challenge/cimg
+magic number = <0%R
+version = 11 in little endian converted in int from bytes
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"<0%R")
+    bro.write(struct.pack("<I", 11))
+
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in some files the version is appended after the file's signature
+there r situation in which u cannot write the raw bytes with the keyboard
+the solution is to use a python script that it will fill those bytes for u
+wb -> write binary. it means no conversions r done 
+to write those bytes u have to import struct library and use the method pack:
+- <I -> writes 4bytes in Little Endian
+- <H -> writes 2bytes in Little Endian
+
+## 🏁 Flag  
+pwn.college{cfubmxMzvrtarJk4ZLDO71LCjCs.0VOwUjNxwCO4IDOxEzW}
