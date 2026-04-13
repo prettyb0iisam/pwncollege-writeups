@@ -1,0 +1,36 @@
+📅 2026-04-13
+
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Util.strxor import strxor
+import textwrap
+context.log_level = 'error'
+
+p_disp = process("/challenge/dispatcher")
+
+p_disp.recvuntil("TASK: ".encode())
+intro = p_disp.recvline().strip().decode()
+iv_old = intro[:32]
+b = bytes.fromhex(iv_old)
+sleep = b"sleep"
+flag = b"flag!"
+
+iv_new = strxor(strxor(b[:5], sleep), flag)
+
+payload = iv_new.hex() + intro[10:] 
+
+p_worker = process("/challenge/worker")
+
+p_worker.sendline(("TASK: " + payload).encode())
+print(p_worker.recvall(timeout=1).decode())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+if u know:
+-IV
+-plaintext
+-ciphertext
+and un can manipulate the IV, u can decrypt a ciphertext and get what u want
+the formula is the following: IV_new = IV_old XOR original_plaintext XOR expected_plaintext
+
+## 🏁 Flag  
+pwn.college{Y9D7tzYh7qJGPleoQBkP8NZa-VE.QX4MzN5wCO4IDOxEzW}
