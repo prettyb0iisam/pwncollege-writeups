@@ -1,0 +1,15 @@
+📅 2026-04-13
+
+cat /challenge/cimg
+the file expects as first argument a file with "<MAG" as magic number
+echo -n "<MAG" > bro.cimg | /challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+file's type r identified by the OS in the following ways:
+1 - extension like .exe .pdf .png
+2 - Magic Number = file's first bytes 
+magic number allows to identify the real file's type
+
+## 🏁 Flag  
+pwn.college{A7kv8jNu5ABEFu0amPF53-3dFwk.0VNwUjNxwCO4IDOxEzW}
