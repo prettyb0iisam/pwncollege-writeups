@@ -1,0 +1,18 @@
+📅 2026-04-13
+
+opened Binary Ninja Free with the cimg file
+find the comparison's raw
+magic number (hex) = 0x28 0x7e 0x6d 0x36
+magic number (string) = (~m6
+echo -n "(~m6" > bro.cimg | /challenge/cimg bro.cimg
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the challenge works same as before but this time we have cimg file only
+since using cat is not possible becasue the file is already compiled u need to use other tools
+at first i tried IDA but u need privileges so i used Binary Ninja
+the software disassemble the file so u can see its source code
+the source code is not the og one but something really close to it
+u can check the cose both in C and Assembly
+
+## 🏁 Flag  
+pwn.college{gQa-UmT1m8V36TrepKCO2xGeCA5.0FMwMDMxwCO4IDOxEzW}
