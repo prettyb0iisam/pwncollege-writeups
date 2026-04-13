@@ -1,0 +1,16 @@
+📅 2026-04-13
+
+cat /challenge/cimg.c
+magic number (dec) = 1919840040 -> (hex) = 0x726E6F28  -> reversed = 0x286f6e72 
+magic number (string) = (onr
+echo -n "(onr" > bro.cimg | /challenge/cimg bro.cimg
+
+## 🧑🏾‍🏫 what this challenge teaches u
+same as before one but this time we have decimal number
+the goal is:
+dec -> hex
+reverse the hex 
+hex -> string
+
+## 🏁 Flag  
+pwn.college{oiqQukIAVTvEp5nh6lFu5CBpROz.0FOwUjNxwCO4IDOxEzW}
