@@ -5,6 +5,7 @@ magic number (hex) = 0x674d6c5b
 reverse it
 magic number (string) = [lMg
 echo -n "[lMg" > bro.cimg | /challenge/cimg bro.cimg
+flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 same as before but this sime with binary ninja
