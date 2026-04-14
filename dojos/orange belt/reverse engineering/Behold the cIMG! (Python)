@@ -1,0 +1,30 @@
+📅 2026-04-14
+
+cat /challenge/cimg
+magic number = cIMG
+versione (int) = 1 (2bytes)
+width = 4bytes
+height = 1bytes
+width*height = 275
+0x20 <= data <= 0x7e
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(struct.pack("<H", 1))
+    bro.write(struct.pack("<I", 275))
+    bro.write(b"\x01")
+    bro.write(b"\x21" * 275)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this time width*height has to respect a value so u can pick each values but their products gotta be the attended one
+
+## 🏁 Flag  
+pwn.college{kQRINeyGWe-9gqA2Rfl2J8wxW8k.0VNxUjNxwCO4IDOxEzW}
