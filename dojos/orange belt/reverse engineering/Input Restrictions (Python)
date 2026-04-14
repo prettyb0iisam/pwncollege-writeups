@@ -1,0 +1,30 @@
+📅 2026-04-14
+
+cat /challenge/cimg
+magic number = cIMG
+version (int) = 1 (1byte)
+width (int) = 59 (1byte)
+height (int) = 17 (1byte)
+len(data) = width*height
+0x20 <= data <= 0x7e
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(b"\x01")
+    bro.write(b"\x3b")
+    bro.write(b"\x11")
+    bro.write(b"\x21" * 1003)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this time datas cannot be random but between 0x20 and 0x7e
+
+## 🏁 Flag  
+pwn.college{c3xZnPH0r8vmlrYGcZpvFXUvt1V.01MxUjNxwCO4IDOxEzW}
