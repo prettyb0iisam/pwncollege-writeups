@@ -1,0 +1,31 @@
+📅 2026-04-14
+
+cat /challenge/cimg
+magic number = (M63
+version (int) = 1 (little) 4bytes
+width (int) = 62 (little) 1byte
+height (int) = 14 (little) 4bytes
+len(data) width * height
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+        bro.write(b"(M63")
+        bro.write(struct.pack("<I", 1))
+        bro.write(b"\x3e")
+        bro.write(struct.pack("<I", 14))
+        bro.write(b"\x00" * 868)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to check properly all comparisons in pythons file
+after version u will find: width and height
+then u have to fill width*height bytes
+
+## 🏁 Flag  
+pwn.college{4g0x7JkzwW8D6T0u6bSD0ZUYPUi.0VMxUjNxwCO4IDOxEzW}
