@@ -1,0 +1,31 @@
+📅 2026-04-14
+
+opened cimg file in Binary Ninja
+magic number = cIMG
+version (int) = 1 (1byte)
+width = 8bytes
+height = 2bytes
+width*height = 275
+0x20 <= data <= 0xfe
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(b"\x01")
+    bro.write(struct.pack("<I", 1))
+    bro.write(b"\x00\x00\x00\x00")
+    bro.write(struct.pack("<H", 275))
+    bro.write(b"\x21" * 275)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+actually, reading and understanding the code from Binary Ninja instead of the og source code is extremely more challenging
+
+## 🏁 Flag  
+pwn.college{s1-Ro2MqyXzIWrm0nr2frLDNWZA.0VNwMDMxwCO4IDOxEzW}
