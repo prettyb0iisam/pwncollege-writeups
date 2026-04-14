@@ -1,0 +1,29 @@
+📅 2026-04-14
+
+cat /challenge/cimg.c
+magic number = cIMG
+version (int) = 1 (4bytes)
+width = (2bytes)
+height = (1byte)
+width*height = 275
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(struct.pack("<I", 1))
+    bro.write(struct.pack("<H", 275))
+    bro.write(b"\x01")
+    bro.write(b"\x21" * 275)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+challenge works the same as previous one
+
+## 🏁 Flag  
+pwn.college{0QvvDH0cpabtCL-O-zeJU0QvJVu.0lNxUjNxwCO4IDOxEzW}
