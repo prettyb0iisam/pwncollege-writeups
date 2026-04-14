@@ -1,0 +1,30 @@
+📅 2026-04-14
+
+cat /challenge/cimg.c
+magic number = cIMG
+version (int) = 1 (2bytes)
+width (int) = 61 (2bytes)
+height (int) = 15 (2bytes)
+len(data) = width*height
+0x20 <= data <= 0x7e
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(struct.pack("<H", 1))
+    bro.write(struct.pack("<H", 61))
+    bro.write(struct.pack("<H", 15))
+    bro.write(b"\x21" * 915)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+easy one, same as the others with data's check
+
+## 🏁 Flag  
+pwn.college{M-aLwXrchyX38k5RXXSIfPM92q5.0FNxUjNxwCO4IDOxEzW}
