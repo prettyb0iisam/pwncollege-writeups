@@ -1,0 +1,31 @@
+📅 2026-04-14
+
+opened Binary Ninja with the cimg file
+magic number (hex) = 43 6d 67 45
+version (int) = 1 (8bytes)
+width (hex) = 3b (4bytes)
+height (hex) = 15 (4bytes)
+len(data) = width * height
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"CmgE")
+    bro.write(struct.pack("<I", 1))
+    bro.write(b"\x00\x00\x00\x00")
+    bro.write(struct.pack("<I", 0x3b))
+    bro.write(struct.pack("<I", 0x15)) 
+    bro.write(b"\x00" * 1239)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+same as previous but with binary ninja
+i think this time is a bit easier cuz u can check for metadata's sizes directly in the same lines where they r declared and values assigned
+
+## 🏁 Flag  
+pwn.college{4fqWoECRNCW_RKcBJ8XUcBUwtG-.01MwMDMxwCO4IDOxEzW}
