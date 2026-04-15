@@ -1,0 +1,32 @@
+📅 2026-04-15
+
+cat /challenge/cimg.c
+magic number = cIMG
+versione (int) = 2 (1byte)
+width (int) = 39 (1byte)
+height (int) = 21 (4bytes)
+len(data) = width*height*4
+pixel = 0x8c 0x1d 0x40 X
+0x20 <= X <= 0x7e
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(b"\x02")
+    bro.write(b"\x27")
+    bro.write(struct.pack("<I", 21))                                                                          
+    bro.write(b"\x8c\x1d\x40\x7c" * 819)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+challenge the same as previous one but in C
+if u solved the previous one u chill on this one and prolly the next one also
+
+## 🏁 Flag  
+pwn.college{853Fap_1zKU1hksmZ3WAmCSQnkK.0FOxUjNxwCO4IDOxEzW}
