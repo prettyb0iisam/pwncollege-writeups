@@ -1,0 +1,31 @@
+📅 2026-04-15
+
+cat /challenge/cimg
+magic number = cIMG
+version (int) = 2 (2bytes)
+width (int) = 2 (4bytes)
+height (int) = 23 (1byte)
+len(data) = width*height*4
+only the following bytes sequences: 0x8c 0x1d 0x40 X
+0x20 <= X <= 0x7e
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(struct.pack("<H", 2))
+    bro.write(struct.pack("<I", 26))
+    bro.write(b"\x17")
+    bro.write(b"\x8c\x1d\x40\x7c" * 598)
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+pretty tough cuz i didnt really get the 4bytes R-G-B-ansii
+
+## 🏁 Flag  
+pwn.college{4dSx3jcC32o58yOif71SajG-G07.01NxUjNxwCO4IDOxEzW}
