@@ -1,0 +1,14 @@
+📅 2026-04-15
+
+cat /challenge/cimg.c
+magic number = cIMG
+version (int) = 2 (2bytes)
+width = (1byte)
+height = (1byte)
+len(data) = width*height*4
+0x20 <= data <= 0x7e
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
