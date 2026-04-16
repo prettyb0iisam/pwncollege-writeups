@@ -6,9 +6,28 @@ version (int) = 2 (2bytes)
 width = (1byte)
 height = (1byte)
 len(data) = width*height*4
+pixels = width*height = 4
 0x20 <= data <= 0x7e
+touch bro.cimg
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(struct.pack("<H", 2))
+    bro.write(b"\x04")
+    bro.write(b"\x01")
+    bro.write(b"\x77\xAA\x1E\x63\xC3\x1A\x08\x49\x66\x43\x3B\x4D\xB0\x5B\x89\x47")
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+tbh i didnt really get the last comparison
+i made it to 4pixels and so 16bytes required but no more than that
+thx to claude code it helped me out to figured out what the last comparison needs
 
 ## 🏁 Flag  
+pwn.college{UOrbCpH1i2xbyMWZdBjvw1o_GJz.0VOxUjNxwCO4IDOxEzW}
