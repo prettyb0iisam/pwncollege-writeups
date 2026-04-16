@@ -1,0 +1,28 @@
+📅 2026-04-16
+
+opened the cimg file in Binary Ninja
+magic number = cIMG
+version = 2 (2bytes)
+width = (1byte)
+height = (1byte)
+touch bro
+vim bro:
+#!/usr/bin/env python3
+import struct
+with open("bro.cimg", "wb") as bro:
+    bro.write(b"cIMG")
+    bro.write(struct.pack("<H", 2))
+    bro.write(b"\x04")
+    bro.write(b"\x01")
+    bro.write(b"\x59\x9D\x82\x63\x11\x4E\x25\x49\x27\xE1\xB7\x4D\xEA\x6D\xCD\x47")
+
+chmod a+x bro
+./bro
+/challenge/cimg bro.cimg
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+tbh didt really solve the challenge
+
+## 🏁 Flag  
+pwn.college{Y_9Qlye-dX8MkxxmClNFnarhcUM.0FMyUjNxwCO4IDOxEzW}
