@@ -1,8 +1,33 @@
 📅 2026-04-24
 
+#!/usr/bin/env python3
+from pwn import * 
+from Crypto.Util.strxor import strxor
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import pad
+context.log_level = 'error'
+import textwrap
+
+p_disp = process("/challenge/dispatcher")
+
+output = p_disp.recvline().strip().decode().split()[-1]
+output = textwrap.wrap(output, 32)
+iv_old = output[0]
+ciphertext = output[1]
+
+sleep = b"sleep"
+flag = b"flag"
+
+iv_new = strxor(strxor(pad(sleep, 16), pad(flag, 16)), bytes.fromhex(iv_old))
+payload = "TASK: " + iv_new.hex() + ciphertext
+
+p_worker = process("/challenge/worker")
+p_worker.sendline(payload.encode())
+print(p_worker.recvall(timeout=1).decode())
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+how to handle old plaintext and expected plaintext different lenghts by just padding them
+use the library: Crypto.Util.Padding -> when u call pad method, specify how many bytes u want the padding
 
 ## 🏁 Flag  
 pwn.college{YWGemIp6L0WDZ9YnNsye9-T4LVJ.QX5MzN5wCO4IDOxEzW}
