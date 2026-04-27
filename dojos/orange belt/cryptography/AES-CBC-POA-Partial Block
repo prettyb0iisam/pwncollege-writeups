@@ -1,0 +1,97 @@
+📅 2026-04-27
+#!/usr/bin/env python3
+from pwn import * 
+from Crypto.Util.strxor import strxor
+context.log_level = 'error'
+
+# Ottieni ciphertext della password
+p_disp = process(["/challenge/dispatcher", "pw"])
+output = p_disp.recvline().strip().decode().split()[-1]
+p_disp.close()
+
+print(f"Ciphertext completo: {output}")
+
+# Converti in bytes
+ct_full = bytes.fromhex(output)
+iv_original = ct_full[:16]
+block = ct_full[16:32]  # Primo (e unico) blocco dato che pw è 12 bytes
+
+print(f"IV:    {iv_original.hex()}")
+print(f"Block: {block.hex()}")
+print()
+
+# Trova intermediate del blocco
+intermediate = bytearray(16)
+
+# Decifra byte per byte (da destra a sinistra)
+for byte_pos in range(15, -1, -1):
+    padding_value = 16 - byte_pos  # 1, 2, 3, ..., 16
+    
+    print(f"Cercando byte {byte_pos} (padding target: 0x{padding_value:02x})...")
+    
+    # Costruisci IV modificato
+    iv_attack = bytearray(16)
+    
+    # Setta i byte già trovati per avere padding corretto
+    for k in range(byte_pos + 1, 16):
+        iv_attack[k] = intermediate[k] ^ padding_value
+    
+    # Brute force sul byte corrente
+    found = False
+    for guess in range(256):
+        iv_attack[byte_pos] = guess
+        
+        payload = iv_attack.hex() + block.hex()
+        
+        p = process("/challenge/worker")
+        p.recvline()  # skip length message
+        p.sendline(f"TASK: {payload}".encode())
+        response = p.recvall(timeout=0.1)
+        p.close()
+        
+        # Padding valido se NON c'è "Error:"
+        if b"Error:" not in response:
+            intermediate[byte_pos] = guess ^ padding_value
+            found = True
+            print(f"  ✓ Byte {byte_pos} found! intermediate[{byte_pos}] = 0x{intermediate[byte_pos]:02x}")
+            break
+    
+    if not found:
+        print(f"  ✗ Failed to find byte {byte_pos}")
+        break
+
+print(f"\n{'='*50}")
+print(f"INTERMEDIATE TROVATA:")
+print(f"Hex: {intermediate.hex()}")
+print(f"Bytes: {list(intermediate)}")
+print(f"{'='*50}")
+
+# XOR intermediate con IV per ottenere plaintext
+plaintext_padded = strxor(bytes(intermediate), iv_original)
+print(f"\nPlaintext con padding:")
+print(f"Hex:  {plaintext_padded.hex()}")
+print(f"Repr: {repr(plaintext_padded)}")
+
+# Rimuovi padding
+padding_len = plaintext_padded[-1]
+password = plaintext_padded[:-padding_len]
+
+print(f"\n{'='*50}")
+print(f"PASSWORD DECIFRATA:")
+print(f"Hex:  {password.hex()}")
+print(f"Repr: {repr(password)}")
+print(f"Len:  {len(password)} bytes")
+print(f"{'='*50}")
+
+# Redeem per ottenere la flag
+print("\n🚩 Redeeming flag...")
+p_redeem = process("/challenge/redeem")
+p_redeem.sendline(password)
+flag = p_redeem.recvall(timeout=1).decode()
+print(flag)
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
+pwn.college{slR_nPWpb-5nUVJtjRmPjkHxyJb.0FOxMjNxwCO4IDOxEzW}
