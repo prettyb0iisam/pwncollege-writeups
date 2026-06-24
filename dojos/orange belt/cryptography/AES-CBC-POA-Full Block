@@ -1,0 +1,70 @@
+📅 2026-06-24
+#!/usr/bin/env python3
+from pwn import *
+import time
+from Crypto.Util.strxor import strxor
+from Crypto.Util.Padding import pad, unpad
+context.log_level = 'error'
+
+p_disp = process(["/challenge/dispatcher", "pw"])
+output_p_disp = p_disp.recvline().strip().decode().split()[-1]
+iv_oldd = output_p_disp[:32]
+iv_old = output_p_disp[:30]          # ESTRATTO IV_OLD
+ciphertext = output_p_disp[32:64]      # ESTRATTO CIPHERTEXT (ovvero la password)
+intermediate = ""
+stringa_nuovo_ciclo = ""
+p_worker = process("/challenge/worker")
+p_worker.recvline().decode()
+
+
+for j in range(16):
+    #RICERCA DELL'ULTIMO CHAR CHE DA "UNKNOWN COMMAND!"
+    for n in range(256):
+        garbage = "00" * (15-j)
+        byte = f"{n:02x}"
+        payload = garbage + byte + stringa_nuovo_ciclo + ciphertext
+        p_worker.sendline("TASK: " + payload)
+        response = p_worker.recvline().strip().decode()
+        print(f"{payload} -> {response}")
+        if response == "Unknown command!":
+            break
+        time.sleep(0.1)
+    print("BYTE TROVATO: ", byte)
+
+    #LAVORI SUL CHAR CHE HAI TROVATO
+    l = j + 1
+    ll = f"{l:02x}"
+    print("XOR DEL BYTE " + byte + " con " + ll)
+    i = strxor(bytes.fromhex(byte), bytes.fromhex(ll)).hex()
+    print("L'INTERMEDIATE =", i)
+    intermediate = i + intermediate
+    print()
+
+    #COSTRUISCI L'INTERMEDIATE PER IL CICLO SUCCESSIVO
+    p = j + 2
+    pp = f"{p:02x}"
+    ppp = pp * (p-1)
+    print("NUOVI VALORI PER IL PROSSIMO CICLO " + intermediate + " con " + ppp)
+
+    stringa_nuovo_ciclo = strxor(bytes.fromhex(intermediate), bytes.fromhex(ppp)).hex()
+    print(stringa_nuovo_ciclo)
+    print("STRINGA PER IL PROSSIMO CICLO -> " + stringa_nuovo_ciclo)
+
+
+print()
+print()
+print(intermediate)
+print(stringa_nuovo_ciclo)
+password = strxor(bytes.fromhex(intermediate), bytes.fromhex(iv_oldd))
+
+print(password.decode())
+
+p_redeem = process("/challenge/redeem")
+p_redeem.sendline(password.decode())
+print(p_redeem.recvall())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
+pwn.college{Q3qkEYbS-AnvZjyuR7cBr82J0Dh.0VOxMjNxwCO4IDOxEzW}
