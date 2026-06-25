@@ -46,7 +46,19 @@ p_redeem.sendline(password)
 print(p_redeem.recvall().decode())
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+POA=Padding Oracle Attack
+AES Decryption works in the following way:
+-Intermediate=DEC(C) with the key
+-XOR between the Intermediate with the IV
+One of the flaws that the server can have is the Oracle which it tells u if the padding is correct or no
+we can exploit the presence of the Oracle and retrieve the plaintext of the ciphertext even without the key
+the steps to retrieve the password by exploiting the Oracle are:
+ 1-bruteforce the IV[15] byte until u get "Unknown command" -> this means the padding is correct
+ 2-Xor this byte with the padding -> this byte is the intermediate[15]
+ 3-setup the correct string for the next byte -> xoring the intermediate with the next padding
+ 4-repeat the cicle until u get the full Intermediate string
+Once u got the Intermediate, just XOR it with the original IV to retrieve the Plaintext
+It took me plenty of time to understand this attack that i found extremely difficult
 
 ## 🏁 Flag  
 pwn.college{slR_nPWpb-5nUVJtjRmPjkHxyJb.0FOxMjNxwCO4IDOxEzW}
