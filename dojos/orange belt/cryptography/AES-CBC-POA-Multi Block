@@ -1,63 +1,68 @@
+📅 2026-06-25
+
 #!/usr/bin/env python3
 from pwn import *
-import time
 from Crypto.Util.strxor import strxor
-from Crypto.Util.Padding import pad, unpad
+from Crypto.Util.Padding import unpad
 context.log_level = 'error'
 
-p_disp = process(["/challenge/dispatcher", "flag"])
-output_p_disp = p_disp.recvline().strip().decode().split()[-1]
-iv_oldd = output_p_disp[:32]           # ESTRAGGO IV_OLD 
-iv_old = output_p_disp[:30]            # ESTRATTO IV_OLD tranne l'ultimo byte
-ciphertext_b1 = output_p_disp[32:64]      # ESTRATTO CIPHERTEXT (ovvero la password)
-ciphertext_b2 = output_p_disp[64:96]
-ciphertext_b3 = output_p_disp[96:128]
-ciphertext_b4 = output_p_disp[128:160]
+p_dispatcher = process(["/challenge/dispatcher", "flag"])
+output = p_dispatcher.recvline().strip().decode().split()[-1]
+iv = output[:32]
+ciphertext = ["None"] * 4
+ciphertext[0] = output[32:64]
+ciphertext[1] = output[64:96]
+ciphertext[2] = output[96:128]
+ciphertext[3] = output[128:160]
+plaintext = ["None"] * 4
 
-intermediate = ""
-stringa_nuovo_ciclo = ""
+ciphertext_flag = ciphertext[0] + ciphertext[1] + ciphertext[2] + ciphertext[3]
+
 p_worker = process("/challenge/worker")
+print("POA SUL CIPHERTEXT: ", ciphertext_flag)
+print()
+for k in range(4):
+    intermediate = ""
+    already_crafted = ""
+    stringa_padding = ""
+    for j in range(16):
+        j = j+1
+        #OTTENIMENTO DEL BYTE CHE PORTA A UNKNOWN COMMAND!
+        for n in range(256):
+            garbage = "00" * (16-j)
+            byte = f"{n:02x}"
+            payload = "TASK: " + garbage + byte + already_crafted + ciphertext[k]
+            p_worker.sendline(payload.encode())
+            response = p_worker.recvline().strip().decode()
+            if response == "Unknown command!":
+                break
 
-#BLOCK 1 -> pwn.college{...
-for j in range(16):
-    #RICERCA DELL'ULTIMO CHAR CHE DA "UNKNOWN COMMAND!"
-    for n in range(256):
-        garbage = "00" * (15-j)
-        byte = f"{n:02x}"
-        payload = garbage + byte + stringa_nuovo_ciclo + ciphertext_b4 ###############################################
-        p_worker.sendline("TASK: " + payload)
-        response = p_worker.recvline().strip().decode()
-        print(f"{payload} -> {response}")
-        if response == "Unknown command!":
-            break
-        time.sleep(0.1)
-    print("BYTE TROVATO: ", byte)
-    #LAVORI SUL CHAR CHE HAI TROVATO
-    l = j + 1
-    ll = f"{l:02x}"
-    print("XOR DEL BYTE " + byte + " con " + ll)
-    i = strxor(bytes.fromhex(byte), bytes.fromhex(ll)).hex()
-    print("L'INTERMEDIATE =", i)
-    intermediate = i + intermediate
+        #OTTENIMENTO DELL'INTERMEDIATE
+        indice = f"{j:02x}"
+        intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(indice)).hex() + intermediate
+
+        #COSTRUZIONE PER IL PROSSIMO CICLO
+        next_indice = f"{j+1:02x}"
+        stringa_padding = next_indice * j
+        already_crafted = strxor(bytes.fromhex(intermediate), bytes.fromhex(stringa_padding)).hex()
+        print("BYTES TROVATI: [" + str(j) + "/16]", end="\r")
     print()
-    #COSTRUISCI L'INTERMEDIATE PER IL CICLO SUCCESSIVO
-    p = j + 2
-    pp = f"{p:02x}"
-    ppp = pp * (p-1)
-    print("NUOVI VALORI PER IL PROSSIMO CICLO " + intermediate + " con " + ppp)
-    stringa_nuovo_ciclo = strxor(bytes.fromhex(intermediate), bytes.fromhex(ppp)).hex()
-    print(stringa_nuovo_ciclo)
-    print("STRINGA PER IL PROSSIMO CICLO -> " + stringa_nuovo_ciclo)
-print()
-print()
-print(intermediate)
-print(stringa_nuovo_ciclo)
-password = strxor(bytes.fromhex(intermediate), bytes.fromhex(ciphertext_b3)) ##############################################
-print(password.decode())
+    print("INTERMEDIATE: ", intermediate)
+    if k == 0:
+        plaintext[k] = strxor(bytes.fromhex(intermediate), bytes.fromhex(iv))
+    else:
+        plaintext[k] = strxor(bytes.fromhex(intermediate), bytes.fromhex(ciphertext[k-1]))
+    print(f"PLAINTEXT BLOCK {k+1}: ", plaintext[k].decode())
+    print()
 
+flag = ""
+for k in range(4):
+    flag += plaintext[k].decode()
+print(unpad(flag.encode(), 16).decode())
 
+## 🧑🏾‍🏫 what this challenge teaches u
+same as previous one but this time since the ciphertext is the flag and the flag is 59chars long, we have 4blocks to attack
+i nested the POA inside of a for executed 4 times, each time for each block
 
-
-
-
+## 🏁 Flag  
 pwn.college{saHis0e8yshPZxW9ufwuOKnTRVF.QXwQzN5wCO4IDOxEzW}
