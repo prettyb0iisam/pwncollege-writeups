@@ -1,201 +1,106 @@
 #!/usr/bin/env python3
 from pwn import *
-import time
-from Crypto.Util.strxor import strxor
 from Crypto.Util.Padding import pad, unpad
+from Crypto.Util.strxor import strxor
 context.log_level = 'error'
 
-p_disp = process(["/challenge/dispatcher"])
-output_p_disp = p_disp.recvline().strip().decode().split()[-1]
-iv_oldd = output_p_disp[:32]           # ESTRAGGO IV_OLD 
-iv_old = output_p_disp[:30]            # ESTRATTO IV_OLD tranne l'ultimo byte
-ciphertext3 = output_p_disp[32:]      # ESTRATTO CIPHERTEXT (ovvero la password)
-intermediate = ""
-stringa_nuovo_ciclo = ""
-p_worker = process("/challenge/worker")
+p_disp = process("/challenge/dispatcher")
+output = p_disp.recvline().strip().decode().split()[-1]
+iv = output[:32]
+ciphertext = output[32:]
+expected = "please give me the flag, kind worker process!"
+expected_hex = expected.encode().hex() + "03"*3
+expected_hex_padding = ["None"] * 4
+expected_hex_padding[0] = expected_hex[:32]
+expected_hex_padding[1] = expected_hex[32:64]
+expected_hex_padding[2] = expected_hex[64:96]
 
-#BLOCK 2
-for j in range(16):
-    #RICERCA DELL'ULTIMO CHAR CHE DA "UNKNOWN COMMAND!"
+##############################   BLOCK 2        #######################
+intermediate = ""
+stringa_padding = ""
+p_worker = process("/challenge/worker")
+print("POA-RICERCA DELL'INTERMEDIATE: ")
+for i in range(16):
     for n in range(256):
-        garbage = "00" * (15-j)
         byte = f"{n:02x}"
-        payload = garbage + byte + stringa_nuovo_ciclo + ciphertext3
-        p_worker.sendline("TASK: " + payload)
+        garbage = "00" * (15-i)
+        payload = "TASK: " + garbage + byte + stringa_padding + ciphertext
+        p_worker.sendline(payload.encode())
         response = p_worker.recvline().strip().decode()
-        print(f"{payload} -> {response}")
         if response == "Unknown command!":
             break
-        time.sleep(0.1)
-    print("BYTE TROVATO: ", byte)
-    #LAVORI SUL CHAR CHE HAI TROVATO
-    l = j + 1
-    ll = f"{l:02x}"
-    print("XOR DEL BYTE " + byte + " con " + ll)
-    i = strxor(bytes.fromhex(byte), bytes.fromhex(ll)).hex()
-    print("L'INTERMEDIATE =", i)
-    intermediate = i + intermediate
-    print()
-    #COSTRUISCI L'INTERMEDIATE PER IL CICLO SUCCESSIVO
-    p = j + 2
-    pp = f"{p:02x}"
-    ppp = pp * (p-1)
-    print("NUOVI VALORI PER IL PROSSIMO CICLO " + intermediate + " con " + ppp)
-    stringa_nuovo_ciclo = strxor(bytes.fromhex(intermediate), bytes.fromhex(ppp)).hex()
-    print(stringa_nuovo_ciclo)
-    print("STRINGA PER IL PROSSIMO CICLO -> " + stringa_nuovo_ciclo)
+    padding = f"{i+1:02x}"
+    intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(padding)).hex() + intermediate
+    next_padding = f"{i+2:02x}"
+    xoring = next_padding * (i+1)
+    stringa_padding = strxor(bytes.fromhex(xoring), bytes.fromhex(intermediate)).hex()
+    print(f"BYTE TROVATI: [{i+1}/16]", end="\r")
 print()
-print()
+block_2 = strxor(bytes.fromhex(intermediate), bytes.fromhex(expected_hex_padding[2])).hex()
+print("BLOCCO COSTRUITO 2: ", block_2)
 p_worker.close()
 print()
-print("INTERMEDIATE -> " + intermediate)
-print("IV_OLD = " + iv_oldd)
-output_atteso = "rker process!\x03\x03\x03"
-output_atteso_hex = "726b65722070726f6365737321030303"
-print("OUTPUT ATTESO: ", output_atteso)
-print("IN HEX E: ", output_atteso_hex)
-print("STRXOR TRA " + intermediate + " e " + output_atteso_hex + " ! ")
-ciphertext2 = strxor(bytes.fromhex(intermediate), bytes.fromhex(output_atteso_hex)).hex()
-print("BLOCCO 2 = ", ciphertext2)
-print()
-
-print("LO XOR DI QUESTO NUOVO BLOCCO CIFRATO CON INTERMEDIATE E:")
-print(strxor(bytes.fromhex(ciphertext2), bytes.fromhex(intermediate)))
-print()
-print("QUINDI BLOCCO 2 DA INVIARE DEVE ESSERE : " + ciphertext2)
-
-payload_finale = "TASK: " + ciphertext2 + ciphertext3
-p_worker = process("/challenge/worker")
-p_worker.sendline(payload_finale.encode())
-print(p_worker.recvall(timeout=1))
-p_worker.close()
 
 
 
-
-
-
-#BLOCK 1
+##############################   BLOCK 1        #######################
 intermediate = ""
-stringa_nuovo_ciclo = ""
+stringa_padding = ""
 p_worker = process("/challenge/worker")
-for j in range(16):
-    #RICERCA DELL'ULTIMO CHAR CHE DA "UNKNOWN COMMAND!"
+for i in range(16):
     for n in range(256):
-        garbage = "00" * (15-j)
         byte = f"{n:02x}"
-        payload = garbage + byte + stringa_nuovo_ciclo + ciphertext2
-        p_worker.sendline("TASK: " + payload)
+        garbage = "00" * (15-i)
+        payload = "TASK: " + garbage + byte + stringa_padding + block_2
+        p_worker.sendline(payload.encode())
         response = p_worker.recvline().strip().decode()
-        print(f"{payload} -> {response}")
         if response == "Unknown command!":
             break
-        time.sleep(0.1)
-    print("BYTE TROVATO: ", byte)
-    #LAVORI SUL CHAR CHE HAI TROVATO
-    l = j + 1
-    ll = f"{l:02x}"
-    print("XOR DEL BYTE " + byte + " con " + ll)
-    i = strxor(bytes.fromhex(byte), bytes.fromhex(ll)).hex()
-    print("L'INTERMEDIATE =", i)
-    intermediate = i + intermediate
-    print()
-    #COSTRUISCI L'INTERMEDIATE PER IL CICLO SUCCESSIVO
-    p = j + 2
-    pp = f"{p:02x}"
-    ppp = pp * (p-1)
-    print("NUOVI VALORI PER IL PROSSIMO CICLO " + intermediate + " con " + ppp)
-    stringa_nuovo_ciclo = strxor(bytes.fromhex(intermediate), bytes.fromhex(ppp)).hex()
-    print(stringa_nuovo_ciclo)
-    print("STRINGA PER IL PROSSIMO CICLO -> " + stringa_nuovo_ciclo)
+    padding = f"{i+1:02x}"
+    intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(padding)).hex() + intermediate
+    next_padding = f"{i+2:02x}"
+    xoring = next_padding * (i+1)
+    stringa_padding = strxor(bytes.fromhex(xoring), bytes.fromhex(intermediate)).hex()
+    print(f"BYTE TROVATI: [{i+1}/16]", end="\r")
 print()
-print()
+block_1 = strxor(bytes.fromhex(intermediate), bytes.fromhex(expected_hex_padding[1])).hex()
+print("BLOCCO COSTRUITO 1: ", block_1)
 p_worker.close()
 print()
-print("INTERMEDIATE -> " + intermediate)
-print("IV_OLD = " + iv_oldd)
-output_atteso = "he flag, kind wo"
-output_atteso_hex = "686520666c61672c206b696e6420776f"
-print("OUTPUT ATTESO: ", output_atteso)
-print("IN HEX E: ", output_atteso_hex)
-print("STRXOR TRA " + intermediate + " e " + output_atteso_hex + " ! ")
-ciphertext1 = strxor(bytes.fromhex(intermediate), bytes.fromhex(output_atteso_hex)).hex()
-print("BLOCCO 1 = ", ciphertext1)
-print()
-
-print("LO XOR DI QUESTO NUOVO BLOCCO CIFRATO CON INTERMEDIATE E:")
-print(strxor(bytes.fromhex(ciphertext1), bytes.fromhex(intermediate)))
-print()
-print("QUINDI BLOCCO 1 DA INVIARE DEVE ESSERE : " + ciphertext1)
-print("VERIFICA CHE RICEVIAMO UNKNOWN COMMAND")
-payload_finale = "TASK: " + ciphertext1 + ciphertext2 + ciphertext3
-print("PAYLOAD CHE VIENE INVIATO: ", payload_finale)
-p_worker = process("/challenge/worker")
-p_worker.sendline(payload_finale.encode())
-print(p_worker.recvall(timeout=1))
-p_worker.close()
 
 
 
-
-
-
-#IV
+##############################   IV        #######################
 intermediate = ""
-stringa_nuovo_ciclo = ""
+stringa_padding = ""
 p_worker = process("/challenge/worker")
-for j in range(16):
-    #RICERCA DELL'ULTIMO CHAR CHE DA "UNKNOWN COMMAND!"
+for i in range(16):
     for n in range(256):
-        garbage = "00" * (15-j)
         byte = f"{n:02x}"
-        payload = garbage + byte + stringa_nuovo_ciclo + ciphertext1
-        p_worker.sendline("TASK: " + payload)
+        garbage = "00" * (15-i)
+        payload = "TASK: " + garbage + byte + stringa_padding + block_1
+        p_worker.sendline(payload.encode())
         response = p_worker.recvline().strip().decode()
-        print(f"{payload} -> {response}")
         if response == "Unknown command!":
             break
-        time.sleep(0.1)
-    print("BYTE TROVATO: ", byte)
-    #LAVORI SUL CHAR CHE HAI TROVATO
-    l = j + 1
-    ll = f"{l:02x}"
-    print("XOR DEL BYTE " + byte + " con " + ll)
-    i = strxor(bytes.fromhex(byte), bytes.fromhex(ll)).hex()
-    print("L'INTERMEDIATE =", i)
-    intermediate = i + intermediate
-    print()
-    #COSTRUISCI L'INTERMEDIATE PER IL CICLO SUCCESSIVO
-    p = j + 2
-    pp = f"{p:02x}"
-    ppp = pp * (p-1)
-    print("NUOVI VALORI PER IL PROSSIMO CICLO " + intermediate + " con " + ppp)
-    stringa_nuovo_ciclo = strxor(bytes.fromhex(intermediate), bytes.fromhex(ppp)).hex()
-    print(stringa_nuovo_ciclo)
-    print("STRINGA PER IL PROSSIMO CICLO -> " + stringa_nuovo_ciclo)
+    padding = f"{i+1:02x}"
+    intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(padding)).hex() + intermediate
+    next_padding = f"{i+2:02x}"
+    xoring = next_padding * (i+1)
+    stringa_padding = strxor(bytes.fromhex(xoring), bytes.fromhex(intermediate)).hex()
+    print(f"BYTE TROVATI: [{i+1}/16]", end="\r")
 print()
-print()
+iv_new = strxor(bytes.fromhex(intermediate), bytes.fromhex(expected_hex_padding[0])).hex()
+print("IV COSTRUITO: ", iv_new)
 p_worker.close()
-print()
-print("INTERMEDIATE -> " + intermediate)
-print("IV_OLD = " + iv_oldd)
-output_atteso = "please give me t"
-output_atteso_hex = "706c656173652067697665206d652074"
-print("OUTPUT ATTESO: ", output_atteso)
-print("IN HEX E: ", output_atteso_hex)
-print("STRXOR TRA " + intermediate + " e " + output_atteso_hex + " ! ")
-iv = strxor(bytes.fromhex(intermediate), bytes.fromhex(output_atteso_hex)).hex()
-print("IV = ", iv)
 print()
 
-print("LO XOR DI QUESTO IV CIFRATO CON INTERMEDIATE E:")
-print(strxor(bytes.fromhex(iv), bytes.fromhex(intermediate)))
-print()
-print("QUINDI IV DA INVIARE DEVE ESSERE : " + iv)
-print("VERIFICA CHE RICEVIAMO UNKNOWN COMMAND")
-payload_finale = "TASK: " + iv + ciphertext1 + ciphertext2 + ciphertext3
-print("PAYLOAD CHE VIENE INVIATO: ", payload_finale)
+
+password = iv_new + block_1 + block_2 + ciphertext
+print("PASSWORD COSTRUITA: " + password)
+
+password = "TASK: " + password
 p_worker = process("/challenge/worker")
-p_worker.sendline(payload_finale.encode())
-print(p_worker.recvall(timeout=1))
-p_worker.close()
+p_worker.sendline(password.encode())
+print(p_worker.recvall(timeout=1).decode())
+
