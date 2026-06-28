@@ -1,8 +1,35 @@
+📅 2026-06-28
+
 #!/usr/bin/env python3
 from pwn import *
 from Crypto.Util.Padding import pad, unpad
 from Crypto.Util.strxor import strxor
 context.log_level = 'error'
+
+def find_intermediate(target_block):
+    intermediate = ""
+    stringa_padding = ""
+    p_worker = process("/challenge/worker")
+    print("POA-RICERCA DELL'INTERMEDIATE: ")
+    for i in range(16):
+        for n in range(256):
+            byte = f"{n:02x}"
+            garbage = "00" * (15-i)
+            payload = "TASK: " + garbage + byte + stringa_padding + target_block
+            p_worker.sendline(payload.encode())
+            response = p_worker.recvline().strip().decode()
+            if response == "Unknown command!":
+                break
+        padding = f"{i+1:02x}"
+        intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(padding)).hex() + intermediate
+        next_padding = f"{i+2:02x}"
+        xoring = next_padding * (i+1)
+        stringa_padding = strxor(bytes.fromhex(xoring), bytes.fromhex(intermediate)).hex()
+        print(f"BYTE TROVATI: [{i+1}/16]", end="\r")
+    print()
+    p_worker.close()
+    return intermediate
+
 
 p_disp = process("/challenge/dispatcher")
 output = p_disp.recvline().strip().decode().split()[-1]
@@ -15,86 +42,23 @@ expected_hex_padding[0] = expected_hex[:32]
 expected_hex_padding[1] = expected_hex[32:64]
 expected_hex_padding[2] = expected_hex[64:96]
 
-##############################   BLOCK 2        #######################
-intermediate = ""
-stringa_padding = ""
-p_worker = process("/challenge/worker")
-print("POA-RICERCA DELL'INTERMEDIATE: ")
-for i in range(16):
-    for n in range(256):
-        byte = f"{n:02x}"
-        garbage = "00" * (15-i)
-        payload = "TASK: " + garbage + byte + stringa_padding + ciphertext
-        p_worker.sendline(payload.encode())
-        response = p_worker.recvline().strip().decode()
-        if response == "Unknown command!":
-            break
-    padding = f"{i+1:02x}"
-    intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(padding)).hex() + intermediate
-    next_padding = f"{i+2:02x}"
-    xoring = next_padding * (i+1)
-    stringa_padding = strxor(bytes.fromhex(xoring), bytes.fromhex(intermediate)).hex()
-    print(f"BYTE TROVATI: [{i+1}/16]", end="\r")
-print()
-block_2 = strxor(bytes.fromhex(intermediate), bytes.fromhex(expected_hex_padding[2])).hex()
+############ BLOCK 2 ##########
+intermediate_3 = find_intermediate(ciphertext)
+block_2 = strxor(bytes.fromhex(intermediate_3), bytes.fromhex(expected_hex_padding[2])).hex()
 print("BLOCCO COSTRUITO 2: ", block_2)
-p_worker.close()
 print()
 
-
-
-##############################   BLOCK 1        #######################
-intermediate = ""
-stringa_padding = ""
-p_worker = process("/challenge/worker")
-for i in range(16):
-    for n in range(256):
-        byte = f"{n:02x}"
-        garbage = "00" * (15-i)
-        payload = "TASK: " + garbage + byte + stringa_padding + block_2
-        p_worker.sendline(payload.encode())
-        response = p_worker.recvline().strip().decode()
-        if response == "Unknown command!":
-            break
-    padding = f"{i+1:02x}"
-    intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(padding)).hex() + intermediate
-    next_padding = f"{i+2:02x}"
-    xoring = next_padding * (i+1)
-    stringa_padding = strxor(bytes.fromhex(xoring), bytes.fromhex(intermediate)).hex()
-    print(f"BYTE TROVATI: [{i+1}/16]", end="\r")
-print()
-block_1 = strxor(bytes.fromhex(intermediate), bytes.fromhex(expected_hex_padding[1])).hex()
+############ BLOCK 1 ##########
+intermediate_2 = find_intermediate(block_2)
+block_1 = strxor(bytes.fromhex(intermediate_2), bytes.fromhex(expected_hex_padding[1])).hex()
 print("BLOCCO COSTRUITO 1: ", block_1)
-p_worker.close()
 print()
 
-
-
-##############################   IV        #######################
-intermediate = ""
-stringa_padding = ""
-p_worker = process("/challenge/worker")
-for i in range(16):
-    for n in range(256):
-        byte = f"{n:02x}"
-        garbage = "00" * (15-i)
-        payload = "TASK: " + garbage + byte + stringa_padding + block_1
-        p_worker.sendline(payload.encode())
-        response = p_worker.recvline().strip().decode()
-        if response == "Unknown command!":
-            break
-    padding = f"{i+1:02x}"
-    intermediate = strxor(bytes.fromhex(byte), bytes.fromhex(padding)).hex() + intermediate
-    next_padding = f"{i+2:02x}"
-    xoring = next_padding * (i+1)
-    stringa_padding = strxor(bytes.fromhex(xoring), bytes.fromhex(intermediate)).hex()
-    print(f"BYTE TROVATI: [{i+1}/16]", end="\r")
+############ IV ##########
+intermediate_1 = find_intermediate(block_1)
+iv_new = strxor(bytes.fromhex(intermediate_1), bytes.fromhex(expected_hex_padding[0])).hex()
+print("IV: ", iv_new)
 print()
-iv_new = strxor(bytes.fromhex(intermediate), bytes.fromhex(expected_hex_padding[0])).hex()
-print("IV COSTRUITO: ", iv_new)
-p_worker.close()
-print()
-
 
 password = iv_new + block_1 + block_2 + ciphertext
 print("PASSWORD COSTRUITA: " + password)
@@ -104,3 +68,14 @@ p_worker = process("/challenge/worker")
 p_worker.sendline(password.encode())
 print(p_worker.recvall(timeout=1).decode())
 
+## 🧑🏾‍🏫 what this challenge teaches u
+when u exploit a POA besides decrypting the ciphertext and find the actual plaintext, u can even craft a plaintext that u want
+the core at the beginning is the same: find the intermediate of the ciphertext block
+then XOR this intermediate with ur expected plaintext so u will find the previous block to attach to the one u exploited
+keep doin it until u get the new iv
+since the code to find the intermediate is the same, i decide to implement for the first time a function that given in input a ciphertext block, the output is its intermediate
+this allowed me to implement the DRY rule: Don't Repeat Yourself
+and so make the code shorter and way easier
+
+## 🏁 Flag  
+pwn.college{AYLdv7F-UyKNHZLjWI5GJo3Gx7-.QXxQzN5wCO4IDOxEzW}
