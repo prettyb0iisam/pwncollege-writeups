@@ -1,0 +1,20 @@
+📅 2026-07-21
+
+/challenge/run
+vim bro.sh
+#!/usr/bin/env bash
+for i in %(seq 256); do
+        timeout 1 ping 10.0.0.$i
+done
+
+chmod a+x bro.sh
+./bro.sh
+checked the host which replies back to ping
+nc -v [ACTIVE HOST] 31337
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to scan an entire subnet with bash script and check active hosts with ping
+
+## 🏁 Flag  
+pwn.college{4h1FY8lqvx2WHlyKtMfS8WSSpmt.QXxYzMzwCO4IDOxEzW}
