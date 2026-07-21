@@ -1,0 +1,12 @@
+📅 2026-07-21
+
+/challenge/run
+nc -vl 31337 OPPURE nc -vln 31337
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can also listen with netcat using -l flag
+to avoid DNS resolution use -n flag
+
+## 🏁 Flag  
+pwn.college{g8SrlZAHNNe87P4LwYEonVbmXOT.QXwYzMzwCO4IDOxEzW}
