@@ -1,0 +1,12 @@
+📅 2026-07-21
+
+/challenge/run
+nc -vN 10.0.0.2 31337
+pressed Ctrl+D
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+use Ctrl+D to shutdown connection
+
+## 🏁 Flag  
+pwn.college{wMJFy-lxkGJdFod9g7Be65R8JCk.0lNyAjNxwCO4IDOxEzW}
