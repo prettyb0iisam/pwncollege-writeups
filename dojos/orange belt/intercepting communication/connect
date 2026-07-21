@@ -1,0 +1,11 @@
+📅 2026-07-21
+
+/challenge/run
+nc -v 10.0.0.2 31337
+flag popped out  
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can open network connections with netcat
+
+## 🏁 Flag  
+pwn.college{MlCiIosHYWHAEB2MG81sa8QZ1_z.QX5UzMzwCO4IDOxEzW}
