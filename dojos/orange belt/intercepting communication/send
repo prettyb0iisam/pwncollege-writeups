@@ -1,0 +1,12 @@
+📅 2026-07-21
+
+/challenge/run  
+nc -v 10.0.0.2 31337
+Hello, World!
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+easy one
+
+## 🏁 Flag  
+pwn.college{w6jTjgoewMPjrxM6ljA_O9pf0io.0VNyAjNxwCO4IDOxEzW}
