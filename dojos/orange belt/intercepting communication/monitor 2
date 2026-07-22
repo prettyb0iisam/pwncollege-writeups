@@ -1,0 +1,14 @@
+📅 2026-07-22
+
+opened in desktop
+opened the terminal and ran
+/challenge/run
+wireshark
+inspected each package from SYN-SYN/ACK-ACK to FIN
+saved each byte and built the flag
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how communication between 2 hosts works
+
+## 🏁 Flag  
+pwn.college{8aceknhR2Vv66uHzfILm0FTl4N_.QX0YzMzwCO4IDOxEzW}
