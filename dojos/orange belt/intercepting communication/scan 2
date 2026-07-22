@@ -1,0 +1,18 @@
+📅 2026-07-22
+
+/challenge/run
+nmap -n -v --min-rate 10000 -p 31337 10.0.0.0/16
+found the host
+nc [HOST] 31337
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+first time in my life using nmap
+actually it is super useful and powerful but to avoid terminal congestion and huge amount of time execution,
+u have to specify correct flags to make it more efficient
+-n -> no DNS
+--min-rate 10000 -> it sends at least 10000 per sec
+-p 31337 -> checks only on port 31337
+
+## 🏁 Flag  
+pwn.college{cm-6ZwKbjq60Px0eSQ5e4j4SUug.QXyYzMzwCO4IDOxEzW}
