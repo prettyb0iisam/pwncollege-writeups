@@ -1,7 +1,12 @@
 📅 2026-07-23
 
+/challenge/run
+iptables -I OUTPUT -p tcp --dport 31337 -j ACCEPT
+nc -v 10.0.0.2 31337
+flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+-I OUTPUT -> set this rule as first in the table
 
 ## 🏁 Flag  
+pwn.college{0bB_rC4AdFt0n0Egm2pmIaM2KU6.0FM1AjNxwCO4IDOxEzW}
