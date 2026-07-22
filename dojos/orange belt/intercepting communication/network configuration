@@ -1,0 +1,15 @@
+📅 2026-07-22
+
+opened desktop
+opened terminal
+tmux
+ip addr del 10.0.0.1/24 dev eth0
+ip addr add 10.0.0.3/24 eth0
+nc -v -l 31337
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to check for ur network interface, delete hosts in it, create new hosts and listen from them
+
+## 🏁 Flag  
+pwn.college{olpTIn6uMz4bZYqYzeWcNc6QrBh.QX1YzMzwCO4IDOxEzW}
