@@ -1,0 +1,14 @@
+📅 2026-07-23
+
+/challenge/run
+iptables -A INPUT -p tcp --dport 31337 -j DROP
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can setup firewall rules with iptables command and its flags
+-A INPUT -> use INPUT chain
+-p tcp -> protocol TCP
+--dport 31337 -> port 31337
+-j DROP -> drop the packet
+
+## 🏁 Flag  
+pwn.college{UljnySZK09_nisx-hqnvP860U_n.0FO0AjNxwCO4IDOxEzW}
