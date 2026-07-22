@@ -1,12 +1,13 @@
 📅 2026-07-22
 
 opened in desktop
-open the terminal and run: /challenge/run; wireshark
+open the terminal and run: /challenge/run
+wireshark
 checked for packets after SYN - SYN/ACK - ACK
-checkd the content and flag popped out
+checked the content and flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to monitor traffic and inspect packages in wireshark
 
-## 🏁 Flag  
+## 🏁 Flag
 pwn.college{0v--Ak5qYgnqzFfotEKqUO8rKFN.QXzYzMzwCO4IDOxEzW}
