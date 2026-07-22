@@ -1,0 +1,11 @@
+📅 2026-07-23
+
+/challenge/run
+iptables -A INPUT -p tcp -s 10.0.0.3 --dport 31337 -j DROP
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to block traffic from a specific host with -s flag
+
+## 🏁 Flag  
+pwn.college{A5_tUOJnHT1A2QzJHKe1QSfM94C.0VO0AjNxwCO4IDOxEzW}
