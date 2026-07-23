@@ -1,0 +1,11 @@
+📅 2026-07-23
+
+/challenge/run
+nc -v 10.0.0.2 31337
+flag popped out
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to DoS a server in a specific port using netcat and a very short (1 host) backlog queue
+
+## 🏁 Flag  
+pwn.college{k2oQz-h78SYki7Tn4rXqPKfbvMU.01N1AjNxwCO4IDOxEzW}
