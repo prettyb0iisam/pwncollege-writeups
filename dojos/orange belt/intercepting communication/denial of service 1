@@ -1,11 +1,30 @@
 📅 2026-07-23
 
+I WAY -> commandline tool nc
 /challenge/run
 nc -v 10.0.0.2 31337
 flag popped out
 
+II WAY -> python
+/challenge/run
+vim bro
+#!/usr/bin/env python3
+import socket
+s = socket.socket()
+s.connect(("10.0.0.2", 31337))
+print(s.recv(60).decode())
+s.close()
+
+chmod a+x bro
+./bro
+flag popped out
+
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to DoS a server in a specific port using netcat and a very short (1 host) backlog queue
+in python socket library allows u to do the same thing
+first u have to create a socket object and then connect to the server
+then print what u recv
+remember, every time u run the script or the command line tool, to restart the challenge 
 
 ## 🏁 Flag  
 pwn.college{k2oQz-h78SYki7Tn4rXqPKfbvMU.01N1AjNxwCO4IDOxEzW}
