@@ -1,0 +1,25 @@
+#!/usr/bin/env python3
+
+from scapy.all import *
+
+# Initial SYN
+syn = IP(dst="10.0.0.2") / TCP(
+    sport=31337,
+    dport=31337,
+    flags="S",
+    seq=31337
+)
+
+synack = sr1(syn, timeout=3)
+
+if synack:
+    # Final ACK completing the handshake
+    ack = IP(dst="10.0.0.2") / TCP(
+        sport=31337,
+        dport=31337,
+        flags="A",
+        seq=31338,
+        ack=synack[TCP].seq + 1
+    )
+
+    send(ack)
