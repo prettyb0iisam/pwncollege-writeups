@@ -1,0 +1,14 @@
+📅 2026-07-24
+
+from scapy.all import *
+
+pkt = IP(dst="10.0.0.2", proto=0xFF)
+
+send(pkt)
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+
+
+## 🏁 Flag  
+pwn.college{MhqVynMZolFEHdmdYOmk6uzFudg.QX3YzMzwCO4IDOxEzW}
