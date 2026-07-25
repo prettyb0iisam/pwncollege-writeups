@@ -1,5 +1,32 @@
 📅 2026-07-23
 
+import socket
+
+# Configura questi valori
+IFACE = "eth0"                     # la tua interfaccia di rete
+SRC_MAC = "aa:bb:cc:dd:ee:ff"       # il MAC del tuo host (mittente)
+DST_MAC = "ff:ff:ff:ff:ff:ff"       # MAC destinazione (broadcast o MAC reale di 10.0.0.2)
+ETH_TYPE = 0xFFFF
+
+def mac_to_bytes(mac):
+    return bytes.fromhex(mac.replace(":", ""))
+
+# Costruzione manuale dell'header Ethernet
+dst = mac_to_bytes(DST_MAC)
+src = mac_to_bytes(SRC_MAC)
+ethertype = ETH_TYPE.to_bytes(2, byteorder='big')
+
+payload = b"Hello 10.0.0.2 - raw ethernet frame"
+
+frame = dst + src + ethertype + payload
+
+# Creazione del raw socket
+s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.htons(ETH_TYPE))
+s.bind((IFACE, 0))
+s.send(frame)
+
+print("Frame inviato:", frame)
+
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 
