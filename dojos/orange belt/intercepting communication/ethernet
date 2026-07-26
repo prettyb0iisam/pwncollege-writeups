@@ -1,6 +1,18 @@
 📅 2026-07-23
 
-I WAY -> socket
+I WAY -> scapy
+#!/usr/bin/env python3
+from scapy.all import *
+iface = "eth0"
+frame = Ether(
+        dst = "ff:ff:ff:ff:ff:ff",
+        src = "aa:aa:aa:aa:aa:aa",
+        type = 0xffff
+)
+packet = frame / Raw(b"ciao")
+sendp(packet, iface=iface)
+
+II WAY -> socket
 #!/usr/bin/env python3
 import socket
 import struct
@@ -21,18 +33,6 @@ if len(frame) < 60:
 s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW)
 s.bind((INTERFACE, 0))
 s.send(frame)
-
-II WAY -> scapy
-#!/usr/bin/env python3
-from scapy.all import *
-iface = "eth0"
-frame = Ether(
-        dst = "ff:ff:ff:ff:ff:ff",
-        src = "aa:aa:aa:aa:aa:aa",
-        type = 0xffff
-)
-packet = frame / Raw(b"ciao")
-sendp(packet, iface=iface)
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to send ethernet frame
