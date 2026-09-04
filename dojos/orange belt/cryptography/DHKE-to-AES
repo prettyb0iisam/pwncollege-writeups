@@ -1,0 +1,21 @@
+📅 2026-09-04
+
+#!/usr/bin/env python3
+from pwn import *
+from Crypto.Cipher import AES
+context.log_level = 'error'
+p = process("/challenge/run")
+B = p.recvline().strip().decode()[4:]
+p.sendline(B.encode())
+p.recvuntil("Flag Ciphertext (hex): ".encode())
+flag = p.recvline().strip().decode()
+key = "00000000000000000000000000000000"
+cipher = AES.new(bytes.fromhex(key), AES.MODE_CBC)
+flag_enc = cipher.decrypt(bytes.fromhex(flag))[16:75]
+print(flag_enc.decode())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to merge key exchange with encryption/decryption
+
+## 🏁 Flag  
+pwn.college{ozHN3p0VI8EqwIgoc7ezyEJ5_iL.QXzQzN5wCO4IDOxEzW}
