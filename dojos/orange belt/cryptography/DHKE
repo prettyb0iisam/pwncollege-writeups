@@ -1,0 +1,42 @@
+📅 2026-09-04
+
+I WAY -> manual
+/challenge/run 
+copied p value
+pasted p value as B
+typed 0 as S
+flag popped out
+
+II WAY -> python
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = 'error'
+p = process("/challenge/run")
+B = p.recvline().strip().decode()[4:]
+p.sendline(B.encode())
+p.sendline("0".encode())
+print(p.recvall().strip().decode())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+DHKE is just genius -> allows u to exchange key securely
+Alice:
+  -a -> random number never shared
+Bob:
+  -b -> random number never shared
+g = root  &  p = large prime number to define their Finite Field
+both these numbers are shared
+
+then:
+Alice -> A=g^a mod p
+Bob   -> B=g^b mod p
+they share A and B
+
+then:
+Alice  -> S=B^a mod p
+Bob    -> S=A^b mod p
+S will be equal for both of them since B^a==g^b^a==g^b*a 
+They share a and b, ensuring that no one else can read the number thanks to the finite field p
+
+
+## 🏁 Flag  
+pwn.college{4lpeZy4Zyd_6DS-aKENgOHShNLV.QX4czMzwCO4IDOxEzW}
