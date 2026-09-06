@@ -1,0 +1,31 @@
+📅 2026-09-06
+
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = "error"
+p = process("/challenge/run")
+p.recvline()
+p.recvline()
+p.recvline()
+p.recvline()
+p.recvline()
+p.recvline()
+p.recvline()
+p.recvuntil(b"e: 0x")
+e = int(p.recvline().strip().decode(), 16)
+p.recvuntil(b"d: 0x")
+d = int(p.recvline().strip().decode(), 16)
+p.recvuntil(b"n: 0x")
+n = int(p.recvline().strip().decode(), 16)
+p.recvuntil(b"challenge: 0x")
+c = int(p.recvline().strip().decode(), 16)
+m = pow(c, d, n)
+p.sendline(hex(m).encode())
+print(p.recvall().decode())
+
+## 🧑🏾‍🏫 what this challenge teaches u
+easy one
+thank god no little-endian stuff
+
+## 🏁 Flag  
+pwn.college{gT2gYkkXb1ODqOHVfafd8pfKtJO.QXzgzMzwCO4IDOxEzW}
