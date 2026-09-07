@@ -1,0 +1,40 @@
+📅 2026-09-07
+
+#!/usr/bin/env python3
+from pwn import *
+context.log_level = 'error'
+from base64 import b64encode, b64decode
+import random
+n = int(open("/challenge/key-n").read(), 16)
+e = int(open("/challenge/key-e").read(), 16)
+target = b"flag"
+m = int.from_bytes(target, "little")
+while True:
+    r = random.randrange(2, n - 1)
+    m_masked = (m * pow(r, e, n)) % n
+    masked_bytes = m_masked.to_bytes(256, "little")
+    if b"flag" not in masked_bytes:
+        break
+payload = b64encode(masked_bytes).decode()
+p_disp = process(["/challenge/dispatcher", payload])
+out = p_disp.recvall().decode()
+p_disp.close()
+sig_b64 = out.split(":", 1)[1].strip()
+s_masked = int.from_bytes(b64decode(sig_b64), "little")
+r_inv = pow(r, -1, n)
+s = (s_masked * r_inv) % n
+forged_signature = s.to_bytes(256, "little")
+forged_b64 = b64encode(forged_signature).decode()
+p_work = process(["/challenge/worker", forged_b64])
+result = p_work.recvall().decode()
+p_work.close()
+print(result)
+
+## 🧑🏾‍🏫 what this challenge teaches u
+RSA signature = m**d mod n
+RSA verify = m**e mod n
+they are basically the same thing as ENC and DEC
+but fuck it, thx clause btw part 2
+
+## 🏁 Flag  
+pwn.college{E4VTliDABZqYc9XWmETvylq2oWV.QX0QzN5wCO4IDOxEzW}
