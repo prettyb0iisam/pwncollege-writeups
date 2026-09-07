@@ -1,0 +1,32 @@
+📅 2026-09-07
+
+#!/usr/bin/env python3
+from pwn import *
+import hashlib
+import string
+import random
+context.log_level = 'error'
+charset = string.ascii_letters + string.digits + string.punctuation
+p = process("/challenge/run")
+p.recvuntil(b"flag_hash[:prefix_length]='")
+target = p.recvline().strip().decode()[:6]
+print("Ricerca della parola...")
+while True:
+    parola = ""
+    parola = ''.join(random.choices(charset, k=10))
+    payload = hashlib.sha256(parola.encode()).hexdigest()[:6]
+    if payload == target:
+        print("Parola trovata: ", parola)
+        parola_hex = parola.encode().hex()
+        p.sendline(parola_hex.encode())
+        print(p.recvall().decode())
+        exit()
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how sha-256 works
+its an asymmetric function in which u provide the input and get an output
+if u change even a single bit of the previous input, u will get a completely different output
+in this case, the checks is based only on the first 3bytes -> 6hex chars allowing it to being computationally completable
+
+## 🏁 Flag  
+pwn.college{4UpZZYUgAFNJqIR24Km5u_7gPCX.QXxgzMzwCO4IDOxEzW}
