@@ -28,7 +28,7 @@ print(flag_bytes.decode())
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 tbh i found it extremely hard because it mixed:
--huge prime number between 2^512 & 2^1024 -> merienne prime
+-huge prime number between 2^512 & 2^1024 -> mersenne prime
 -fermat theorem
 -base64
 -little-endian
