@@ -34,7 +34,7 @@ print(result)
 RSA signature = m**d mod n
 RSA verify = m**e mod n
 they are basically the same thing as ENC and DEC
-but fuck it, thx clause btw part 2
+but fuck it, thx claude btw part 2
 
 ## 🏁 Flag  
 pwn.college{E4VTliDABZqYc9XWmETvylq2oWV.QX0QzN5wCO4IDOxEzW}
