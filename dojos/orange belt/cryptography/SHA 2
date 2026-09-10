@@ -1,0 +1,30 @@
+📅 2026-09-10
+
+#!/usr/bin/env python3
+import hashlib
+import base64
+from pwn import *
+context.log_level = 'error'
+p = process("/challenge/run")
+p.recvuntil(b"challenge (b64): ")
+string_b64 = p.recvline().strip().decode()
+string = base64.b64decode(string_b64)
+target = b"\x00\x00"
+print("Ricerca dei byte...")
+for i in range(0x1000000):
+    response = i.to_bytes(4, "big")
+    payload = string + response
+    digest = hashlib.sha256(payload).digest()
+    if digest[:2] == target:
+        byte = base64.b64encode(response).decode()
+        print("Invio di", byte)
+        p.sendline(byte.encode())
+        print(p.recvall().decode())
+        exit()
+
+## 🧑🏾‍🏫 what this challenge teaches u
+brute force to find the target: first 2bytes gotta be NULL
+maximum total attempts are 65536
+
+## 🏁 Flag  
+pwn.college{EKUpOWauBvPF4MPlVzrhl26Ix-7.QXygzMzwCO4IDOxEzW}
