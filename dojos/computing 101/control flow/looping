@@ -8,7 +8,7 @@
 ## ✅ what i did  
 -clicked start
 -opened the terminal
--ran: 'gdb /challenge/reverse-me'
+-ran: 'gdb /challenge/reverse-me' 
 (gdb): starti
 (gdb): disas _start
 found out the program write a string in the stack: 
