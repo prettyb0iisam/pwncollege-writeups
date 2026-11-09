@@ -1,28 +1,17 @@
-# challenge: moving between registers
-
-📅 2025-06-24
-📁 your first program
-
----
-
-## ✅ what i did  
--clicked start
--opened the terminal
--ran: 'vim bro.s'
--typed: '.intel_syntax noprefix'
-        '.global _start'
-        '_start:'
-        'mov rdi, rsi'
-        'mov rax, 60'
-        'syscall'
--ran: 'as -o bro.o bro.s'
--ran: 'ld -o bro bro.o'
--ran: '/challenge/check bro'
--flag popped out
+📅 2026-11-09
+vim bro.s:
+        .intel_syntax noprefix
+        .global _start
+        _start:
+        mov rdi, rsi
+        mov rax, 60
+        syscall
+as -o bro.o bro.s
+ld -o bro bro.o
+/challenge/check bro
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-rsi register is commonly used to store variable data
-u can use the mov instruction to copy data from one register into another
+how to move values already stored and handle syscalls
 
 ## 🏁 Flag  
 pwn.college{Ath6cjR-klMQKbPNPS-DausQgmu.QX5QTN2wCO4IDOxEzW}
