@@ -1,26 +1,14 @@
-# challenge: stored addresses
-
-📅 2025-06-25
-📁 computer memory
-
----
-
-## ✅ what i did  
--clicked start
--opened the terminal
--ran: '/challenge/check'
--typed: '.intel_syntax noprefix'
-        '.global _start'
-        '_start: '
-        'mov rdi, [567800]'
-        'mov rdi, [rdi]'
-        'mov rax, 60'
-        'syscall'
--pressed Ctrl+D
--flag popped out
+📅 2026-11-09
+.intel_syntax noprefix
+.global _start
+_start:
+mov rdi, [567800]
+mov rdi, [rdi]
+mov rax, 60
+syscall
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-u can dereference an address multiple times to follow a chain of pointers and reach the actual data
+how to load a value in a register and dereference it 2times
 
 ## 🏁 Flag  
 pwn.college{A-jwk310IkPjzeslsrt-Dbn39_S.QXzMTO1wCO4IDOxEzW}
