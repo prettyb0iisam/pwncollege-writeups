@@ -1,7 +1,4 @@
 📅 2026-11-09
-
-.intel_syntax noprefix
-.global _start:
 mov rax, 60
 
 ## 🧑🏾‍🏫 what this challenge teaches u
