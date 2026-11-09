@@ -1,24 +1,10 @@
-# challenge: the stack
-
-📅 2026-02-18
-📁 the stack
-
----
-
-## ✅ what i did  
--clicked start
--opened the terminal
--ran: 'vim bro.s'
--typed: '.intel_syntax noprefix'
-        '.global _start'
-        '_start: '
-        'mov rdi, [rsp]'
-        'mov rax, 60'
-        'syscall'
--ran: 'as -o bro.o bro.s'
--ran: 'ld -o bro bro.o'
--ran: '/challenge/check bro'
--flag popped out
+📅 2026-11-09
+.intel_syntax noprefix
+.global _start
+_start:
+mov rdi, [rsp]
+mov rax, 60
+syscall
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 its been couple months i wasnt solving assembly challenges and shit this helps me solidify concepts
