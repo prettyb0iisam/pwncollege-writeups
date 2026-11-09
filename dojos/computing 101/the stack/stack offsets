@@ -1,24 +1,10 @@
-# challenge: stack offsets
-
-📅 2026-02-18
-📁 the stack
-
----
-
-## ✅ what i did  
--clicked start
--opened the terminal
--ran: 'vim bro.s'
--typed: '.intel_syntax noprefix'
-        '.global _start'
-        '_start: '
-        'mov rdi, [rsp+128]'
-        'mov rax, 60'
-        'syscall'
--ran: 'as -o bro.o bro.s'
--ran: 'ld -o bro bro.o'
--ran: '/challenge/check bro'
--flag popped out
+📅 2026-11-09
+.intel_syntax noprefix
+.global _start
+_start:
+mov rdi, [rsp+128]
+mov rax, 60
+syscall
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to use offsets to refers to different memory locations starting from a known one
