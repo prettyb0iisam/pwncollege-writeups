@@ -1,25 +1,11 @@
-# challenge: program arguments on the stack
-
-📅 2026-02-18
-📁 the stack
-
----
-
-## ✅ what i did  
--clicked start
--opened the terminal
--ran: 'vim bro.s'
--typed: '.intel_syntax noprefix'
-        '.global _start'
-        '_start: '
-        'mov rdi, [rsp+16]'
-        'mov rdi, [rdi]'
-        'mov rax, 60'
-        'syscall'
--ran: 'as -o bro.o bro.s'
--ran: 'ld -o bro bro.o'
--ran: '/challenge/check bro'
--flag popped out
+📅 2026-11-09
+.intel_syntax noprefix
+.global _start
+_start:
+mov rdi, [rsp+16]
+mov rdi, [rdi]
+mov rax, 60
+syscall
 
 ## 🧑🏾‍🏫 what this challenge teaches u
 how to use offsets and access to memory where r stored data using stakc's pointers build at program's initialization
