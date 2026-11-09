@@ -1,25 +1,13 @@
-# challenge: dereferencing yourself
-
-📅 2025-06-25
-📁 computer memory
-
----
-
-## ✅ what i did  
--clicked start
--opened the terminal
--ran: '/challenge/check'
--typed: '.intel_syntax noprefix'
-        '.global _start'
-        '_start: '
-        'mov rdi, [rdi]'
-        'mov rax, 60'
-        'syscall'
--pressed Ctrl+D
--flag popped out
+📅 2026-11-09
+.intel_syntax noprefix
+.global _start
+_start:
+mov rdi, [rdi]
+mov rax, 60
+syscall
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-u can use the same register to dereference its content and also to store the value in it
+dereferences register value and use it as argument for exit syscall
 
 ## 🏁 Flag  
 pwn.college{ADXnFSFWctW7HVAozoKtZBWjKxN.QXyMTO1wCO4IDOxEzW}
