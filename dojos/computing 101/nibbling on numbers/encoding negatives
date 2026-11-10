@@ -1,1 +1,10 @@
-a
+📅 2026-11-10
++256 to the number and then convert it to BIN
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the concept is basically reversing the procedure we did before:
+1 - add to the number +256 (it doesnt matter if its positive or negative)
+2 - convert it from DEC to BIN
+
+## 🏁 Flag  
+pwn.college{YGxGZQEm7SYYAG0PcWu7GXIqZMk.01M3kDNywCO4IDOxEzW}
