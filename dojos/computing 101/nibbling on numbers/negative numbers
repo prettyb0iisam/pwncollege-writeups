@@ -1,1 +1,10 @@
-broski
+📅 2026-11-10
+just used calculator to solve it.
+if it asks for UNSIGNED -> just convert the bit from BIN to DEC
+if it asks for SIGNED & MSB is 1 -> convert the bit from BIN to DEC and subtract 256
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to handle negative numbers with two's complement
+
+## 🏁 Flag  
+pwn.college{ELmnN3EkZT2TnYjvyQXZxPVqx67.0FM3kDNywCO4IDOxEzW}
