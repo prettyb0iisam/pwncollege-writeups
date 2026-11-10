@@ -1,1 +1,12 @@
-bro
+📅 2026-11-10
+same as before but this time use 65536 instead of 256
+
+## 🧑🏾‍🏫 what this challenge teaches u
+in the previous challenge we used 256 because we had 8bits.
+in this case since we have double of em so 16bits, we have to increase the value esponentially and thats why we use 65536 if we have 16bits
+so to convert a number which the MSB is 1 and the architecture is 16bits:
+1 - convert the number from BIN to DEC
+2 - subtract 65536 on it
+
+## 🏁 Flag  
+pwn.college{kIbl2kBweBJrF9sH6T9KCcbVrJF.0VM3kDNywCO4IDOxEzW}
