@@ -1,1 +1,8 @@
-g
+📅 2026-11-10
+challenge works the same as previous one but substract using: 4 294 967 296
+
+## 🧑🏾‍🏫 what this challenge teaches u
+two's complement using 32bits
+
+## 🏁 Flag  
+pwn.college{Y1CM3PImS1l2BQEDb-fYwWSAuY_.0lM3kDNywCO4IDOxEzW}
