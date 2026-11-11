@@ -1,1 +1,12 @@
+📅 2026-11-11
+gdb /challenge/debug-me
+r < /challenge/secret
+[COPIED]
 q
+/challenge/submit-number [PASTED]
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can pass file as arguments inside gdb using < /path/of/the/file
+
+## 🏁 Flag  
+pwn.college{ofnip-LHKZieHw8wklRQtaTg_c0.01N0MTNywCO4IDOxEzW}
