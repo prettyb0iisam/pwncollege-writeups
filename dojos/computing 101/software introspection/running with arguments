@@ -1,1 +1,9 @@
-v
+📅 2026-11-11
+gdb /challenge/debug-me
+r pwn
+
+## 🧑🏾‍🏫 what this challenge teaches u
+u can pass arguments to programs in gdb before executing them with r followed by the argument(s)
+
+## 🏁 Flag  
+pwn.college{seOdIoNuHKTntXMd3zC4EA6IbnM.01M1kDNywCO4IDOxEzW}
