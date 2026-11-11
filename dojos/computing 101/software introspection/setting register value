@@ -1,1 +1,18 @@
-b
+📅 2026-11-11
+gdb /challenge/debug-me
+disassemble
+starti
+stepi
+set $rdi=1337
+stepi
+print $rdi
+[COPIED]
+q
+/challenge/submit-number [PASTE]
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to set a registers value during dynamic execution
+print $reg VALUE -> sets reg's new value
+
+## 🏁 Flag  
+pwn.college{IQ7XPY3syM6D8nKFTivcdeURyE1.0FNzQTNywCO4IDOxEzW}
