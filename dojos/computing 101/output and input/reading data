@@ -1,1 +1,25 @@
-a
+📅 2026-11-11
+.intel_syntax noprefix
+.global _start
+_start:
+mov rdi, 0
+sub rsp, 128
+mov rsi, rsp
+mov rdx, 128
+mov rax, 0
+syscall
+mov rdi, 1
+mov rsi, rsp
+mov rdx, 128
+mov rax, 1
+syscall
+mov rdi, 42
+mov rax, 60
+syscall
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to use read syscall
+u can store the value in the stack but remember to initialize rsp
+
+## 🏁 Flag  
+pwn.college{oKq7I-3aTPlCZZfDBKYN0KroB8A.0FNwUTNxwCO4IDOxEzW}
