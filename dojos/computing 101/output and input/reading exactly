@@ -1,1 +1,24 @@
-q
+📅 2026-11-11
+.intel_syntax noprefix
+.global _start
+_start:
+mov rdi, 0
+sub rsp, 1024
+mov rsi, rsp
+mov rdx, 1024
+mov rax, 0
+syscall
+mov rdx, rax
+mov rdi, 1
+mov rsi, rsp
+mov rax, 1
+syscall
+mov rdi, 42
+mov rax, 60
+syscall
+
+## 🧑🏾‍🏫 what this challenge teaches u
+read syscall store its output in rax and it tell how many byte has been read
+
+## 🏁 Flag  
+pwn.college{EuV3dntBF9nNOaE0jiYreLgJlzN.0VM4ATNywCO4IDOxEzW}
