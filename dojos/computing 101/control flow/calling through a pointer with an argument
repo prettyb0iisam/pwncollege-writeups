@@ -1,1 +1,14 @@
-a
+📅 2026-11-12
+.intel_syntax noprefix
+.global solve
+solve:
+mov     rax, rdi
+mov     rdi, 1337
+call    rax
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to call functions with arguments
+
+## 🏁 Flag  
+pwn.college{YgXPCymORb2bJ5lm9K8Mzu_c79v.01N1kDNywCO4IDOxEzW}
