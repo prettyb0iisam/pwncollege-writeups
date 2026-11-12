@@ -1,1 +1,24 @@
-a
+📅 2026-11-12
+.intel_syntax noprefix
+.global solve
+solve:
+mov     rdx, rsi
+mov     rsi, rdi
+mov     rdi, 1
+mov     rax, 1
+syscall
+mov     rdi, 0
+mov     rax, 60
+syscall
+
+as -o bro.o bro.s
+ld -shared -o bro.so bro.o
+/challenge/check bro.so
+
+## 🧑🏾‍🏫 what this challenge teaches u
+very useful challenge to learn how to create shared libraries
+to assemble the library works the same but to link it remember to use -shared flag and the output is .so
+remember also that in .s there is no _start but (in this case) solve
+
+## 🏁 Flag  
+pwn.college{EhVgUJQgiLi5ps21poygVcsxFTL.0FN1kDNywCO4IDOxEzW}
