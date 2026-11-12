@@ -1,1 +1,12 @@
-a
+📅 2026-11-12
+.intel_syntax noprefix
+.global solve
+solve:
+movsx   rax, BYTE PTR [rdi]
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+movsx treats the byte as signed
+
+## 🏁 Flag  
+pwn.college{8eIzb31QPiePlHDXCaeGfFGmsKs.0FO3ATNywCO4IDOxEzW}
