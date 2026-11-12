@@ -1,1 +1,17 @@
-a
+📅 2026-11-12
+.intel_syntax noprefix
+.global solve
+solve:
+mov     rax, rdi
+ret
+
+as -o bro.o bro.s
+ld -shared -o bro.so bro.o
+/challenge/check
+
+## 🧑🏾‍🏫 what this challenge teaches u
+use ret to return from the function
+rax is used to store return's value
+
+## 🏁 Flag  
+pwn.college{sRelrOhRb4WAALJimiJaEZICBA4.0VN1kDNywCO4IDOxEzW}
