@@ -1,1 +1,12 @@
-a
+📅 2026-11-12
+.intel_syntax noprefix
+.global solve
+solve:
+call    rdi
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to call a function using call instruction and specify the register which contains the function's address
+
+## 🏁 Flag  
+pwn.college{4VrVn8IKkYrdt0ZWSDjjdLjQgWh.0lN1kDNywCO4IDOxEzW}
