@@ -1,1 +1,13 @@
-a
+📅 2026-11-12
+objdump -M intel -d /challenge/reverse-me
+copied the hex string (0x6c4d56426547486c)
+since it works in little endian, reverse it (0x6c48476542564d6c)
+converted from hex to string (lHGeBVMl)
+copied the value
+/challenge/reverse-me [PASTED] (lHGeBVMl)
+
+## 🧑🏾‍🏫 what this challenge teaches u
+little endian works uby the LSB to MSB
+
+## 🏁 Flag  
+pwn.college{wkr8SJf4-vUNl64hrGwtokoz_yO.0VM0ATNywCO4IDOxEzW}
