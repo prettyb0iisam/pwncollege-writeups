@@ -1,1 +1,41 @@
-g
+📅 2026-11-12
+.intel_syntax noprefix
+.global solve
+solve:
+mov     rbx, rax
+mov     rbp, rcx
+mov     r12, rdx
+mov     r13, rsi
+mov     r14, rdi
+mov     r15, r8
+push    r9
+push    r10
+push    r11
+call    rdi
+mov     rax, rbx
+mov     rcx, rbp
+mov     rdx, r12
+mov     rsi, r13
+mov     rdi, r14
+mov     r8, r15
+pop     r11
+pop     r10
+pop     r9
+call    rsi
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+all gprs are divided in:
+caller-saved regs -> regs that (conventionally) are not restored after a function has been called
+rax, rcx, rdx, rsi, rdi, r8, r9, r10, r11
+
+callee-saved regs -> regs that (conventionally) are restored after a function has been called
+rbx, rbp, r12, r13, r14, r15
+
+this means that if u call a function and u store important datas in caller-saved regs, u r not guarantee that when the funcion returns, u will get them back
+thats why u have to use callee-saved regs or push those values in the stack
+
+(idk why my code gives me the flag anyway but crashes at the end with SIGBUS)
+
+## 🏁 Flag  
+pwn.college{Y4DDfmF3Jq7ETCFBiTZCveb2RuZ.0FM4kDNywCO4IDOxEzW}
