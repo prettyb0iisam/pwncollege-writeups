@@ -1,1 +1,15 @@
-a
+📅 2026-11-13
+.intel_syntax noprefix
+.global LOBYTE
+LOBYTE:
+xor     rbx, rbx
+mov     rbx, 0xff
+and     rbx, rdi
+mov     rax, rbx
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+if u use mov instructions and u pass an immediate which length is 2bytes only, then all the other bits will be set to 0
+
+## 🏁 Flag  
+ pwn.college{QCrTFKTxm4OJW7bvyPXX1xH_FpT.0lM1ATNywCO4IDOxEzW}
