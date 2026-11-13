@@ -1,1 +1,25 @@
-a
+📅 2026-11-13
+.intel_syntax noprefix
+.global solve
+solve:
+xor     rbx, rbx
+mov     rbx, 1
+and     rbx, rdi
+cmp     rbx, 1
+je      odd
+xor     rax, rax
+mov     rax, 1
+ret
+odd:
+xor     rax, rax
+ret
+
+as -o bro.o bro.s
+ld -shared -o bro.so bro.o
+/challenge/check bro.so
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to write a function which compare a value and tells u if its even or odd
+
+## 🏁 Flag  
+ pwn.college{cUh2iXdwu50TUI-jHkIGBwHg-C_.0VM1ATNywCO4IDOxEzW}
