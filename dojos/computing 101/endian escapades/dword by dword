@@ -1,1 +1,12 @@
-a
+📅 2026-11-17
+objdump -d -M intel /challenge/reverse-me
+copied the immediate in cmp instruction
+convert it in string and reverse it
+loop it for each intermediate i find until last one (the forth)
+build a unique string and sent it as argument
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how reversing works using dwords
+
+## 🏁 Flag  
+ pwn.college{kbZ5Ej7bBdZuOyCv8Rsw4ak77EI.01M0ATNywCO4IDOxEzW}
