@@ -1,1 +1,9 @@
-h
+📅 2026-11-17
+objdump -M intel -d /challenge/reverse-me
+same as before but this time 2bytes only to check
+
+## 🧑🏾‍🏫 what this challenge teaches u
+same as previous one
+
+## 🏁 Flag  
+pwn.college{gxGz2AYsrTmmLG7JZdMB6kJ5KgI.0FN0ATNywCO4IDOxEzW}
