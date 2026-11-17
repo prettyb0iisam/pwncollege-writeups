@@ -1,5 +1,12 @@
 📅 2026-11-12
 
+objdump -M intel -d /challenge/reverse-me
+checked immediate value in movabs instruction and copied them
+converted them and copied the little endian string
+/challenge/reverse-me [PASTED both strings]
+
 ## 🧑🏾‍🏫 what this challenge teaches u
+how to reverse using objdump and gdb dinamically
 
 ## 🏁 Flag  
+pwn.college{M8QkNZOMIcAJKoL2B6wisJ_u5_h.0lM0ATNywCO4IDOxEzW}
