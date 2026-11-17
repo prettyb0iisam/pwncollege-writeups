@@ -1,1 +1,14 @@
-a
+📅 2026-11-17
+.intel_syntax noprefix
+.global solve
+solve:
+shr    rdi, 8
+and    rdi, 0xff
+mov    rax, rdi
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+using shr for right shifting
+
+## 🏁 Flag  
+pwn.college{0tttTPwyCR6kZBiTVysDJrSVdds.01N1ATNywCO4IDOxEzW}
