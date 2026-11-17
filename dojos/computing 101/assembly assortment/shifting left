@@ -1,1 +1,14 @@
-s
+📅 2026-11-17
+.intel_syntax noprefix
+.global solve
+solve:
+shl     rdi, 4
+mov     rax, rdi
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+shl instruction stands for shift-left
+then the second operand explicit how many shifts
+
+## 🏁 Flag  
+pwn.college{E850ms4s9NkBAOszkN7fgoLkTrq.0lN1ATNywCO4IDOxEzW}
