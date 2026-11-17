@@ -1,1 +1,17 @@
-a
+📅 2026-11-17
+.intel_syntax noprefix
+.global str_upper
+str_upper:
+cmp     BYTE PTR [rdi], 0
+je      exit
+sub     BYTE PTR [rdi], 0x20
+add     rdi, 1
+jmp     str_upper
+exit:
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+to lowercase chars u need to sub by 0x20
+
+## 🏁 Flag  
+pwn.college{0Q_lefpdGoU9B6a8uA6AmwsQWiL.0FN1ATNywCO4IDOxEzW}
