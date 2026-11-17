@@ -1,1 +1,17 @@
-a
+📅 2026-11-17
+.intel_syntax noprefix
+.global str_swapcase
+str_swapcase:
+cmp     BYTE PTR [rdi], 0
+je      exit
+xor     BYTE PTR [rdi], 0x20
+add     rdi, 1
+jmp     str_swapcase
+exit:
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+i didnt expect xor was so versatile
+
+## 🏁 Flag  
+pwn.college{8TW16IZFtbocDwW_88f-QQraNte.0VN1ATNywCO4IDOxEzW}
