@@ -1,1 +1,15 @@
-a
+📅 2026-11-17
+objdump -M intel -d /challege/reverse-me
+this time we have a struct, so:
+-8bytes
+-4bytes
+-2bytes
+-1byte
+-1byte
+so it works the same as previous one but all merged in 1 unique challenge
+
+## 🧑🏾‍🏫 what this challenge teaches u
+structs are like a pack of different bytes together
+
+## 🏁 Flag  
+pwn.college{AUIUbTcLdP227IsiURP9zVNml4z.0lN0ATNywCO4IDOxEzW}
