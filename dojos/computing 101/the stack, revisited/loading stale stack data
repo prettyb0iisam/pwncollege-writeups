@@ -1,5 +1,13 @@
 📅 2026-11-18
+.intel_syntax noprefix
+.global solve
+solve:
+call    rdi
+mov     rax, QWORD PTR [rsp-0x10]
+ret
 
 ## 🧑🏾‍🏫 what this challenge teaches u
+how to handle stack frame and datas
 
 ## 🏁 Flag  
+pwn.college{84ysWwKkml0J4ImNq3i07P8ziYP.0lN2ITNywCO4IDOxEzW}
