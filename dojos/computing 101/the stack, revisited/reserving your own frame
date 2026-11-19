@@ -1,0 +1,19 @@
+📅 2026-11-18
+.intel_syntax noprefix
+.global solve
+solve:
+sub     rsp, 256
+movabs  rdx, 255
+clear:
+mov     BYTE PTR [rsp+rdx], 0
+sub     rdx, 1
+cmp     rdx, -1
+jne     clear
+add     rsp, 256
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to zeros a stack frame u initialized previoulsy
+
+## 🏁 Flag  
+pwn.college{8Atgj9f8VVoa2jPJPByn-KdI6fK.0FOzITNywCO4IDOxEzW}
