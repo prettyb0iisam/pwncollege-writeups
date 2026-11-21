@@ -1,0 +1,17 @@
+📅 2026-11-21
+/challenge/program
+env -i BRO=x /challenge/program
+gdb /challenge/program
+q
+env -i BRO=x /challenge/program
+counted how many more xs
+env -i BRO=x... /challenge/program
+
+## 🧑🏾‍🏫 what this challenge teaches u
+this case required 2 things to match:
+- just 1 env variable
+- argv has to start at a specific address
+so the idea basically is just to set 1 env variable and then increase the number of x of that variable based on which address the argv argument has to be pointed to
+
+## 🏁 Flag  
+pwn.college{MhrJo6fDcKTOmKQtORgl2fMNGFC.0lM2kDNywCO4IDOxEzW}
