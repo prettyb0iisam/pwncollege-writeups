@@ -1,0 +1,14 @@
+📅 2026-11-21
+/challenge/program 
+gdb /challenge/program
+q
+env -i BRO=x /challenge/program
+counted how many bytes the program wants
+env -i BRO=x.... /challenge/program
+
+## 🧑🏾‍🏫 what this challenge teaches u
+the environment a program sees in a shell is different then the one it has been launched in gdb
+this because gdb, besides shell env variables, adds also its own variables
+
+## 🏁 Flag  
+pwn.college{4tNsYjEM0gfkMdHHZYV_beWOup2.0VM2kDNywCO4IDOxEzW}
