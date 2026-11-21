@@ -1,0 +1,11 @@
+📅 2026-11-21
+env -i /challenge/program
+based on the number u get, type X types x as env variable when u execute the program
+env -i BRO=xxx...... /challenge/program
+
+## 🧑🏾‍🏫 what this challenge teaches u
+env -i ./[program] -> execute the program wit no env variables
+env -i BRO=ciao ... -> execute the program with only the env variables u specified after -i 
+
+## 🏁 Flag  
+pwn.college{MW5q9V-aa8Jqs_kAA51qKjf2upG.0FM2kDNywCO4IDOxEzW}
