@@ -1,6 +1,19 @@
 📅 2026-11-21
-
+.intel_syntax noprefix
+.global _start
+_start:
+mov     rdi, 1
+mov     rsi, QWORD PTR [rsp+24]
+mov     rdx, 65
+mov     rax, 1
+syscall
+mov     rdi, 1
+mov     rax, 60
+syscall
 
 ## 🧑🏾‍🏫 what this challenge teaches u
+i guess when using lea and when mov lol
+dont forget to exit
 
 ## 🏁 Flag  
+pwn.college{QjzUk04Vp6fTNBkxvO_Pyeb4cCa.0VO1kDNywCO4IDOxEzW}
