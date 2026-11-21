@@ -1,0 +1,39 @@
+📅 2026-11-21
+.intel_syntax noprefix
+.global solve
+solve:
+sub     rsp, 256
+xor     rcx, rcx
+xor     r11, r11
+clear:
+mov     BYTE PTR [rsp+rcx], 0
+add     rcx, 1
+cmp     rcx, 256
+jne     clear
+loop:
+xor     rcx, rcx
+mov     cl, BYTE PTR [rdi]
+cmp     BYTE PTR [rsp+rcx], 1
+je      skip
+mov     BYTE PTR [rsp+rcx], 1
+add     r11, 1
+skip:
+add     rdi, 1
+sub     rsi, 1
+cmp     rsi, 0
+jne     loop
+mov     rax, r11
+add     rsp, 256
+ret
+
+as -o bro.o bro.s
+ld -shared -o bro.so bro.o
+/challenge/check bro.so
+
+## 🧑🏾‍🏫 what this challenge teaches u
+super useful challenge
+it helps u understanding how to use loops, to handle regs and most important (in this challenge), stack frame
+ion y i found it hard and actually i spent 3days solving it but rn that flag popped out im so fulfilled
+
+## 🏁 Flag  
+pwn.college{I4oKbaV1f1wlxxQ7m-rG0kSUKtx.0FO1ATNywCO4IDOxEzW}
