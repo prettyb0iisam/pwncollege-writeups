@@ -1,0 +1,42 @@
+📅 2026-11-22
+.intel_syntax noprefix
+.global atoi_digit
+.global atoi
+atoi_digit:
+xor     rsi, rsi
+mov     sil, BYTE PTR [rdi]
+sub     rsi, 0x30
+mov     rax, rsi
+ret
+atoi:
+xor     r8, r8
+check_neg:
+cmp     BYTE PTR [rdi], 0x2d
+jne     loop
+movabs  r9, 1
+add     rdi, 1
+loop:
+cmp     BYTE PTR [rdi], 0x30
+jb      done
+cmp     BYTE PTR [rdi], 0x39
+ja      done
+mov     r11, rdi
+call    atoi_digit
+imul    r8, 10
+add     r8, rax
+add     r11, 1
+mov     rdi, r11
+jmp     loop
+done:
+mov     rax, r8
+cmp     r9, 1
+jne     pos
+neg     rax
+pos:
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to handle comparison using ascii value instead of 0
+
+## 🏁 Flag  
+pwn.college{IrxnNMtHCRZ-GqdswqPYkn3bB2K.0lN4kDNywCO4IDOxEzW}
