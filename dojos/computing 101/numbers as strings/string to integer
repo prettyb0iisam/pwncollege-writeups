@@ -1,0 +1,31 @@
+📅 2026-11-22
+.intel_syntax noprefix
+.global atoi_digit
+.global atoi
+atoi_digit:
+xor     rsi, rsi
+mov     sil, BYTE PTR [rdi]
+sub     rsi, 0x30
+mov     rax, rsi
+ret
+atoi:
+xor     r8, r8
+loop:
+cmp     BYTE PTR [rdi], 0
+je      done
+mov     r11, rdi
+call    atoi_digit
+imul    r8, 10
+add     r8, rax
+add     r11, 1
+mov     rdi, r11
+jmp     loop
+done:
+mov     rax, r8
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+i like this one
+
+## 🏁 Flag  
+pwn.college{4p2pkXhI1YThwkmqCa5NSwCguMY.0FN4kDNywCO4IDOxEzW}
