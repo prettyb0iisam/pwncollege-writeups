@@ -1,0 +1,15 @@
+📅 2026-11-22
+.intel_syntax noprefix
+.global atoi_digit
+atoi_digit:
+xor     rsi, rsi
+mov     sil, BYTE PTR [rdi]
+sub     rsi, 0x30
+mov     rax, rsi
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to convert a string number to its integer value
+
+## 🏁 Flag  
+pwn.college{gcHxXZzqeWMBozAxQm3RfVOOje8.0lM4kDNywCO4IDOxEzW}
