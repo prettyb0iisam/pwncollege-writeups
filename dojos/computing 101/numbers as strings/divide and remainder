@@ -1,0 +1,21 @@
+📅 2026-11-22
+.intel_syntax noprefix
+.global itoa
+itoa:
+xor     rdx, rdx
+mov     rax, rdi
+mov     rcx, 10
+div     rcx
+mov     rcx, 0x30
+add     rax, rcx
+mov     BYTE PTR [rsi], al
+add     rdx, rcx
+mov     BYTE PTR [rsi+1], dl
+mov     rax, 2
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+shit i forgot div was such tricky to use
+
+## 🏁 Flag  
+pwn.college{MZJUgyvuAlZKUP_2zjj8fZu_R2z.0VO4kDNywCO4IDOxEzW}
