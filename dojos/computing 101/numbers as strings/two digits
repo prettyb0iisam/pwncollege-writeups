@@ -1,0 +1,28 @@
+📅 2026-11-22
+.intel_syntax noprefix
+.global atoi_digit
+.global atoi
+atoi_digit:
+xor     rsi, rsi
+mov     sil, BYTE PTR [rdi]
+sub     rsi, 0x30
+mov     rax, rsi
+ret
+atoi:
+mov     r11, rdi
+call    atoi_digit
+mov     rdx, rax
+add     r11, 1
+mov     rdi, r11
+call    atoi_digit
+imul    rdx, 10
+add     rax, rdx
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+very useful challenge
+this one teaches u how to handle multiple functions in the same file
+how to call them, set the right registers before calling them, handle returned values after calling them...
+
+## 🏁 Flag  
+pwn.college{gaHgCwBA8lVsh_fWX0eMsCtaLz1.01M4kDNywCO4IDOxEzW}
