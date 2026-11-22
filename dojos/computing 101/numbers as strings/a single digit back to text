@@ -1,0 +1,15 @@
+📅 2026-11-22
+.intel_syntax noprefix
+.global itoa_digit
+itoa_digit:
+movabs  rax, 0x30
+add     rax, rdi
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+easy one
+just the opposite from the previous ones
+atoi -> itoa
+
+## 🏁 Flag  
+pwn.college{obqQmqCnTV2LPUfDJQiVmCG2Oi6.0FO4kDNywCO4IDOxEzW}
