@@ -1,0 +1,48 @@
+📅 2026-11-23
+.intel_syntax noprefix
+.global itoa
+itoa:
+mov     rcx, 10
+mov     rax, rdi
+push    rbx
+push    r12
+xor     rbx, rbx
+cmp     rdi, '0'
+je      zero_case
+div_loop:
+xor     rdx, rdx
+div     rcx
+push    rdx
+add     rbx, 1
+cmp     rax, 0
+jne     div_loop
+cmp     rbx, 0
+je      zero_case
+mov     r11, rbx
+write:
+xor     r12, r12
+pop     r12
+add     r12, 0x30
+mov     BYTE PTR [rsi], r12b
+add     rsi, 1
+sub     rbx, 1
+cmp     rbx, 0
+jne     write
+mov     rax, r11
+pop     r12
+pop     rbx
+ret
+zero_case:
+mov     BYTE PTR [rsi], 0x30
+mov     rax, 0
+pop     r12
+pop     rbx
+ret
+
+## 🧑🏾‍🏫 what this challenge teaches u
+tough one 
+u have to know how to debug with gdb to solve them 'easier' and faster
+also strace -f can be very important to understand when ur syscalls fail
+
+## 🏁 Flag  
+pwn.college{gW41MmxMT6J30-PeWA_IAwgJmHl.0VM5kDNywCO4IDOxEzW}
