@@ -1,0 +1,29 @@
+📅 2026-11-26
+.intel_syntax noprefix
+.global _start
+
+_start:
+        xor     rdx, rdx
+        mov     rsi, QWORD PTR [rsp+16]
+count:
+        cmp     BYTE PTR [rsi], 0
+        je      write
+        add     rdx, 1
+        add     rsi, 1
+        jmp     count
+
+write:
+        mov     rsi, QWORD PTR [rsp+16]
+        mov     rdi, 1
+        mov     rax, 1
+        syscall
+
+        mov     rax, 60
+        mov     rdi, 0
+        syscall
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to write in stdout argv[1]
+
+## 🏁 Flag  
+pwn.college{om3tAgaixAD64HylSfH11Hafsba.0FM3ATNywCO4IDOxEzW}
