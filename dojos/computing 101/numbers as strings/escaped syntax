@@ -1,0 +1,82 @@
+📅 2026-11-27
+.intel_syntax noprefix
+.global _start
+
+_start:
+        mov     rcx, rsp
+        add     rcx, 16
+        xor     rdx, rdx
+        mov     rsi, rsp
+        sub     rsi, 1000
+        xor     r11, r11
+        xor     r10, r10
+        mov     rcx, [rcx]
+        mov     r10, rsi
+
+
+loop:
+        cmp     BYTE PTR [rcx], 0
+        je      write
+        cmp     BYTE PTR [rcx], 0x5c
+        je      slash
+        cmp     BYTE PTR [rcx], 0x25
+        je      percentage
+        jmp     char
+
+slash:
+        cmp     BYTE PTR [rcx+1], 0x5c
+        je      double_slash
+        cmp     BYTE PTR [rcx+1], 0x6e
+        je      new_line
+
+
+char:
+        mov     r11b, BYTE PTR [rcx]
+        mov     BYTE PTR [rsi], r11b
+        inc     rdx
+        inc     rcx
+        inc     rsi
+        jmp     loop
+
+new_line:
+        mov     BYTE PTR [rsi], 0x0a
+        inc     rsi
+        add     rcx, 2
+        inc     rdx
+        jmp     loop
+
+double_slash:
+        cmp     BYTE PTR [rcx+2], 0x6e
+        je      new_line
+        mov     BYTE PTR [rsi], 0x5c
+        inc     rsi
+        add     rcx, 2
+        inc     rdx
+        jmp     loop
+
+percentage:
+        cmp     BYTE PTR [rcx+1], 0x25
+        jne     loop
+        mov     BYTE PTR [rsi], 0x25
+        inc     rsi
+        add     rcx, 2
+        inc     rdx
+        jmp     loop
+
+write:
+        mov     rsi, r10
+        mov     rdi, 1
+        mov     rax, 1
+        syscall
+
+exit:
+        mov     rax, 60
+        mov     rdi, 0
+        syscall
+
+
+## 🧑🏾‍🏫 what this challenge teaches u
+how to handle multiple escapes symbols
+
+## 🏁 Flag  
+pwn.college{Ug7w3FiibZu4slp1RGYemCVdgny.0lM3ATNywCO4IDOxEzW}
