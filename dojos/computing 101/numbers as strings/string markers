@@ -1,0 +1,231 @@
+📅 2026-11-28
+.intel_syntax noprefix
+.global atoi_digit
+.global atoi
+.global _start
+.global itoa
+
+itoa:
+        push    rsi
+        push    rdx
+        xor     rax, rax
+        push    r11
+        xor     r11,r11
+        cmp     rdi, 0
+        jg      poss
+        je      zero_case
+        neg     rdi
+        add     r11, 1
+        mov     BYTE PTR [rsi], '-'
+        add     rsi, 1
+poss:
+        mov     rcx, 10
+        mov     rax, rdi
+        push    r12
+        push    rbx
+        xor     rbx, rbx
+div_loop:
+        xor     rdx, rdx
+        div     rcx
+        push    rdx
+        add     rbx, 1
+        cmp     rax, 0
+        jne     div_loop
+        add     r11, rbx
+writee:
+        pop     r12
+        add     r12, 0x30
+        mov     BYTE PTR [rsi], r12b
+        add     rsi, 1
+        sub     rbx, 1
+        add     rdx, 1
+        cmp     rbx, 0
+        jne     writee
+        mov     rax, r11
+        pop     rbx
+        pop     r12
+        pop     r11
+        jmp     exitt
+zero_case:
+        mov     BYTE PTR [rsi], 0x30
+        mov     rax, 1
+        pop     r11
+        jmp     exitt
+exitt:
+        pop     rdx
+        pop     rsi
+        ret
+
+
+atoi_digit:
+        xor     rsi, rsi
+        mov     sil, BYTE PTR [rdi]
+        sub     rsi, 0x30
+        mov     rax, rsi
+        ret
+atoi:
+        xor     r8, r8
+        xor     r9, r9
+        xor     rax, rax
+check_neg:
+        cmp     BYTE PTR [rdi], 0x2d
+        jne     looop
+        mov     r9, 1
+        add     rdi, 1
+looop:
+        cmp     BYTE PTR [rdi], 0x30
+        jb      done
+        cmp     BYTE PTR [rdi], 0x39
+        ja      done
+        mov     r11, rdi
+        call    atoi_digit
+        imul    r8, 10
+        add     r8, rax
+        add     r11, 1
+        mov     rdi, r11
+        jmp     looop
+done:
+        mov     rax, r8
+        cmp     r9, 1
+        jne     pos
+        neg     rax
+pos:
+        ret
+
+
+
+
+
+_start:
+        mov     rcx, rsp
+        add     rcx, 16
+        xor     rdx, rdx
+        mov     rsi, rsp
+        sub     rsi, 1000
+        xor     r11, r11
+        xor     r10, r10
+        mov     rcx, [rcx]
+        mov     r10, rsi
+        xor     r15, r15
+
+
+loop:
+        cmp     BYTE PTR [rcx], 0
+        je      write
+        cmp     BYTE PTR [rcx], 0x5c
+        je      slash
+        cmp     BYTE PTR [rcx], 0x25
+        je      percentage
+        jmp     char
+
+slash:
+        cmp     BYTE PTR [rcx+1], 0x5c
+        je      double_slash
+        cmp     BYTE PTR [rcx+1], 0x6e
+        je      new_line
+
+
+char:
+        mov     r11b, BYTE PTR [rcx]
+        mov     BYTE PTR [rsi], r11b
+        inc     rdx
+        inc     rcx
+        inc     rsi
+        jmp     loop
+
+new_line:
+        mov     BYTE PTR [rsi], 0x0a
+        inc     rsi
+        add     rcx, 2
+        inc     rdx
+        jmp     loop
+
+double_slash:
+        cmp     BYTE PTR [rcx+2], 0x6e
+        je      new_line
+        mov     BYTE PTR [rsi], 0x5c
+        inc     rsi
+        add     rcx, 2
+        inc     rdx
+        jmp     loop
+
+percentage:
+        cmp     BYTE PTR [rcx+1], 0x64
+        je      ARG
+        cmp     BYTE PTR [rcx+1], 0x73
+        je      string
+        cmp     BYTE PTR [rcx+1], 0x25
+        jne     loop
+        mov     BYTE PTR [rsi], 0x25
+        inc     rsi
+        add     rcx, 2
+        inc     rdx
+        jmp     loop
+
+string:
+        mov     r13, rcx
+        add     r15, 1
+        mov     rcx, rsp
+        add     rcx, 16
+        mov     r14, 8
+        imul    r14, r15
+string_chek:
+        mov     rcx, [rcx+r14]
+        mov     rsi, r10
+        add     rsi, rdx
+        xor     rax, rax
+write_loop:
+        cmp     BYTE PTR [rcx], 0
+        je      loop_fix
+        mov     al, BYTE PTR [rcx]
+        mov     BYTE PTR [rsi], al
+        inc     rsi
+        inc     rcx
+        inc     rdx
+        jmp     write_loop
+
+loop_fix:
+        mov     rcx, r13
+        add     rcx, 2
+        jmp     loop
+
+
+ARG:
+        mov     r13, rcx
+        add     r15, 1
+        mov     rcx, rsp
+        add     rcx, 16
+        mov     r14, 8
+        imul    r14, r15
+
+
+argv_check:
+        mov     rcx, [rcx+r14]
+        mov     rdi, rcx
+        call    atoi
+        mov     rsi, r10
+        add     rsi, rdx
+        mov     rdi, rax
+        call    itoa
+        add     rdx, rax
+        mov     rcx, r13
+        add     rcx, 2
+        add     rsi, rax
+        jmp     loop
+
+write:
+        mov     rsi, r10
+        mov     rdi, 1
+        mov     rax, 1
+        syscall
+
+exit:
+        mov     rax, 60
+        mov     rdi, 0
+        syscall
+
+## 🧑🏾‍🏫 what this challenge teaches u
+woww very tough
+
+## 🏁 Flag  
+pwn.college{cDXQc0nWNfQZVSng0M_TJIGXa1G.0VN3ATNywCO4IDOxEzW}
